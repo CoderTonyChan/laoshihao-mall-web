@@ -14,7 +14,7 @@
           {name: 'user-center', desc: '个人中心'},
           {name: 'user-order', desc: '我的订单'},
           {name: 'user-pass-update', desc: '修改密码'},
-          {name: 'about', desc: '关于MMall'}
+          {name: 'about', desc: '关于商城'}
         ]
       };
     },

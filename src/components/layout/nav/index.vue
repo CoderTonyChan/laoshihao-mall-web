@@ -28,7 +28,7 @@
           <a class="link" href="javascript:void(0)" @click.prevent="loadPage('user-center')">我的老师好商城</a>
         </li>
         <li class="nav-item">
-          <a class="link" href="javascript:void(0)" @click.preventk="loadPage('about')">关于老师好商城</a>
+          <a class="link" href="javascript:void(0)" @click.prevent="loadPage('about')">关于老师好商城</a>
         </li>
       </ul>
     </div>
