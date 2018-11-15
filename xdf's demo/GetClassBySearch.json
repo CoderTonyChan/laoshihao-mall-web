@@ -1,0 +1,154 @@
+{
+    "ResponseData": {
+        "CategoryFilterList": [
+            {
+                "FirstCode": "414",
+                "FirstName": "中学辅导",
+                "SecondCode": null,
+                "SecondName": null,
+                "IsEnd": true,
+                "CourseCount": 2,
+                "IsSelected": false
+            }
+        ],
+        "PropertyFilterList": [
+            {
+                "PropertyCode": "3",
+                "PropertyName": "人群",
+                "PropertySortIndex": 10,
+                "ValueCode": "9",
+                "ValueName": "一年级",
+                "ValueSortIndex": 10
+            },
+            {
+                "PropertyCode": "3",
+                "PropertyName": "人群",
+                "PropertySortIndex": 10,
+                "ValueCode": "10",
+                "ValueName": "二年级",
+                "ValueSortIndex": 20
+            },
+            {
+                "PropertyCode": "3",
+                "PropertyName": "人群",
+                "PropertySortIndex": 10,
+                "ValueCode": "11",
+                "ValueName": "三年级",
+                "ValueSortIndex": 30
+            },
+            {
+                "PropertyCode": "3",
+                "PropertyName": "人群",
+                "PropertySortIndex": 10,
+                "ValueCode": "12",
+                "ValueName": "四年级",
+                "ValueSortIndex": 40
+            },
+            {
+                "PropertyCode": "3",
+                "PropertyName": "人群",
+                "PropertySortIndex": 10,
+                "ValueCode": "13",
+                "ValueName": "五年级",
+                "ValueSortIndex": 50
+            },
+            {
+                "PropertyCode": "3",
+                "PropertyName": "人群",
+                "PropertySortIndex": 10,
+                "ValueCode": "14",
+                "ValueName": "六年级",
+                "ValueSortIndex": 60
+            },
+            {
+                "PropertyCode": "4",
+                "PropertyName": "学科",
+                "PropertySortIndex": 20,
+                "ValueCode": "15",
+                "ValueName": "英语",
+                "ValueSortIndex": 10
+            },
+            {
+                "PropertyCode": "4",
+                "PropertyName": "学科",
+                "PropertySortIndex": 20,
+                "ValueCode": "16",
+                "ValueName": "数学",
+                "ValueSortIndex": 20
+            },
+            {
+                "PropertyCode": "4",
+                "PropertyName": "学科",
+                "PropertySortIndex": 20,
+                "ValueCode": "17",
+                "ValueName": "语文",
+                "ValueSortIndex": 30
+            },
+            {
+                "PropertyCode": "5",
+                "PropertyName": "学习内容",
+                "PropertySortIndex": 30,
+                "ValueCode": "23",
+                "ValueName": "数学校内同步",
+                "ValueSortIndex": 50
+            },
+            {
+                "PropertyCode": "5",
+                "PropertyName": "学习内容",
+                "PropertySortIndex": 30,
+                "ValueCode": "24",
+                "ValueName": "英语单项",
+                "ValueSortIndex": 60
+            },
+            {
+                "PropertyCode": "5",
+                "PropertyName": "学习内容",
+                "PropertySortIndex": 30,
+                "ValueCode": "25",
+                "ValueName": "英语综合",
+                "ValueSortIndex": 70
+            },
+            {
+                "PropertyCode": "5",
+                "PropertyName": "学习内容",
+                "PropertySortIndex": 30,
+                "ValueCode": "26",
+                "ValueName": "语文单项",
+                "ValueSortIndex": 80
+            },
+            {
+                "PropertyCode": "5",
+                "PropertyName": "学习内容",
+                "PropertySortIndex": 30,
+                "ValueCode": "27",
+                "ValueName": "语文综合",
+                "ValueSortIndex": 90
+            },
+            {
+                "PropertyCode": "5",
+                "PropertyName": "学习内容",
+                "PropertySortIndex": 30,
+                "ValueCode": "28",
+                "ValueName": "专题精讲",
+                "ValueSortIndex": 100
+            },
+            {
+                "PropertyCode": "5",
+                "PropertyName": "学习内容",
+                "PropertySortIndex": 30,
+                "ValueCode": "29",
+                "ValueName": "思维训练",
+                "ValueSortIndex": 110
+            }
+        ],
+        "BusinessDistrictFilterList": [],
+        "AreaFilterList": [],
+        "ClassModeFilterList": [],
+        "ClassTimeFilterList": [],
+        "ClassCapacityFilterList": [],
+        "TotalRecords": 0,
+        "ClassList": []
+    },
+    "Status": 1,
+    "Error": ""
+}
