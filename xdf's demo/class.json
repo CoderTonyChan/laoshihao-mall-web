@@ -1,0 +1,418 @@
+{
+    "ResponseData": {
+        "CategoryFilterList": [
+            {
+                "FirstCode": "414",
+                "FirstName": "中学辅导",
+                "SecondCode": null,
+                "SecondName": null,
+                "IsEnd": true,
+                "CourseCount": 2,
+                "IsSelected": false
+            }
+        ],
+        "PropertyFilterList": [
+            {
+                "PropertyCode": "6",
+                "PropertyName": "年级",
+                "PropertySortIndex": 10,
+                "ValueCode": "30",
+                "ValueName": "初一",
+                "ValueSortIndex": 10
+            },
+            {
+                "PropertyCode": "6",
+                "PropertyName": "年级",
+                "PropertySortIndex": 10,
+                "ValueCode": "31",
+                "ValueName": "初二",
+                "ValueSortIndex": 20
+            },
+            {
+                "PropertyCode": "6",
+                "PropertyName": "年级",
+                "PropertySortIndex": 10,
+                "ValueCode": "32",
+                "ValueName": "初三（四年制）",
+                "ValueSortIndex": 30
+            },
+            {
+                "PropertyCode": "6",
+                "PropertyName": "年级",
+                "PropertySortIndex": 10,
+                "ValueCode": "33",
+                "ValueName": "中考",
+                "ValueSortIndex": 40
+            },
+            {
+                "PropertyCode": "6",
+                "PropertyName": "年级",
+                "PropertySortIndex": 10,
+                "ValueCode": "34",
+                "ValueName": "高一",
+                "ValueSortIndex": 50
+            },
+            {
+                "PropertyCode": "6",
+                "PropertyName": "年级",
+                "PropertySortIndex": 10,
+                "ValueCode": "35",
+                "ValueName": "高二",
+                "ValueSortIndex": 60
+            },
+            {
+                "PropertyCode": "6",
+                "PropertyName": "年级",
+                "PropertySortIndex": 10,
+                "ValueCode": "36",
+                "ValueName": "高考",
+                "ValueSortIndex": 70
+            },
+            {
+                "PropertyCode": "6",
+                "PropertyName": "年级",
+                "PropertySortIndex": 10,
+                "ValueCode": "934",
+                "ValueName": "初中",
+                "ValueSortIndex": 80
+            },
+            {
+                "PropertyCode": "6",
+                "PropertyName": "年级",
+                "PropertySortIndex": 10,
+                "ValueCode": "935",
+                "ValueName": "高中",
+                "ValueSortIndex": 90
+            },
+            {
+                "PropertyCode": "7",
+                "PropertyName": "科目",
+                "PropertySortIndex": 20,
+                "ValueCode": "37",
+                "ValueName": "英语",
+                "ValueSortIndex": 10
+            },
+            {
+                "PropertyCode": "7",
+                "PropertyName": "科目",
+                "PropertySortIndex": 20,
+                "ValueCode": "38",
+                "ValueName": "数学",
+                "ValueSortIndex": 20
+            },
+            {
+                "PropertyCode": "7",
+                "PropertyName": "科目",
+                "PropertySortIndex": 20,
+                "ValueCode": "39",
+                "ValueName": "语文",
+                "ValueSortIndex": 30
+            },
+            {
+                "PropertyCode": "7",
+                "PropertyName": "科目",
+                "PropertySortIndex": 20,
+                "ValueCode": "40",
+                "ValueName": "物理",
+                "ValueSortIndex": 40
+            },
+            {
+                "PropertyCode": "7",
+                "PropertyName": "科目",
+                "PropertySortIndex": 20,
+                "ValueCode": "41",
+                "ValueName": "化学",
+                "ValueSortIndex": 50
+            },
+            {
+                "PropertyCode": "7",
+                "PropertyName": "科目",
+                "PropertySortIndex": 20,
+                "ValueCode": "42",
+                "ValueName": "生物",
+                "ValueSortIndex": 50
+            },
+            {
+                "PropertyCode": "7",
+                "PropertyName": "科目",
+                "PropertySortIndex": 20,
+                "ValueCode": "43",
+                "ValueName": "地理",
+                "ValueSortIndex": 60
+            },
+            {
+                "PropertyCode": "7",
+                "PropertyName": "科目",
+                "PropertySortIndex": 20,
+                "ValueCode": "44",
+                "ValueName": "历史",
+                "ValueSortIndex": 70
+            },
+            {
+                "PropertyCode": "7",
+                "PropertyName": "科目",
+                "PropertySortIndex": 20,
+                "ValueCode": "45",
+                "ValueName": "政治",
+                "ValueSortIndex": 80
+            },
+            {
+                "PropertyCode": "7",
+                "PropertyName": "科目",
+                "PropertySortIndex": 20,
+                "ValueCode": "46",
+                "ValueName": "科学",
+                "ValueSortIndex": 90
+            },
+            {
+                "PropertyCode": "7",
+                "PropertyName": "科目",
+                "PropertySortIndex": 20,
+                "ValueCode": "47",
+                "ValueName": "理综",
+                "ValueSortIndex": 100
+            },
+            {
+                "PropertyCode": "7",
+                "PropertyName": "科目",
+                "PropertySortIndex": 20,
+                "ValueCode": "48",
+                "ValueName": "文综",
+                "ValueSortIndex": 110
+            },
+            {
+                "PropertyCode": "7",
+                "PropertyName": "科目",
+                "PropertySortIndex": 20,
+                "ValueCode": "49",
+                "ValueName": "自主招生",
+                "ValueSortIndex": 120
+            },
+            {
+                "PropertyCode": "7",
+                "PropertyName": "科目",
+                "PropertySortIndex": 20,
+                "ValueCode": "50",
+                "ValueName": "港澳面试",
+                "ValueSortIndex": 130
+            },
+            {
+                "PropertyCode": "7",
+                "PropertyName": "科目",
+                "PropertySortIndex": 20,
+                "ValueCode": "51",
+                "ValueName": "艺考文化课",
+                "ValueSortIndex": 140
+            },
+            {
+                "PropertyCode": "7",
+                "PropertyName": "科目",
+                "PropertySortIndex": 20,
+                "ValueCode": "942",
+                "ValueName": "优才计划",
+                "ValueSortIndex": 141
+            },
+            {
+                "PropertyCode": "7",
+                "PropertyName": "科目",
+                "PropertySortIndex": 20,
+                "ValueCode": "52",
+                "ValueName": "学业水平测试",
+                "ValueSortIndex": 150
+            },
+            {
+                "PropertyCode": "7",
+                "PropertyName": "科目",
+                "PropertySortIndex": 20,
+                "ValueCode": "53",
+                "ValueName": "全日制",
+                "ValueSortIndex": 160
+            },
+            {
+                "PropertyCode": "7",
+                "PropertyName": "科目",
+                "PropertySortIndex": 20,
+                "ValueCode": "54",
+                "ValueName": "复读",
+                "ValueSortIndex": 170
+            },
+            {
+                "PropertyCode": "8",
+                "PropertyName": "学习目标",
+                "PropertySortIndex": 30,
+                "ValueCode": "55",
+                "ValueName": "好学",
+                "ValueSortIndex": 10
+            },
+            {
+                "PropertyCode": "8",
+                "PropertyName": "学习目标",
+                "PropertySortIndex": 30,
+                "ValueCode": "56",
+                "ValueName": "精进",
+                "ValueSortIndex": 20
+            },
+            {
+                "PropertyCode": "8",
+                "PropertyName": "学习目标",
+                "PropertySortIndex": 30,
+                "ValueCode": "723",
+                "ValueName": "志高",
+                "ValueSortIndex": 30
+            },
+            {
+                "PropertyCode": "9",
+                "PropertyName": "季度",
+                "PropertySortIndex": 40,
+                "ValueCode": "57",
+                "ValueName": "春季",
+                "ValueSortIndex": 10
+            },
+            {
+                "PropertyCode": "9",
+                "PropertyName": "季度",
+                "PropertySortIndex": 40,
+                "ValueCode": "58",
+                "ValueName": "暑假",
+                "ValueSortIndex": 20
+            },
+            {
+                "PropertyCode": "9",
+                "PropertyName": "季度",
+                "PropertySortIndex": 40,
+                "ValueCode": "59",
+                "ValueName": "秋季",
+                "ValueSortIndex": 30
+            },
+            {
+                "PropertyCode": "9",
+                "PropertyName": "季度",
+                "PropertySortIndex": 40,
+                "ValueCode": "60",
+                "ValueName": "寒假",
+                "ValueSortIndex": 40
+            },
+            {
+                "PropertyCode": "9",
+                "PropertyName": "季度",
+                "PropertySortIndex": 40,
+                "ValueCode": "61",
+                "ValueName": "五一",
+                "ValueSortIndex": 50
+            },
+            {
+                "PropertyCode": "9",
+                "PropertyName": "季度",
+                "PropertySortIndex": 40,
+                "ValueCode": "62",
+                "ValueName": "十一",
+                "ValueSortIndex": 60
+            },
+            {
+                "PropertyCode": "9",
+                "PropertyName": "季度",
+                "PropertySortIndex": 40,
+                "ValueCode": "63",
+                "ValueName": "春节",
+                "ValueSortIndex": 70
+            },
+            {
+                "PropertyCode": "214",
+                "PropertyName": "特型",
+                "PropertySortIndex": 60,
+                "ValueCode": "936",
+                "ValueName": "专项",
+                "ValueSortIndex": 10
+            },
+            {
+                "PropertyCode": "214",
+                "PropertyName": "特型",
+                "PropertySortIndex": 60,
+                "ValueCode": "937",
+                "ValueName": "模考",
+                "ValueSortIndex": 20
+            }
+        ],
+        "BusinessDistrictFilterList": [],
+        "AreaFilterList": [],
+        "ClassModeFilterList": [
+            {
+                "Code": "101",
+                "Name": "走读"
+            }
+        ],
+        "ClassTimeFilterList": [
+            {
+                "Code": "11",
+                "Name": "平时白天"
+            },
+            {
+                "Code": "17",
+                "Name": "周末"
+            }
+        ],
+        "ClassCapacityFilterList": [
+            {
+                "Code": "11",
+                "Name": "25人"
+            }
+        ],
+        "TotalRecords": 2,
+        "ClassList": [
+            {
+                "TeacherList": [],
+                "Id": 3468471,
+                "SchoolId": 506,
+                "CityId": 441900,
+                "Code": "DG01193YSC011",
+                "Name": "高中专项班（国外雅思强化）",
+                "NameBefore": "",
+                "NameAfter": "国外雅思强化",
+                "NameDecorate": "",
+                "FullName": "高中专项班（国外雅思强化）",
+                "LearnPlace": "待定",
+                "AreaCode": "",
+                "Longitude": "",
+                "Latitude": "",
+                "StartDate": "2019-01-20T00:00:00",
+                "EndDate": "2019-02-18T00:00:00",
+                "LearnTime": "0800-1220",
+                "LessonTimes": 40,
+                "MaxNum": 25,
+                "CurrentNum": 1,
+                "Price": 12800.0,
+                "IsNet": false,
+                "ApplyState": 0,
+                "RegistrationType": 2
+            },
+            {
+                "TeacherList": [],
+                "Id": 3468472,
+                "SchoolId": 506,
+                "CityId": 441900,
+                "Code": "DG01194YSJ011",
+                "Name": "高中专项班（国外雅思精讲精练）",
+                "NameBefore": "",
+                "NameAfter": "国外雅思精讲精练",
+                "NameDecorate": "",
+                "FullName": "高中专项班（国外雅思精讲精练）",
+                "LearnPlace": "待定",
+                "AreaCode": "",
+                "Longitude": "",
+                "Latitude": "",
+                "StartDate": "2019-03-09T00:00:00",
+                "EndDate": "2019-06-08T00:00:00",
+                "LearnTime": "周六13:30-17:50，周日8:00-12:20",
+                "LessonTimes": 56,
+                "MaxNum": 25,
+                "CurrentNum": 1,
+                "Price": 17800.0,
+                "IsNet": false,
+                "ApplyState": 0,
+                "RegistrationType": 2
+            }
+        ]
+    },
+    "Status": 1,
+    "Error": ""
+}
