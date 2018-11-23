@@ -1,9 +1,9 @@
 const gbs = {
-  host: 'http://paascloud.net',
-  lockr_prefix: 'PASSCLOUD_PAAS_',
-  cookie_prefix: 'PASSCLOUD_PAAS_',
+  host: 'http://lshao.cn',
+  lockr_prefix: 'LAOSHIHAO_',
+  cookie_prefix: 'LAOSHIHAO_',
   secret_key: '^#rwd6Ffz$X5alRN',
-  domain: '.paascloud.net',
+  domain: '.lshao.cn',
   secret: {
     key_str: 'om8q6fq#A0Yl@qJy',
     iv_str: '0#86gzOcsv1bXyIx'
@@ -12,9 +12,9 @@ const gbs = {
 const cbs = {};
 
 if (process.env.NODE_ENV === 'production') {
-  gbs.domain = '.paascloud.net';
+  gbs.domain = '.lshao.cn';
 } else {
-  gbs.domain = '.paascloud.net';
+  gbs.domain = '.lshao.cn';
   gbs.lockr_prefix += 'DEV_';
   gbs.cookie_prefix += 'DEV_';
 }

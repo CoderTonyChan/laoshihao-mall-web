@@ -196,11 +196,12 @@ const actions = {
 };
 
 function jumpLoginPage () {
-  if (process.env.NODE_ENV === 'production') {
-    window.location.href = 'http://login.paascloud.net/login';
-  } else {
-    window.location.href = 'http://dev-login.paascloud.net/login';
-  }
+  // if (process.env.NODE_ENV === 'production') {
+  //   window.location.href = 'http://login.paascloud.net/login';
+  // } else {
+  //   window.location.href = 'http://dev-login.paascloud.net/login';
+  // }
+  window.location.href = 'http://login.lshao.cn/login';
 }
 
 export default {

@@ -28,18 +28,20 @@ let mixin = {
       this.loadPage('Index');
     },
     goSignIn() {
-      if (process.env.NODE_ENV === 'production') {
-        window.location.href = 'http://login.paascloud.net';
-      } else {
-        window.location.href = 'http://dev-login.paascloud.net';
-      }
+      // if (process.env.NODE_ENV === 'production') {
+      //   window.location.href = 'http://login.paascloud.net';
+      // } else {
+      //   window.location.href = 'http://dev-login.paascloud.net';
+      // }
+      window.location.href = 'http://login.lshao.cn';
     },
     goSignUp() {
-      if (process.env.NODE_ENV === 'production') {
-        window.location.href = 'http://login.paascloud.net/register';
-      } else {
-        window.location.href = 'http://dev-login.paascloud.net/register';
-      }
+      // if (process.env.NODE_ENV === 'production') {
+      //   window.location.href = 'http://login.paascloud.net/register';
+      // } else {
+      //   window.location.href = 'http://dev-login.paascloud.net/register';
+      // }
+      window.location.href = 'http://login.lshao.cn/register';
     },
     ajax(param) {
       let {type, url, data, success, isUnMusk} = param;

@@ -70,6 +70,7 @@ Vue.prototype.$pcEncrypt = PcEncrypt;
 if (process.env.NODE_ENV === 'production') {
   Vue.prototype.$http.defaults.baseURL = 'http://api.paascloud.net/';
 }
+Vue.prototype.$http.defaults.baseURL = 'http://api.lshao.cn/';
 
 function mergeCartFlag() {
   let authToken = store.getters.getAuthToken;
@@ -143,6 +144,7 @@ Vue.prototype.$http.interceptors.response.use((res) => {
   }
 });
 
+// 登陆统一处理
 router.beforeEach((to, from, next) => {
   NProgress.start();
   PcCookie.set({
@@ -155,11 +157,12 @@ router.beforeEach((to, from, next) => {
       if (res) {
         next();
       } else {
-        if (process.env.NODE_ENV === 'production') {
-          window.location.href = 'http://login.paascloud.net/login';
-        } else {
-          window.location.href = 'http://dev-login.paascloud.net/login';
-        }
+        window.location.href = 'http://login.lshao.cn/login';
+        // if (process.env.NODE_ENV === 'production') {
+        //   window.location.href = 'http://login.paascloud.net/login';
+        // } else {
+        //   window.location.href = 'http://dev-login.paascloud.net/login';
+        // }
       }
     });
   } else {
