@@ -3,52 +3,50 @@
     <div class="w">
       <ul class="keywords-list">
         <li class="keywords-item">
-          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','手机')">手机</a>
-          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','数码')">数码</a>
+          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','2020考研')">2020考研</a>
+          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','考研集训')">考研集训</a>
         </li>
         <li class="keywords-item">
-          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','电脑')">电脑</a>
-          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','办公配件')">办公配件</a>
+          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','2019考研')">2019考研 </a>
+          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','考研抢分')">考研抢分</a>
+        </li>
+        <li class="keywords-item">   
+          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','托福')">托福</a>
+          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','SAT')">SAT</a>
+          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','GRE')">GRE</a>
+          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','GMAT')">GMAT</a>
+        </li>
+        <li class="keywords-item"> 
+          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','雅思留学')">雅思留学</a>
+          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','雅思移民')">雅思移民</a>
         </li>
         <li class="keywords-item">
-          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','电视')">电视</a>
-          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','空调')">空调</a>
-          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','冰箱')">冰箱</a>
-          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','洗衣机')">洗衣机</a>
+          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','小学')">小学</a>
+          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','初中')">初中</a>
+          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','高中')">高中</a>
+        </li>
+        <li class="keywords-item"> 
+          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','英语四级')">英语四级</a>
+          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','英语六级')">英语六级</a>
         </li>
         <li class="keywords-item">
-          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','厨卫家电')">厨卫家电</a>
-          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','小家电')">小家电</a>
+          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','英语能力')">英语能力</a>
+          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','新概念')">新概念</a>
+          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','BEC')">BEC</a>
+        </li>
+        <li class="keywords-item"> 
+          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','外教口语1对1')">外教口语1对1</a>
+          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','免费口语测评')">免费口语测评</a>
         </li>
         <li class="keywords-item">
-          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','家具')">家具</a>
-          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','家具')">家具</a>
-          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','家装')">家装</a>
+          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','日语')">日语</a>
+          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','韩语')">韩语</a>
+          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','德语')">德语</a>
+          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','法语')">法语</a>
         </li>
-        <li class="keywords-item">
-          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','厨卫家电')">厨卫家电</a>
-          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','小家电')">小家电</a>
-        </li>
-        <li class="keywords-item">
-          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','个护化妆')">个护化妆</a>
-          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','清洁用品')">清洁用品</a>
-          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','纸品')">纸品</a>
-        </li>
-        <li class="keywords-item">
-          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','母婴用品')">母婴用品</a>
-          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','儿童玩具')">儿童玩具</a>
-          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','童装童鞋')">童装童鞋</a>
-        </li>
-        <li class="keywords-item">
-          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','鞋靴')">鞋靴</a>
-          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','箱包')">箱包</a>
-          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','钟表')">钟表</a>
-          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','珠宝')">珠宝</a>
-        </li>
-        <li class="keywords-item">
-          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','图书')">图书</a>
-          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','音像')">音像</a>
-          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','电子书')">电子书</a>
+        <li class="keywords-item"> 
+          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','多纳英语启蒙')">多纳英语启蒙</a>
+          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','少儿英语外教课')">少儿英语外教课</a>
         </li>
       </ul>
       <div class="banner-con">
