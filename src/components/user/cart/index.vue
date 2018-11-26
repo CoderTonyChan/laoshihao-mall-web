@@ -10,7 +10,7 @@
                 <span>全选</span>
               </label>
             </th>
-            <th class="cart-cell cell-info">商品信息</th>
+            <th class="cart-cell cell-info">课程信息</th>
             <th class="cart-cell cell-price">单价</th>
             <th class="cart-cell cell-count">数量</th>
             <th class="cart-cell cell-total">合计</th>
@@ -62,7 +62,7 @@
         </div>
         <div class="submit-con">
           <div v-if="cartInfo.totalNum > 0">
-            <span>已选择{{cartInfo.totalNum}}件商品</span>
+            <span>已选择{{cartInfo.totalNum}}课程</span>
             <span>总价：</span>
             <span class="submit-total">{{cartInfo.totalPrice | formatMoney}}</span>
             <span @click="loadPage('order-confirm')" class="btn btn-submit">去结算</span>

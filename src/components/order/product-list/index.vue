@@ -3,7 +3,7 @@
     <table class="product-table">
       <tr>
         <th class="cell-img">&nbsp;</th>
-        <th class="cell-info">商品描述</th>
+        <th class="cell-info">课程描述</th>
         <th class="cell-price">价格</th>
         <th class="cell-count">数量</th>
         <th class="cell-total">小计</th>

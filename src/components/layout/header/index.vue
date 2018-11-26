@@ -5,7 +5,7 @@
       <div class="w">
         <a class="logo" href="javascript:void(0)" @click.prevent="goHome">老师好商城</a>
         <div class="search-con">
-          <input class="search-input" v-model="searchInfo" id="search-input" placeholder="请输入商品名称"/>
+          <input class="search-input" v-model="searchInfo" id="search-input" placeholder="请输入课程名称"/>
           <button class="btn search-btn" @click="goGoodsListPage(searchInfo)" id="search-btn" @keyup.13="goGoodsListPage(searchInfo)">搜索</button>
         </div>
       </div>

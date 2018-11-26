@@ -56,12 +56,12 @@
     </div>
     <div class="w">
       <div class="floor-wrap" v-for="(category, index1) in  categoryData" :key="category.categoryId">
-        <h1 class="floor-title">F{{index1 + 1}} {{category.categoryName}}</h1>
+        <h1 class="floor-title">{{category.categoryName}}</h1>
         <ul class="floor-list">
           <li class="floor-item" v-for="(item, index2) in  category.categoryList" :key="item.categoryId">
             <a href="javascript:void(0)" @click="goGoodsListPage(item.categoryId)">
               <span class="floor-text">{{item.categoryName}}</span>
-              <img class="floor-img" :src="getImage(index1, index2)" alt="双开门冰箱"/>
+              <img class="floor-img" :src="imgUrl" alt/>
             </a>
           </li>
         </ul>

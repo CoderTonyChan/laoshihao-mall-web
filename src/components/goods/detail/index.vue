@@ -5,13 +5,27 @@
       <div class="intro-wrap">
         <div class="p-img-con">
           <div class="main-img-con">
-            <img class="main-img" v-lazy="mainImage" alt="name"/>
+            <!-- <img class="main-img" v-lazy="mainImage" alt="name"/> -->
+            <video-player  class="video-player-box"
+                 ref="videoPlayer"
+                 :options="playerOptions"
+                 :playsinline="true"
+                 customEventName="customstatechangedeventname"
+                 @play="onPlayerPlay($event)"
+                 @pause="onPlayerPause($event)"
+                 @ended="onPlayerEnded($event)"
+                 @waiting="onPlayerWaiting($event)"
+                 @playing="onPlayerPlaying($event)"
+                 @timeupdate="onPlayerTimeupdate($event)"
+                 @statechanged="playerStateChanged($event)"
+                 @ready="playerReadied">
+            </video-player>
           </div>
-          <ul class="p-img-list">
+          <!-- <ul class="p-img-list">
             <li class="p-img-item" v-for="url in subImages" :key="url">
               <img @mouseenter="changeMainImg(url)" class="p-img" v-lazy="url"/>
             </li>
-          </ul>
+          </ul> -->
         </div>
         <div class="p-info-con">
           <h1 class="p-name">{{product.name}}</h1>
@@ -49,6 +63,11 @@
   </div>
 </template>
 <script type="text/ecmascript-6">
+// require styles
+  import 'video.js/dist/video-js.css';
+
+  import { videoPlayer } from 'vue-video-player';
+
   export default {
     data() {
       return {
@@ -56,7 +75,20 @@
         buyCount: 1,
         product: {},
         mainImage: '',
-        subImages: []
+        subImages: [],
+        playerOptions: { // videojs options //static/images/author.jpg
+          height: '402px',
+          width: '420px',
+          muted: true,
+          language: 'en',
+          playbackRates: [0.7, 1.0, 1.5, 2.0],
+          sources: [{
+            type: 'video/mp4',
+            src: 'https://cdn.theguardian.tv/webM/2015/07/20/150716YesMen_synd_768k_vp8.webm'
+            // src: 'http://www.w3school.com.cn/i/movie.ogg'
+          }],
+          poster: 'http://file.koolearn.com/2018/1112/20181112113959687.png'
+        }
       };
     },
     created() {
@@ -65,7 +97,38 @@
       this.loadDetail();
       this.isShowProduct = true;
     },
+    mounted() {
+      console.log('this is current player instance object', this.player);
+
+      this.playerOptions.sources[0].src = 'http://www.w3school.com.cn/i/movie.ogg';
+      this.playerOptions.poster = 'http://file.koolearn.com/2018/1112/20181112113959687.png';
+    },
+    computed: {
+      player() {
+        return this.$refs.videoPlayer.player;
+      }
+    },
     methods: {
+      // listen event
+      onPlayerPlay(player) {
+        // console.log('player play!', player)
+      },
+      onPlayerPause(player) {
+        // console.log('player pause!', player)
+      },
+      // ...player event
+
+      // or listen state event
+      playerStateChanged(playerCurrentState) {
+        // console.log('player current update state', playerCurrentState)
+      },
+
+      // player is ready
+      playerReadied(player) {
+        console.log('the player is readied', player);
+        // you can use it to do something...
+        // player.[methods]
+      },
       addCart() {
         let userCart = {};
         console.info('this.product', this.product);
@@ -123,8 +186,16 @@
         });
       }
     },
-    components: {}
+    components: {
+      videoPlayer
+    }
   };
 </script>
 <style rel="stylesheet/scss" lang="scss">
+.video-js .vjs-big-play-button {
+    top: 50%;
+    left: 50%;
+    margin-top: -0.7em;
+    margin-left: -1.5em;
+}
 </style>

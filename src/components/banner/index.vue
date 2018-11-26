@@ -1,8 +1,8 @@
 <template>
   <div class="banner">
     <swiper :options="swiperOption">
-      <swiper-slide v-for="slide in swiperSlides" :key="slide.title">
-        <img class="banner-img" :src="slide.src">
+      <swiper-slide v-for="slide in swiperSlides" :key="slide.title" >
+        <img class="banner-img" :src="slide.src" @click="goGoodsListPage('',slide.title)">
         <!-- v-lazy 环路空白 待解决 -->
       </swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
@@ -26,7 +26,7 @@
         swiperOption: {
           notNextTick: true,
           autoplay: 3500,
-          initialSlide: 1,
+          initialSlide: 2,
           setWrapperSize: true,
           pagination: '.swiper-pagination',
           paginationClickable: true,
@@ -40,27 +40,27 @@
         swiperSlides: [
           {
             src: require('../../assets/image/banner/banner1.jpg'),
-            title: 'xxx1',
+            title: '雅思',
             href: 'detail/analysis'
           },
           {
             src: require('../../assets/image/banner/banner2.jpg'),
-            title: 'xxx2',
+            title: 'GRE',
             href: 'detail/count'
           },
           {
             src: require('../../assets/image/banner/banner3.jpg'),
-            title: 'xxx3',
+            title: '日语',
             href: 'http://xxx.xxx.com'
           },
           {
             src: require('../../assets/image/banner/banner4.jpg'),
-            title: 'xxx4',
+            title: '新概念英语',
             href: 'detail/forecast'
           },
           {
             src: require('../../assets/image/banner/banner5.jpg'),
-            title: 'xxx5',
+            title: '中小学',
             href: 'detail/forecast'
           }
         ]
@@ -69,6 +69,24 @@
     components: {
       swiper,
       swiperSlide
+    },
+    methods: {
+      getImage(index1, index2) {
+        return require('../../assets/image/floor/floor' + (index1 + 1) + '-' + (index2 + 1) + '.jpg');
+      },
+      goGoodsListPage(categoryId, keyword) {
+        let param = {};
+        param.categoryId = categoryId;
+        param.keyword = keyword;
+        this.loadPage('goods-list', param);
+      },
+      queryCategoryData(resolve) {
+        this.ajax({
+          type: 'GET',
+          url: `/uac/auth/category/getProductCategoryDtoByPid/0`,
+          success: resolve
+        });
+      }
     }
   };
 </script>

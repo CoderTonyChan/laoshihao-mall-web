@@ -17,9 +17,9 @@
         </div>
       </div>
       <div class="result-con cart-add-success" v-show="showCartAddSuccess">
-        <h1 class="result-title">您的商品已成功加入购物车！</h1>
+        <h1 class="result-title">您的课程已成功加入购物车！</h1>
         <div class="result-content">
-          <a class="link" href="javascript:void(0)" @click.prevent="goHome">继续购物</a>
+          <a class="link" href="javascript:void(0)" @click.prevent="goHome">继续报名</a>
           <a class="link" href="javascript:void(0)" @click.prevent="goCartPage">去购物车查看</a>
         </div>
       </div>

@@ -44,12 +44,12 @@
           </div>
         </div>
         <div class="panel">
-          <div class="panel-title">商品清单</div>
+          <div class="panel-title">课程清单</div>
           <div class="panel-body">
             <table class="product-table">
               <tr>
                 <th class="cell-th cell-img">&nbsp;</th>
-                <th class="cell-th cell-info">商品信息</th>
+                <th class="cell-th cell-info">课程信息</th>
                 <th class="cell-th cell-price">单价</th>
                 <th class="cell-th cell-count">数量</th>
                 <th class="cell-th cell-total">小计</th>
