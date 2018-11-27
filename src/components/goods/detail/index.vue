@@ -13,10 +13,6 @@
                  customEventName="customstatechangedeventname"
                  @play="onPlayerPlay($event)"
                  @pause="onPlayerPause($event)"
-                 @ended="onPlayerEnded($event)"
-                 @waiting="onPlayerWaiting($event)"
-                 @playing="onPlayerPlaying($event)"
-                 @timeupdate="onPlayerTimeupdate($event)"
                  @statechanged="playerStateChanged($event)"
                  @ready="playerReadied">
             </video-player>
@@ -30,11 +26,11 @@
         <div class="p-info-con">
           <h1 class="p-name">{{product.name}}</h1>
           <p class="p-subtitle">{{product.subtitle}}</p>
-          <div class="p-info-item p-price-con">
+          <div class="p-info-item p-price-con p-price">
             <span class="label">价格:</span>
             <span class="info">{{product.price | formatMoney}}</span>
           </div>
-          <div class="p-info-item">
+          <!-- <div class="p-info-item">
             <span class="label">库存:</span>
             <span class="info">{{product.stock}}</span>
           </div>
@@ -43,9 +39,13 @@
             <input class="p-count" :value="buyCount" readonly=""/>
             <span class="p-count-btn plus" @click="changeBuyCount('plus')">+</span>
             <span class="p-count-btn minus" @click="changeBuyCount('minus')">-</span>
+          </div> -->
+          <div class="p-product-info">
+            <p>课时：264&nbsp;&nbsp;&nbsp;&nbsp;有效期：                            400天</p>
+            <p class="teacher">主讲：<a target="_blank" href="//www.koolearn.com/teacher/7769.html?productline=34">霍娜</a>、<a target="_blank" href="//www.koolearn.com/teacher/7770.html?productline=34">田静</a></p>
           </div>
           <div class="p-info-item">
-            <a class="btn cart-add" @click="addCart">加入购物车</a>
+            <a class="btn cart-add" @click="addCart">立刻报名</a>
           </div>
         </div>
       </div>
@@ -76,6 +76,7 @@
         product: {},
         mainImage: '',
         subImages: [],
+        video: '',
         playerOptions: { // videojs options //static/images/author.jpg
           height: '402px',
           width: '420px',
@@ -99,9 +100,6 @@
     },
     mounted() {
       console.log('this is current player instance object', this.player);
-
-      this.playerOptions.sources[0].src = 'http://www.w3school.com.cn/i/movie.ogg';
-      this.playerOptions.poster = 'http://file.koolearn.com/2018/1112/20181112113959687.png';
     },
     computed: {
       player() {
@@ -174,11 +172,15 @@
             if (res.code === 200) {
               this.product = res.result;
               this.mainImage = this.product.mainImage;
-              let subImages = this.product.subImages;
-              let array = subImages.split(',');
-              for (let index in array) {
-                this.subImages.push(array[index]);
+              if (this.product.subImages) {
+                let subImages = this.product.subImages;
+                let array = subImages.split(',');
+                for (let index in array) {
+                  this.subImages.push(array[index]);
+                }
               }
+              this.playerOptions.sources[0].src = this.product.video;
+              this.playerOptions.poster = this.product.mainImage;
             } else {
               this.isShowProduct = false;
             }
@@ -198,4 +200,30 @@
     margin-top: -0.7em;
     margin-left: -1.5em;
 }
+.p-product-info {
+    padding: 20px 0 20px;
+    border-bottom: 1px solid #dedfe1;
+}
+.p-product-info a {
+    color: #828282;
+    text-decoration: none;
+}
+
+.cart-add {
+    display: inline-block;
+    padding: 0 120px;
+    height: 50px;
+    line-height: 50px;
+    vertical-align: middle;
+    border: none;
+    background: #c60023;
+    font-size: 23px;
+    font-weight: bold;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    text-decoration: none;
+    /* width: 200px; */
+}
+
 </style>

@@ -49,13 +49,13 @@
 }
 .intro-wrap .p-info-con .p-subtitle{
     font-size: 15px;
-    color: #c60023;
+    color: #666;
     line-height: 30px;
 }
 .intro-wrap .p-info-con .p-info-item{
     position: relative;
     padding: 0 10px;
-    margin-top: 20px;
+    margin-top: 70px;
 }
 .intro-wrap .p-info-con .p-info-item .label{
     display: inline-block;

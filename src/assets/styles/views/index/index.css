@@ -71,7 +71,8 @@
     color: #d58717;
     font-weight: normal;
     font-size: 20px;
-    border-bottom: 1px solid #d58717;
+    border-bottom: 1px solid #d58717;    
+    padding-top: 20px;
 }
 /* 更改各楼层标题颜色 */
 .floor-wrap:nth-child(2) .floor-title{
