@@ -55,10 +55,10 @@
       </div>
     </div>
     <div class="w">
-      <div class="floor-wrap" v-for="(category, index1) in  categoryData" :key="category.categoryId">
+      <div class="floor-wrap" v-for="category in  categoryData" :key="category.categoryId">
         <h1 class="floor-title">{{category.categoryName}}</h1>
         <ul class="floor-list">
-          <li class="floor-item" v-for="(item, index2) in  category.categoryList" :key="item.categoryId">
+          <li class="floor-item" v-for="item in  category.categoryList" :key="item.categoryId">
             <a href="javascript:void(0)" @click="goGoodsListPage(item.categoryId)">
               <span class="floor-text">{{item.categoryName}}</span>
               <img class="floor-img" :src="imgUrl" alt/>
@@ -109,7 +109,8 @@
       queryCategoryData(resolve) {
         this.ajax({
           type: 'GET',
-          url: `/uac/auth/category/getProductCategoryDtoByPid/0`,
+          // url: `/uac/auth/category/getProductCategoryDtoByPid/0`,
+          url: `/uac/auth/category/getCategoryAndProductDtoByPid/0`,
           success: resolve
         });
       }
