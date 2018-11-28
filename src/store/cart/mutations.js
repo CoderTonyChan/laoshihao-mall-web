@@ -11,9 +11,10 @@ axios.interceptors.request.use((config) => {
   return Promise.reject(error);
 });
 if (process.env.NODE_ENV === 'production') {
-  axios.defaults.baseURL = 'http://api.paascloud.net/';
+  axios.defaults.baseURL = 'http://api.lshao.cn/';
 }
-axios.defaults.baseURL = 'http://api.lshao.cn/';
+// 打开这个就可以线上
+// axios.defaults.baseURL = 'http://api.lshao.cn/';
 
 axios.interceptors.response.use((res) => {
   if (res.data.code !== 200 && res.data.code !== 500) {

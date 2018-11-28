@@ -68,9 +68,10 @@ Vue.prototype.$pcNProgress = NProgress;
 Vue.prototype.$pcEncrypt = PcEncrypt;
 
 if (process.env.NODE_ENV === 'production') {
-  Vue.prototype.$http.defaults.baseURL = 'http://api.paascloud.net/';
+  Vue.prototype.$http.defaults.baseURL = 'http://api.lshao.cn/';
 }
-Vue.prototype.$http.defaults.baseURL = 'http://api.lshao.cn/';
+// 打开这个就可以线上
+// Vue.prototype.$http.defaults.baseURL = 'http://api.lshao.cn/';
 
 function mergeCartFlag() {
   let authToken = store.getters.getAuthToken;
