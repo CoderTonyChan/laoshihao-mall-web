@@ -34,6 +34,7 @@ axios.interceptors.response.use((res) => {
     if (error.response.status === 500) {
       alert(error.response.data.message);
     } else if (error.response.status === 504) {
+      // 504是网关错误
       alert('网关错误');
     } else {
       console.log('Error', error.message);

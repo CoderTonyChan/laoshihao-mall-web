@@ -28,6 +28,7 @@ let mixin = {
       this.loadPage('Index');
     },
     goSignIn() {
+      console.log(`goSignIn ${process.env.NODE_ENV}`);
       if (process.env.NODE_ENV === 'production') {
         window.location.href = 'http://login.lshao.cn';
       } else {

@@ -86,7 +86,7 @@ function mergeCartFlag() {
       data: cartListDto
     })
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         authToken.mergeCartFlag = true;
         store.dispatch('update_user_info', authToken.loginName);
         store.dispatch('set_cart_list', res.result.cartProductVoList);
