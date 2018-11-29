@@ -158,12 +158,11 @@ router.beforeEach((to, from, next) => {
       if (res) {
         next();
       } else {
-        window.location.href = 'http://login.lshao.cn/login';
-        // if (process.env.NODE_ENV === 'production') {
-        //   window.location.href = 'http://login.paascloud.net/login';
-        // } else {
-        //   window.location.href = 'http://dev-login.paascloud.net/login';
-        // }
+        if (process.env.NODE_ENV === 'production') {
+          window.location.href = 'http://login.lshao.cn/login';
+        } else {
+          window.location.href = 'http://dev-login.lshao.cn/login';
+        }
       }
     });
   } else {
