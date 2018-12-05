@@ -15,7 +15,7 @@
         <div class="panel-body">
             <div class="row align-items-center">
               <div class="col-md-12">
-                <img src="http://lshao.cn/LshLogin/images/zi.png"
+                <img src="http://lshao.cn/LshLogin/images/zi.png" 
                 >
               </div>
               <div class="col-md-6 order-md-1 text-center text-md-left pr-md-5">
@@ -72,4 +72,7 @@ export default {
 };
 </script>
 <style rel="stylesheet/scss" lang="scss">
+.panel img {
+  background-color: #ddd;
+}
 </style>

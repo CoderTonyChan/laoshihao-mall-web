@@ -3,50 +3,53 @@
     <div class="w">
       <ul class="keywords-list">
         <li class="keywords-item">
-          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','2020考研')">2020考研</a>
-          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','考研集训')">考研集训</a>
-        </li>
-        <li class="keywords-item">
-          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','2019考研')">2019考研 </a>
-          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','考研抢分')">考研抢分</a>
-        </li>
-        <li class="keywords-item">   
-          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','托福')">托福</a>
-          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','SAT')">SAT</a>
-          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','GRE')">GRE</a>
-          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','GMAT')">GMAT</a>
-        </li>
-        <li class="keywords-item"> 
-          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','雅思留学')">雅思留学</a>
-          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','雅思移民')">雅思移民</a>
-        </li>
-        <li class="keywords-item">
           <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','小学')">小学</a>
           <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','初中')">初中</a>
           <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','高中')">高中</a>
         </li>
+        <li class="keywords-item">
+          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','东莞卓越教育')">东莞卓越教育</a>
+          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','华泰教育')">华泰教育</a>
+        </li>
         <li class="keywords-item"> 
-          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','英语四级')">英语四级</a>
-          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','英语六级')">英语六级</a>
+          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','尹奇')">尹奇</a>
+          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','李文荣')">李文荣</a>
         </li>
         <li class="keywords-item">
-          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','英语能力')">英语能力</a>
-          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','新概念')">新概念</a>
-          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','BEC')">BEC</a>
-        </li>
-        <li class="keywords-item"> 
-          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','外教口语1对1')">外教口语1对1</a>
-          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','免费口语测评')">免费口语测评</a>
+          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','三角')">三角 </a>
+          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','不等式')">不等式</a>
+          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','二次函数')">二次函数</a>
         </li>
         <li class="keywords-item">
-          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','日语')">日语</a>
-          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','韩语')">韩语</a>
-          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','德语')">德语</a>
-          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','法语')">法语</a>
+          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','电路与电流')">电路与电流</a>
+          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','压力压强')">压力压强</a>
+          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','光的反射')">光的反射</a>
         </li>
-        <li class="keywords-item"> 
-          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','多纳英语启蒙')">多纳英语启蒙</a>
-          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','少儿英语外教课')">少儿英语外教课</a>
+        <li class="keywords-item">
+          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','酸碱盐')">酸碱盐</a>
+          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','碳的氧化物')">碳的氧化物</a>
+          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','化学方程式')">化学方程式</a>
+        </li>
+        <li class="keywords-item">
+          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','文学常识')">文学常识</a>
+          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','文言文')">文言文</a>
+          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','现代文阅读')">现代文阅读</a>
+        </li>
+        <li class="keywords-item">
+          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','被动语态')">被动语态</a>
+          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','现在进行时')">现在进行时</a>
+        </li>
+        <li class="keywords-item">   
+          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','预测题')">预测题</a>  
+          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','压轴题')">压轴题</a>
+          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','模拟题')">模拟题</a>
+        </li>
+        <li class="keywords-item">    
+          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','北京')">北京</a>
+          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','上海')">上海</a>
+          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','广州')">广州</a>
+          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','深圳')">深圳</a>
+          <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','东莞')">东莞</a>
         </li>
       </ul>
       <div class="banner-con">
