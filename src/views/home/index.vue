@@ -1,6 +1,45 @@
 <template>
   <div>
     <div class="w">
+      <div class="panel-body">
+          <div class="row align-items-center">
+              <div class="col-md-12">
+                <h2 class="title">老师好的教学模式，以确保在线教学的质量</h2>
+              </div>
+              <div class="col-md-6 order-md-1 text-center text-md-left pr-md-5">
+                <!-- <h1 class="mb-3 bd-text-purple-bright">老师好</h1> -->
+                <img class="titlePhoto" src="https://s1.ax1x.com/2018/12/06/Flz1fA.png"/>
+                <div class="d-flex flex-column flex-md-row lead mb-3">
+                  <a
+                    href="http://webboard.oss-cn-shanghai.aliyuncs.com/LshaoSetup.rar"
+                    class="btn btn-lg btn-bd-primary mb-3 mb-md-0 mr-md-3"
+                    onclick="ga('send', 'event', 'Jumbotron actions', 'Get started', 'Get started');"
+                  >Windows下载</a>
+                  <a
+                    href="http://webboard.oss-cn-shanghai.aliyuncs.com/lshao.apk"
+                    class="btn btn-lg btn-outline-secondary"
+                    onclick="ga('send', 'event', 'Jumbotron actions', 'Download', 'Download 4.0.0');"
+                  >Android下载</a>
+                  <a
+                    href="https://itunes.apple.com/us/app/id1265741384"
+                    class="btn btn-lg btn-outline-secondary"
+                    onclick="ga('send', 'event', 'Jumbotron actions', 'Download', 'Download 4.0.0');"
+                  >iOS下载</a>
+                </div>
+                <!-- <p class="text-muted mb-0">当前版本：v4.0.0 | 文档更新于：2018-07-07</p> -->
+              </div>
+              <div class="col-6 mx-auto col-md-6 order-md-2">
+                <p class="lead">&nbsp;</p>
+                <img
+                  class="img-fluid mb-3 mb-md-0"
+                  src="http://lshao.cn/images/mainpage.jpg"
+                  alt
+                >
+              </div>
+          </div>
+      </div>
+    </div>
+    <div class="w">
       <ul class="keywords-list">
         <li class="keywords-item">
           <a class="link" target="_blank" href="javascript:void(0)" @click="goGoodsListPage('','小学')">小学</a>
@@ -142,7 +181,13 @@
   };
 </script>
 <style rel="stylesheet/scss" lang="scss">
-
+.title{
+  text-align: center;
+}
+.titlePhoto{
+  display: inline;
+  text-align: center;
+}
 .p-course-list .p-item {
     float: left;
     box-sizing: border-box;

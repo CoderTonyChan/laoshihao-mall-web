@@ -41,8 +41,10 @@
             <span class="p-count-btn minus" @click="changeBuyCount('minus')">-</span>
           </div> -->
           <div class="p-product-info">
-            <p>课时：264&nbsp;&nbsp;&nbsp;&nbsp;有效期：                            400天</p>
-            <p class="teacher">主讲：<a target="_blank" href="//www.koolearn.com/teacher/7769.html?productline=34">霍娜</a>、<a target="_blank" href="//www.koolearn.com/teacher/7770.html?productline=34">田静</a></p>
+            <p>课时：{{product.period}}&nbsp;&nbsp;&nbsp;&nbsp;有效期：                            {{this.dataString}}</p>
+            <p class="teacher">主讲：
+              <a v-for="(teacher, index) in product.teacherList" :key="teacher.id" target="_blank">{{teacher.name}}<span v-if="index !== product.teacherList.length - 1">、</span></a>
+            </p>
           </div>
           <div class="p-info-item">
             <a class="btn cart-add" @click="addCart">立刻报名</a>
@@ -52,7 +54,7 @@
       <div class="detail-wrap">
         <div class="detail-tab-con">
           <ul class="tab-list">
-            <li class="tab-item active">详细描述</li>
+            <li class="tab-item active">课程描述</li>
           </ul>
         </div>
         <div class="detail-con">
@@ -190,6 +192,18 @@
     },
     components: {
       videoPlayer
+    },
+    computed: {
+      dataString() {
+        var date = new Date(this.product.validTime);//如果date为13位不需要乘1000
+        var Y = date.getFullYear() + '-';
+        var M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
+        var D = (date.getDate() < 10 ? '0' + (date.getDate()) : date.getDate()) + ' ';
+        // var h = (date.getHours() < 10 ? '0' + date.getHours() : date.getHours()) + ':';
+        // var m = (date.getMinutes() <10 ? '0' + date.getMinutes() : date.getMinutes()) + ':';
+        // var s = (date.getSeconds() <10 ? '0' + date.getSeconds() : date.getSeconds());
+        return Y+M+D;
+      }
     }
   };
 </script>
@@ -216,7 +230,7 @@
     line-height: 50px;
     vertical-align: middle;
     border: none;
-    background: #c60023;
+    background: #337ab7;
     font-size: 23px;
     font-weight: bold;
     color: #fff;

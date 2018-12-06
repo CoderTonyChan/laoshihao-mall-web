@@ -9,7 +9,7 @@
     cursor: pointer;
 }
 .address-item.active{
-    border: 3px dashed #c60023;
+    border: 3px dashed #337ab7;
 }
 .address-item:hover,
 .address-add:hover{
@@ -96,7 +96,7 @@
 .submit-con .submit-total{
     margin-right: 20px;
     font-size: 18px;
-    color: #c60023;
+    color: #337ab7;
     font-weight: bold;
     vertical-align: middle;
 }

@@ -10,14 +10,14 @@
       </div>
     </div>
     <div class="confirm-wrap w">
-      <div class="panel panel-color panel-padding">
+      <!-- <div class="panel panel-color panel-padding">
         <h1 class="panel-title panel-padding">收货地址</h1>
         <div class="panel-body address-list panel-padding">
           <template v-if="addressList.length">
             <pc-address-list :addressList="addressList" :selectAddress="selectAddress"/>
           </template>
         </div>
-      </div>
+      </div> -->
       <div class="panel panel-color panel-padding">
         <h1 class="panel-title panel-padding">商品清单</h1>
         <div class="panel-body product-con panel-padding">
@@ -86,10 +86,11 @@
         });
       },
       createOrderDoc() {
-        if (!this.addressId) {
-          alert('请选择发货地址');
-          return;
-        }
+        // if (!this.addressId) {
+        //   alert('请选择发货地址');
+        //   return;
+        // }
+        this.addressId = 0;
         this.ajax({
           url: `/omc/order/createOrderDoc/` + this.addressId,
           success: (res) => {
