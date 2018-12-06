@@ -95,6 +95,8 @@
         return this.$store.getters.getCartInfo;
       },
       cartList() {
+        console.log(`this.$store.getters.getCartList =${this.$store.getters.getCartList}`);
+    
         return this.$store.getters.getCartList;
       }
     },
