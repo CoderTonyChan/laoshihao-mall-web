@@ -8,6 +8,7 @@
     padding: 10px 0;
     color: #666;
     border-bottom: 1px solid #eee;
+    vertical-align: middle;
 }
 .order-list-table.header{
     background: #eee;
@@ -42,7 +43,7 @@
     border: 1px solid #ddd;
 }
 .order-list-table .cell-info{
-    width: 45%;
+    width: 30%;
     text-align: left;
 }
 .order-list-table .cell-price{

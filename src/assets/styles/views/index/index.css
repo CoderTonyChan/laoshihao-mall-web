@@ -39,6 +39,7 @@
 .banner-con .banner-img{
     width: 100%;
     height: 370px;
+    cursor: pointer;
 }
 /* banner的前一张和后一张按钮 */
 .banner-con .banner-arrow{

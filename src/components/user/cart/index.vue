@@ -72,7 +72,7 @@
     </div>
     <p v-show="cartList.length === 0" class="err-tip">
       <span>您的购物车空空如也，</span>
-      <a style="cursor: pointer;" @click="goHome">立即去购物</a>
+      <a style="cursor: pointer;" @click="goHome">立即去选课</a>
     </p>
   </div>
 </template>
