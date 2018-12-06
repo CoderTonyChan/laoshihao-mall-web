@@ -53,8 +53,9 @@ const getters = {
     return state.rememberMe;
   },
   getRefreshToken: (state) => {
-    if (!state.refreshToken) {
+    if (!state.refreshToken.refresh_token) {
       state.refreshToken = PcCookie.get(enums.USER.REFRESH_TOKEN) ? JSON.parse(PcCookie.get(enums.USER.REFRESH_TOKEN)) : {};
+      console.log(`state.refreshToken`);
     }
     return state.refreshToken.refresh_token;
   },
@@ -108,8 +109,12 @@ const mutations = {
     // debugger;
     delete authToken['jti'];
     delete authToken['token_type'];
-    let refreshToken = {};
-    Object.assign(refreshToken, authToken);
+    let refreshToken = PcCookie.get(enums.USER.REFRESH_TOKEN) ? JSON.parse(PcCookie.get(enums.USER.REFRESH_TOKEN)) : {};
+    if (!refreshToken) {
+      // 为空也不能赋值 反正这里有问题
+      Object.assign(refreshToken, authToken);
+    }
+    console.log(`authToken`);
     // delete authToken['scope'];
     delete authToken['refresh_token'];
     delete refreshToken['access_token'];
@@ -154,24 +159,25 @@ const mutations = {
 
 const actions = {
   get_access_token({commit}, cb) {
+    debugger;
     if (!state.authToken || state.authToken.access_token === '') {
       state.authToken = PcCookie.get(enums.USER.AUTH_TOKEN) ? JSON.parse(PcCookie.get(enums.USER.AUTH_TOKEN)) : {};
     }
     if (state.authToken) {
       // 判断是否需要续租
       if ((new Date().getTime() - state.authToken.timestamp) > 100 * 60 * 1000) {
-        console.log(`判断是否需要续租`);
-        // refreshToken().then(res => {
-        //   if (res.data.code === 200) {
-        //     commit('updateAuthToken', res.data.result);
-        //   } else {
-        //     commit('deleteUserInfo');
-        //     commit('deleteAuthToken');
-        //     commit('deleteMenuList');
-        //     commit('deleteRememberMe');
-        //     jumpLoginPage();
-        //   }
-        // });
+        refreshToken().then(res => {
+          if (res.data.code === 200) {
+            commit('updateAuthToken', res.data.result);
+          } else {
+            commit('deleteUserInfo');
+            commit('deleteAuthToken');
+            commit('deleteMenuList');
+            commit('deleteRememberMe');
+            jumpLoginPage();
+          };
+          console.log(`判断是否需要续租`);
+        });
       }
     }
     cb && cb(state.authToken.access_token);
