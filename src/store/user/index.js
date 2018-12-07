@@ -99,6 +99,10 @@ const mutations = {
     PcLockr.set(enums.USER.MENU_LIST, menuList);
   },
   updateAuthToken (state, authToken) {
+    if (typeof authToken === 'string') {
+      authToken = JSON.parse(authToken);
+    }
+    console.log(`更新token : updateAuthToken`);
     state.authToken = authToken;
     // https://github.com/js-cookie/js-cookie/wiki/Frequently-Asked-Questions#expire-cookies-in-less-than-a-day
     let expires = 2 / 24;
@@ -159,16 +163,16 @@ const mutations = {
 
 const actions = {
   get_access_token({commit}, cb) {
-    debugger;
     if (!state.authToken || state.authToken.access_token === '') {
       state.authToken = PcCookie.get(enums.USER.AUTH_TOKEN) ? JSON.parse(PcCookie.get(enums.USER.AUTH_TOKEN)) : {};
     }
     if (state.authToken) {
       // 判断是否需要续租
-      if ((new Date().getTime() - state.authToken.timestamp) > 100 * 60 * 1000) {
+      if ((new Date().getTime() - state.authToken.timestamp) > 90 * 60 * 1000) {
         refreshToken().then(res => {
           if (res.data.code === 200) {
             commit('updateAuthToken', res.data.result);
+            console.log(res);
           } else {
             commit('deleteUserInfo');
             commit('deleteAuthToken');
