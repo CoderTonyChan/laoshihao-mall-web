@@ -4,12 +4,18 @@
       <div class="panel-body">
         <div class="row align-items-center">
           <div class="col-md-12">
-            <h2 class="title">老师好的教学模式，以确保在线教学的质量</h2>
+            <!-- <h2 class="title">老师好的教学模式，以确保在线教学的质量</h2> -->
           </div>
           <div class="col-md-6 order-md-1 text-center text-md-left pr-md-5">
             <!-- <h1 class="mb-3 bd-text-purple-bright">老师好</h1> -->
+            <h3 class="title">
+              <em>老师好的教学模式，以确保在线教学的质量</em>
+            </h3>
             <img class="titlePhoto" src="https://s1.ax1x.com/2018/12/06/Flz1fA.png">
             <div class="d-flex flex-column flex-md-row lead mb-3">
+              <h3 class="title">
+                <em>我们为您提供工具，请您来做教学</em>
+              </h3>
               <a
                 href="http://webboard.oss-cn-shanghai.aliyuncs.com/LshaoSetup.rar"
                 class="btn btn-lg btn-bd-primary mb-3 mb-md-0 mr-md-3"
@@ -21,9 +27,8 @@
                 onclick="ga('send', 'event', 'Jumbotron actions', 'Download', 'Download 4.0.0');"
               >Android下载</a>
               <a
-                href="https://itunes.apple.com/us/app/id1265741384"
                 class="btn btn-lg btn-outline-secondary"
-                onclick="ga('send', 'event', 'Jumbotron actions', 'Download', 'Download 4.0.0');"
+                @click="checkVersion()"
               >iOS下载</a>
             </div>
             <!-- <p class="text-muted mb-0">当前版本：v4.0.0 | 文档更新于：2018-07-07</p> -->
@@ -35,6 +40,9 @@
                   src="http://lshao.cn/images/mainpage.jpg"
                   alt
             >-->
+            <h3>
+              <em>老师好介绍</em>
+            </h3>
             <video-player
               class="video-player-box"
               ref="videoPlayer"
@@ -225,12 +233,6 @@
             class="link"
             target="_blank"
             href="javascript:void(0)"
-            @click="goGoodsListPage('','上海')"
-          >上海</a>
-          <a
-            class="link"
-            target="_blank"
-            href="javascript:void(0)"
             @click="goGoodsListPage('','广州')"
           >广州</a>
           <a
@@ -245,6 +247,12 @@
             href="javascript:void(0)"
             @click="goGoodsListPage('','东莞')"
           >东莞</a>
+          <a
+            class="link"
+            target="_blank"
+            href="javascript:void(0)"
+            @click="goGoodsListPage('','广西')"
+          >广西</a>
         </li>
       </ul>
       <div class="banner-con">
@@ -301,7 +309,7 @@ export default {
     return {
       playerOptions: {
         // videojs options //static/images/author.jpg
-        autoplay: 'muted',
+        autoplay: "muted",
         height: "402px",
         width: "420px",
         muted: true,
@@ -310,8 +318,7 @@ export default {
         sources: [
           {
             type: "video/mp4",
-            src:
-              "https://lshao.oss-cn-beijing.aliyuncs.com/lshao2.0.mp4"
+            src: "https://lshao.oss-cn-beijing.aliyuncs.com/lshao2.0.mp4"
             // src: 'http://www.w3school.com.cn/i/movie.ogg'
           }
         ],
@@ -379,6 +386,72 @@ export default {
       param.keyword = keyword;
       this.loadPage("goods-list", param);
     },
+    checkVersion() {
+      var userAgent = navigator.userAgent.toLowerCase();
+      var name = "Unknown";
+      var version = "Unknown";
+      if (userAgent.indexOf("win") > -1) {
+        name = "Windows";
+        if (userAgent.indexOf("windows nt 5.0") > -1) {
+          version = "Windows 2000";
+        } else if (
+          userAgent.indexOf("windows nt 5.1") > -1 ||
+          userAgent.indexOf("windows nt 5.2") > -1
+        ) {
+          version = "Windows XP";
+        } else if (userAgent.indexOf("windows nt 6.0") > -1) {
+          version = "Windows Vista";
+        } else if (
+          userAgent.indexOf("windows nt 6.1") > -1 ||
+          userAgent.indexOf("windows 7") > -1
+        ) {
+          version = "Windows 7";
+        } else if (
+          userAgent.indexOf("windows nt 6.2") > -1 ||
+          userAgent.indexOf("windows 8") > -1
+        ) {
+          version = "Windows 8";
+        } else if (userAgent.indexOf("windows nt 6.3") > -1) {
+          version = "Windows 8.1";
+        } else if (
+          userAgent.indexOf("windows nt 6.2") > -1 ||
+          userAgent.indexOf("windows nt 10.0") > -1
+        ) {
+          version = "Windows 10";
+        } else {
+          version = "Unknown";
+        }
+      } else if (userAgent.indexOf("iphone") > -1) {
+        name = "Iphone";
+      } else if (userAgent.indexOf("mac") > -1) {
+        name = "Mac";
+      } else if (
+        userAgent.indexOf("x11") > -1 ||
+        userAgent.indexOf("unix") > -1 ||
+        userAgent.indexOf("sunname") > -1 ||
+        userAgent.indexOf("bsd") > -1
+      ) {
+        name = "Unix";
+      } else if (userAgent.indexOf("linux") > -1) {
+        if (userAgent.indexOf("android") > -1) {
+          name = "Android";
+        } else {
+          name = "Linux";
+        }
+      } else {
+        name = "Unknown";
+      }
+      var os = new Object();
+      os.name = name;
+      os.version = version;
+      if (os.name === 'Iphone') {
+        window.open('https://itunes.apple.com/us/app/id1265741384');
+      }else{
+        this.errorTips('请在Safari中打开');
+      }
+
+
+    },
     queryCategoryData(resolve) {
       this.ajax({
         type: "GET",
@@ -408,10 +481,10 @@ export default {
   text-align: center;
 }
 .video-js .vjs-big-play-button {
-    top: 50%;
-    left: 50%;
-    margin-top: -0.7em;
-    margin-left: -1.5em;
+  top: 50%;
+  left: 50%;
+  margin-top: -0.7em;
+  margin-left: -1.5em;
 }
 .p-course-list .p-item {
   float: left;
