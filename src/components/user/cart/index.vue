@@ -12,8 +12,8 @@
             </th>
             <th class="cart-cell cell-info">课程信息</th>
             <th class="cart-cell cell-price">单价</th>
-            <th class="cart-cell cell-count">数量</th>
-            <th class="cart-cell cell-total">合计</th>
+            <!-- <th class="cart-cell cell-count">数量</th> -->
+            <!-- <th class="cart-cell cell-total">合计</th> -->
             <th class="cart-cell cell-opera">操作</th>
           </tr>
         </table>
@@ -35,12 +35,12 @@
               <a class="link" @click="loadPage('goods-detail', {'productId': cart.productId})">{{cart.productName}}</a>
             </td>
             <td class="cart-cell cell-price">{{cart.productPrice | formatMoney}}</td>
-            <td class="cart-cell cell-count">
+            <!-- <td class="cart-cell cell-count">
               <span class="count-btn minus" @click="actionCart(cart, 'minus_count')">-</span>
               <input class="count-input" :value="cart.quantity" data-max="cart.productStock"/>
               <span class="count-btn plus" @click="actionCart(cart, 'plus_count')">+</span>
-            </td>
-            <td class="cart-cell cell-total">{{cart.productPrice * cart.quantity | formatMoney}}</td>
+            </td> -->
+            <!-- <td class="cart-cell cell-total">{{cart.productPrice * cart.quantity | formatMoney}}</td> -->
             <td class="cart-cell cell-opera">
               <span class="link cart-delete" @click="actionCart(cart, 'delete_product')">删除</span>
             </td>

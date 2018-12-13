@@ -131,6 +131,15 @@ export default [
           hideMainHeader: false
         },
         component: resolve => require(['views/about'], resolve)
+      },
+      {
+        name: 'disclaimer',
+        path: 'about/disclaimer',
+        meta: {
+          name: '免责声明',
+          hideMainHeader: false
+        },
+        component: resolve => require(['views/about/disclaimer'], resolve)
       }
     ]
   },

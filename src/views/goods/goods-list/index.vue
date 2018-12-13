@@ -10,11 +10,103 @@
       </div>
     </div>
     <div class="list-wrap w">
+      <div class="selector" id="J_selector">
+        <div class="s-title" clstag="thirdtype|keycount|thirdtype|select">
+          <h3>
+            <b>课程</b>
+            <em>筛选</em>
+            <!-- 共&nbsp;
+            <span>58482</span>个商品 -->
+          </h3>
+        </div>
+        <div class="J_selectorLine s-line J_selectorFold">
+          <div class="sl-wrap">
+            <div class="sl-key">
+              <span>机构：</span>
+            </div>
+            <div class="sl-value">
+              <div class="sl-v-list">
+                <ul class="J_valueList">
+                  <li v-for="organ in selectorsData.organs" :key="organ.id">
+                    <a
+                      @click="reloadOrganData(organ)"
+                    >
+                      <i></i>{{organ.name}}
+                    </a>
+                    <a v-if="organ.id === queryInfo.organId" @click="reloadCancelOrganData(organ)">X</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="J_selectorLine s-line J_selectorFold">
+          <div class="sl-wrap">
+            <div class="sl-key">
+              <span>便捷导购：</span>
+            </div>
+            <div class="sl-value">
+              <div class="sl-v-list">
+                <ul class="J_valueList">
+                  <li>
+                    <a
+                      href="/list.html?cat=670,671,672&amp;ev=6265%5F9113&amp;sort=sort_totalsales15_desc&amp;trans=1&amp;JL=3_便捷导购_商务办公"
+                      rel="nofollow"
+                    >
+                      <i></i>商务办公
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/list.html?cat=670,671,672&amp;ev=6265%5F94635&amp;sort=sort_totalsales15_desc&amp;trans=1&amp;JL=3_便捷导购_家庭使用"
+                      rel="nofollow"
+                    >
+                      <i></i>家庭使用
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/list.html?cat=670,671,672&amp;ev=6265%5F94636&amp;sort=sort_totalsales15_desc&amp;trans=1&amp;JL=3_便捷导购_轻薄便携"
+                      rel="nofollow"
+                    >
+                      <i></i>轻薄便携
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/list.html?cat=670,671,672&amp;ev=6265%5F94637&amp;sort=sort_totalsales15_desc&amp;trans=1&amp;JL=3_便捷导购_高清游戏"
+                      rel="nofollow"
+                    >
+                      <i></i>高清游戏
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/list.html?cat=670,671,672&amp;ev=6265%5F94638&amp;sort=sort_totalsales15_desc&amp;trans=1&amp;JL=3_便捷导购_设计相关"
+                      rel="nofollow"
+                    >
+                      <i></i>设计相关
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="list-wrap w">
       <ul class="sort-con">
-        <li :class="{'sort-item': true, 'active': sortActive}" data-type="default" @click="changeSort('default')">默认排序
-        </li>
-        <li :class="{'sort-item': true, 'active': !sortActive, 'asc': isAsc, 'desc': isDesc}" data-type="price"
-            @click="changeSort('price')">
+        <li
+          :class="{'sort-item': true, 'active': sortActive}"
+          data-type="default"
+          @click="changeSort('default')"
+        >默认排序</li>
+        <li
+          :class="{'sort-item': true, 'active': !sortActive, 'asc': isAsc, 'desc': isDesc}"
+          data-type="price"
+          @click="changeSort('price')"
+        >
           <span>价格</span>
           <i class="fa fa-sort-asc"></i>
           <i class="fa fa-sort-desc"></i>
@@ -30,50 +122,175 @@
   </div>
 </template>
 <script type="text/ecmascript-6">
-  import pcGoodsList from 'components/goods/list';
+import pcGoodsList from "components/goods/list";
 
-  export default {
-    data() {
-      return {
-        sortActive: true,
-        isAsc: false,
-        isDesc: false,
-        orderBy: 'name asc'
-      };
-    },
-    created() {
-    },
-    activated() {
-    },
-    methods: {
-      changeSort(sort) {
-        if (sort === 'price') {
-          this.sortActive = false;
-          if (!this.isAsc && !this.isDesc) {
-            this.isAsc = true;
-            this.orderBy = 'price asc';
-          } else {
-            if (this.isAsc) {
-              this.isAsc = false;
-              this.isDesc = true;
-              this.orderBy = 'price desc';
-            } else {
-              this.isAsc = true;
-              this.isDesc = false;
-              this.orderBy = 'price asc';
-            }
-          }
-        } else {
-          this.sortActive = !this.sortActive;
-          this.orderBy = 'name asc';
-        }
-        this.$pcBus.$emit('productSort', this.orderBy);
+export default {
+  data() {
+    return {
+      sortActive: true,
+      isAsc: false,
+      isDesc: false,
+      orderBy: "name asc",
+      selectorsData: [],
+      queryInfo: {
+        categoryId: "",
+        keyword: "",
+        pageNum: "1",
+        pageSize: "10",
+        organId: "",
+        spec: ""
       }
+    };
+  },
+  created() {
+    console.error(`goods-list---created`);
+  },
+  beforeRouteEnter (to, from, next) {
+    // getPost(to.params.id, (err, post) => {
+    //   next(vm => vm.setData(err, post))
+    // })
+    next();
+    console.error(`goods-list---beforeRouteEnter`);
+  },
+  // 路由改变前，组件就已经渲染完了
+  // 逻辑稍稍不同
+  beforeRouteUpdate (to, from, next) {
+    // getPost(to.params.id, (err, post) => {
+    //   // this.setData(err, post)
+    //   next()
+    // })
+
+    next();
+    this.querySelectorsData(res => {
+      if (res.code === 200) {
+        this.selectorsData = res.result;
+        console.log(res.result);
+      } else {
+        alert("加载主页面失败");
+      }
+    });
+    console.error(`goods-list---beforeRouteUpdate`);
+  },
+  activated() {
+    this.querySelectorsData(res => {
+      if (res.code === 200) {
+        this.selectorsData = res.result;
+        console.log(res.result);
+      } else {
+        alert("加载主页面失败");
+      }
+    });
+  },
+  methods: {
+    reloadOrganData(organ){
+      console.log(organ);
+      this.queryInfo.categoryId = this.getUrlParam('categoryId');
+      this.queryInfo.keyword = this.getUrlParam('keyword');
+      this.queryInfo.organId = organ.id;
+      console.log(`reloadOrganData id`);
+      console.log(organ.id);
+      this.loadPage('goods-list', this.queryInfo);
     },
-    components: {
-      pcGoodsList
+    querySelectorsData(resolve) {
+      this.queryInfo.categoryId = this.getUrlParam('categoryId');
+      this.queryInfo.keyword = this.getUrlParam('keyword');
+      this.queryInfo.organId = this.getUrlParam('organId');
+      console.log(`querySelectorsData id`);
+      console.log(this.queryInfo.organId);
+      this.ajax({
+        type: "POST",
+        url: `/uac/auth/product/getSelectors`,
+        data: this.queryInfo,
+        success: resolve
+      });
+    },
+    changeSort(sort) {
+      if (sort === "price") {
+        this.sortActive = false;
+        if (!this.isAsc && !this.isDesc) {
+          this.isAsc = true;
+          this.orderBy = "price asc";
+        } else {
+          if (this.isAsc) {
+            this.isAsc = false;
+            this.isDesc = true;
+            this.orderBy = "price desc";
+          } else {
+            this.isAsc = true;
+            this.isDesc = false;
+            this.orderBy = "price asc";
+          }
+        }
+      } else {
+        this.sortActive = !this.sortActive;
+        this.orderBy = "name asc";
+      }
+      this.$pcBus.$emit("productSort", this.orderBy);
     }
-  };
+  },
+  components: {
+    pcGoodsList
+  }
+};
 </script>
-<style rel="stylesheet/scss" lang="scss">
+<style>
+.selector .s-title {
+  border-bottom: 1px solid #ddd;
+  background: #f1f1f1;
+  line-height: 34px;
+  height: 65px;
+  overflow: hidden;
+  zoom: 1;
+}
+.selector .s-title h3 b {
+  color: #e4393c;
+  margin-right: 5px;
+}
+.selector .sl-wrap {
+  position: relative;
+  _zoom: 1;
+  line-height: 34px;
+  border-bottom: 1px dashed #eee;
+}
+.selector .sl-key {
+  float: left;
+  width: 100px;
+  padding-left: 10px;
+  color: #999;
+}
+.selector .sl-value {
+  margin-left: 110px;
+  padding-right: 130px;
+  padding-left: 10px;
+  overflow: hidden;
+  zoom: 1;
+}
+.selector .sl-v-list {
+  overflow: hidden;
+  zoom: 1;
+  padding-top: 4px;
+}
+.selector .sl-v-list ul {
+  float: left;
+  overflow: hidden;
+  zoom: 1;
+  position: relative;
+  height: 30px;
+}
+.selector .sl-v-list li {
+  margin-right: 50px;
+}
+.selector .sl-v-list li {
+  float: left;
+  _display: inline;
+  margin-right: 16px;
+  margin-bottom: 4px;
+  height: 26px;
+  line-height: 26px;
+}
+.selector .sl-v-list li a {
+  float: left;
+  white-space: nowrap;
+  zoom: 1;
+}
 </style>

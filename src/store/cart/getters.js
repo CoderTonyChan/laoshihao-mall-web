@@ -9,9 +9,11 @@ export default {
       let item = list[i];
       if (item.checked === 1 || item.checked === true) {
         let price = parseInt(item.productPrice);
-        let quantity = parseInt(item.quantity);
-        state.cartInfo.totalPrice += price * quantity;
-        state.cartInfo.totalNum += quantity;
+        // let quantity = parseInt(item.quantity);
+        // state.cartInfo.totalPrice += price * quantity;
+        // state.cartInfo.totalNum += quantity;
+        state.cartInfo.totalPrice += price * 1;// 全部按照1算
+        state.cartInfo.totalNum += 1;
       }
     }
     return state.cartInfo;

@@ -11,7 +11,7 @@
             <h3 class="title">
               <em>老师好的教学模式，以确保在线教学的质量</em>
             </h3>
-            <img class="titlePhoto" src="https://s1.ax1x.com/2018/12/06/Flz1fA.png">
+            <img class="titlePhoto" src="http://oss.lshao.cn/picture/home/515578321149371392.png">
             <div class="d-flex flex-column flex-md-row lead mb-3">
               <h3 class="title">
                 <em>我们为您提供工具，请您来做教学</em>
@@ -40,8 +40,8 @@
                   src="http://lshao.cn/images/mainpage.jpg"
                   alt
             >-->
-            <h3>
-              <em>老师好介绍</em>
+            <h3 class="title">
+              <em>老师好简介</em>
             </h3>
             <video-player
               class="video-player-box"
@@ -311,7 +311,7 @@ export default {
         // videojs options //static/images/author.jpg
         autoplay: "muted",
         height: "402px",
-        width: "420px",
+        width: "510px",
         muted: true,
         language: "en",
         playbackRates: [0.7, 1.0, 1.5, 2.0],

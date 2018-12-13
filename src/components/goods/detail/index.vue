@@ -54,7 +54,10 @@
       <div class="detail-wrap">
         <div class="detail-tab-con">
           <ul class="tab-list">
-            <li class="tab-item active">课程描述</li>
+            <li class="tab-item active"><a href="#div1">课程介绍</a></li>
+            <li class="tab-item active"><a href="#div2">课程大纲</a></li>
+            <li class="tab-item active"><a href="#div3">名师介绍</a></li>
+            <li class="tab-item active"><a href="#div4">退换课规则</a></li>
           </ul>
         </div>
         <div class="detail-con">
@@ -238,6 +241,10 @@
     cursor: pointer;
     text-decoration: none;
     /* width: 200px; */
+}
+.detail-wrap .tab-list .tab-item a {
+    color: #eee;
+    text-decoration: none;
 }
 
 </style>
