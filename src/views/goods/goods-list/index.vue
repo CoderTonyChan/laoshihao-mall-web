@@ -9,14 +9,14 @@
         </div>
       </div>
     </div>
-    <div class="list-wrap w">
+    <div class="list-wrap w" v-if="selectorsData">
       <div class="selector" id="J_selector">
         <div class="s-title" clstag="thirdtype|keycount|thirdtype|select">
           <h3>
             <b>课程</b>
             <em>筛选</em>
             <!-- 共&nbsp;
-            <span>58482</span>个商品 -->
+            <span>58482</span>个商品-->
           </h3>
         </div>
         <div v-if="selectorsData.organs" class="J_selectorLine s-line J_selectorFold">
@@ -28,10 +28,9 @@
               <div class="sl-v-list">
                 <ul class="J_valueList">
                   <li v-for="organ in selectorsData.organs" :key="organ.id">
-                    <a
-                      @click="reloadOrganData(organ)"
-                    >
-                      <i></i>{{organ.name}}
+                    <a @click="reloadOrganData(organ)">
+                      <i></i>
+                      {{organ.name}}
                     </a>
                     <a v-if="organ.id === queryInfo.organId" @click="reloadCancelOrganData(organ)">X</a>
                   </li>
@@ -40,7 +39,11 @@
             </div>
           </div>
         </div>
-        <div class="J_selectorLine s-line J_selectorFold" v-for="category in selectorsData.categorys" :key="category.id">
+        <div
+          class="J_selectorLine s-line J_selectorFold"
+          v-for="category in selectorsData.categorys"
+          :key="category.id"
+        >
           <div class="sl-wrap">
             <div class="sl-key">
               <span>{{category.name}}：</span>
@@ -49,19 +52,25 @@
               <div class="sl-v-list">
                 <ul class="J_valueList">
                   <li v-for="value in category.list" :key="value.id">
-                    <a
-                      @click="reloadCategoryData(value)"
-                    >
-                      <i></i>{{value.name}}
+                    <a @click="reloadCategoryData(value)">
+                      <i></i>
+                      {{value.name}}
                     </a>
-                    <a v-if="value.id === queryInfo.categoryId" @click="reloadCancelCategoryData(value)">X</a>
+                    <a
+                      v-if="value.id === queryInfo.categoryId"
+                      @click="reloadCancelCategoryData(value)"
+                    >X</a>
                   </li>
                 </ul>
               </div>
             </div>
           </div>
         </div>
-        <div class="J_selectorLine s-line J_selectorFold" v-for="spec in selectorsData.specs" :key="spec.id">
+        <div
+          class="J_selectorLine s-line J_selectorFold"
+          v-for="spec in selectorsData.specs"
+          :key="spec.id"
+        >
           <div class="sl-wrap">
             <div class="sl-key">
               <span>{{spec.name}}：</span>
@@ -70,12 +79,14 @@
               <div class="sl-v-list">
                 <ul class="J_valueList">
                   <li v-for="value in spec.values" :key="value.id">
-                    <a
-                      @click="reloadSpecsData(spec,value)"
-                    >
-                      <i></i>{{value.name}}
+                    <a @click="reloadSpecsData(spec,value)">
+                      <i></i>
+                      {{value.name}}
                     </a>
-                    <a v-if="(spec.id + '_' +value.id) === queryInfo.spec" @click="reloadCancelSpecsData(spec,value)">X</a>
+                    <a
+                      v-if="(spec.id + '_' +value.id) === queryInfo.spec"
+                      @click="reloadCancelSpecsData(spec,value)"
+                    >X</a>
                   </li>
                 </ul>
               </div>
@@ -120,7 +131,7 @@ export default {
       isAsc: false,
       isDesc: false,
       orderBy: "name asc",
-      selectorsData: [],
+      selectorsData: { organs: [], categorys: [], specs: [] },
       queryInfo: {
         categoryId: "",
         keyword: "",
@@ -129,13 +140,13 @@ export default {
         organId: "",
         spec: ""
       },
-      pcGoodsListKey:1
+      pcGoodsListKey: 1
     };
   },
   created() {
     console.error(`goods-list---created`);
   },
-  beforeRouteEnter (to, from, next) {
+  beforeRouteEnter(to, from, next) {
     // getPost(to.params.id, (err, post) => {
     //   next(vm => vm.setData(err, post))
     // })
@@ -144,12 +155,13 @@ export default {
   },
   // 路由改变前，组件就已经渲染完了
   // 逻辑稍稍不同
-  beforeRouteUpdate (to, from, next) {
+  beforeRouteUpdate(to, from, next) {
     next();
     this.querySelectorsData(res => {
       if (res.code === 200) {
-        this.selectorsData = res.result;
+          this.selectorsData = res.result;
         console.log(res.result);
+        this.$pcBus.$emit("searchProduct");
       } else {
         alert("加载主页面失败");
       }
@@ -167,52 +179,53 @@ export default {
     });
   },
   methods: {
-    reloadCancelSpecsData(spec,organ){
+    reloadCancelSpecsData(spec, organ) {
       console.log(organ);
-      this.queryInfo.keyword = this.getUrlParam('keyword');
+      this.queryInfo.keyword = this.getUrlParam("keyword");
       this.queryInfo.spec = null;
-      this.loadPage('goods-list', this.queryInfo);
+      this.loadPage("goods-list", this.queryInfo);
     },
-    reloadSpecsData(spec,organ){
+    reloadSpecsData(spec, organ) {
       console.log(organ);
-      this.queryInfo.spec = spec.id + '_' +organ.id;
-      this.queryInfo.keyword = this.getUrlParam('keyword');
-      this.loadPage('goods-list', this.queryInfo);
-    },reloadCancelCategoryData(organ){
+      this.queryInfo.spec = spec.id + "_" + organ.id;
+      this.queryInfo.keyword = this.getUrlParam("keyword");
+      this.loadPage("goods-list", this.queryInfo);
+    },
+    reloadCancelCategoryData(organ) {
       console.log(organ);
       this.queryInfo.categoryId = null;
-      this.queryInfo.keyword = this.getUrlParam('keyword');
-      this.loadPage('goods-list', this.queryInfo);
+      this.queryInfo.keyword = this.getUrlParam("keyword");
+      this.loadPage("goods-list", this.queryInfo);
     },
-    reloadCategoryData(organ){
+    reloadCategoryData(organ) {
       console.log(organ);
       this.queryInfo.categoryId = organ.id;
-      this.queryInfo.keyword = this.getUrlParam('keyword');
+      this.queryInfo.keyword = this.getUrlParam("keyword");
       console.log(organ.id);
-      this.loadPage('goods-list', this.queryInfo);
+      this.loadPage("goods-list", this.queryInfo);
     },
-    reloadCancelOrganData(organ){
+    reloadCancelOrganData(organ) {
       console.log(organ);
-      this.queryInfo.categoryId = this.getUrlParam('categoryId');
-      this.queryInfo.keyword = this.getUrlParam('keyword');
+      this.queryInfo.categoryId = this.getUrlParam("categoryId");
+      this.queryInfo.keyword = this.getUrlParam("keyword");
       this.queryInfo.organId = null;
       console.log(`reloadCancelOrganData id`);
-      this.loadPage('goods-list', this.queryInfo);
+      this.loadPage("goods-list", this.queryInfo);
     },
-    reloadOrganData(organ){
+    reloadOrganData(organ) {
       console.log(organ);
-      this.queryInfo.categoryId = this.getUrlParam('categoryId');
-      this.queryInfo.keyword = this.getUrlParam('keyword');
+      this.queryInfo.categoryId = this.getUrlParam("categoryId");
+      this.queryInfo.keyword = this.getUrlParam("keyword");
       this.queryInfo.organId = organ.id;
       console.log(`reloadOrganData id`);
       console.log(organ.id);
-      this.loadPage('goods-list', this.queryInfo);
+      this.loadPage("goods-list", this.queryInfo);
     },
     querySelectorsData(resolve) {
-      this.queryInfo.categoryId = this.getUrlParam('categoryId');
-      this.queryInfo.keyword = this.getUrlParam('keyword');
-      this.queryInfo.organId = this.getUrlParam('organId');
-      this.queryInfo.spec = this.getUrlParam('spec');
+      this.queryInfo.categoryId = this.getUrlParam("categoryId");
+      this.queryInfo.keyword = this.getUrlParam("keyword");
+      this.queryInfo.organId = this.getUrlParam("organId");
+      this.queryInfo.spec = this.getUrlParam("spec");
       console.log(`querySelectorsData id`);
       console.log(this.queryInfo.organId);
       this.ajax({

@@ -26,10 +26,7 @@
                 class="btn btn-lg btn-outline-secondary"
                 onclick="ga('send', 'event', 'Jumbotron actions', 'Download', 'Download 4.0.0');"
               >Android下载</a>
-              <a
-                class="btn btn-lg btn-outline-secondary"
-                @click="checkVersion()"
-              >iOS下载</a>
+              <a class="btn btn-lg btn-outline-secondary" @click="checkVersion()">iOS下载</a>
             </div>
             <!-- <p class="text-muted mb-0">当前版本：v4.0.0 | 文档更新于：2018-07-07</p> -->
           </div>
@@ -85,14 +82,20 @@
             class="link"
             target="_blank"
             href="javascript:void(0)"
-            @click="goGoodsListPage('','东莞卓越教育')"
+            @click="goGoodsListPage('','','2')"
           >东莞卓越教育</a>
           <a
             class="link"
             target="_blank"
             href="javascript:void(0)"
-            @click="goGoodsListPage('','华泰教育')"
-          >华泰教育</a>
+            @click="goGoodsListPage('','','3')"
+          >星火</a>
+          <a
+            class="link"
+            target="_blank"
+            href="javascript:void(0)"
+            @click="goGoodsListPage('','','1')"
+          >新东方</a>
         </li>
         <li class="keywords-item">
           <a
@@ -380,10 +383,11 @@ export default {
         (index2 + 1) +
         ".jpg");
     },
-    goGoodsListPage(categoryId, keyword) {
+    goGoodsListPage(categoryId, keyword, organId) {
       let param = {};
       param.categoryId = categoryId;
       param.keyword = keyword;
+      param.organId = organId;
       this.loadPage("goods-list", param);
     },
     checkVersion() {
@@ -444,13 +448,11 @@ export default {
       var os = new Object();
       os.name = name;
       os.version = version;
-      if (os.name === 'Iphone') {
-        window.open('https://itunes.apple.com/us/app/id1265741384');
-      }else{
-        this.errorTips('请在Safari中打开');
+      if (os.name === "Iphone") {
+        window.open("https://itunes.apple.com/us/app/id1265741384");
+      } else {
+        this.errorTips("请在Safari中打开");
       }
-
-
     },
     queryCategoryData(resolve) {
       this.ajax({
@@ -485,11 +487,11 @@ export default {
 }
 .titlePhoto {
   // width: 70%;
-  // width: 70px;  
-  // height: 70px;  
+  // width: 70px;
+  // height: 70px;
   margin-top: -40px;
-  max-width: 70%;  
-  // max-height: 70%;    
+  max-width: 70%;
+  // max-height: 70%;
   display: inline-block;
   text-align: center;
 }
