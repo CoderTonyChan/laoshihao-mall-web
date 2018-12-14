@@ -19,7 +19,7 @@
             <span>58482</span>个商品 -->
           </h3>
         </div>
-        <div class="J_selectorLine s-line J_selectorFold">
+        <div v-if="selectorsData.organs" class="J_selectorLine s-line J_selectorFold">
           <div class="sl-wrap">
             <div class="sl-key">
               <span>机构：</span>
@@ -40,53 +40,42 @@
             </div>
           </div>
         </div>
-        <div class="J_selectorLine s-line J_selectorFold">
+        <div class="J_selectorLine s-line J_selectorFold" v-for="category in selectorsData.categorys" :key="category.id">
           <div class="sl-wrap">
             <div class="sl-key">
-              <span>便捷导购：</span>
+              <span>{{category.name}}：</span>
             </div>
             <div class="sl-value">
               <div class="sl-v-list">
                 <ul class="J_valueList">
-                  <li>
+                  <li v-for="value in category.list" :key="value.id">
                     <a
-                      href="/list.html?cat=670,671,672&amp;ev=6265%5F9113&amp;sort=sort_totalsales15_desc&amp;trans=1&amp;JL=3_便捷导购_商务办公"
-                      rel="nofollow"
+                      @click="reloadCategoryData(value)"
                     >
-                      <i></i>商务办公
+                      <i></i>{{value.name}}
                     </a>
+                    <a v-if="value.id === queryInfo.categoryId" @click="reloadCancelCategoryData(value)">X</a>
                   </li>
-                  <li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="J_selectorLine s-line J_selectorFold" v-for="spec in selectorsData.specs" :key="spec.id">
+          <div class="sl-wrap">
+            <div class="sl-key">
+              <span>{{spec.name}}：</span>
+            </div>
+            <div class="sl-value">
+              <div class="sl-v-list">
+                <ul class="J_valueList">
+                  <li v-for="value in spec.values" :key="value.id">
                     <a
-                      href="/list.html?cat=670,671,672&amp;ev=6265%5F94635&amp;sort=sort_totalsales15_desc&amp;trans=1&amp;JL=3_便捷导购_家庭使用"
-                      rel="nofollow"
+                      @click="reloadSpecsData(spec,value)"
                     >
-                      <i></i>家庭使用
+                      <i></i>{{value.name}}
                     </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/list.html?cat=670,671,672&amp;ev=6265%5F94636&amp;sort=sort_totalsales15_desc&amp;trans=1&amp;JL=3_便捷导购_轻薄便携"
-                      rel="nofollow"
-                    >
-                      <i></i>轻薄便携
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/list.html?cat=670,671,672&amp;ev=6265%5F94637&amp;sort=sort_totalsales15_desc&amp;trans=1&amp;JL=3_便捷导购_高清游戏"
-                      rel="nofollow"
-                    >
-                      <i></i>高清游戏
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/list.html?cat=670,671,672&amp;ev=6265%5F94638&amp;sort=sort_totalsales15_desc&amp;trans=1&amp;JL=3_便捷导购_设计相关"
-                      rel="nofollow"
-                    >
-                      <i></i>设计相关
-                    </a>
+                    <a v-if="(spec.id + '_' +value.id) === queryInfo.spec" @click="reloadCancelSpecsData(spec,value)">X</a>
                   </li>
                 </ul>
               </div>
@@ -114,7 +103,7 @@
       </ul>
       <!-- list 容器 -->
       <ul class="p-list-con">
-        <pc-goods-list/>
+        <pc-goods-list :key="pcGoodsListKey"/>
       </ul>
       <!-- 分页容器 -->
       <div class="pagination"></div>
@@ -139,7 +128,8 @@ export default {
         pageSize: "10",
         organId: "",
         spec: ""
-      }
+      },
+      pcGoodsListKey:1
     };
   },
   created() {
@@ -155,11 +145,6 @@ export default {
   // 路由改变前，组件就已经渲染完了
   // 逻辑稍稍不同
   beforeRouteUpdate (to, from, next) {
-    // getPost(to.params.id, (err, post) => {
-    //   // this.setData(err, post)
-    //   next()
-    // })
-
     next();
     this.querySelectorsData(res => {
       if (res.code === 200) {
@@ -182,6 +167,38 @@ export default {
     });
   },
   methods: {
+    reloadCancelSpecsData(spec,organ){
+      console.log(organ);
+      this.queryInfo.keyword = this.getUrlParam('keyword');
+      this.queryInfo.spec = null;
+      this.loadPage('goods-list', this.queryInfo);
+    },
+    reloadSpecsData(spec,organ){
+      console.log(organ);
+      this.queryInfo.spec = spec.id + '_' +organ.id;
+      this.queryInfo.keyword = this.getUrlParam('keyword');
+      this.loadPage('goods-list', this.queryInfo);
+    },reloadCancelCategoryData(organ){
+      console.log(organ);
+      this.queryInfo.categoryId = null;
+      this.queryInfo.keyword = this.getUrlParam('keyword');
+      this.loadPage('goods-list', this.queryInfo);
+    },
+    reloadCategoryData(organ){
+      console.log(organ);
+      this.queryInfo.categoryId = organ.id;
+      this.queryInfo.keyword = this.getUrlParam('keyword');
+      console.log(organ.id);
+      this.loadPage('goods-list', this.queryInfo);
+    },
+    reloadCancelOrganData(organ){
+      console.log(organ);
+      this.queryInfo.categoryId = this.getUrlParam('categoryId');
+      this.queryInfo.keyword = this.getUrlParam('keyword');
+      this.queryInfo.organId = null;
+      console.log(`reloadCancelOrganData id`);
+      this.loadPage('goods-list', this.queryInfo);
+    },
     reloadOrganData(organ){
       console.log(organ);
       this.queryInfo.categoryId = this.getUrlParam('categoryId');
@@ -195,6 +212,7 @@ export default {
       this.queryInfo.categoryId = this.getUrlParam('categoryId');
       this.queryInfo.keyword = this.getUrlParam('keyword');
       this.queryInfo.organId = this.getUrlParam('organId');
+      this.queryInfo.spec = this.getUrlParam('spec');
       console.log(`querySelectorsData id`);
       console.log(this.queryInfo.organId);
       this.ajax({

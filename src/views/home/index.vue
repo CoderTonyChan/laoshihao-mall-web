@@ -11,7 +11,7 @@
             <h3 class="title">
               <em>老师好的教学模式，以确保在线教学的质量</em>
             </h3>
-            <img class="titlePhoto" src="http://oss.lshao.cn/picture/home/515578321149371392.png">
+            <img src="http://oss.lshao.cn/picture/home/515578321149371392.png" class="titlePhoto">
             <div class="d-flex flex-column flex-md-row lead mb-3">
               <h3 class="title">
                 <em>我们为您提供工具，请您来做教学</em>
@@ -34,7 +34,7 @@
             <!-- <p class="text-muted mb-0">当前版本：v4.0.0 | 文档更新于：2018-07-07</p> -->
           </div>
           <div class="col-6 mx-auto col-md-6 order-md-2">
-            <p class="lead">&nbsp;</p>
+            <!-- <p class="lead">&nbsp;</p> -->
             <!-- <img
                   class="img-fluid mb-3 mb-md-0"
                   src="http://lshao.cn/images/mainpage.jpg"
@@ -99,14 +99,14 @@
             class="link"
             target="_blank"
             href="javascript:void(0)"
-            @click="goGoodsListPage('','尹奇')"
-          >尹奇</a>
+            @click="goGoodsListPage('','王老师')"
+          >王老师</a>
           <a
             class="link"
             target="_blank"
             href="javascript:void(0)"
-            @click="goGoodsListPage('','李文荣')"
-          >李文荣</a>
+            @click="goGoodsListPage('','周老师')"
+          >周老师</a>
         </li>
         <li class="keywords-item">
           <a
@@ -473,11 +473,24 @@ export default {
 };
 </script>
 <style rel="stylesheet/scss" lang="scss">
+.panel-body {
+  margin-top: -30px;
+}
+
 .title {
   text-align: center;
 }
+.lead {
+  margin-top: -30px;
+}
 .titlePhoto {
-  display: inline;
+  // width: 70%;
+  // width: 70px;  
+  // height: 70px;  
+  margin-top: -40px;
+  max-width: 70%;  
+  // max-height: 70%;    
+  display: inline-block;
   text-align: center;
 }
 .video-js .vjs-big-play-button {
