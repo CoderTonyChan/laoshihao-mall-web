@@ -60,19 +60,16 @@
         <li class="keywords-item">
           <a
             class="link"
-            target="_blank"
             href="javascript:void(0)"
             @click="goGoodsListPage('','小学')"
           >小学</a>
           <a
             class="link"
-            target="_blank"
             href="javascript:void(0)"
             @click="goGoodsListPage('','初中')"
           >初中</a>
           <a
             class="link"
-            target="_blank"
             href="javascript:void(0)"
             @click="goGoodsListPage('','高中')"
           >高中</a>
@@ -80,19 +77,16 @@
         <li class="keywords-item">
           <a
             class="link"
-            target="_blank"
             href="javascript:void(0)"
             @click="goGoodsListPage('','','2')"
           >东莞卓越教育</a>
           <a
             class="link"
-            target="_blank"
             href="javascript:void(0)"
             @click="goGoodsListPage('','','3')"
           >星火</a>
           <a
             class="link"
-            target="_blank"
             href="javascript:void(0)"
             @click="goGoodsListPage('','','1')"
           >新东方</a>
@@ -100,13 +94,11 @@
         <li class="keywords-item">
           <a
             class="link"
-            target="_blank"
             href="javascript:void(0)"
             @click="goGoodsListPage('','王老师')"
           >王老师</a>
           <a
             class="link"
-            target="_blank"
             href="javascript:void(0)"
             @click="goGoodsListPage('','周老师')"
           >周老师</a>
@@ -114,19 +106,16 @@
         <li class="keywords-item">
           <a
             class="link"
-            target="_blank"
             href="javascript:void(0)"
             @click="goGoodsListPage('','三角')"
           >三角</a>
           <a
             class="link"
-            target="_blank"
             href="javascript:void(0)"
             @click="goGoodsListPage('','不等式')"
           >不等式</a>
           <a
             class="link"
-            target="_blank"
             href="javascript:void(0)"
             @click="goGoodsListPage('','二次函数')"
           >二次函数</a>
@@ -134,19 +123,16 @@
         <li class="keywords-item">
           <a
             class="link"
-            target="_blank"
             href="javascript:void(0)"
             @click="goGoodsListPage('','电路与电流')"
           >电路与电流</a>
           <a
             class="link"
-            target="_blank"
             href="javascript:void(0)"
             @click="goGoodsListPage('','压力压强')"
           >压力压强</a>
           <a
             class="link"
-            target="_blank"
             href="javascript:void(0)"
             @click="goGoodsListPage('','光的反射')"
           >光的反射</a>
@@ -154,19 +140,16 @@
         <li class="keywords-item">
           <a
             class="link"
-            target="_blank"
             href="javascript:void(0)"
             @click="goGoodsListPage('','酸碱盐')"
           >酸碱盐</a>
           <a
             class="link"
-            target="_blank"
             href="javascript:void(0)"
             @click="goGoodsListPage('','碳的氧化物')"
           >碳的氧化物</a>
           <a
             class="link"
-            target="_blank"
             href="javascript:void(0)"
             @click="goGoodsListPage('','化学方程式')"
           >化学方程式</a>
@@ -174,19 +157,16 @@
         <li class="keywords-item">
           <a
             class="link"
-            target="_blank"
             href="javascript:void(0)"
             @click="goGoodsListPage('','文学常识')"
           >文学常识</a>
           <a
             class="link"
-            target="_blank"
             href="javascript:void(0)"
             @click="goGoodsListPage('','文言文')"
           >文言文</a>
           <a
             class="link"
-            target="_blank"
             href="javascript:void(0)"
             @click="goGoodsListPage('','现代文阅读')"
           >现代文阅读</a>
@@ -194,13 +174,11 @@
         <li class="keywords-item">
           <a
             class="link"
-            target="_blank"
             href="javascript:void(0)"
             @click="goGoodsListPage('','被动语态')"
           >被动语态</a>
           <a
             class="link"
-            target="_blank"
             href="javascript:void(0)"
             @click="goGoodsListPage('','现在进行时')"
           >现在进行时</a>
@@ -208,19 +186,16 @@
         <li class="keywords-item">
           <a
             class="link"
-            target="_blank"
             href="javascript:void(0)"
             @click="goGoodsListPage('','预测题')"
           >预测题</a>
           <a
             class="link"
-            target="_blank"
             href="javascript:void(0)"
             @click="goGoodsListPage('','压轴题')"
           >压轴题</a>
           <a
             class="link"
-            target="_blank"
             href="javascript:void(0)"
             @click="goGoodsListPage('','模拟题')"
           >模拟题</a>
@@ -228,31 +203,26 @@
         <li class="keywords-item">
           <a
             class="link"
-            target="_blank"
             href="javascript:void(0)"
             @click="goGoodsListPage('','北京')"
           >北京</a>
           <a
             class="link"
-            target="_blank"
             href="javascript:void(0)"
             @click="goGoodsListPage('','广州')"
           >广州</a>
           <a
             class="link"
-            target="_blank"
             href="javascript:void(0)"
             @click="goGoodsListPage('','深圳')"
           >深圳</a>
           <a
             class="link"
-            target="_blank"
             href="javascript:void(0)"
             @click="goGoodsListPage('','东莞')"
           >东莞</a>
           <a
             class="link"
-            target="_blank"
             href="javascript:void(0)"
             @click="goGoodsListPage('','广西')"
           >广西</a>
