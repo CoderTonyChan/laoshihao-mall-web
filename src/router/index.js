@@ -133,6 +133,15 @@ export default [
         component: resolve => require(['views/about'], resolve)
       },
       {
+        name: 'privacy',
+        path: 'about/privacy',
+        meta: {
+          name: '隐私政策',
+          hideMainHeader: false
+        },
+        component: resolve => require(['views/about/privacy'], resolve)
+      },
+      {
         name: 'disclaimer',
         path: 'about/disclaimer',
         meta: {
