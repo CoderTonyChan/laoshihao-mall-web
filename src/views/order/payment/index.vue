@@ -15,6 +15,11 @@
       <div class="img-con">
         <img class="qr-code" v-lazy="optUploadFileRespDto.attachmentUrl" alt="支付二维码"/>
       </div>
+      <div id="cc_protocols" data-spm-anchor-id="a2h03.8164468.0.i0">
+            <a class="ccp_item" href="http://static.lshao.cn/agreement.html" target="_blank">
+            《会员服务协议》</a><a class="ccp_item" href="http://static.lshao.cn/trade.html" target="_blank">
+            《连续包月服务协议》</a>
+        </div>
     </div>
   </div>
 </template>
@@ -80,4 +85,15 @@
   };
 </script>
 <style rel="stylesheet/scss" lang="scss">
+#cc_protocols .ccp_item {
+    display: inline-block;
+    position: relative;
+    float: right;
+    right: 280px;
+    margin-top: 14px;
+    margin-left: 10px;
+    vertical-align: top;
+    font-size: 12px;
+    color: #999;
+}
 </style>

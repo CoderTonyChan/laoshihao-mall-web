@@ -38,7 +38,8 @@
                   alt
             >-->
             <h3 class="title">
-              <em>老师好简介</em>
+              <a href="javascript:void(0)" @click="chooseVideo(0)">老师好简介</a>
+              <a href="javascript:void(0)" @click="chooseVideo(1)">老师好操作指南</a>
             </h3>
             <video-player
               class="video-player-box"
@@ -280,6 +281,10 @@ import { videoPlayer } from "vue-video-player";
 export default {
   data() {
     return {
+      videos:[
+        "https://lshao.oss-cn-beijing.aliyuncs.com/lshao2.0.mp4",
+        "https://lshao.oss-cn-beijing.aliyuncs.com/lshao2.0.mp4"
+      ],
       playerOptions: {
         // videojs options //static/images/author.jpg
         autoplay: "muted",
@@ -292,7 +297,6 @@ export default {
           {
             type: "video/mp4",
             src: "https://lshao.oss-cn-beijing.aliyuncs.com/lshao2.0.mp4"
-            // src: 'http://www.w3school.com.cn/i/movie.ogg'
           }
         ],
         poster: "http://lshao.cn/images/mainpage.jpg"
@@ -324,6 +328,20 @@ export default {
   },
   methods: {
     // listen event
+    chooseVideo(number) {
+      // this.playerOptions.sources[0].src = this.videos[number];
+      // this.$refs.videoPlayer.player.pause();
+      // this.$refs.videoPlayer.player.play();
+      // console.log(`chooseVideo`);
+      // console.log(this.$refs.videoPlayer.player);
+      if (number === 0) {
+        this.playerOptions.sources[0].src = 'https://lshao.oss-cn-beijing.aliyuncs.com/lshao2.0.mp4';
+        this.$refs.videoPlayer.player.play();
+      }else{
+        this.playerOptions.sources[0].src = '';
+      }
+
+    },
     onPlayerPlay(player) {
       // console.log('player play!', player)
     },
@@ -342,6 +360,7 @@ export default {
       console.log("the player is readied", player);
       // you can use it to do something...
       // player.[methods]
+      this.playerOptions.sources[0].src = this.videos[0];
     },
     goProductDetailPage(productId) {
       this.loadPage("goods-detail", { productId: productId });
@@ -450,7 +469,7 @@ export default {
 }
 
 .title {
-  text-align: center;
+  // text-align: center;
 }
 .lead {
   margin-top: -30px;
