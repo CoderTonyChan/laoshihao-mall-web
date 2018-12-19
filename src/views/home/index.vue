@@ -11,7 +11,7 @@
             <h3 class="title">
               <em>老师好的教学模式，以确保在线教学的质量</em>
             </h3>
-            <img src="http://oss.lshao.cn/picture/home/515578321149371392.png" class="titlePhoto">
+            <img src="http://oss.lshao.cn/picture/home/515578321149371393.png" class="titlePhoto">
             <div class="d-flex flex-column flex-md-row lead mb-3">
               <h3 class="title">
                 <em>我们为您提供工具，请您来在线教学</em>
@@ -468,9 +468,9 @@ export default {
   margin-top: -30px;
 }
 
-.title {
+// .title {
   // text-align: center;
-}
+// }
 .lead {
   margin-top: -30px;
 }
