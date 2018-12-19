@@ -163,12 +163,19 @@
       },
       deleteSelectProduct() {
         console.info('this.cartList', this.cartList);
+        var tmpArr = [];
         for (let item of this.cartList) {
           console.info(item.productId);
           if (item.checked || item.checked === 1) {
-            this.actionCart(item, 'delete_product');
+            // this.actionCart(item, 'delete_product');
+            tmpArr.push(item);
           }
         }
+        console.log(tmpArr);
+        for (let item of tmpArr) {
+          this.actionCart(item, 'delete_product');
+        }
+        
       }
     }
   };
