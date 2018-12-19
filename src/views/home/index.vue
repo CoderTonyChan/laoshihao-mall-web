@@ -14,7 +14,7 @@
             <img src="http://oss.lshao.cn/picture/home/515578321149371392.png" class="titlePhoto">
             <div class="d-flex flex-column flex-md-row lead mb-3">
               <h3 class="title">
-                <em>我们为您提供工具，请您来做教学</em>
+                <em>我们为您提供工具，请您来在线教学</em>
               </h3>
               <a
                 href="http://webboard.oss-cn-shanghai.aliyuncs.com/LshaoSetup.rar"
@@ -37,10 +37,10 @@
                   src="http://lshao.cn/images/mainpage.jpg"
                   alt
             >-->
-            <h3 class="title">
+            <h4 class="title">
               <a href="javascript:void(0)" @click="chooseVideo(0)">老师好简介</a>
-              <a href="javascript:void(0)" @click="chooseVideo(1)">老师好操作指南</a>
-            </h3>
+              <a href="javascript:void(0)" @click="chooseVideo(1)">操作指南</a>
+            </h4>
             <video-player
               class="video-player-box"
               ref="videoPlayer"
@@ -566,4 +566,10 @@ export default {
   line-height: 12px;
   color: #828282;
 }
+h4{
+  font-size: 18px;
+  margin-top: 36px;
+  margin-left: 340px;
+}
+
 </style>
