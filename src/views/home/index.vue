@@ -283,7 +283,7 @@ export default {
     return {
       videos:[
         "https://lshao.oss-cn-beijing.aliyuncs.com/lshao2.0.mp4",
-        "https://lshao.oss-cn-beijing.aliyuncs.com/lshao2.0.mp4"
+        "https://lshao.oss-cn-beijing.aliyuncs.com/%E8%80%81%E5%B8%88%E5%A5%BD%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%975.0%28%E9%AB%98%E6%B8%85%29.mp4"
       ],
       playerOptions: {
         // videojs options //static/images/author.jpg
@@ -334,25 +334,28 @@ export default {
       // this.$refs.videoPlayer.player.play();
       // console.log(`chooseVideo`);
       // console.log(this.$refs.videoPlayer.player);
-      if (number === 0) {
-        this.playerOptions.sources[0].src = 'https://lshao.oss-cn-beijing.aliyuncs.com/lshao2.0.mp4';
-        this.$refs.videoPlayer.player.play();
-      }else{
-        this.playerOptions.sources[0].src = '';
-      }
+      // if (number === 0) {
+      //   this.playerOptions.sources[0].src = 'https://lshao.oss-cn-beijing.aliyuncs.com/lshao2.0.mp4';
+      //   this.$refs.videoPlayer.player.play();
+      // }else{
+      //   this.playerOptions.sources[0].src = '';
+      // }
+
+        this.playerOptions.sources[0].src = this.videos[number];
+        // this.$refs.videoPlayer.player.play();
 
     },
     onPlayerPlay(player) {
-      // console.log('player play!', player)
+      console.log('player play!', player)
     },
     onPlayerPause(player) {
-      // console.log('player pause!', player)
+      console.log('player pause!', player)
     },
     // ...player event
 
     // or listen state event
     playerStateChanged(playerCurrentState) {
-      // console.log('player current update state', playerCurrentState)
+      console.log('player current update state', playerCurrentState)
     },
 
     // player is ready
@@ -360,7 +363,9 @@ export default {
       console.log("the player is readied", player);
       // you can use it to do something...
       // player.[methods]
-      this.playerOptions.sources[0].src = this.videos[0];
+      setTimeout(() => {
+        player.play();
+      }, 10);
     },
     goProductDetailPage(productId) {
       this.loadPage("goods-detail", { productId: productId });
