@@ -6,7 +6,7 @@
           <div class="col-md-12">
             <!-- <h2 class="title">老师好的教学模式，以确保在线教学的质量</h2> -->
           </div>
-          <div class="col-md-6 order-md-1 text-center text-md-left pr-md-5">
+          <div class="col-md-6 col-xs-6 ">
             <!-- <h1 class="mb-3 bd-text-purple-bright">老师好</h1> -->
             <h3 class="title">
               <em>老师好的教学模式，以确保在线教学的质量</em>
@@ -30,7 +30,7 @@
             </div>
             <!-- <p class="text-muted mb-0">当前版本：v4.0.0 | 文档更新于：2018-07-07</p> -->
           </div>
-          <div class="col-6 mx-auto col-md-6 order-md-2">
+          <div class="col-md-6 col-xs-6 ">
             <!-- <p class="lead">&nbsp;</p> -->
             <!-- <img
                   class="img-fluid mb-3 mb-md-0"
@@ -59,174 +59,54 @@
     <div class="w">
       <ul class="keywords-list">
         <li class="keywords-item">
-          <a
-            class="link"
-            href="javascript:void(0)"
-            @click="goGoodsListPage('','小学')"
-          >小学</a>
-          <a
-            class="link"
-            href="javascript:void(0)"
-            @click="goGoodsListPage('','初中')"
-          >初中</a>
-          <a
-            class="link"
-            href="javascript:void(0)"
-            @click="goGoodsListPage('','高中')"
-          >高中</a>
+          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','小学')">小学</a>
+          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','初中')">初中</a>
+          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','高中')">高中</a>
         </li>
         <li class="keywords-item">
-          <a
-            class="link"
-            href="javascript:void(0)"
-            @click="goGoodsListPage('','','2')"
-          >东莞卓越教育</a>
-          <a
-            class="link"
-            href="javascript:void(0)"
-            @click="goGoodsListPage('','','3')"
-          >星火</a>
-          <a
-            class="link"
-            href="javascript:void(0)"
-            @click="goGoodsListPage('','','1')"
-          >新东方</a>
+          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','','2')">东莞卓越教育</a>
+          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','','3')">星火</a>
+          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','','1')">新东方</a>
         </li>
         <li class="keywords-item">
-          <a
-            class="link"
-            href="javascript:void(0)"
-            @click="goGoodsListPage('','王老师')"
-          >王老师</a>
-          <a
-            class="link"
-            href="javascript:void(0)"
-            @click="goGoodsListPage('','周老师')"
-          >周老师</a>
+          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','王老师')">王老师</a>
+          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','周老师')">周老师</a>
         </li>
         <li class="keywords-item">
-          <a
-            class="link"
-            href="javascript:void(0)"
-            @click="goGoodsListPage('','三角')"
-          >三角</a>
-          <a
-            class="link"
-            href="javascript:void(0)"
-            @click="goGoodsListPage('','不等式')"
-          >不等式</a>
-          <a
-            class="link"
-            href="javascript:void(0)"
-            @click="goGoodsListPage('','二次函数')"
-          >二次函数</a>
+          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','三角')">三角</a>
+          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','不等式')">不等式</a>
+          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','二次函数')">二次函数</a>
         </li>
         <li class="keywords-item">
-          <a
-            class="link"
-            href="javascript:void(0)"
-            @click="goGoodsListPage('','电路与电流')"
-          >电路与电流</a>
-          <a
-            class="link"
-            href="javascript:void(0)"
-            @click="goGoodsListPage('','压力压强')"
-          >压力压强</a>
-          <a
-            class="link"
-            href="javascript:void(0)"
-            @click="goGoodsListPage('','光的反射')"
-          >光的反射</a>
+          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','电路与电流')">电路与电流</a>
+          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','压力压强')">压力压强</a>
+          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','光的反射')">光的反射</a>
         </li>
         <li class="keywords-item">
-          <a
-            class="link"
-            href="javascript:void(0)"
-            @click="goGoodsListPage('','酸碱盐')"
-          >酸碱盐</a>
-          <a
-            class="link"
-            href="javascript:void(0)"
-            @click="goGoodsListPage('','碳的氧化物')"
-          >碳的氧化物</a>
-          <a
-            class="link"
-            href="javascript:void(0)"
-            @click="goGoodsListPage('','化学方程式')"
-          >化学方程式</a>
+          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','酸碱盐')">酸碱盐</a>
+          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','碳的氧化物')">碳的氧化物</a>
+          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','化学方程式')">化学方程式</a>
         </li>
         <li class="keywords-item">
-          <a
-            class="link"
-            href="javascript:void(0)"
-            @click="goGoodsListPage('','文学常识')"
-          >文学常识</a>
-          <a
-            class="link"
-            href="javascript:void(0)"
-            @click="goGoodsListPage('','文言文')"
-          >文言文</a>
-          <a
-            class="link"
-            href="javascript:void(0)"
-            @click="goGoodsListPage('','现代文阅读')"
-          >现代文阅读</a>
+          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','文学常识')">文学常识</a>
+          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','文言文')">文言文</a>
+          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','现代文阅读')">现代文阅读</a>
         </li>
         <li class="keywords-item">
-          <a
-            class="link"
-            href="javascript:void(0)"
-            @click="goGoodsListPage('','被动语态')"
-          >被动语态</a>
-          <a
-            class="link"
-            href="javascript:void(0)"
-            @click="goGoodsListPage('','现在进行时')"
-          >现在进行时</a>
+          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','被动语态')">被动语态</a>
+          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','现在进行时')">现在进行时</a>
         </li>
         <li class="keywords-item">
-          <a
-            class="link"
-            href="javascript:void(0)"
-            @click="goGoodsListPage('','预测题')"
-          >预测题</a>
-          <a
-            class="link"
-            href="javascript:void(0)"
-            @click="goGoodsListPage('','压轴题')"
-          >压轴题</a>
-          <a
-            class="link"
-            href="javascript:void(0)"
-            @click="goGoodsListPage('','模拟题')"
-          >模拟题</a>
+          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','预测题')">预测题</a>
+          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','压轴题')">压轴题</a>
+          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','模拟题')">模拟题</a>
         </li>
         <li class="keywords-item">
-          <a
-            class="link"
-            href="javascript:void(0)"
-            @click="goGoodsListPage('','北京')"
-          >北京</a>
-          <a
-            class="link"
-            href="javascript:void(0)"
-            @click="goGoodsListPage('','广州')"
-          >广州</a>
-          <a
-            class="link"
-            href="javascript:void(0)"
-            @click="goGoodsListPage('','深圳')"
-          >深圳</a>
-          <a
-            class="link"
-            href="javascript:void(0)"
-            @click="goGoodsListPage('','东莞')"
-          >东莞</a>
-          <a
-            class="link"
-            href="javascript:void(0)"
-            @click="goGoodsListPage('','广西')"
-          >广西</a>
+          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','北京')">北京</a>
+          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','广州')">广州</a>
+          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','深圳')">深圳</a>
+          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','东莞')">东莞</a>
+          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','广西')">广西</a>
         </li>
       </ul>
       <div class="banner-con">
@@ -281,7 +161,7 @@ import { videoPlayer } from "vue-video-player";
 export default {
   data() {
     return {
-      videos:[
+      videos: [
         "https://lshao.oss-cn-beijing.aliyuncs.com/lshao2.0.mp4",
         "https://lshao.oss-cn-beijing.aliyuncs.com/%E8%80%81%E5%B8%88%E5%A5%BD%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%975.0%28%E9%AB%98%E6%B8%85%29.mp4"
       ],
@@ -316,6 +196,19 @@ export default {
       ]
     };
   },
+  mounted() {
+    // 动态设置背景图的高度为浏览器可视区域高度
+
+    // 首先在Virtual DOM渲染数据时，设置下背景图的高度．
+    // this.playerOptions.width = `${document.documentElement.clientHeight * 0.5 }px`;
+    // this.playerOptions.height = `${document.documentElement.clientHeight * 0.5 * 0.7}px`;
+    // // 然后监听window的resize事件．在浏览器窗口变化时再设置下背景图高度．
+    // const that = this;
+    // window.onresize = function temp() {
+    //   that.playerOptions.width = `${document.documentElement.clientHeight * 0.5 }px`;
+    //   that.playerOptions.height = `${document.documentElement.clientHeight * 0.5 * 0.7 }px`;
+    // };
+  },
   created() {},
   activated() {
     this.queryCategoryData(res => {
@@ -341,21 +234,20 @@ export default {
       //   this.playerOptions.sources[0].src = '';
       // }
 
-        this.playerOptions.sources[0].src = this.videos[number];
-        // this.$refs.videoPlayer.player.play();
-
+      this.playerOptions.sources[0].src = this.videos[number];
+      // this.$refs.videoPlayer.player.play();
     },
     onPlayerPlay(player) {
-      console.log('player play!', player)
+      console.log("player play!", player);
     },
     onPlayerPause(player) {
-      console.log('player pause!', player)
+      console.log("player pause!", player);
     },
     // ...player event
 
     // or listen state event
     playerStateChanged(playerCurrentState) {
-      console.log('player current update state', playerCurrentState)
+      console.log("player current update state", playerCurrentState);
     },
 
     // player is ready
@@ -474,7 +366,7 @@ export default {
 }
 
 // .title {
-  // text-align: center;
+// text-align: center;
 // }
 .lead {
   margin-top: -30px;
@@ -571,10 +463,9 @@ export default {
   line-height: 12px;
   color: #828282;
 }
-h4{
+h4 {
   font-size: 18px;
   margin-top: 36px;
   margin-left: 340px;
 }
-
 </style>
