@@ -14,7 +14,7 @@
             <img src="http://oss.lshao.cn/picture/home/515578321149371393.png" class="titlePhoto">
             <div class="d-flex flex-column flex-md-row lead mb-3">
               <h3 class="title">
-                <em>我们为您提供工具，请您来在线教学</em>
+                <em>我们为您提供工具，请您来线上教学</em>
               </h3>
               <a
                 href="http://webboard.oss-cn-shanghai.aliyuncs.com/LshaoSetup.rar"
