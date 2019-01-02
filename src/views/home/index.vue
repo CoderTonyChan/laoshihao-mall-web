@@ -315,6 +315,8 @@ export default {
         name = "Iphone";
       } else if (userAgent.indexOf("mac") > -1) {
         name = "Mac";
+      } else if (userAgent.indexOf("iPad") > -1) {
+        name = "iPad";
       } else if (
         userAgent.indexOf("x11") > -1 ||
         userAgent.indexOf("unix") > -1 ||
@@ -334,7 +336,7 @@ export default {
       var os = new Object();
       os.name = name;
       os.version = version;
-      if (os.name === "Iphone") {
+      if (os.name === "Iphone"||os.name ==="iPad") {
         window.open("https://itunes.apple.com/us/app/id1265741384");
       } else {
         this.errorTips("请在Safari中打开");
