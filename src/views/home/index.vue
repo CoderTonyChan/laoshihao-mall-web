@@ -315,7 +315,7 @@ export default {
         name = "Iphone";
       } else if (userAgent.indexOf("mac") > -1) {
         name = "Mac";
-      } else if (userAgent.indexOf("iPad") > -1) {
+      } else if (userAgent.indexOf("ipad") > -1) {
         name = "iPad";
       } else if (
         userAgent.indexOf("x11") > -1 ||
