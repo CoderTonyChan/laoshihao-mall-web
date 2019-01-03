@@ -277,6 +277,7 @@ export default {
       this.loadPage("goods-list", param);
     },
     checkVersion() {
+      // 这里全部小写
       var userAgent = navigator.userAgent.toLowerCase();
       var name = "Unknown";
       var version = "Unknown";
@@ -313,11 +314,11 @@ export default {
         }
       } else if (userAgent.indexOf("iphone") > -1) {
         name = "Iphone";
-      } else if (userAgent.indexOf("mac") > -1) {
-        name = "Mac";
       } else if (userAgent.indexOf("ipad") > -1) {
         name = "iPad";
-      } else if (
+      } else if (userAgent.indexOf("mac") > -1) {
+        name = "Mac";
+      }else if (
         userAgent.indexOf("x11") > -1 ||
         userAgent.indexOf("unix") > -1 ||
         userAgent.indexOf("sunname") > -1 ||
