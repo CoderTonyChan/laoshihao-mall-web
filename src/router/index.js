@@ -127,7 +127,7 @@ export default [
         name: 'about',
         path: 'aboutMe',
         meta: {
-          name: '关于老师好商城',
+          name: '关于老师好平台',
           hideMainHeader: false
         },
         component: resolve => require(['views/about'], resolve)
