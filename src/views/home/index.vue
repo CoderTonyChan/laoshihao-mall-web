@@ -40,6 +40,7 @@
             <h4 class="title">
               <a href="javascript:void(0)" @click="chooseVideo(0)">老师好简介</a>
               <a href="javascript:void(0)" @click="chooseVideo(1)">操作指南</a>
+              <a href="javascript:void(0)" @click="chooseVideo(2)">互动课堂</a>
             </h4>
             <video-player
               class="video-player-box"
@@ -163,7 +164,8 @@ export default {
     return {
       videos: [
         "https://lshao.oss-cn-beijing.aliyuncs.com/lshao2.0.mp4",
-        "https://lshao.oss-cn-beijing.aliyuncs.com/%E8%80%81%E5%B8%88%E5%A5%BD%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%975.0%28%E9%AB%98%E6%B8%85%29.mp4"
+        "https://lshao.oss-cn-beijing.aliyuncs.com/%E8%80%81%E5%B8%88%E5%A5%BD%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%975.0%28%E9%AB%98%E6%B8%85%29.mp4",
+        "https://lshao.oss-cn-beijing.aliyuncs.com/%E4%BA%92%E5%8A%A8%E8%AF%BE%E5%A0%82.mp4"
       ],
       playerOptions: {
         // videojs options //static/images/author.jpg
@@ -469,6 +471,6 @@ export default {
 h4 {
   font-size: 18px;
   margin-top: 36px;
-  margin-left: 340px;
+  margin-left: 260px;
 }
 </style>
