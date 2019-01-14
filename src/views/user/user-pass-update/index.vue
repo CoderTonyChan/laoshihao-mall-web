@@ -3,7 +3,7 @@
     <div class="crumb">
       <div class="w">
         <div class="crumb-con">
-          <a class="link" href="javascript:void(0)" @click.prevent="goHome">老师好平台</a>
+          <a class="link" href="javascript:void(0)" @click.prevent="goHome">老师好商城</a>
           <span>></span>
           <span class="link-text">{{$route.meta.name}}</span>
         </div>

@@ -14,7 +14,7 @@
             <img src="http://oss.lshao.cn/picture/home/515578321149371393.png" class="titlePhoto">
             <div class="d-flex flex-column flex-md-row lead mb-3">
               <h3 class="title">
-                <em>我们为您提供工具，请您来线上教学</em>
+                <em>我们提供平台和工具，帮您卖产品，帮您做在线教学</em>
               </h3>
               <a
                 href="http://webboard.oss-cn-shanghai.aliyuncs.com/LshaoSetup.rar"
@@ -370,9 +370,9 @@ export default {
   margin-top: -30px;
 }
 
-// .title {
-// text-align: center;
-// }
+h3.title {
+  font-size: 22px;
+}
 .lead {
   margin-top: -30px;
 }
