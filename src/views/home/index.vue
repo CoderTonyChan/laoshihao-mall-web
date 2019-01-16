@@ -9,12 +9,12 @@
           <div class="col-md-6 col-xs-6 ">
             <!-- <h1 class="mb-3 bd-text-purple-bright">老师好</h1> -->
             <h3 class="title">
-              <em>老师好的教学模式，以确保在线教学的质量</em>
+              <em>我们提供平台和工具，帮您卖产品，帮您做在线教学</em>
             </h3>
-            <img src="http://oss.lshao.cn/picture/home/515578321149371393.png" class="titlePhoto">
+            <img src="http://oss.lshao.cn/picture/home/515578321149371394.png" class="titlePhoto">
             <div class="d-flex flex-column flex-md-row lead mb-3">
               <h3 class="title">
-                <em>我们提供平台和工具，帮您卖产品，帮您做在线教学</em>
+                <em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;老师好的教学模式</em>
               </h3>
               <a
                 href="http://webboard.oss-cn-shanghai.aliyuncs.com/LshaoSetup.rar"
@@ -375,12 +375,14 @@ h3.title {
 }
 .lead {
   margin-top: -30px;
+  margin-left: 50px;
 }
 .titlePhoto {
   // width: 70%;
   // width: 70px;
   // height: 70px;
   margin-top: -40px;
+  margin-left: 50px;
   max-width: 70%;
   // max-height: 70%;
   display: inline-block;
