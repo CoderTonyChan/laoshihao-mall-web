@@ -13,7 +13,7 @@
             </h3>
             <img src="http://oss.lshao.cn/picture/home/515578321149371394.png" class="titlePhoto">
             <div class="d-flex flex-column flex-md-row lead mb-3">
-              <h3 class="title">
+              <h3 class="title" style="font-size: 12px;">
                 <em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;老师好的教学模式</em>
               </h3>
               <a
