@@ -52,6 +52,15 @@
         </div>
       </div>
       <div class="detail-wrap">
+        <div class="detail-title">
+          <div>
+            <h1 class="title">老师好独特的在线教学模式，让学生在家学和在校学一个样</h1>
+          </div>
+            <img src="http://oss.lshao.cn/picture/home/515578321149371394.png" class="titlePhoto">
+            <img src="http://oss.lshao.cn/picture/home/515578321149371394.png" class="titlePhoto">
+        </div>
+      </div>
+      <div class="detail-wrap">
         <div class="detail-tab-con">
           <ul class="tab-list">
             <li class="tab-item active"><a href="#div1">课程介绍</a></li>
@@ -61,6 +70,11 @@
           </ul>
         </div>
         <div class="detail-con">
+          <!-- <div>
+            <h1 class="title">老师好独特的在线教学模式，让学生在家学和在校学一个样</h1>
+          </div>
+            <img src="http://oss.lshao.cn/picture/home/515578321149371394.png" class="titlePhoto">
+            <img src="http://oss.lshao.cn/picture/home/515578321149371394.png" class="titlePhoto"> -->
           <div v-html="product.detail"></div>
         </div>
       </div>
@@ -211,6 +225,15 @@
   };
 </script>
 <style rel="stylesheet/scss" lang="scss">
+.detail-wrap .detail-title{
+    padding-top: 20px;
+    background: clear;
+}
+.detail-wrap .detail-title img {
+    display: block;
+    margin: 0 auto;
+}
+
 .video-js .vjs-big-play-button {
     top: 50%;
     left: 50%;

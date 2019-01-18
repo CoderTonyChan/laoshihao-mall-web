@@ -50,7 +50,7 @@ export default [
         meta: {
           name: '商品详情',
           requestAuth: false,
-          hideMainHeader: false
+          hideMainHeader: true
         },
         component: resolve => require(['views/goods/goods-detail'], resolve)
       },
@@ -131,6 +131,15 @@ export default [
           hideMainHeader: false
         },
         component: resolve => require(['views/about'], resolve)
+      },
+      {
+        name: 'download',
+        path: 'download',
+        meta: {
+          name: '客户端下载',
+          hideMainHeader: true
+        },
+        component: resolve => require(['views/about/download'], resolve)
       },
       {
         name: 'privacy',
