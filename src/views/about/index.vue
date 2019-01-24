@@ -10,8 +10,9 @@
       </div>
     </div>
     <div class="about-wrap w">
-      <div class="panel">
-        <h1 class="panel-title">关于我们</h1>
+      <div class="jumbotron">
+        <h1>北京道明科技有限公司</h1>
+        <p>北京道明科技有限公司成立于2014年5月4日，成立之初就面向K12教育，依据“视频课将重塑教育”的在线教育发展趋势，利用多年积累的原创技术，开发了在Pad上直接手写作业、远程虚拟教室等等在线教学的功能，打通了K12教育从线下走向线上的最后一公里。老师好在线商城为课外辅导教育机构提供了销售其课程的平台，老师好App为老师提供了在线教学工具，提升了教学水平、减轻了工作量。</p>
       </div>
     </div>
   </div>
@@ -29,7 +30,7 @@ export default {
 };
 </script>
 <style rel="stylesheet/scss" lang="scss">
-.panel img {
-  background-color: #ddd;
+.jumbotron {
+  background-color: rgba(255,255,255,.0);;
 }
 </style>

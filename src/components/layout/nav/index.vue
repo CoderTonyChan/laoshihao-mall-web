@@ -25,6 +25,9 @@
           </span>
           <span class="link js-logout" @click.prevent="logout">退出</span>
         </span>
+        <span class="user">
+          <span class="link" @click.prevent="loadPage('download')">客户端下载</span>
+        </span>
       </div>
       <ul class="nav-list">
         <li class="nav-item">
@@ -46,9 +49,9 @@
         <!-- <li class="nav-item">
           <a class="link" href="javascript:void(0)" @click.prevent="loadPage('about')">关于老师好商城</a>
         </li>-->
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="link" href="javascript:void(0)" @click.prevent="loadPage('download')">客户端下载</a>
-        </li>
+        </li> -->
       </ul>
     </div>
   </div>

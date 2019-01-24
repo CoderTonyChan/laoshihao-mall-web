@@ -1,17 +1,17 @@
 <template>
   <div>
     <div class="w">
-      <table class="table table-bordered">
+      <!-- <table class="table table-bordered">
         <tbody>
           <tr>
             <td class="orgin col-md-2">教育机构:</td>
-            <td class="orgin col-md-2">博学</td>
-            <td class="orgin col-md-2">点睛</td>
+            <td class="link orgin col-md-2" @click="goGoodsListPage('','','1')">博学</td>
+            <td class="link orgin col-md-2" @click="goGoodsListPage('','','2')">点睛</td>
             <td class="orgin col-md-2"></td>
             <td class="orgin col-md-2"></td>
           </tr>
         </tbody>
-      </table>
+      </table> -->
     </div>
     <div class="w">
       <ul class="keywords-list">
@@ -24,49 +24,49 @@
           <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','高中')">高中</a>-->
         </li>
         <li class="keywords-item">
-          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','','2')">数学</a>
-          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','','2')">数学</a>
-          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','','2')">数学</a>
+          <a class="link" href="javascript:void(0)" @click="changeCateID('100031')">数学</a>
+          <a class="link" href="javascript:void(0)" @click="changeCateID('100041')">数学</a>
+          <a class="link" href="javascript:void(0)" @click="changeCateID('100051')">数学</a>
         </li>
         <li class="keywords-item">
-          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','','2')">英语</a>
-          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','','2')">英语</a>
-          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','','2')">英语</a>
+          <a class="link" href="javascript:void(0)" @click="changeCateID('100032')">英语</a>
+          <a class="link" href="javascript:void(0)" @click="changeCateID('100042')">英语</a>
+          <a class="link" href="javascript:void(0)" @click="changeCateID('100052')">英语</a>
         </li>
         <li class="keywords-item">
-          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','','2')">语文</a>
-          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','','2')">语文</a>
-          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','','2')">语文</a>
+          <a class="link" href="javascript:void(0)" @click="changeCateID('100033')">语文</a>
+          <a class="link" href="javascript:void(0)" @click="changeCateID('100043')">语文</a>
+          <a class="link" href="javascript:void(0)" @click="changeCateID('100053')">语文</a>
         </li>
         <li class="keywords-item">
-          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','','2')">历史</a>
-          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','','2')">历史</a>
-          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','','2')">历史</a>
+          <a class="link" href="javascript:void(0)" @click="changeCateID('100034')">历史</a>
+          <a class="link" href="javascript:void(0)" @click="changeCateID('100044')">历史</a>
+          <a class="link" href="javascript:void(0)" @click="changeCateID('100054')">历史</a>
         </li>
         <li class="keywords-item">
-          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','','2')">地理</a>
-          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','','2')">地理</a>
-          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','','2')">地理</a>
+          <a class="link" href="javascript:void(0)" @click="changeCateID('100035')">地理</a>
+          <a class="link" href="javascript:void(0)" @click="changeCateID('100045')">地理</a>
+          <a class="link" href="javascript:void(0)" @click="changeCateID('100055')">地理</a>
         </li>
         <li class="keywords-item">
-          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','','2')">物理</a>
-          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','','2')">物理</a>
-          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','','2')">物理</a>
+          <a class="link" href="javascript:void(0)" @click="changeCateID('100036')">物理</a>
+          <a class="link" href="javascript:void(0)" @click="changeCateID('100046')">物理</a>
+          <a class="link" href="javascript:void(0)" @click="changeCateID('100056')">物理</a>
         </li>
         <li class="keywords-item">
-          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','','2')">化学</a>
-          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','','2')">化学</a>
-          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','','2')">化学</a>
+          <a class="link" href="javascript:void(0)" @click="changeCateID('100037')">化学</a>
+          <a class="link" href="javascript:void(0)" @click="changeCateID('100047')">化学</a>
+          <a class="link" href="javascript:void(0)" @click="changeCateID('100057')">化学</a>
         </li>
         <li class="keywords-item">
-          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','','2')">生物</a>
-          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','','2')">生物</a>
-          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','','2')">生物</a>
+          <a class="link" href="javascript:void(0)" @click="changeCateID('100038')">生物</a>
+          <a class="link" href="javascript:void(0)" @click="changeCateID('100048')">生物</a>
+          <a class="link" href="javascript:void(0)" @click="changeCateID('100058')">生物</a>
         </li>
         <li class="keywords-item">
-          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','','2')">政治</a>
-          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','','2')">政治</a>
-          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','','2')">政治</a>
+          <a class="link" href="javascript:void(0)" @click="changeCateID('100039')">政治</a>
+          <a class="link" href="javascript:void(0)" @click="changeCateID('100049')">政治</a>
+          <a class="link" href="javascript:void(0)" @click="changeCateID('100059')">政治</a>
         </li>
       </ul>
       <div style="float: left;">
@@ -125,11 +125,25 @@
         </ul>
       </div>
     </div>
+    <div class="w">
+      <div class="btm-enter-wrap">
+        <p class="btm-word">老师好合作伙伴</p>
+        <a
+          class="btm-enter link"
+          @click.prevent="loadPage('zhaomu')"
+          target="_blank"
+        >如何入驻
+        </a>
+      </div>
+      <div class="btm-banner-wrap">
+        <origin-banner></origin-banner>
+      </div>
+    </div>
   </div>
 </template>
 <script type="text/ecmascript-6">
 import "video.js/dist/video-js.css";
-import pcBanner from "components/banner";
+import originBanner from "components/banner/originBanner";
 import { videoPlayer } from "vue-video-player";
 
 export default {
@@ -236,6 +250,15 @@ export default {
     goProductDetailPage(productId) {
       this.loadPage("goods-detail", { productId: productId });
     },
+    changeCateID(ID) {
+      this.queryCategoryDataByID(ID, res => {
+        if (res.code === 200) {
+          this.categoryData = res.result;
+        } else {
+          alert("加载主页面失败");
+        }
+      });
+    },
     getImage(index1, index2) {
       return require("../../assets/image/floor/floor" +
         (index1 + 1) +
@@ -324,10 +347,18 @@ export default {
         url: `/uac/auth/category/getCategoryAndProductDtoByPid/0`,
         success: resolve
       });
+    },
+    queryCategoryDataByID(ID, resolve) {
+      this.ajax({
+        type: "GET",
+        // url: `/uac/auth/category/getProductCategoryDtoByPid/0`,
+        url: `/uac/auth/category/getCategoryAndProductDtoById/${ID}`,
+        success: resolve
+      });
     }
   },
   components: {
-    pcBanner,
+    originBanner,
     videoPlayer
   },
   computed: {
@@ -338,6 +369,29 @@ export default {
 };
 </script>
 <style rel="stylesheet/scss" lang="scss">
+.w .btm-enter-wrap {
+    float: left;
+    width: 110px;
+    text-align: center;
+    margin: 0 19px;
+    position: relative;
+    height: 80px;
+}
+.w  .btm-enter-wrap .btm-word {
+    font-size: 15px;
+    color: #000;
+    padding-top: 11px;
+    padding-bottom: 3px;
+}
+.w .btm-enter-wrap .btm-enter {
+    color: #fd4f02;
+    font-size: 14px;
+    border: 1px solid #fd4f02;
+    padding: 5px 10px;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
 .orgin {
   font-size: 20px;
   text-align: right;

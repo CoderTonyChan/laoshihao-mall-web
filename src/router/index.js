@@ -142,6 +142,15 @@ export default [
         component: resolve => require(['views/about/download'], resolve)
       },
       {
+        name: 'zhaomu',
+        path: 'zhaomu',
+        meta: {
+          name: '入驻流程',
+          hideMainHeader: true
+        },
+        component: resolve => require(['views/about/zhaomu'], resolve)
+      },
+      {
         name: 'privacy',
         path: 'about/privacy',
         meta: {
