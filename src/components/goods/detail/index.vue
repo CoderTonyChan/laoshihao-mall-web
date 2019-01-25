@@ -86,8 +86,87 @@
           </div>
           <img src="http://oss.lshao.cn/picture/product/546248591694373888.png" class="titlePhoto">
 
-          <h1 class="title">上课流程</h1>
-          <img src="http://oss.lshao.cn/picture/product/546249985486758912.png" class="titlePhoto">
+          <h1 class="title">学生上课流程</h1>
+          <br>
+          <!-- <img src="http://oss.lshao.cn/picture/product/546249985486758912.png" class="titlePhoto"> -->
+
+    <div class="w">
+      <!-- <div class="box-title">学生入驻流程</div> -->
+      <ul class="pro-list">
+        <li style="margin-left: 120px;">
+          <div class="top">
+            <img
+              src="https://gw.alicdn.com/tfs/TB1_YUZSXXXXXbqXFXXXXXXXXXX-50-43.png"
+              width="50"
+              height="43"
+              alt
+            >
+            <p class="index-p">1</p>
+            <p class="title">网上注册</p>
+          </div>
+        </li>
+        <li>
+          <div class="top">
+            <img
+              src="https://gw.alicdn.com/tfs/TB19gMsSXXXXXctaXXXXXXXXXXX-50-43.png"
+              width="50"
+              height="43"
+              alt
+            >
+            <p class="index-p">2</p>
+            <p class="title">操作指南</p>
+          </div>
+        </li>
+        <li>
+          <div class="top">
+            <img
+              src="https://gw.alicdn.com/tfs/TB1B8ZkSXXXXXcAapXXXXXXXXXX-50-43.png"
+              width="50"
+              height="43"
+              alt
+            >
+            <p class="index-p">3</p>
+            <p class="title">网上报班</p>
+          </div>
+        </li>
+        <li>
+          <div class="top">
+            <img
+              src="https://gw.alicdn.com/tfs/TB1rV34SXXXXXcGXpXXXXXXXXXX-50-43.png"
+              width="50"
+              height="43"
+              alt
+            >
+            <p class="index-p">4</p>
+            <p class="title">下载App</p>
+          </div>
+        </li>
+        <li>
+          <div class="top">
+            <img
+              src="https://gw.alicdn.com/tfs/TB1U4kZSXXXXXXgXFXXXXXXXXXX-50-43.png"
+              width="50"
+              height="43"
+              alt
+            >
+            <p class="index-p">5</p>
+            <p class="title">登录App</p>
+          </div>
+        </li>
+        <li>
+          <div class="top">
+            <img
+              src="https://gw.alicdn.com/tfs/TB1XQMOSXXXXXbFXVXXXXXXXXXX-50-43.png"
+              width="50"
+              height="43"
+              alt
+            >
+            <p class="index-p">6</p>
+            <p class="title">上课</p>
+          </div>
+        </li>
+      </ul>
+    </div>
         </div>
       </div>
       <div class="detail-wrap">
@@ -103,7 +182,7 @@
               <a href="#div3">名师介绍</a>
             </li>
             <li class="tab-item active">
-              <a href="#div4">退换课规则</a>
+              <a href="#div4">退课&常见问题</a>
             </li>
           </ul>
         </div>
@@ -332,6 +411,56 @@ export default {
 };
 </script>
 <style rel="stylesheet/scss" lang="scss">
+.box-title {
+    height: 40px;
+    line-height: 40px;
+    border-left: 8px solid #0090f5;
+    font-size: 30px;
+    text-indent: 10px;
+    color: #0090f5;
+    font-weight: 700;
+}
+.pro-list li {
+    width: 124px;
+    height: 130px;
+    float: left;
+    margin: 0 20px 20px 0;
+    background: 0 0;
+}
+.pro-list li .top {
+    width: 124px;
+    height: 124px;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    background: #0090f5;
+    position: relative;
+    overflow: hidden;
+}
+.pro-list li .top img {
+    margin: 10px auto 6px;
+}
+.pro-list li .top .index-p {
+    height: 20px;
+    line-height: 20px;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+}
+.pro-list li .top .title {
+    height: 30px;
+    line-height: 30px;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+}
+p {
+    margin:1px;
+}
+
+
 .detail-con {
   padding: 35px 30px 30px;
 }

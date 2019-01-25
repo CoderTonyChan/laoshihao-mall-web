@@ -9,108 +9,10 @@
         </div>
       </div>
     </div>
-    <div class="w">
-      <div class="box-title">学生入驻流程</div>
-      <ul class="pro-list">
-        <li>
-          <div class="top">
-            <img
-              src="https://gw.alicdn.com/tfs/TB1_YUZSXXXXXbqXFXXXXXXXXXX-50-43.png"
-              width="50"
-              height="43"
-              alt
-            >
-            <p class="index-p">1</p>
-            <p class="title">注册</p>
-          </div>
-          <div class="bottom">
-            <p
-              class="desc3"
-              data-spm-anchor-id="a1z14.7974659.797783.i0.6d90ad26b416hW"
-            >注册并登录网站</p>
-            <a href="http://login.lshao.cn/register" class="link" target="_blank">详情</a>
-          </div>
-        </li>
-        <li>
-          <div class="top">
-            <img
-              src="https://gw.alicdn.com/tfs/TB19gMsSXXXXXctaXXXXXXXXXXX-50-43.png"
-              width="50"
-              height="43"
-              alt
-            >
-            <p class="index-p">2</p>
-            <p class="title">操作指南</p>
-          </div>
-          <div class="bottom">
-            <p class="desc3">观看老师好App操作指南</p>
-          </div>
-        </li>
-        <li>
-          <div class="top">
-            <img
-              src="https://gw.alicdn.com/tfs/TB1B8ZkSXXXXXcAapXXXXXXXXXX-50-43.png"
-              width="50"
-              height="43"
-              alt
-            >
-            <p class="index-p">3</p>
-            <p class="title">下载App</p>
-          </div>
-          <div class="bottom">
-            <p class="desc3">下载老师好App(推荐使用Pad)</p>
-          </div>
-        </li>
-        <li>
-          <div class="top">
-            <img
-              src="https://gw.alicdn.com/tfs/TB1rV34SXXXXXcGXpXXXXXXXXXX-50-43.png"
-              width="50"
-              height="43"
-              alt
-            >
-            <p class="index-p">4</p>
-            <p class="title">课程表</p>
-          </div>
-          <div class="bottom">
-            <p class="desc3">跟随课程表按老师好在线教学模式上课</p>
-          </div>
-        </li>
-        <li>
-          <div class="top">
-            <img
-              src="https://gw.alicdn.com/tfs/TB1U4kZSXXXXXXgXFXXXXXXXXXX-50-43.png"
-              width="50"
-              height="43"
-              alt
-            >
-            <p class="index-p">5</p>
-            <p class="title">登录</p>
-          </div>
-          <div class="bottom">
-            <p class="desc3">登录老师好App</p>
-          </div>
-        </li>
-        <li>
-          <div class="top">
-            <img
-              src="https://gw.alicdn.com/tfs/TB1XQMOSXXXXXbFXVXXXXXXXXXX-50-43.png"
-              width="50"
-              height="43"
-              alt
-            >
-            <p class="index-p">6</p>
-            <p class="title">上课</p>
-          </div>
-          <div class="bottom">
-            <p class="desc3">跟随课程表按老师好在校教学模式上课</p>
-          </div>
-        </li>
-      </ul>
-    </div>
 
     <div class="w">
       <div class="box-title">机构入驻流程</div>
+      <br>
       <ul class="pro-list">
         <li>
           <div class="top">
@@ -123,12 +25,6 @@
             <p class="index-p">1</p>
             <p class="title">申请账号</p>
           </div>
-          <div class="bottom">
-            <p
-              class="desc3"
-              data-spm-anchor-id="a1z14.7974659.797783.i0.6d90ad26b416hW"
-            >申请管理员账号</p>
-          </div>
         </li>
         <li>
           <div class="top">
@@ -140,9 +36,6 @@
             >
             <p class="index-p">2</p>
             <p class="title">操作指南</p>
-          </div>
-          <div class="bottom">
-            <p class="desc3">观看老师好App操作指南</p>
           </div>
         </li>
         <li>
@@ -156,9 +49,6 @@
             <p class="index-p">3</p>
             <p class="title">下载App</p>
           </div>
-          <div class="bottom">
-            <p class="desc3">下载老师好App(推荐使用Pad)</p>
-          </div>
         </li>
         <li>
           <div class="top">
@@ -169,10 +59,7 @@
               alt
             >
             <p class="index-p">4</p>
-            <p class="title">课程表</p>
-          </div>
-          <div class="bottom">
-            <p class="desc3">用App建立课程表和教学内容</p>
+            <p class="title">创建课程</p>
           </div>
         </li>
         <li>
@@ -186,9 +73,6 @@
             <p class="index-p">5</p>
             <p class="title">管理运营</p>
           </div>
-          <div class="bottom">
-            <p class="desc3">登录网站后台管理软件并上传课程</p>
-          </div>
         </li>
         <li>
           <div class="top">
@@ -201,9 +85,6 @@
             <p class="index-p">6</p>
             <p class="title">登录App</p>
           </div>
-          <div class="bottom">
-            <p class="desc3">登录老师好App</p>
-          </div>
         </li>
         <li>
           <div class="top">
@@ -215,9 +96,6 @@
             >
             <p class="index-p">7</p>
             <p class="title">上课</p>
-          </div>
-          <div class="bottom">
-            <p class="desc3">按课程表和老师好在校教学模式上课</p>
           </div>
         </li>
       </ul>
