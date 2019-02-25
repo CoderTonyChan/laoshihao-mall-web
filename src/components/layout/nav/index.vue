@@ -30,17 +30,29 @@
         </span>
       </div>
       <ul class="nav-list">
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="link" @click="loadPage('user-cart')">
             <i class="fa fa-shopping-cart"></i>
             购物车(
             <span class="cart-count">{{cartList.length}}</span>)
           </a>
+        </li> -->
+        
+        <li class="nav-item register">
+          <a class="link" href="javascript:void(0)" @click.prevent="loadPage('user-order')">注册有礼</a>
         </li>
+        
         <li class="nav-item">
+          <span class="shu">|</span>
+          <a class="link" href="javascript:void(0)" @click.prevent="loadPage('user-order')">登录</a>
+        </li>
+        
+        <li class="nav-item">
+          <span class="shu">|</span>
           <a class="link" href="javascript:void(0)" @click.prevent="loadPage('user-order')">我的订单</a>
         </li>
         <li class="nav-item">
+          <span class="shu">|</span>
           <a class="link" href="javascript:void(0)" @click.prevent="loadPage('user-center')">我的中心</a>
         </li>
         <!-- <li class="nav-item">
@@ -97,9 +109,42 @@ export default {
 </script>
 
 <style>
+.nav{
+	height: 30px;
+	background-color: #333333;
+  color : #cfcfcf;
+}
 .city {
   text-align: center;
   position: relative;
   z-index: 9999;
+}
+.nav .link {
+  color : #cfcfcf
+}
+
+.nav .link:hover {
+  text-decoration:none;
+  color: #E9967A;
+}
+.nav .register {
+    width: 86px;
+    height: 20px;
+    /* background-color: #444444; */
+    border-radius: 10px;
+    top: 5px;
+    position: relative;
+    background: #444444 url(http://pn9jzw2t9.bkt.clouddn.com/register.png) 10px center no-repeat;
+}
+
+.nav .register a{
+  
+    position: relative;
+    top: -5px;
+    left: 25px;
+}
+.nav .shu{
+  margin-left: 10px;
+  margin-right: 10px;
 }
 </style>
