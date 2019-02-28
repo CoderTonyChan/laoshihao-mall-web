@@ -4,9 +4,8 @@
     padding: 0;
 }
 body{
-    background: #f6f6f6;
+    background: #ffffff;
     
-	font-family: FZLTHK--GBK1-0;
 	font-size: 12px;
 	font-weight: normal;
 	font-stretch: normal;
@@ -109,3 +108,5 @@ input[type='checkbox']{
     background: url(./assets/image/icon/loading.gif) no-repeat;
     opacity: .6;
 }
+
+a,body,button,h1,h2,h3,h4,html,input,li{font-family:"Microsoft YaHei","微软雅黑",Arial,sans-serif!important}

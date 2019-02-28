@@ -1,143 +1,1674 @@
 <template>
   <div>
-    <div class="w">
-      <!-- <table class="table table-bordered">
-        <tbody>
-          <tr>
-            <td class="orgin col-md-2">教育机构:</td>
-            <td class="link orgin col-md-2" @click="goGoodsListPage('','','1')">博学</td>
-            <td class="link orgin col-md-2" @click="goGoodsListPage('','','2')">点睛</td>
-            <td class="orgin col-md-2"></td>
-            <td class="orgin col-md-2"></td>
-          </tr>
-        </tbody>
-      </table> -->
-    </div>
-    <div class="w">
-      <ul class="keywords-list">
-        <li class="keywords-item">
-          <span class="link" style="cursor: auto;">小学</span>
-          <span class="link" style="cursor: auto;">初中</span>
-          <span class="link" style="cursor: auto;">高中</span>
-          <!-- <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','小学')">小学</a>
-          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','初中')">初中</a>
-          <a class="link" href="javascript:void(0)" @click="goGoodsListPage('','高中')">高中</a>-->
-        </li>
-        <li class="keywords-item">
-          <a class="link" href="javascript:void(0)" @click="changeCateID('100031')">数学</a>
-          <a class="link" href="javascript:void(0)" @click="changeCateID('100041')">数学</a>
-          <a class="link" href="javascript:void(0)" @click="changeCateID('100051')">数学</a>
-        </li>
-        <li class="keywords-item">
-          <a class="link" href="javascript:void(0)" @click="changeCateID('100032')">英语</a>
-          <a class="link" href="javascript:void(0)" @click="changeCateID('100042')">英语</a>
-          <a class="link" href="javascript:void(0)" @click="changeCateID('100052')">英语</a>
-        </li>
-        <li class="keywords-item">
-          <a class="link" href="javascript:void(0)" @click="changeCateID('100033')">语文</a>
-          <a class="link" href="javascript:void(0)" @click="changeCateID('100043')">语文</a>
-          <a class="link" href="javascript:void(0)" @click="changeCateID('100053')">语文</a>
-        </li>
-        <li class="keywords-item">
-          <a class="link" href="javascript:void(0)" @click="changeCateID('100034')">历史</a>
-          <a class="link" href="javascript:void(0)" @click="changeCateID('100044')">历史</a>
-          <a class="link" href="javascript:void(0)" @click="changeCateID('100054')">历史</a>
-        </li>
-        <li class="keywords-item">
-          <a class="link" href="javascript:void(0)" @click="changeCateID('100035')">地理</a>
-          <a class="link" href="javascript:void(0)" @click="changeCateID('100045')">地理</a>
-          <a class="link" href="javascript:void(0)" @click="changeCateID('100055')">地理</a>
-        </li>
-        <li class="keywords-item">
-          <a class="link" href="javascript:void(0)" @click="changeCateID('100036')">物理</a>
-          <a class="link" href="javascript:void(0)" @click="changeCateID('100046')">物理</a>
-          <a class="link" href="javascript:void(0)" @click="changeCateID('100056')">物理</a>
-        </li>
-        <li class="keywords-item">
-          <a class="link" href="javascript:void(0)" @click="changeCateID('100037')">化学</a>
-          <a class="link" href="javascript:void(0)" @click="changeCateID('100047')">化学</a>
-          <a class="link" href="javascript:void(0)" @click="changeCateID('100057')">化学</a>
-        </li>
-        <li class="keywords-item">
-          <a class="link" href="javascript:void(0)" @click="changeCateID('100038')">生物</a>
-          <a class="link" href="javascript:void(0)" @click="changeCateID('100048')">生物</a>
-          <a class="link" href="javascript:void(0)" @click="changeCateID('100058')">生物</a>
-        </li>
-        <li class="keywords-item">
-          <a class="link" href="javascript:void(0)" @click="changeCateID('100039')">政治</a>
-          <a class="link" href="javascript:void(0)" @click="changeCateID('100049')">政治</a>
-          <a class="link" href="javascript:void(0)" @click="changeCateID('100059')">政治</a>
-        </li>
-      </ul>
-      <div style="float: left;">
-        <h4 class="title">
-          <a href="javascript:void(0)" @click="chooseVideo(0)">老师好简介</a>
-          <a href="javascript:void(0)" @click="chooseVideo(1)">操作指南</a>
-          <a href="javascript:void(0)" @click="chooseVideo(2)">互动课堂</a>
-        </h4>
-        <video-player
-          class="video-player-box"
-          ref="videoPlayer"
-          :options="playerOptions"
-          :playsinline="true"
-          customEventName="customstatechangedeventname"
-          @play="onPlayerPlay($event)"
-          @pause="onPlayerPause($event)"
-          @statechanged="playerStateChanged($event)"
-          @ready="playerReadied"
-        ></video-player>
+    <div class="ad">
+      <div class="w radius">
+        <div class="radius-left">
+          <div class="top">
+            <span>小学科目</span>
+            <ul>
+              <li>数学</li>
+              <li>英语</li>
+              <li>语文</li>
+            </ul>
+          </div>
+          <div class="mid">
+            <span>初中科目</span>
+            <ul>
+              <li>数学</li>
+              <li>英语</li>
+              <li>语文</li>
+              <li>物理</li>
+              <li>化学</li>
+              <li>政治</li>
+              <li>历史</li>
+              <li>地理</li>
+              <li>生物</li>
+              <li>信息科技</li>
+            </ul>
+          </div>
+          <div class="botton">
+            <span>高中科目</span>
+            <ul>
+              <li>数学</li>
+              <li>英语</li>
+              <li>语文</li>
+              <li>物理</li>
+              <li>化学</li>
+              <li>政治</li>
+              <li>历史</li>
+              <li>地理</li>
+              <li>生物</li>
+              <li>信息科技</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="radius-right"></div>
+      </div>
+      <div class="p-max-width-wrap p-content">
+        <div class="p-title-wrap">
+          <div class="p-title">热门课程</div>
+          <ul class="p-tabs-list" id="jp-solive-tabs-wrap">
+            <li
+              class="p-item"
+              @mouseenter="hotItemIndex = 0"
+              :class="hotItemIndex === 0?'p-selected':'p-no-selected'"
+            >全部</li>
+            <li
+              class="p-item"
+              @mouseenter="hotItemIndex = 1"
+              :class="hotItemIndex === 1?'p-selected':'p-no-selected'"
+            >小学</li>
+            <li
+              class="p-item"
+              @mouseenter="hotItemIndex = 2"
+              :class="hotItemIndex === 2?'p-selected':'p-no-selected'"
+            >初中</li>
+            <li
+              class="p-item"
+              @mouseenter="hotItemIndex = 3"
+              :class="hotItemIndex === 3?'p-selected':'p-no-selected'"
+            >高中</li>
+            <!-- <li class="p-item" @mouseenter="hotItemIndex = 4"  :class="hotItemIndex === 4?'p-selected':'p-no-selected'">四六级</li>
+            <li class="p-item" @mouseenter="hotItemIndex = 5"  :class="hotItemIndex === 5?'p-selected':'p-no-selected'">小语种</li>
+            <li class="p-item" @mouseenter="hotItemIndex = 6"  :class="hotItemIndex === 6?'p-selected':'p-no-selected'">英语能力</li>-->
+          </ul>
+          <a class="p-more-link" href="http://zhibo.koolearn.com/list/0" target="_blank"></a>
+        </div>
+        <transition name="fade">
+          <div class="p-class-wrap">
+            <ul class="p-class-list p-selected" v-show="hotItemIndex === 0">
+              <li class="p-item">
+                <a class="p-link" href="//www.koolearn.com/product/c_65_14415.html" target="_blank">
+                  <img
+                    class="p-img"
+                    src="https://uploadimg.koolearn.com/upload/2019-01-25/e779e60cc78824667a98629ef1577476.jpg"
+                    alt
+                  >
+                  <div class="p-info-wrap">
+                    <p class="p-title">2019年上教师资格证笔试冲刺救急班（小学）</p>
+                    <p class="p-time">
+                      <img
+                        src="http://oss.lshao.cn/images/people.png"
+                        alt
+                        style="bottom: 1px;position: relative;"
+                      > 259&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;课时数：32
+                    </p>
+                    <div class="p-item-footer">
+                      <span class="p-price">
+                        <em class="p-unit">￥</em>9.90
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="p-item">
+                <a class="p-link" href="//www.koolearn.com/product/c_65_14445.html" target="_blank">
+                  <img
+                    class="p-img"
+                    src="https://uploadimg.koolearn.com/upload/2019-01-25/b0684af9926be01171ba5a5b1a833e6f.jpg"
+                    alt
+                  >
+                  <div class="p-info-wrap">
+                    <p class="p-title">2019年上教师资格证笔试冲刺救急班（中学）</p>
+                    <p class="p-time">今天 19:00-21:00</p>
+                    <div class="p-item-footer">
+                      <span class="p-teacher">主讲 范志明</span>
+                      <span class="p-price">
+                        <em class="p-unit">￥</em>9.90
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="p-item">
+                <a class="p-link" href="//www.koolearn.com/product/c_7_14767.html" target="_blank">
+                  <img
+                    class="p-img"
+                    src="https://uploadimg.koolearn.com/upload/2019-02-17/bfe4595957cc35220154edc49fc19194.jpg"
+                    alt
+                  >
+                  <div class="p-info-wrap">
+                    <p class="p-title">乔治老师托福词汇营【第2期】</p>
+                    <p class="p-time">明天 19:50-21:00</p>
+                    <div class="p-item-footer">
+                      <span class="p-teacher">主讲 李冰洁</span>
+                      <span class="p-price">
+                        <em class="p-unit">￥</em>1.00
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="p-item">
+                <a class="p-link" href="//www.koolearn.com/product/c_8_14760.html" target="_blank">
+                  <img
+                    class="p-img"
+                    src="https://uploadimg.koolearn.com/upload/2019-02-15/840c47963cbfb4f1210a32966691e8d9.png"
+                    alt
+                  >
+                  <div class="p-info-wrap">
+                    <p class="p-title">新东方雅思3月公益课</p>
+                    <p class="p-time">2019-03-04</p>
+                    <div class="p-item-footer">
+                      <span class="p-teacher">主讲 王煦</span>
+                      <span class="p-price">
+                        <em class="p-unit">￥</em>1.00
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="p-item">
+                <a class="p-link" href="//www.koolearn.com/product/c_25_13963.html" target="_blank">
+                  <img
+                    class="p-img"
+                    src="https://uploadimg.koolearn.com/upload/2019-01-04/431b551e8ccc5160e03ee00d634dfb8a.jpg"
+                    alt
+                  >
+                  <div class="p-info-wrap">
+                    <p class="p-title">【期末冲刺满分】六年级应用题重点突破</p>
+                    <p class="p-time">2019-01-12</p>
+                    <div class="p-item-footer">
+                      <span class="p-teacher">主讲 许秋琦</span>
+                      <span class="p-price">观看回放</span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+
+            <ul class="p-class-list p-selected" v-show="hotItemIndex === 1">
+              <li class="p-item">
+                <a class="p-link" href="//www.koolearn.com/product/c_2_13951.html" target="_blank">
+                  <img
+                    class="p-img"
+                    src="https://uploadimg.koolearn.com/upload/2019-01-02/3aae374be24db0e90a244d48ed7eac08.jpg"
+                    alt
+                  >
+                  <div class="p-info-wrap">
+                    <p class="p-title">考研规划●报考策略 20讲</p>
+                    <p class="p-time">2019-01-28</p>
+                    <div class="p-item-footer">
+                      <span class="p-price">观看回放</span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="p-item">
+                <a class="p-link" href="//www.koolearn.com/product/c_2_14348.html" target="_blank">
+                  <img
+                    class="p-img"
+                    src="https://uploadimg.koolearn.com/upload/2019-01-17/8211fdc034b67b2dbd2e284e5bfd7b79.jpg"
+                    alt
+                  >
+                  <div class="p-info-wrap">
+                    <p class="p-title">2020考研英语进阶全程班超级班会</p>
+                    <p class="p-time">2019-01-23</p>
+                    <div class="p-item-footer">
+                      <span class="p-price">观看回放</span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="p-item">
+                <a class="p-link" href="//www.koolearn.com/product/c_2_13411.html" target="_blank">
+                  <img
+                    class="p-img"
+                    src="https://uploadimg.koolearn.com/upload/2018-12-13/e1070d50678785e05028beaf115c5b41.jpg"
+                    alt
+                  >
+                  <div class="p-info-wrap">
+                    <p class="p-title">2019考研真题解析</p>
+                    <p class="p-time">2018-12-23</p>
+                    <div class="p-item-footer">
+                      <span class="p-teacher">主讲 阮晔</span>
+                      <span class="p-price">观看回放</span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+            <ul class="p-class-list p-selected" v-show="hotItemIndex === 2">
+              <li class="p-item">
+                <a class="p-link" href="//www.koolearn.com/product/c_7_14560.html" target="_blank">
+                  <img
+                    class="p-img"
+                    src="https://uploadimg.koolearn.com/upload/2019-02-01/f1454f923444e6e512e1a791df4cac44.jpg"
+                    alt
+                  >
+                  <div class="p-info-wrap">
+                    <p class="p-title">能不能读普高高考班来申请美国本科</p>
+                    <p class="p-time">今天 19:55-21:00</p>
+                    <div class="p-item-footer">
+                      <span class="p-teacher">主讲 张仪</span>
+                      <span class="p-price">免费领取</span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="p-item">
+                <a class="p-link" href="//www.koolearn.com/product/c_13_14391.html" target="_blank">
+                  <img
+                    class="p-img"
+                    src="https://uploadimg.koolearn.com/upload/2019-01-22/aa48d19c0edb2c0eff6766045f03e008.jpg"
+                    alt
+                  >
+                  <div class="p-info-wrap">
+                    <p class="p-title">新东方GMAT2月公益课</p>
+                    <p class="p-time">今天 20:00-21:00</p>
+                    <div class="p-item-footer">
+                      <span class="p-teacher">主讲 周谢慧</span>
+                      <span class="p-price">
+                        <em class="p-unit">￥</em>1.00
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="p-item">
+                <a class="p-link" href="//www.koolearn.com/product/c_7_14767.html" target="_blank">
+                  <img
+                    class="p-img"
+                    src="https://uploadimg.koolearn.com/upload/2019-02-17/bfe4595957cc35220154edc49fc19194.jpg"
+                    alt
+                  >
+                  <div class="p-info-wrap">
+                    <p class="p-title">乔治老师托福词汇营【第2期】</p>
+                    <p class="p-time">明天 19:50-21:00</p>
+                    <div class="p-item-footer">
+                      <span class="p-teacher">主讲 李冰洁</span>
+                      <span class="p-price">
+                        <em class="p-unit">￥</em>1.00
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="p-item">
+                <a class="p-link" href="//www.koolearn.com/product/c_7_14745.html" target="_blank">
+                  <img
+                    class="p-img"
+                    src="https://uploadimg.koolearn.com/upload/2019-02-14/b82c9dc362c21d770fd2da4f22fc265a.jpg"
+                    alt
+                  >
+                  <div class="p-info-wrap">
+                    <p class="p-title">新东方托福3月公益课-第6期</p>
+                    <p class="p-time">2019-03-01</p>
+                    <div class="p-item-footer">
+                      <span class="p-teacher">主讲 吴奇</span>
+                      <span class="p-price">
+                        <em class="p-unit">￥</em>1.00
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="p-item">
+                <a class="p-link" href="//www.koolearn.com/product/c_8_14760.html" target="_blank">
+                  <img
+                    class="p-img"
+                    src="https://uploadimg.koolearn.com/upload/2019-02-15/840c47963cbfb4f1210a32966691e8d9.png"
+                    alt
+                  >
+                  <div class="p-info-wrap">
+                    <p class="p-title">新东方雅思3月公益课</p>
+                    <p class="p-time">2019-03-04</p>
+                    <div class="p-item-footer">
+                      <span class="p-teacher">主讲 王煦</span>
+                      <span class="p-price">
+                        <em class="p-unit">￥</em>1.00
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+            <ul class="p-class-list p-selected" v-show="hotItemIndex === 3">
+              <li class="p-item">
+                <a class="p-link" href="//www.koolearn.com/product/c_25_13961.html" target="_blank">
+                  <img
+                    class="p-img"
+                    src="https://uploadimg.koolearn.com/upload/2019-01-04/0cbbc0076e9ea8cc2196b70f6b1c4084.jpg"
+                    alt
+                  >
+                  <div class="p-info-wrap">
+                    <p class="p-title">【期末冲刺满分】四年级期末重点知识串讲</p>
+                    <p class="p-time">2019-01-12</p>
+                    <div class="p-item-footer">
+                      <span class="p-teacher">主讲 张海彬</span>
+                      <span class="p-price">观看回放</span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="p-item">
+                <a class="p-link" href="//www.koolearn.com/product/c_25_13962.html" target="_blank">
+                  <img
+                    class="p-img"
+                    src="https://uploadimg.koolearn.com/upload/2019-01-04/ee99809cca0923a94f4896df1c5d1dea.jpg"
+                    alt
+                  >
+                  <div class="p-info-wrap">
+                    <p class="p-title">【期末冲刺满分】五年级期末重点知识串讲</p>
+                    <p class="p-time">2019-01-12</p>
+                    <div class="p-item-footer">
+                      <span class="p-teacher">主讲 邵春楠</span>
+                      <span class="p-price">观看回放</span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="p-item">
+                <a class="p-link" href="//www.koolearn.com/product/c_25_13963.html" target="_blank">
+                  <img
+                    class="p-img"
+                    src="https://uploadimg.koolearn.com/upload/2019-01-04/431b551e8ccc5160e03ee00d634dfb8a.jpg"
+                    alt
+                  >
+                  <div class="p-info-wrap">
+                    <p class="p-title">【期末冲刺满分】六年级应用题重点突破</p>
+                    <p class="p-time">2019-01-12</p>
+                    <div class="p-item-footer">
+                      <span class="p-teacher">主讲 许秋琦</span>
+                      <span class="p-price">观看回放</span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="p-item">
+                <a class="p-link" href="//www.koolearn.com/product/c_25_10400.html" target="_blank">
+                  <img
+                    class="p-img"
+                    src="https://uploadimg.koolearn.com/upload/2018-09-27/65e0ebc8cd939753a0a422dcb10a95a6.jpg"
+                    alt
+                  >
+                  <div class="p-info-wrap">
+                    <p class="p-title">【小升初冲刺】较复杂的分数应用</p>
+                    <p class="p-time">2018-10-07</p>
+                    <div class="p-item-footer">
+                      <span class="p-teacher">主讲 许秋琦</span>
+                      <span class="p-price">
+                        <em class="p-unit">￥</em>19.90
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="p-item">
+                <a class="p-link" href="//www.koolearn.com/product/c_24_10415.html" target="_blank">
+                  <img
+                    class="p-img"
+                    src="https://uploadimg.koolearn.com/upload/2018-09-27/7bc712ff73311270bd8b49023d0fd72d.jpg"
+                    alt
+                  >
+                  <div class="p-info-wrap">
+                    <p class="p-title">【高考数学】函数难点不再难</p>
+                    <p class="p-time">2018-10-07</p>
+                    <div class="p-item-footer">
+                      <span class="p-teacher">主讲 程玲海</span>
+                      <span class="p-price">
+                        <em class="p-unit">￥</em>19.90
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+            <ul class="p-class-list" :class="hotItemIndex === 4?'p-selected':'p-no-selected'">
+              <li class="p-item">
+                <a class="p-link" href="//www.koolearn.com/product/c_19_14422.html" target="_blank">
+                  <img
+                    class="p-img"
+                    src="https://uploadimg.koolearn.com/upload/2019-02-01/8dff0d6758ff243448a43babd918df7d.png"
+                    alt
+                  >
+                  <div class="p-info-wrap">
+                    <p class="p-title">黄金备考：四六级出分吐槽&amp;逆袭规划</p>
+                    <p class="p-time">2019-03-04</p>
+                    <div class="p-item-footer">
+                      <span class="p-teacher">主讲 潘赟</span>
+                      <span class="p-price">免费领取</span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="p-item">
+                <a class="p-link" href="//www.koolearn.com/product/c_19_14335.html" target="_blank">
+                  <img
+                    class="p-img"
+                    src="https://uploadimg.koolearn.com/upload/2019-01-23/2d7a9a32ae71ceb1cd0860ce96530687.jpg"
+                    alt
+                  >
+                  <div class="p-info-wrap">
+                    <p class="p-title">四六级新年过级通关宝典</p>
+                    <p class="p-time">2019-01-31</p>
+                    <div class="p-item-footer">
+                      <span class="p-teacher">主讲 王江涛</span>
+                      <span class="p-price">观看回放</span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="p-item">
+                <a class="p-link" href="//www.koolearn.com/product/c_19_13876.html" target="_blank">
+                  <img
+                    class="p-img"
+                    src="https://uploadimg.koolearn.com/upload/2019-01-08/16014183f7ff7ee491f6a5146d93ff7b.png"
+                    alt
+                  >
+                  <div class="p-info-wrap">
+                    <p class="p-title">四六级寒假备考规划</p>
+                    <p class="p-time">2019-01-20</p>
+                    <div class="p-item-footer">
+                      <span class="p-teacher">主讲 唐迟</span>
+                      <span class="p-price">观看回放</span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="p-item">
+                <a class="p-link" href="//www.koolearn.com/product/c_19_13639.html" target="_blank">
+                  <img
+                    class="p-img"
+                    src="https://uploadimg.koolearn.com/upload/2018-12-29/8c9d4511f6715308abd025dbb3e35bb7.jpg"
+                    alt
+                  >
+                  <div class="p-info-wrap">
+                    <p class="p-title">四六级真题高频词串讲</p>
+                    <p class="p-time">2019-01-09</p>
+                    <div class="p-item-footer">
+                      <span class="p-teacher">主讲 李卓然</span>
+                      <span class="p-price">
+                        <em class="p-unit">￥</em>19.90
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+            <ul class="p-class-list" :class="hotItemIndex === 5?'p-selected':'p-no-selected'">
+              <li class="p-item">
+                <a class="p-link" href="//www.koolearn.com/product/c_28_12911.html" target="_blank">
+                  <img
+                    class="p-img"
+                    src="https://uploadimg.koolearn.com/upload/2018-04-28/c97ca0dd3eda71b860e992ad80a5c1d1.jpg"
+                    alt
+                  >
+                  <div class="p-info-wrap">
+                    <p class="p-title">【热门课程】德福听力技巧点拨</p>
+                    <p class="p-time">2019-03-01</p>
+                    <div class="p-item-footer">
+                      <span class="p-teacher">主讲 朱敏</span>
+                      <span class="p-price">
+                        <em class="p-unit">￥</em>1.00
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="p-item">
+                <a class="p-link" href="//www.koolearn.com/product/c_28_12909.html" target="_blank">
+                  <img
+                    class="p-img"
+                    src="https://uploadimg.koolearn.com/upload/2018-04-28/3c2fbd4f3bcc3947b1fd443f4d2384c7.jpg"
+                    alt
+                  >
+                  <div class="p-info-wrap">
+                    <p class="p-title">【热门课程】德福阅读技巧点拨</p>
+                    <p class="p-time">2019-03-02</p>
+                    <div class="p-item-footer">
+                      <span class="p-teacher">主讲 傅强</span>
+                      <span class="p-price">
+                        <em class="p-unit">￥</em>1.00
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="p-item">
+                <a class="p-link" href="//www.koolearn.com/product/c_28_12913.html" target="_blank">
+                  <img
+                    class="p-img"
+                    src="https://uploadimg.koolearn.com/upload/2018-04-28/a28b86baf1eff0dddcf64f5e4d2abc58.jpg"
+                    alt
+                  >
+                  <div class="p-info-wrap">
+                    <p class="p-title">【热门课程】德福写作技巧点拨</p>
+                    <p class="p-time">2019-03-09</p>
+                    <div class="p-item-footer">
+                      <span class="p-teacher">主讲 傅强</span>
+                      <span class="p-price">
+                        <em class="p-unit">￥</em>1.00
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="p-item">
+                <a class="p-link" href="//www.koolearn.com/product/c_28_12915.html" target="_blank">
+                  <img
+                    class="p-img"
+                    src="https://uploadimg.koolearn.com/upload/2018-04-28/fe694db5eedbdd2796138d6fd8683862.jpg"
+                    alt
+                  >
+                  <div class="p-info-wrap">
+                    <p class="p-title">【热门课程】德福口语技巧点拨</p>
+                    <p class="p-time">2019-03-14</p>
+                    <div class="p-item-footer">
+                      <span class="p-teacher">主讲 张夏娃</span>
+                      <span class="p-price">
+                        <em class="p-unit">￥</em>1.00
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="p-item">
+                <a class="p-link" href="//www.koolearn.com/product/c_28_12910.html" target="_blank">
+                  <img
+                    class="p-img"
+                    src="https://uploadimg.koolearn.com/upload/2018-04-28/dfe443c5ac122429902adc968deec941.jpg"
+                    alt
+                  >
+                  <div class="p-info-wrap">
+                    <p class="p-title">【热门课程】德福阅读解题密训</p>
+                    <p class="p-time">2019-03-16</p>
+                    <div class="p-item-footer">
+                      <span class="p-teacher">主讲 傅强</span>
+                      <span class="p-price">
+                        <em class="p-unit">￥</em>1.00
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+            <ul class="p-class-list" :class="hotItemIndex === 6?'p-selected':'p-no-selected'">
+              <li class="p-item">
+                <a class="p-link" href="//www.koolearn.com/product/c_37_14574.html" target="_blank">
+                  <img
+                    class="p-img"
+                    src="https://uploadimg.koolearn.com/upload/2018-12-29/c984487a525229954793313da171ee35.jpg"
+                    alt
+                  >
+                  <div class="p-info-wrap">
+                    <p class="p-title">限时1元：英语学习大作战（语音、口语、语法全突破）</p>
+                    <p class="p-time">2019-03-02</p>
+                    <div class="p-item-footer">
+                      <span class="p-teacher">主讲 金格妃</span>
+                      <span class="p-price">
+                        <em class="p-unit">￥</em>1.00
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="p-item">
+                <a class="p-link" href="//www.koolearn.com/product/c_34_13776.html" target="_blank">
+                  <img
+                    class="p-img"
+                    src="https://uploadimg.koolearn.com/upload/2018-12-29/f65549e75a53cde46bc07400a0ac9c85.jpg"
+                    alt
+                  >
+                  <div class="p-info-wrap">
+                    <p class="p-title">初中新概念二册（上）：英语强化直播菁华班</p>
+                    <p class="p-time">2019-03-02</p>
+                    <div class="p-item-footer">
+                      <span class="p-teacher">主讲 刘昭君</span>
+                      <span class="p-price">
+                        <em class="p-unit">￥</em>509.15
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="p-item">
+                <a class="p-link" href="//www.koolearn.com/product/c_34_13553.html" target="_blank">
+                  <img
+                    class="p-img"
+                    src="https://uploadimg.koolearn.com/upload/2018-12-20/a556d7f8b8daa5586d7ea73d4cd5bea4.jpg"
+                    alt
+                  >
+                  <div class="p-info-wrap">
+                    <p class="p-title">小学新概念一册（上）：英语基础直播菁华班</p>
+                    <p class="p-time">2019-03-03</p>
+                    <div class="p-item-footer">
+                      <span class="p-teacher">主讲 刘萍</span>
+                      <span class="p-price">
+                        <em class="p-unit">￥</em>509.15
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="p-item">
+                <a class="p-link" href="//www.koolearn.com/product/c_37_13387.html" target="_blank">
+                  <img
+                    class="p-img"
+                    src="https://uploadimg.koolearn.com/upload/2018-12-05/c09bccefc08a51c17029ce982516310b.jpg"
+                    alt
+                  >
+                  <div class="p-info-wrap">
+                    <p class="p-title">一年带你读完柯林斯（2019年版）</p>
+                    <p class="p-time">2019-03-07</p>
+                    <div class="p-item-footer">
+                      <span class="p-teacher">主讲 唐静</span>
+                      <span class="p-price">
+                        <em class="p-unit">￥</em>629.00
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="p-item">
+                <a class="p-link" href="//www.koolearn.com/product/c_34_14942.html" target="_blank">
+                  <img
+                    class="p-img"
+                    src="https://uploadimg.koolearn.com/upload/2019-02-26/7282129fb5eb8f88ad84d59cde48968a.jpg"
+                    alt
+                  >
+                  <div class="p-info-wrap">
+                    <p class="p-title">7天畅学：新概念二册精品体验课（3月4日开班）</p>
+                    <p class="p-time">2019-03-09</p>
+                    <div class="p-item-footer">
+                      <span class="p-teacher">主讲 田静</span>
+                      <span class="p-price">
+                        <em class="p-unit">￥</em>1.00
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </transition>
       </div>
     </div>
-    <div class="w">
-      <div class="floor-wrap" v-for="category in  categoryData" :key="category.categoryId">
-        <h1 class="floor-title">{{category.categoryName}}</h1>
-        <ul class="floor-list p-course-list">
-          <!-- <li class="floor-item" v-for="item in  category.categoryList" :key="item.categoryId">
-            <a href="javascript:void(0)" @click="goGoodsListPage(item.categoryId)">
-              <span class="floor-text">{{item.categoryName}}</span>
-              <img class="floor-img" :src="imgUrl" alt/>
-            </a>
-          </li>-->
-          <li
-            class="p-item p-r-border p-b-border"
-            v-for="item in category.productTeacherDtoList"
-            :key="item.id"
+    <div class="section2">
+      <div class="p-content p-max-width-wrap detail-top">
+        <div class="p-left-imgs-wrap" id="jp-left-imgs-dx-wrap">
+          <img
+            class="p-title-img"
+            src="//images.koolearn.com/shark/project/zt/2017/1205koolearn-home-gf/i/hot-course/hot-title-dx.png?f1cb1f"
+            alt
           >
-            <a class="p-link" href="javascript:void(0)" @click="goProductDetailPage(item.id)">
-              <p class="p-title">
-                <span class="p-flag">NEW</span>
-                {{item.name}}
-              </p>
-              <p class="p-time">
-                课时数：{{item.period}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <span
-                  class="p-price"
-                >价格：{{item.price}}</span>
-              </p>
-              <ul class="p-teacher-list">
-                <li class="p-teacher-item" v-for="teacher in item.teacherList" :key="teacher.id">
-                  <img class="p-teacher-avatar" :src="teacher.avatar">
-                  <p class="p-teacher-name">{{teacher.name}}</p>
-                </li>
-              </ul>
-            </a>
-          </li>
-        </ul>
+          <ul class="p-imgs-list jp-left-imgs-list">
+            <li class="p-item p-selected">
+              <a class="p-link" href="http://www.koolearn.com/ke/kaoyan2/" target="_blank">
+                <img
+                  class="p-course-img"
+                  src="//file.koolearn.com/2018/0423/20180423111947336.jpg"
+                  alt
+                >
+                <p class="p-course-title">2020考研（签约）全程班</p>
+                <p class="p-course-info">零基础长线备考拼高分</p>
+              </a>
+            </li>
+            <li class="p-item">
+              <a class="p-link" href="http://www.koolearn.com/ke/kaoyan/" target="_blank">
+                <img
+                  class="p-course-img"
+                  src="//file.koolearn.com/2017/1219/20171219053817588.png"
+                  alt
+                >
+                <p class="p-course-title">2019考研复试</p>
+                <p class="p-course-info">科学辅导逆袭通关</p>
+              </a>
+            </li>
+            <li class="p-item">
+              <a
+                class="p-link"
+                href="http://www.koolearn.com/ke/cet/?from=shouye_daxue"
+                target="_blank"
+              >
+                <img
+                  class="p-course-img"
+                  src="//file.koolearn.com/2017/1219/20171219054016231.png"
+                  alt
+                >
+                <p class="p-course-title">四六级</p>
+                <p class="p-course-info">直击考点高分过级</p>
+              </a>
+            </li>
+          </ul>
+          <ul class="p-imgs-index jp-left-imgs-index-list">
+            <li class="p-item p-selected"></li>
+            <li class="p-item"></li>
+            <li class="p-item"></li>
+          </ul>
+        </div>
+        <div class="p-middle-content-wrap">
+          <ul class="p-course-list jp-get-hot-list-wrap" data-id="1281">
+            <li class="p-item p-r-border p-b-border">
+              <a class="p-link" href="//www.koolearn.com/product/c_2_13979.html" target="_blank">
+                <p class="p-title">
+                  <span class="p-flag">NEW</span>2020考研英语进阶全程春季1班（一、二可选）
+                </p>
+                <p class="p-time">课时数：267</p>
+                <ul class="p-teacher-list">
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391542195818496_small.jpg"
+                      alt
+                    >
+                    <p class="p-teacher-name">王江涛</p>
+                  </li>
+
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//tfs.koolearn.com/class-teacher/img/201806/6410390927579287552_small.jpg"
+                      alt
+                    >
+                    <p class="p-teacher-name">李旭</p>
+                  </li>
+
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//teacher.koocdn.com/teacher/picture/201901/1548926701500_small.jpg"
+                      alt
+                    >
+                    <p class="p-teacher-name">唐静</p>
+                  </li>
+                </ul>
+              </a>
+            </li>
+
+            <li class="p-item p-r-border p-b-border">
+              <a class="p-link" href="//www.koolearn.com/product/c_2_13970.html" target="_blank">
+                <p class="p-title">
+                  <span class="p-flag">NEW</span>2020考研政治进阶全程班
+                </p>
+                <p class="p-time">课时数：125</p>
+                <ul class="p-teacher-list">
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//tfs.koolearn.com/class-teacher/img/201804/6388639532102717440.JPG"
+                      alt
+                    >
+                    <p class="p-teacher-name">阮晔</p>
+                  </li>
+
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//tfs.koolearn.com/class-teacher/img/201804/6388639691649847296.JPG"
+                      alt
+                    >
+                    <p class="p-teacher-name">徐涛</p>
+                  </li>
+
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//tfs.koolearn.com/class-teacher/img/201804/6388639693042356224.JPG"
+                      alt
+                    >
+                    <p class="p-teacher-name">刘源泉</p>
+                  </li>
+                </ul>
+              </a>
+            </li>
+
+            <li class="p-item p-b-border">
+              <a class="p-link" href="//www.koolearn.com/product/c_19_14656.html" target="_blank">
+                <p class="p-title">
+                  <span class="p-flag">NEW</span>大学英语四级全程2班【2019年6月】
+                </p>
+                <p class="p-time">课时数：131</p>
+                <ul class="p-teacher-list">
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391542195818496_small.jpg"
+                      alt
+                    >
+                    <p class="p-teacher-name">王江涛</p>
+                  </li>
+
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//tfs.koolearn.com/class-teacher/img/201806/6410390927579287552_small.jpg"
+                      alt
+                    >
+                    <p class="p-teacher-name">李旭</p>
+                  </li>
+
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391816595574784_small.jpg"
+                      alt
+                    >
+                    <p class="p-teacher-name">唐迟</p>
+                  </li>
+                </ul>
+              </a>
+            </li>
+
+            <li class="p-item p-r-border">
+              <a class="p-link" href="//www.koolearn.com/product/c_20_14689.html" target="_blank">
+                <p class="p-title">
+                  <span class="p-flag">NEW</span>大学英语六级全程2班【2019年6月】
+                </p>
+                <p class="p-time">课时数：131</p>
+                <ul class="p-teacher-list">
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391542195818496_small.jpg"
+                      alt
+                    >
+                    <p class="p-teacher-name">王江涛</p>
+                  </li>
+
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//tfs.koolearn.com/class-teacher/img/201806/6410390927579287552_small.jpg"
+                      alt
+                    >
+                    <p class="p-teacher-name">李旭</p>
+                  </li>
+
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391816595574784_small.jpg"
+                      alt
+                    >
+                    <p class="p-teacher-name">唐迟</p>
+                  </li>
+                </ul>
+              </a>
+            </li>
+
+            <li class="p-item p-r-border">
+              <a class="p-link" href="//www.koolearn.com/product/c_20_14689.html" target="_blank">
+                <p class="p-title">
+                  <span class="p-flag">NEW</span>大学英语六级全程2班【2019年6月】
+                </p>
+                <p class="p-time">课时数：131</p>
+                <ul class="p-teacher-list">
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391542195818496_small.jpg"
+                      alt
+                    >
+                    <p class="p-teacher-name">王江涛</p>
+                  </li>
+
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//tfs.koolearn.com/class-teacher/img/201806/6410390927579287552_small.jpg"
+                      alt
+                    >
+                    <p class="p-teacher-name">李旭</p>
+                  </li>
+
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391816595574784_small.jpg"
+                      alt
+                    >
+                    <p class="p-teacher-name">唐迟</p>
+                  </li>
+                </ul>
+              </a>
+            </li>
+
+            <li class="p-item">
+              <a class="p-link" href="//www.koolearn.com/product/c_20_14689.html" target="_blank">
+                <p class="p-title">
+                  <span class="p-flag">NEW</span>大学英语六级全程2班【2019年6月】
+                </p>
+                <p class="p-time">课时数：131</p>
+                <ul class="p-teacher-list">
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391542195818496_small.jpg"
+                      alt
+                    >
+                    <p class="p-teacher-name">王江涛</p>
+                  </li>
+
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//tfs.koolearn.com/class-teacher/img/201806/6410390927579287552_small.jpg"
+                      alt
+                    >
+                    <p class="p-teacher-name">李旭</p>
+                  </li>
+
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391816595574784_small.jpg"
+                      alt
+                    >
+                    <p class="p-teacher-name">唐迟</p>
+                  </li>
+                </ul>
+              </a>
+            </li>
+          </ul>
+          <ul class="p-gg-imgs-list">
+            <li class="p-item p-part1">
+              <a href="http://www.koolearn.com/ke/kaoyan2/" class="p-link" target="_blank">
+                <img class="p-bg-img" src="//file.koolearn.com/2017/1227/20171227031136951.jpg" alt>
+                <p class="p-title">2020考研政治进阶全程班</p>
+                <p class="p-info">阮晔 徐涛 刘源泉</p>
+              </a>
+            </li>
+            <li class="p-item p-part1">
+              <a href="http://www.koolearn.com/ke/kaoyan2/" class="p-link" target="_blank">
+                <img class="p-bg-img" src="//file.koolearn.com/2017/1219/20171219054251419.png" alt>
+                <p class="p-title">2020考研英语进阶全程班</p>
+                <p class="p-info">王江涛 李旭 唐静</p>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-    <div class="w">
-      <div class="btm-enter-wrap">
-        <p class="btm-word">老师好合作伙伴</p>
-        <a
-          class="btm-enter link"
-          @click.prevent="loadPage('zhaomu')"
-          target="_blank"
-        >如何入驻
-        </a>
+
+      <div class="p-content p-max-width-wrap detail-mid">
+        <div class="p-left-imgs-wrap" id="jp-left-imgs-dx-wrap">
+          <img
+            class="p-title-img"
+            src="//images.koolearn.com/shark/project/zt/2017/1205koolearn-home-gf/i/hot-course/hot-title-dx.png?f1cb1f"
+            alt
+          >
+          <ul class="p-imgs-list jp-left-imgs-list">
+            <li class="p-item p-selected">
+              <a class="p-link" href="http://www.koolearn.com/ke/kaoyan2/" target="_blank">
+                <img
+                  class="p-course-img"
+                  src="//file.koolearn.com/2018/0423/20180423111947336.jpg"
+                  alt
+                >
+                <p class="p-course-title">2020考研（签约）全程班</p>
+                <p class="p-course-info">零基础长线备考拼高分</p>
+              </a>
+            </li>
+            <li class="p-item">
+              <a class="p-link" href="http://www.koolearn.com/ke/kaoyan/" target="_blank">
+                <img
+                  class="p-course-img"
+                  src="//file.koolearn.com/2017/1219/20171219053817588.png"
+                  alt
+                >
+                <p class="p-course-title">2019考研复试</p>
+                <p class="p-course-info">科学辅导逆袭通关</p>
+              </a>
+            </li>
+            <li class="p-item">
+              <a
+                class="p-link"
+                href="http://www.koolearn.com/ke/cet/?from=shouye_daxue"
+                target="_blank"
+              >
+                <img
+                  class="p-course-img"
+                  src="//file.koolearn.com/2017/1219/20171219054016231.png"
+                  alt
+                >
+                <p class="p-course-title">四六级</p>
+                <p class="p-course-info">直击考点高分过级</p>
+              </a>
+            </li>
+          </ul>
+          <ul class="p-imgs-index jp-left-imgs-index-list">
+            <li class="p-item p-selected"></li>
+            <li class="p-item"></li>
+            <li class="p-item"></li>
+          </ul>
+        </div>
+        <div class="p-middle-content-wrap">
+          <ul class="p-course-list jp-get-hot-list-wrap" data-id="1281">
+            <li class="p-item p-r-border p-b-border">
+              <a class="p-link" href="//www.koolearn.com/product/c_2_13979.html" target="_blank">
+                <p class="p-title">
+                  <span class="p-flag">NEW</span>2020考研英语进阶全程春季1班（一、二可选）
+                </p>
+                <p class="p-time">课时数：267</p>
+                <ul class="p-teacher-list">
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391542195818496_small.jpg"
+                      alt
+                    >
+                    <p class="p-teacher-name">王江涛</p>
+                  </li>
+
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//tfs.koolearn.com/class-teacher/img/201806/6410390927579287552_small.jpg"
+                      alt
+                    >
+                    <p class="p-teacher-name">李旭</p>
+                  </li>
+
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//teacher.koocdn.com/teacher/picture/201901/1548926701500_small.jpg"
+                      alt
+                    >
+                    <p class="p-teacher-name">唐静</p>
+                  </li>
+                </ul>
+              </a>
+            </li>
+
+            <li class="p-item p-r-border p-b-border">
+              <a class="p-link" href="//www.koolearn.com/product/c_2_13970.html" target="_blank">
+                <p class="p-title">
+                  <span class="p-flag">NEW</span>2020考研政治进阶全程班
+                </p>
+                <p class="p-time">课时数：125</p>
+                <ul class="p-teacher-list">
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//tfs.koolearn.com/class-teacher/img/201804/6388639532102717440.JPG"
+                      alt
+                    >
+                    <p class="p-teacher-name">阮晔</p>
+                  </li>
+
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//tfs.koolearn.com/class-teacher/img/201804/6388639691649847296.JPG"
+                      alt
+                    >
+                    <p class="p-teacher-name">徐涛</p>
+                  </li>
+
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//tfs.koolearn.com/class-teacher/img/201804/6388639693042356224.JPG"
+                      alt
+                    >
+                    <p class="p-teacher-name">刘源泉</p>
+                  </li>
+                </ul>
+              </a>
+            </li>
+
+            <li class="p-item p-b-border">
+              <a class="p-link" href="//www.koolearn.com/product/c_19_14656.html" target="_blank">
+                <p class="p-title">
+                  <span class="p-flag">NEW</span>大学英语四级全程2班【2019年6月】
+                </p>
+                <p class="p-time">课时数：131</p>
+                <ul class="p-teacher-list">
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391542195818496_small.jpg"
+                      alt
+                    >
+                    <p class="p-teacher-name">王江涛</p>
+                  </li>
+
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//tfs.koolearn.com/class-teacher/img/201806/6410390927579287552_small.jpg"
+                      alt
+                    >
+                    <p class="p-teacher-name">李旭</p>
+                  </li>
+
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391816595574784_small.jpg"
+                      alt
+                    >
+                    <p class="p-teacher-name">唐迟</p>
+                  </li>
+                </ul>
+              </a>
+            </li>
+
+            <li class="p-item p-r-border">
+              <a class="p-link" href="//www.koolearn.com/product/c_20_14689.html" target="_blank">
+                <p class="p-title">
+                  <span class="p-flag">NEW</span>大学英语六级全程2班【2019年6月】
+                </p>
+                <p class="p-time">课时数：131</p>
+                <ul class="p-teacher-list">
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391542195818496_small.jpg"
+                      alt
+                    >
+                    <p class="p-teacher-name">王江涛</p>
+                  </li>
+
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//tfs.koolearn.com/class-teacher/img/201806/6410390927579287552_small.jpg"
+                      alt
+                    >
+                    <p class="p-teacher-name">李旭</p>
+                  </li>
+
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391816595574784_small.jpg"
+                      alt
+                    >
+                    <p class="p-teacher-name">唐迟</p>
+                  </li>
+                </ul>
+              </a>
+            </li>
+
+            <li class="p-item p-r-border">
+              <a class="p-link" href="//www.koolearn.com/product/c_20_14689.html" target="_blank">
+                <p class="p-title">
+                  <span class="p-flag">NEW</span>大学英语六级全程2班【2019年6月】
+                </p>
+                <p class="p-time">课时数：131</p>
+                <ul class="p-teacher-list">
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391542195818496_small.jpg"
+                      alt
+                    >
+                    <p class="p-teacher-name">王江涛</p>
+                  </li>
+
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//tfs.koolearn.com/class-teacher/img/201806/6410390927579287552_small.jpg"
+                      alt
+                    >
+                    <p class="p-teacher-name">李旭</p>
+                  </li>
+
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391816595574784_small.jpg"
+                      alt
+                    >
+                    <p class="p-teacher-name">唐迟</p>
+                  </li>
+                </ul>
+              </a>
+            </li>
+
+            <li class="p-item">
+              <a class="p-link" href="//www.koolearn.com/product/c_20_14689.html" target="_blank">
+                <p class="p-title">
+                  <span class="p-flag">NEW</span>大学英语六级全程2班【2019年6月】
+                </p>
+                <p class="p-time">课时数：131</p>
+                <ul class="p-teacher-list">
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391542195818496_small.jpg"
+                      alt
+                    >
+                    <p class="p-teacher-name">王江涛</p>
+                  </li>
+
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//tfs.koolearn.com/class-teacher/img/201806/6410390927579287552_small.jpg"
+                      alt
+                    >
+                    <p class="p-teacher-name">李旭</p>
+                  </li>
+
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391816595574784_small.jpg"
+                      alt
+                    >
+                    <p class="p-teacher-name">唐迟</p>
+                  </li>
+                </ul>
+              </a>
+            </li>
+          </ul>
+          <ul class="p-gg-imgs-list">
+            <li class="p-item p-part1">
+              <a href="http://www.koolearn.com/ke/kaoyan2/" class="p-link" target="_blank">
+                <img class="p-bg-img" src="//file.koolearn.com/2017/1227/20171227031136951.jpg" alt>
+                <p class="p-title">2020考研政治进阶全程班</p>
+                <p class="p-info">阮晔 徐涛 刘源泉</p>
+              </a>
+            </li>
+            <li class="p-item p-part1">
+              <a href="http://www.koolearn.com/ke/kaoyan2/" class="p-link" target="_blank">
+                <img class="p-bg-img" src="//file.koolearn.com/2017/1219/20171219054251419.png" alt>
+                <p class="p-title">2020考研英语进阶全程班</p>
+                <p class="p-info">王江涛 李旭 唐静</p>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="btm-banner-wrap">
-        <origin-banner></origin-banner>
+
+      <div class="p-content p-max-width-wrap detail-bottom">
+        <div class="p-left-imgs-wrap" id="jp-left-imgs-dx-wrap">
+          <img
+            class="p-title-img"
+            src="//images.koolearn.com/shark/project/zt/2017/1205koolearn-home-gf/i/hot-course/hot-title-dx.png?f1cb1f"
+            alt
+          >
+          <ul class="p-imgs-list jp-left-imgs-list">
+            <li class="p-item p-selected">
+              <a class="p-link" href="http://www.koolearn.com/ke/kaoyan2/" target="_blank">
+                <img
+                  class="p-course-img"
+                  src="//file.koolearn.com/2018/0423/20180423111947336.jpg"
+                  alt
+                >
+                <p class="p-course-title">2020考研（签约）全程班</p>
+                <p class="p-course-info">零基础长线备考拼高分</p>
+              </a>
+            </li>
+            <li class="p-item">
+              <a class="p-link" href="http://www.koolearn.com/ke/kaoyan/" target="_blank">
+                <img
+                  class="p-course-img"
+                  src="//file.koolearn.com/2017/1219/20171219053817588.png"
+                  alt
+                >
+                <p class="p-course-title">2019考研复试</p>
+                <p class="p-course-info">科学辅导逆袭通关</p>
+              </a>
+            </li>
+            <li class="p-item">
+              <a
+                class="p-link"
+                href="http://www.koolearn.com/ke/cet/?from=shouye_daxue"
+                target="_blank"
+              >
+                <img
+                  class="p-course-img"
+                  src="//file.koolearn.com/2017/1219/20171219054016231.png"
+                  alt
+                >
+                <p class="p-course-title">四六级</p>
+                <p class="p-course-info">直击考点高分过级</p>
+              </a>
+            </li>
+          </ul>
+          <ul class="p-imgs-index jp-left-imgs-index-list">
+            <li class="p-item p-selected"></li>
+            <li class="p-item"></li>
+            <li class="p-item"></li>
+          </ul>
+        </div>
+        <div class="p-middle-content-wrap">
+          <ul class="p-course-list jp-get-hot-list-wrap" data-id="1281">
+            <li class="p-item p-r-border p-b-border">
+              <a class="p-link" href="//www.koolearn.com/product/c_2_13979.html" target="_blank">
+                <p class="p-title">
+                  <span class="p-flag">NEW</span>2020考研英语进阶全程春季1班（一、二可选）
+                </p>
+                <p class="p-time">课时数：267</p>
+                <ul class="p-teacher-list">
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391542195818496_small.jpg"
+                      alt
+                    >
+                    <p class="p-teacher-name">王江涛</p>
+                  </li>
+
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//tfs.koolearn.com/class-teacher/img/201806/6410390927579287552_small.jpg"
+                      alt
+                    >
+                    <p class="p-teacher-name">李旭</p>
+                  </li>
+
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//teacher.koocdn.com/teacher/picture/201901/1548926701500_small.jpg"
+                      alt
+                    >
+                    <p class="p-teacher-name">唐静</p>
+                  </li>
+                </ul>
+              </a>
+            </li>
+
+            <li class="p-item p-r-border p-b-border">
+              <a class="p-link" href="//www.koolearn.com/product/c_2_13970.html" target="_blank">
+                <p class="p-title">
+                  <span class="p-flag">NEW</span>2020考研政治进阶全程班
+                </p>
+                <p class="p-time">课时数：125</p>
+                <ul class="p-teacher-list">
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//tfs.koolearn.com/class-teacher/img/201804/6388639532102717440.JPG"
+                      alt
+                    >
+                    <p class="p-teacher-name">阮晔</p>
+                  </li>
+
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//tfs.koolearn.com/class-teacher/img/201804/6388639691649847296.JPG"
+                      alt
+                    >
+                    <p class="p-teacher-name">徐涛</p>
+                  </li>
+
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//tfs.koolearn.com/class-teacher/img/201804/6388639693042356224.JPG"
+                      alt
+                    >
+                    <p class="p-teacher-name">刘源泉</p>
+                  </li>
+                </ul>
+              </a>
+            </li>
+
+            <li class="p-item p-b-border">
+              <a class="p-link" href="//www.koolearn.com/product/c_19_14656.html" target="_blank">
+                <p class="p-title">
+                  <span class="p-flag">NEW</span>大学英语四级全程2班【2019年6月】
+                </p>
+                <p class="p-time">课时数：131</p>
+                <ul class="p-teacher-list">
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391542195818496_small.jpg"
+                      alt
+                    >
+                    <p class="p-teacher-name">王江涛</p>
+                  </li>
+
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//tfs.koolearn.com/class-teacher/img/201806/6410390927579287552_small.jpg"
+                      alt
+                    >
+                    <p class="p-teacher-name">李旭</p>
+                  </li>
+
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391816595574784_small.jpg"
+                      alt
+                    >
+                    <p class="p-teacher-name">唐迟</p>
+                  </li>
+                </ul>
+              </a>
+            </li>
+
+            <li class="p-item p-r-border">
+              <a class="p-link" href="//www.koolearn.com/product/c_20_14689.html" target="_blank">
+                <p class="p-title">
+                  <span class="p-flag">NEW</span>大学英语六级全程2班【2019年6月】
+                </p>
+                <p class="p-time">课时数：131</p>
+                <ul class="p-teacher-list">
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391542195818496_small.jpg"
+                      alt
+                    >
+                    <p class="p-teacher-name">王江涛</p>
+                  </li>
+
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//tfs.koolearn.com/class-teacher/img/201806/6410390927579287552_small.jpg"
+                      alt
+                    >
+                    <p class="p-teacher-name">李旭</p>
+                  </li>
+
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391816595574784_small.jpg"
+                      alt
+                    >
+                    <p class="p-teacher-name">唐迟</p>
+                  </li>
+                </ul>
+              </a>
+            </li>
+
+            <li class="p-item p-r-border">
+              <a class="p-link" href="//www.koolearn.com/product/c_20_14689.html" target="_blank">
+                <p class="p-title">
+                  <span class="p-flag">NEW</span>大学英语六级全程2班【2019年6月】
+                </p>
+                <p class="p-time">课时数：131</p>
+                <ul class="p-teacher-list">
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391542195818496_small.jpg"
+                      alt
+                    >
+                    <p class="p-teacher-name">王江涛</p>
+                  </li>
+
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//tfs.koolearn.com/class-teacher/img/201806/6410390927579287552_small.jpg"
+                      alt
+                    >
+                    <p class="p-teacher-name">李旭</p>
+                  </li>
+
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391816595574784_small.jpg"
+                      alt
+                    >
+                    <p class="p-teacher-name">唐迟</p>
+                  </li>
+                </ul>
+              </a>
+            </li>
+
+            <li class="p-item">
+              <a class="p-link" href="//www.koolearn.com/product/c_20_14689.html" target="_blank">
+                <p class="p-title">
+                  <span class="p-flag">NEW</span>大学英语六级全程2班【2019年6月】
+                </p>
+                <p class="p-time">课时数：131</p>
+                <ul class="p-teacher-list">
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391542195818496_small.jpg"
+                      alt
+                    >
+                    <p class="p-teacher-name">王江涛</p>
+                  </li>
+
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//tfs.koolearn.com/class-teacher/img/201806/6410390927579287552_small.jpg"
+                      alt
+                    >
+                    <p class="p-teacher-name">李旭</p>
+                  </li>
+
+                  <li class="p-teacher-item">
+                    <img
+                      class="p-teacher-avatar"
+                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391816595574784_small.jpg"
+                      alt
+                    >
+                    <p class="p-teacher-name">唐迟</p>
+                  </li>
+                </ul>
+              </a>
+            </li>
+          </ul>
+          <ul class="p-gg-imgs-list">
+            <li class="p-item p-part1">
+              <a href="http://www.koolearn.com/ke/kaoyan2/" class="p-link" target="_blank">
+                <img class="p-bg-img" src="//file.koolearn.com/2017/1227/20171227031136951.jpg" alt>
+                <p class="p-title">2020考研政治进阶全程班</p>
+                <p class="p-info">阮晔 徐涛 刘源泉</p>
+              </a>
+            </li>
+            <li class="p-item p-part1">
+              <a href="http://www.koolearn.com/ke/kaoyan2/" class="p-link" target="_blank">
+                <img class="p-bg-img" src="//file.koolearn.com/2017/1219/20171219054251419.png" alt>
+                <p class="p-title">2020考研英语进阶全程班</p>
+                <p class="p-info">王江涛 李旭 唐静</p>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
+      <!-- 为什么选择老师好 -->
+      <div class="w">
+        <div class="capital">
+          <div class="capital-ti">
+            <img
+              class="capital-ti__img"
+              src="//images.koolearn.com/shark/project/zt/2017/0918koolearn-home-gf/i/content/why-choose-title.png?cf9c3e"
+            >
+          </div>
+          <div class="capital-list">
+            <div class="capital-list-box">
+              <a>
+                <img class="capital-list-box__img" src="http://oss.lshao.cn/images/why_icon1.png">
+                <div class="p-capital-info">
+                  <h3 class="capital-list-box__h">三大平台终端</h3>
+                  <p class="capital-list-box__p">多客户端支持
+                    <br>Windows / Android / iOS平台
+                  </p>
+                </div>
+              </a>
+            </div>
+            <div class="capital-list-box">
+              <a>
+                <img class="capital-list-box__img" src="http://oss.lshao.cn/images/why_icon2.png">
+                <div class="p-capital-info">
+                  <h3 class="capital-list-box__h">闭环在线辅导</h3>
+                  <p class="capital-list-box__p">微课视频、虚拟教室、无纸化写作业
+                    <br>在线考试、在线1对1、成绩统计
+                  </p>
+                </div>
+              </a>
+            </div>
+            <div class="capital-list-box">
+              <a>
+                <img class="capital-list-box__img" src="http://oss.lshao.cn/images/why_icon3.png">
+                <div class="p-capital-info">
+                  <h3 class="capital-list-box__h">独创专利技术</h3>
+                  <p class="capital-list-box__p">Pad上手写作业并能编辑
+                    <br>笔迹、自动批改作业、查看答案和填空题数字识别
+                  </p>
+                </div>
+              </a>
+            </div>
+            <div class="capital-list-box">
+              <a>
+                <img class="capital-list-box__img" src="http://oss.lshao.cn/images/why_icon4.png">
+                <div class="p-capital-info">
+                  <h3 class="capital-list-box__h">双师课堂教学</h3>
+                  <p class="capital-list-box__p">双师课堂: 名师精品课
+                    <br>辅导老师闭环在线教、随时随地学
+                  </p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 优质合作机构 -->
+
+      <div class="w" style="padding-bottom: 60px;">
+        <div class="capital">
+          <div class="capital-ti">
+            <img
+              class="capital-ti__img"
+              src="//images.koolearn.com/shark/project/zt/2017/0918koolearn-home-gf/i/content/why-choose-title.png?cf9c3e"
+            >
+          </div>
+          <ul class="coop">
+            <li class="item">
+              <img src="//images.koolearn.com/fe_upload/2018/1/2018-1-9-1515489909341.png">
+            </li>
+            <li class="item">
+              <img src="//images.koolearn.com/shark/project/zt/2017/0918koolearn-home-gf/i/content/outfit_duona.png?3236a6">
+            </li>
+            <li class="item">
+              <img src="//images.koolearn.com/fe_upload/2018/1/2018-1-9-1515489909341.png">
+            </li>
+            <li class="item">
+              <img src="//images.koolearn.com/shark/project/zt/2017/0918koolearn-home-gf/i/content/outfit_duona.png?3236a6">
+            </li>
+            <li class="item">
+              <img src="//images.koolearn.com/fe_upload/2018/1/2018-1-9-1515489909341.png">
+            </li>
+            <li class="item">
+              <img src="//images.koolearn.com/shark/project/zt/2017/0918koolearn-home-gf/i/content/outfit_duona.png?3236a6">
+            </li>
+            <li class="item">
+              <img src="//images.koolearn.com/fe_upload/2018/1/2018-1-9-1515489909341.png">
+            </li>
+            <li class="item">
+              <img src="//images.koolearn.com/shark/project/zt/2017/0918koolearn-home-gf/i/content/outfit_duona.png?3236a6">
+            </li>
+
+          </ul>
+        </div>
+      </div>
+
+      <!-- <div class="w detail-top debug">abc</div> -->
     </div>
   </div>
 </template>
@@ -149,6 +1680,7 @@ import { videoPlayer } from "vue-video-player";
 export default {
   data() {
     return {
+      hotItemIndex: 0,
       videos: [
         "https://lshao.oss-cn-beijing.aliyuncs.com/lshao2.0.mp4",
         "https://lshao.oss-cn-beijing.aliyuncs.com/%E8%80%81%E5%B8%88%E5%A5%BD%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%975.0%28%E9%AB%98%E6%B8%85%29.mp4",
@@ -370,26 +1902,26 @@ export default {
 </script>
 <style rel="stylesheet/scss" lang="scss">
 .w .btm-enter-wrap {
-    float: left;
-    width: 110px;
-    text-align: center;
-    margin: 0 19px;
-    position: relative;
-    height: 80px;
+  float: left;
+  width: 110px;
+  text-align: center;
+  margin: 0 19px;
+  position: relative;
+  height: 80px;
 }
-.w  .btm-enter-wrap .btm-word {
-    font-size: 15px;
-    color: #000;
-    padding-top: 11px;
-    padding-bottom: 3px;
+.w .btm-enter-wrap .btm-word {
+  font-size: 15px;
+  color: #000;
+  padding-top: 11px;
+  padding-bottom: 3px;
 }
 .w .btm-enter-wrap .btm-enter {
-    color: #fd4f02;
-    font-size: 14px;
-    border: 1px solid #fd4f02;
-    padding: 5px 10px;
-    border-radius: 20px;
-    text-decoration: none;
+  color: #fd4f02;
+  font-size: 14px;
+  border: 1px solid #fd4f02;
+  padding: 5px 10px;
+  border-radius: 20px;
+  text-decoration: none;
 }
 
 .orgin {
@@ -424,27 +1956,27 @@ h3.title {
   margin-top: -0.7em;
   margin-left: -1.5em;
 }
-.p-course-list .p-item {
-  float: left;
-  box-sizing: border-box;
-  width: 216px;
-  height: 192px;
-  border-left: 1px solid #c0c4cc;
-  border-top: 1px solid #c0c4cc;
-  border-bottom: 1px solid #c0c4cc;
-}
-.p-course-list .p-item:last-child {
-  border-right: 1px solid #c0c4cc;
-}
+// .p-course-list .p-item {
+//   float: left;
+//   box-sizing: border-box;
+//   width: 216px;
+//   height: 192px;
+//   border-left: 1px solid #c0c4cc;
+//   border-top: 1px solid #c0c4cc;
+//   border-bottom: 1px solid #c0c4cc;
+// }
+// .p-course-list .p-item:last-child {
+//   border-right: 1px solid #c0c4cc;
+// }
 
-.p-course-list .p-item .p-title {
-  height: 34px;
-  font-size: 14px;
-  line-height: 16px;
-  color: #545e64;
-  word-break: break-all;
-  overflow: hidden;
-}
+// .p-course-list .p-item .p-title {
+//   height: 34px;
+//   font-size: 14px;
+//   line-height: 16px;
+//   color: #545e64;
+//   word-break: break-all;
+//   overflow: hidden;
+// }
 
 .p-course-list .p-item .p-title .p-flag {
   display: inline-block;
@@ -463,7 +1995,7 @@ h3.title {
   margin-top: 6px;
   font-size: 12px;
   line-height: 16px;
-  color: #00b2b8;
+  color: #4d7fff;
 }
 .p-course-list .p-item .p-price {
   color: #29d;
@@ -504,5 +2036,676 @@ h4 {
   font-size: 18px;
   margin-top: 0px;
   margin-left: 565px;
+}
+
+.radius {
+  width: 1080px;
+  height: 450px;
+  background-color: red;
+  border-radius: 24px;
+}
+
+.radius .radius-left {
+  width: 240px;
+  height: 450px;
+  background-color: #2b333b;
+}
+
+.radius .radius-left span {
+  width: 70px;
+  height: 17px;
+  font-size: 18px;
+  font-weight: normal;
+  font-stretch: normal;
+  letter-spacing: 0px;
+  color: #e2ebff;
+  top: 27px;
+  position: relative;
+}
+
+.radius .radius-left ul {
+  position: relative;
+  top: 20px;
+}
+
+.radius .radius-left ul li {
+  margin-right: 20px;
+  margin-top: 20px;
+  float: left;
+  height: 14px;
+
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  letter-spacing: 0px;
+  color: #e2ebff;
+}
+
+.radius .radius-left .top {
+  margin-left: 20px;
+  margin-right: 20px;
+  height: 104px;
+  // background-color: yellow;
+  border-bottom: 1px solid rgba($color: #e7e7e7, $alpha: 0.12);
+}
+
+.radius .radius-left .mid {
+  height: 164px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-bottom: 1px solid rgba($color: #e7e7e7, $alpha: 0.12);
+}
+
+.radius .radius-left .botton {
+  margin-left: 20px;
+  margin-right: 20px;
+  height: 182px;
+}
+
+.radius .radius-right {
+  width: 240px;
+  height: 182px;
+  background-color: green;
+  border-radius: 24px;
+}
+
+.p-content {
+  margin-top: 20px;
+}
+
+body .p-max-width-wrap {
+  box-sizing: border-box;
+  width: 1080px;
+  margin: 0 auto;
+  padding-top: 60px;
+}
+
+.p-content .p-title-wrap {
+  position: relative;
+  line-height: 20px;
+  padding: 0 15px;
+}
+.p-content .p-title-wrap .p-title:before {
+  content: "";
+  display: inline-block;
+  height: 16px;
+  width: 4px;
+  margin-right: 10px;
+  background-color: #4d7fff;
+}
+
+.p-content .p-title-wrap .p-title {
+  display: inline-block;
+  margin-right: 43px;
+  font-size: 20px;
+  color: #4d7fff;
+}
+.p-content .p-title-wrap .p-tabs-list {
+  display: inline-block;
+  vertical-align: text-bottom;
+}
+
+.p-content .p-title-wrap .p-tabs-list > .p-item.p-selected,
+.p-content .p-title-wrap .p-tabs-list > .p-item:hover {
+  color: #4d7fff;
+}
+
+.p-content .p-title-wrap .p-tabs-list > .p-item.p-selected {
+  // display: block;
+}
+
+.p-content .p-title-wrap .p-tabs-list > .p-item.p-no-selected {
+  // display: none;
+  color: #9fadb5;
+}
+
+.p-content .p-title-wrap .p-tabs-list > .p-item:first-child {
+  margin-left: 0;
+}
+.p-content .p-title-wrap .p-tabs-list > .p-item {
+  float: left;
+  margin-left: 30px;
+  line-height: 20px;
+  font-size: 14px;
+  color: #9fadb5;
+  cursor: pointer;
+}
+
+.p-content .p-title-wrap .p-more-link {
+  position: absolute;
+  right: 15px;
+  top: 9px;
+  display: inline-block;
+  width: 32px;
+  height: 10px;
+  background-position: -190px 0;
+  text-decoration: none;
+}
+
+.p-content .p-class-wrap {
+  position: relative;
+  min-height: 296px;
+  padding-top: 12px;
+}
+
+.p-content .p-class-wrap .p-class-list.p-selected {
+  z-index: 2;
+  display: block;
+}
+
+.p-content .p-class-wrap .p-class-list.p-no-selected {
+  display: none;
+}
+.p-content .p-class-wrap .p-class-list {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  display: none;
+}
+
+.p-content .p-class-wrap .p-class-list .p-item {
+  box-sizing: border-box;
+  width: 20%;
+  padding-top: 20px;
+  float: left;
+}
+
+.p-content .p-class-wrap .p-class-list .p-item:first-child .p-link,
+.p-content .p-class-wrap .p-class-list .p-item:hover .p-link {
+  border-left-color: #fff;
+}
+
+.p-content .p-class-wrap .p-class-list .p-item .p-link {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-decoration: none;
+}
+body a,
+body a:active,
+body a:hover {
+  outline: 0 !important;
+  text-decoration: none;
+}
+
+.p-content .p-class-wrap .p-class-list .p-item .p-link .p-img {
+  width: 200px;
+  height: 130px;
+  border-radius: 10px;
+}
+fieldset,
+img {
+  border: 0;
+}
+
+.p-content .p-class-wrap .p-class-list .p-item .p-link .p-info-wrap {
+  box-sizing: border-box;
+  padding: 20px 10px;
+  text-align: left;
+  width: 200px;
+}
+
+.p-content .p-class-wrap .p-class-list .p-item .p-link .p-info-wrap .p-title {
+  height: 32px;
+  word-break: break-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  line-height: 16px;
+  color: #545e64;
+}
+
+.p-content .p-class-wrap .p-class-list .p-item .p-link .p-info-wrap .p-time {
+  margin-top: 15px;
+  font-size: 12px;
+  line-height: 12px;
+  color: #999999;
+}
+
+.p-content
+  .p-class-wrap
+  .p-class-list
+  .p-item
+  .p-link
+  .p-info-wrap
+  .p-item-footer {
+  position: relative;
+  margin-top: 12px;
+  height: 23px;
+  line-height: 22px;
+}
+
+.p-content
+  .p-class-wrap
+  .p-class-list
+  .p-item
+  .p-link
+  .p-info-wrap
+  .p-item-footer
+  .p-teacher {
+  display: inline-block;
+  font-size: 12px;
+  color: #828282;
+  vertical-align: middle;
+  width: 96px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.p-content
+  .p-class-wrap
+  .p-class-list
+  .p-item
+  .p-link
+  .p-info-wrap
+  .p-item-footer
+  .p-price {
+  position: absolute;
+  right: 2px;
+  top: 0;
+  display: inline-block;
+  font-size: 22px;
+  color: #ff8330;
+}
+
+.p-content
+  .p-class-wrap
+  .p-class-list
+  .p-item
+  .p-link
+  .p-info-wrap
+  .p-item-footer
+  .p-price
+  .p-unit {
+  font-size: 14px;
+}
+ol,
+ul {
+  margin-top: 0;
+  margin-bottom: 0px;
+}
+.ad {
+  background-color: #ffffff;
+}
+
+.section2 {
+  background-color: #f5f8fb;
+  padding-top: 60px;
+}
+
+.section2 .detail-top {
+  padding-top: 60px;
+  height: 380px;
+}
+
+.section2 .detail-mid {
+  margin-top: 60px;
+  height: 380px;
+}
+
+.section2 .detail-bottom {
+  margin-top: 60px;
+  height: 380px;
+}
+
+.debug {
+  background-color: red;
+  height: 1000px;
+}
+img {
+  display: inline;
+}
+.p-item {
+  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+}
+// 动画不生效
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 2s ease-out;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
+.p-hot-course-wrap.p-green-wrap .p-content {
+  border-bottom: 1px solid #54d2d5;
+}
+.p-content {
+  position: relative;
+  height: 384px;
+  background-color: #fff;
+}
+body .p-max-width-wrap {
+  box-sizing: border-box;
+  width: 1080px;
+  margin: 0 auto;
+}
+.p-hot-course-wrap.p-green-wrap .p-content .p-left-imgs-wrap,
+.p-hot-course-wrap.p-green-wrap .p-content .p-middle-content-wrap .p-flag {
+  background-color: #54d2d5;
+}
+.p-content .p-left-imgs-wrap {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: inline-block;
+  width: 226px;
+  height: 380px;
+  text-align: center;
+  vertical-align: top;
+  cursor: default;
+  background-color: green;
+}
+.p-content .p-left-imgs-wrap .p-title-img {
+  margin-top: 25px;
+}
+.p-content .p-left-imgs-wrap .p-imgs-list {
+  position: relative;
+  margin-top: 35px;
+  height: 250px;
+  overflow: hidden;
+  background-image: url(//images.koolearn.com/shark/project/zt/2017/1205koolearn-home-gf/i/hot-course/left-imgs-bg.png?b0bf3d);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.p-content .p-left-imgs-wrap .p-imgs-list {
+  position: relative;
+  margin-top: 35px;
+  height: 250px;
+  overflow: hidden;
+  background-image: url(//images.koolearn.com/shark/project/zt/2017/1205koolearn-home-gf/i/hot-course/left-imgs-bg.png?b0bf3d);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.p-content .p-left-imgs-wrap .p-imgs-list .p-item {
+  text-align: center;
+  position: absolute;
+  left: 240px;
+  width: 188px;
+  filter: alpha(opacity=0);
+  -moz-opacity: 0;
+  opacity: 0;
+  z-index: 0;
+}
+.p-content .p-left-imgs-wrap .p-imgs-list .p-item {
+  text-align: center;
+  position: absolute;
+  left: 240px;
+  width: 188px;
+  filter: alpha(opacity=0);
+  -moz-opacity: 0;
+  opacity: 0;
+  z-index: 0;
+}
+.p-content .p-left-imgs-wrap .p-imgs-list .p-item .p-link {
+  position: relative;
+  left: 0;
+  display: inline-block;
+  width: 188px;
+  height: 250px;
+  box-sizing: border-box;
+  padding: 0 24px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.p-content .p-left-imgs-wrap .p-imgs-list .p-item .p-course-img {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 188px;
+  height: 250px;
+}
+.p-content .p-left-imgs-wrap .p-imgs-list .p-item .p-course-title {
+  position: relative;
+  margin-top: 25px;
+  font-size: 14px;
+  line-height: 20px;
+}
+.p-hot-course-wrap.p-green-wrap .p-content .p-left-imgs-wrap .p-course-title,
+.p-hot-course-wrap.p-green-wrap .p-content .p-middle-content-wrap .p-time {
+  color: #00b2b8;
+}
+.p-content .p-left-imgs-wrap .p-imgs-list .p-item .p-course-info {
+  position: relative;
+  font-size: 12px;
+  line-height: 20px;
+  color: #828282;
+}
+.p-content .p-middle-content-wrap {
+  position: absolute;
+  display: inline-block;
+  box-sizing: border-box;
+  width: 854px;
+  left: 226px;
+  top: 0px;
+}
+.p-content .p-middle-content-wrap .p-course-list {
+  display: inline-block;
+  width: 672px;
+  margin-right: 227px;
+}
+.p-content .p-middle-content-wrap .p-course-list .p-item.p-b-border {
+  border-bottom: 1px solid #f4f4f4;
+}
+.p-content .p-middle-content-wrap .p-course-list .p-item.p-r-border {
+  border-right: 1px solid #f4f4f4;
+}
+.p-content .p-middle-content-wrap .p-course-list .p-item {
+  float: left;
+  box-sizing: border-box;
+  width: 215px;
+  height: 192px;
+}
+.p-content .p-middle-content-wrap .p-course-list .p-item .p-link {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 237px;
+  height: 192px;
+  padding: 25px 40px 0 25px;
+}
+.p-content .p-middle-content-wrap .p-course-list .p-item .p-title {
+  height: 34px;
+  font-size: 14px;
+  line-height: 16px;
+  color: #545e64;
+  word-break: break-all;
+  overflow: hidden;
+}
+.p-content .p-middle-content-wrap .p-course-list .p-item .p-title .p-flag {
+  display: inline-block;
+  padding: 3px;
+  margin-right: 5px;
+  font-size: 12px;
+  line-height: 12px;
+  color: #fff;
+  border-radius: 3px;
+}
+.p-hot-course-wrap.p-green-wrap .p-content .p-left-imgs-wrap,
+.p-hot-course-wrap.p-green-wrap .p-content .p-middle-content-wrap .p-flag {
+  background-color: #54d2d5;
+}
+
+.p-content .p-middle-content-wrap .p-course-list .p-item .p-time {
+  height: 32px;
+  overflow: hidden;
+  margin-top: 6px;
+  font-size: 12px;
+  line-height: 16px;
+}
+.p-hot-course-wrap.p-green-wrap .p-content .p-left-imgs-wrap .p-course-title,
+.p-hot-course-wrap.p-green-wrap .p-content .p-middle-content-wrap .p-time {
+  color: #00b2b8;
+}
+.p-content .p-middle-content-wrap .p-course-list .p-item .p-teacher-list {
+  margin-top: 15px;
+}
+.p-content
+  .p-middle-content-wrap
+  .p-course-list
+  .p-item
+  .p-teacher-list
+  .p-teacher-item:first-child {
+  margin-left: 0;
+}
+.p-content
+  .p-middle-content-wrap
+  .p-course-list
+  .p-item
+  .p-teacher-list
+  .p-teacher-item {
+  float: left;
+  width: 40px;
+  height: 66px;
+  margin-left: 10px;
+  text-align: center;
+  overflow: hidden;
+}
+.p-content
+  .p-middle-content-wrap
+  .p-course-list
+  .p-item
+  .p-teacher-list
+  .p-teacher-item
+  .p-teacher-avatar {
+  display: inline-block;
+  width: 38px;
+  height: 38px;
+  border: 1px solid #f4f4f4;
+}
+.p-content
+  .p-middle-content-wrap
+  .p-course-list
+  .p-item
+  .p-teacher-list
+  .p-teacher-item
+  .p-teacher-name {
+  margin-top: 8px;
+  font-size: 12px;
+  line-height: 12px;
+  color: #828282;
+}
+
+.p-content .p-middle-content-wrap .p-gg-imgs-list {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.p-content .p-middle-content-wrap .p-gg-imgs-list .p-item {
+  height: 190px;
+}
+
+.p-content .p-middle-content-wrap .p-gg-imgs-list .p-item .p-link {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  width: 210px;
+  height: 192px;
+  padding: 25px 20px 0 25px;
+  word-break: break-all;
+  overflow: hidden;
+}
+.p-content .p-middle-content-wrap .p-gg-imgs-list .p-item .p-bg-img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  height: 190px;
+  width: 237px;
+}
+.p-content .p-middle-content-wrap .p-gg-imgs-list .p-item .p-bg-img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  height: 190px;
+  width: 237px;
+}
+.p-hot-course-wrap.p-green-wrap
+  .p-content
+  .p-middle-content-wrap
+  .p-gg-imgs-list
+  .p-item
+  .p-info {
+  color: #8295af;
+}
+.p-content .p-middle-content-wrap .p-gg-imgs-list .p-item .p-info {
+  position: relative;
+  left: 0;
+  margin-top: 6px;
+  font-size: 12px;
+  line-height: 12px;
+}
+
+.capital {
+  width: 1190px;
+  padding-top: 60px;
+  margin: 0 auto;
+  clear: both;
+  float: none;
+}
+.capital .capital-ti {
+  text-align: center;
+}
+fieldset,
+img {
+  border: 0;
+}
+
+.capital .capital-list .capital-list-box:first-child {
+  margin-left: 0;
+}
+.capital .capital-list .capital-list-box {
+  width: 262px;
+  height: 262px;
+  display: inline-block;
+  box-sizing: border-box;
+  float: left;
+  margin-left: 10px;
+  padding-top: 58px;
+  text-align: center;
+}
+
+.capital .capital-list .capital-list-box .p-pr23 {
+  padding-right: 23px !important;
+}
+
+.capital .capital-list .capital-list-box .capital-list-box__img {
+  height: 70px;
+  width: 70px;
+}
+
+.capital .capital-list .capital-list-box .p-capital-info {
+  // display: inline-block;
+  text-align: center;
+}
+.capital .capital-list .capital-list-box .p-capital-info .capital-list-box__h {
+  color: #545e64;
+  font-size: 18px;
+  line-height: 18px;
+}
+.capital .capital-list .capital-list-box .p-capital-info .capital-list-box__p {
+  line-height: 20px;
+  color: #9fadb5;
+  font-size: 14px;
+}
+.capital .coop{
+  margin-top: 20px;
+  margin-bottom: 40px;
+  color: #9fadb5;
+}
+.capital .coop .item{
+  float: left;
+    margin-right: 93px;
+    margin-top: 22px;
 }
 </style>

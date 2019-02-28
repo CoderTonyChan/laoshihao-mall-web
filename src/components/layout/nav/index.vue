@@ -14,20 +14,20 @@
             <li class="link city" @click="change('广西')">广西</li>
           </ul>
         </span>
-        <span class="user not-login" v-show="loginName == null || loginName === ''">
+        <!-- <span class="user not-login" v-show="loginName == null || loginName === ''">
           <span class="link js-login" @click="goSignIn">登录</span>
           <span class="link js-register" @click="goSignUp">注册</span>
-        </span>
-        <span class="user login" v-show="loginName != null && loginName !== ''">
+        </span> -->
+        <!-- <span class="user login" v-show="loginName != null && loginName !== ''">
           <span class="link-text">
             欢迎，
             <span class="username">{{loginName}}</span>
           </span>
           <span class="link js-logout" @click.prevent="logout">退出</span>
-        </span>
-        <span class="user">
+        </span> -->
+        <!-- <span class="user">
           <span class="link" @click.prevent="loadPage('download')">客户端下载</span>
-        </span>
+        </span> -->
       </div>
       <ul class="nav-list">
         <!-- <li class="nav-item">
@@ -39,12 +39,12 @@
         </li> -->
         
         <li class="nav-item register">
-          <a class="link" href="javascript:void(0)" @click.prevent="loadPage('user-order')">注册有礼</a>
+          <a class="link" href="javascript:void(0)"  @click="goSignUp">注册有礼</a>
         </li>
         
         <li class="nav-item">
           <span class="shu">|</span>
-          <a class="link" href="javascript:void(0)" @click.prevent="loadPage('user-order')">登录</a>
+          <a class="link" href="javascript:void(0)" @click="goSignIn">登录</a>
         </li>
         
         <li class="nav-item">
@@ -134,7 +134,7 @@ export default {
     border-radius: 10px;
     top: 5px;
     position: relative;
-    background: #444444 url(http://pn9jzw2t9.bkt.clouddn.com/register.png) 10px center no-repeat;
+    background: #444444 url(http://oss.lshao.cn/images/register.png) 10px center no-repeat;
 }
 
 .nav .register a{
