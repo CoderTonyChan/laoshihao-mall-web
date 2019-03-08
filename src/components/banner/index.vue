@@ -150,21 +150,21 @@ export default {
           title: "GRE",
           href: "detail/count"
         },
-        {
-          src: require("../../assets/image/banner/banner3.jpg"),
-          title: "日语",
-          href: "http://xxx.xxx.com"
-        },
-        {
-          src: require("../../assets/image/banner/banner4.jpg"),
-          title: "新概念英语",
-          href: "detail/forecast"
-        },
-        {
-          src: require("../../assets/image/banner/banner5.jpg"),
-          title: "中小学",
-          href: "detail/forecast"
-        }
+        // {
+        //   src: require("../../assets/image/banner/banner3.jpg"),
+        //   title: "日语",
+        //   href: "http://xxx.xxx.com"
+        // },
+        // {
+        //   src: require("../../assets/image/banner/banner4.jpg"),
+        //   title: "新概念英语",
+        //   href: "detail/forecast"
+        // },
+        // {
+        //   src: require("../../assets/image/banner/banner5.jpg"),
+        //   title: "中小学",
+        //   href: "detail/forecast"
+        // }
       ]
     };
   },
