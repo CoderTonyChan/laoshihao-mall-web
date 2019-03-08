@@ -1525,7 +1525,7 @@
               <a>
                 <img class="capital-list-box__img" src="http://oss.lshao.cn/images/why_icon3.png">
                 <div class="p-capital-info">
-                  <h3 class="capital-list-box__h">独创专利技术</h3>
+                  <h3 class="capital-list-box__h">手写作业编辑</h3>
                   <p class="capital-list-box__p">Pad上手写作业并能编辑
                     <br>笔迹、自动批改作业、查看答案和填空题数字识别
                   </p>
