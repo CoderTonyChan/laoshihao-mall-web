@@ -1548,7 +1548,6 @@
       </div>
 
       <!-- 优质合作机构 -->
-
       <div class="w" style="padding-bottom: 60px;">
         <div class="capital">
           <div class="capital-ti">
