@@ -690,7 +690,7 @@
     </div>
     <div class="section2">
       <div class="p-content p-max-width-wrap detail-top">
-        <div class="p-left-imgs-wrap" id="jp-left-imgs-dx-wrap" style="background-image: url(http://oss.lshao.cn/images/primary_bg.png);">
+        <div class="p-left-imgs-wrap" id="jp-left-imgs-dx-wrap" style="background-image: url(http://oss.lshao.cn/images/primary_bg1.png);">
           <!-- <img
             class="p-title-img"
             src="//images.koolearn.com/shark/project/zt/2017/1205koolearn-home-gf/i/hot-course/hot-title-dx.png?f1cb1f"
@@ -989,7 +989,7 @@
       </div>
 
       <div class="p-content p-max-width-wrap detail-mid">
-        <div class="p-left-imgs-wrap" id="jp-left-imgs-dx-wrap"  style="background-image: url(http://oss.lshao.cn/images/junior_bg.png);">
+        <div class="p-left-imgs-wrap" id="jp-left-imgs-dx-wrap"  style="background-image: url(http://oss.lshao.cn/images/junior_bg1.png);">
           
           <div class="top-banner">
             <j-school-banner />
@@ -1240,7 +1240,7 @@
       </div>
 
       <div class="p-content p-max-width-wrap detail-bottom">
-        <div class="p-left-imgs-wrap" id="jp-left-imgs-dx-wrap"   style="background-image: url(http://oss.lshao.cn/images/high_bg.png);">
+        <div class="p-left-imgs-wrap" id="jp-left-imgs-dx-wrap"   style="background-image: url(http://oss.lshao.cn/images/high_bg1.png);">
           
           <div class="top-banner">
             <h-school-banner />
