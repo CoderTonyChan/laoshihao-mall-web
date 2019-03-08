@@ -117,10 +117,10 @@
 }
 
 .footer .f-img{
-    display: inline;
+    display: block;
     position: absolute;
     right: 0;
-    margin-top: 46px;
+    margin-top: -99px;
 }
 
 .footer .f-table .item {
