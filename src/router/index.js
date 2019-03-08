@@ -137,7 +137,7 @@ export default [
         path: 'download',
         meta: {
           name: '客户端下载',
-          hideMainHeader: true
+          hideMainHeader: false
         },
         component: resolve => require(['views/about/download'], resolve)
       },

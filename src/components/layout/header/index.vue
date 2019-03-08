@@ -3,7 +3,7 @@
     <pc-nav/>
     <div class="header">
       <div class="w">
-        <img src="http://oss.lshao.cn/images/Logo.png" alt style="top: 27px;position: relative;">
+        <img src="http://oss.lshao.cn/images/Logo.png" alt style="top: 27px;position: relative;"  @click.prevent="goHome" class="link">
         <div class="search-con">
           <input class="search-input" v-model="searchInfo" id="search-input" placeholder="请输入课程名称">
           <button
@@ -16,16 +16,16 @@
           </button>
           <ul class="search-list">
             <li class="search-item register">
-              <a href="javascript:void(0)" class="link">注册有礼</a>
+              <a href="javascript:void(0)" class="link"  @click="goGoodsListPage('初三数学','')">初三数学</a>
             </li>
             <li class="search-item">
-              <a href="javascript:void(0)" class="link hightlight">登录</a>
+              <a href="javascript:void(0)" class="link hightlight" @click="goGoodsListPage('初一英语','初三数学')">初一英语</a>
             </li>
             <li class="search-item">
-              <a href="javascript:void(0)" class="link">我的订单</a>
+              <a href="javascript:void(0)" class="link" @click="goGoodsListPage('初二英语','初三数学')">初二英语</a>
             </li>
             <li class="search-item">
-              <a href="javascript:void(0)" class="link">我的中心</a>
+              <a href="javascript:void(0)" class="link" @click="goGoodsListPage('热门课程','初三数学')">热门课程</a>
             </li>
           </ul>
         </div>
@@ -34,7 +34,7 @@
           <span class="font link" @click.prevent="loadPage('user-center')">&nbsp;购物车</span><span class="hightlight">(0)</span>
         </div>
         <div class="download">
-          <span class="button link">客户端下载</span>
+          <span class="button link" @click.prevent="loadPage('download')" >客户端下载</span>
         </div>
       </div>
     </div>
@@ -93,8 +93,7 @@ export default {
 .header .search-con .search-input {
   border: none;
   width: 300px;
-  height: 12px;
-  
+  height: 20px;
   font-size: 12px;
   font-weight: normal;
   font-stretch: normal;
@@ -119,7 +118,7 @@ export default {
   position: relative;
   border: none;
   top: 8px;
-  left: 10px;
+  left: 30px;
 }
 
 .header .search-con .search-btn:focus {

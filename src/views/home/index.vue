@@ -6,44 +6,47 @@
           <div class="top">
             <span>小学科目</span>
             <ul>
-              <li>数学</li>
-              <li>英语</li>
-              <li>语文</li>
+              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('','小学')">数学</li>
+              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('','英语')">英语</li>
+              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('','语文')">语文</li>
             </ul>
           </div>
           <div class="mid">
             <span>初中科目</span>
             <ul>
-              <li>数学</li>
-              <li>英语</li>
-              <li>语文</li>
-              <li>物理</li>
-              <li>化学</li>
-              <li>政治</li>
-              <li>历史</li>
-              <li>地理</li>
-              <li>生物</li>
-              <li>信息科技</li>
+              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('','数学')">数学</li>
+              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('','英语')">英语</li>
+              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('','语文')">语文</li>
+              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('','物理')">物理</li>
+              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('','化学')">化学</li>
+              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('','政治')">政治</li>
+              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('','历史')">历史</li>
+              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('','地理')">地理</li>
+              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('','生物')">生物</li>
+              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('','信息科技')">信息科技</li>
             </ul>
           </div>
           <div class="botton">
             <span>高中科目</span>
             <ul>
-              <li>数学</li>
-              <li>英语</li>
-              <li>语文</li>
-              <li>物理</li>
-              <li>化学</li>
-              <li>政治</li>
-              <li>历史</li>
-              <li>地理</li>
-              <li>生物</li>
-              <li>信息科技</li>
+              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('','数学')">数学</li>
+              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('','英语')">英语</li>
+              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('','语文')">语文</li>
+              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('','物理')">物理</li>
+              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('','化学')">化学</li>
+              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('','政治')">政治</li>
+              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('','历史')">历史</li>
+              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('','地理')">地理</li>
+              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('','生物')">生物</li>
+              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('','信息科技')">信息科技</li>
             </ul>
           </div>
         </div>
 
-        <div class="radius-right"></div>
+        <div class="radius-right">
+          <!-- 123 -->
+        <pc-banner></pc-banner>
+        </div>
       </div>
       <div class="p-max-width-wrap p-content">
         <div class="p-title-wrap">
@@ -79,7 +82,7 @@
           <div class="p-class-wrap">
             <ul class="p-class-list p-selected" v-show="hotItemIndex === 0">
               <li class="p-item">
-                <a class="p-link" href="//www.koolearn.com/product/c_65_14415.html" target="_blank">
+                <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                   <img
                     class="p-img"
                     src="https://uploadimg.koolearn.com/upload/2019-01-25/e779e60cc78824667a98629ef1577476.jpg"
@@ -103,7 +106,7 @@
                 </a>
               </li>
               <li class="p-item">
-                <a class="p-link" href="//www.koolearn.com/product/c_65_14445.html" target="_blank">
+                <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                   <img
                     class="p-img"
                     src="https://uploadimg.koolearn.com/upload/2019-01-25/b0684af9926be01171ba5a5b1a833e6f.jpg"
@@ -122,7 +125,7 @@
                 </a>
               </li>
               <li class="p-item">
-                <a class="p-link" href="//www.koolearn.com/product/c_7_14767.html" target="_blank">
+                <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                   <img
                     class="p-img"
                     src="https://uploadimg.koolearn.com/upload/2019-02-17/bfe4595957cc35220154edc49fc19194.jpg"
@@ -141,7 +144,7 @@
                 </a>
               </li>
               <li class="p-item">
-                <a class="p-link" href="//www.koolearn.com/product/c_8_14760.html" target="_blank">
+                <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                   <img
                     class="p-img"
                     src="https://uploadimg.koolearn.com/upload/2019-02-15/840c47963cbfb4f1210a32966691e8d9.png"
@@ -160,7 +163,7 @@
                 </a>
               </li>
               <li class="p-item">
-                <a class="p-link" href="//www.koolearn.com/product/c_25_13963.html" target="_blank">
+                <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                   <img
                     class="p-img"
                     src="https://uploadimg.koolearn.com/upload/2019-01-04/431b551e8ccc5160e03ee00d634dfb8a.jpg"
@@ -180,7 +183,7 @@
 
             <ul class="p-class-list p-selected" v-show="hotItemIndex === 1">
               <li class="p-item">
-                <a class="p-link" href="//www.koolearn.com/product/c_2_13951.html" target="_blank">
+                <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                   <img
                     class="p-img"
                     src="https://uploadimg.koolearn.com/upload/2019-01-02/3aae374be24db0e90a244d48ed7eac08.jpg"
@@ -196,7 +199,7 @@
                 </a>
               </li>
               <li class="p-item">
-                <a class="p-link" href="//www.koolearn.com/product/c_2_14348.html" target="_blank">
+                <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                   <img
                     class="p-img"
                     src="https://uploadimg.koolearn.com/upload/2019-01-17/8211fdc034b67b2dbd2e284e5bfd7b79.jpg"
@@ -212,7 +215,7 @@
                 </a>
               </li>
               <li class="p-item">
-                <a class="p-link" href="//www.koolearn.com/product/c_2_13411.html" target="_blank">
+                <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                   <img
                     class="p-img"
                     src="https://uploadimg.koolearn.com/upload/2018-12-13/e1070d50678785e05028beaf115c5b41.jpg"
@@ -231,7 +234,7 @@
             </ul>
             <ul class="p-class-list p-selected" v-show="hotItemIndex === 2">
               <li class="p-item">
-                <a class="p-link" href="//www.koolearn.com/product/c_7_14560.html" target="_blank">
+                <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                   <img
                     class="p-img"
                     src="https://uploadimg.koolearn.com/upload/2019-02-01/f1454f923444e6e512e1a791df4cac44.jpg"
@@ -248,7 +251,7 @@
                 </a>
               </li>
               <li class="p-item">
-                <a class="p-link" href="//www.koolearn.com/product/c_13_14391.html" target="_blank">
+                <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                   <img
                     class="p-img"
                     src="https://uploadimg.koolearn.com/upload/2019-01-22/aa48d19c0edb2c0eff6766045f03e008.jpg"
@@ -267,7 +270,7 @@
                 </a>
               </li>
               <li class="p-item">
-                <a class="p-link" href="//www.koolearn.com/product/c_7_14767.html" target="_blank">
+                <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                   <img
                     class="p-img"
                     src="https://uploadimg.koolearn.com/upload/2019-02-17/bfe4595957cc35220154edc49fc19194.jpg"
@@ -286,7 +289,7 @@
                 </a>
               </li>
               <li class="p-item">
-                <a class="p-link" href="//www.koolearn.com/product/c_7_14745.html" target="_blank">
+                <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                   <img
                     class="p-img"
                     src="https://uploadimg.koolearn.com/upload/2019-02-14/b82c9dc362c21d770fd2da4f22fc265a.jpg"
@@ -305,7 +308,7 @@
                 </a>
               </li>
               <li class="p-item">
-                <a class="p-link" href="//www.koolearn.com/product/c_8_14760.html" target="_blank">
+                <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                   <img
                     class="p-img"
                     src="https://uploadimg.koolearn.com/upload/2019-02-15/840c47963cbfb4f1210a32966691e8d9.png"
@@ -326,7 +329,7 @@
             </ul>
             <ul class="p-class-list p-selected" v-show="hotItemIndex === 3">
               <li class="p-item">
-                <a class="p-link" href="//www.koolearn.com/product/c_25_13961.html" target="_blank">
+                <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                   <img
                     class="p-img"
                     src="https://uploadimg.koolearn.com/upload/2019-01-04/0cbbc0076e9ea8cc2196b70f6b1c4084.jpg"
@@ -343,7 +346,7 @@
                 </a>
               </li>
               <li class="p-item">
-                <a class="p-link" href="//www.koolearn.com/product/c_25_13962.html" target="_blank">
+                <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                   <img
                     class="p-img"
                     src="https://uploadimg.koolearn.com/upload/2019-01-04/ee99809cca0923a94f4896df1c5d1dea.jpg"
@@ -360,7 +363,7 @@
                 </a>
               </li>
               <li class="p-item">
-                <a class="p-link" href="//www.koolearn.com/product/c_25_13963.html" target="_blank">
+                <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                   <img
                     class="p-img"
                     src="https://uploadimg.koolearn.com/upload/2019-01-04/431b551e8ccc5160e03ee00d634dfb8a.jpg"
@@ -377,7 +380,7 @@
                 </a>
               </li>
               <li class="p-item">
-                <a class="p-link" href="//www.koolearn.com/product/c_25_10400.html" target="_blank">
+                <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                   <img
                     class="p-img"
                     src="https://uploadimg.koolearn.com/upload/2018-09-27/65e0ebc8cd939753a0a422dcb10a95a6.jpg"
@@ -396,7 +399,7 @@
                 </a>
               </li>
               <li class="p-item">
-                <a class="p-link" href="//www.koolearn.com/product/c_24_10415.html" target="_blank">
+                <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                   <img
                     class="p-img"
                     src="https://uploadimg.koolearn.com/upload/2018-09-27/7bc712ff73311270bd8b49023d0fd72d.jpg"
@@ -417,7 +420,7 @@
             </ul>
             <ul class="p-class-list" :class="hotItemIndex === 4?'p-selected':'p-no-selected'">
               <li class="p-item">
-                <a class="p-link" href="//www.koolearn.com/product/c_19_14422.html" target="_blank">
+                <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                   <img
                     class="p-img"
                     src="https://uploadimg.koolearn.com/upload/2019-02-01/8dff0d6758ff243448a43babd918df7d.png"
@@ -434,7 +437,7 @@
                 </a>
               </li>
               <li class="p-item">
-                <a class="p-link" href="//www.koolearn.com/product/c_19_14335.html" target="_blank">
+                <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                   <img
                     class="p-img"
                     src="https://uploadimg.koolearn.com/upload/2019-01-23/2d7a9a32ae71ceb1cd0860ce96530687.jpg"
@@ -451,7 +454,7 @@
                 </a>
               </li>
               <li class="p-item">
-                <a class="p-link" href="//www.koolearn.com/product/c_19_13876.html" target="_blank">
+                <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                   <img
                     class="p-img"
                     src="https://uploadimg.koolearn.com/upload/2019-01-08/16014183f7ff7ee491f6a5146d93ff7b.png"
@@ -468,7 +471,7 @@
                 </a>
               </li>
               <li class="p-item">
-                <a class="p-link" href="//www.koolearn.com/product/c_19_13639.html" target="_blank">
+                <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                   <img
                     class="p-img"
                     src="https://uploadimg.koolearn.com/upload/2018-12-29/8c9d4511f6715308abd025dbb3e35bb7.jpg"
@@ -489,7 +492,7 @@
             </ul>
             <ul class="p-class-list" :class="hotItemIndex === 5?'p-selected':'p-no-selected'">
               <li class="p-item">
-                <a class="p-link" href="//www.koolearn.com/product/c_28_12911.html" target="_blank">
+                <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                   <img
                     class="p-img"
                     src="https://uploadimg.koolearn.com/upload/2018-04-28/c97ca0dd3eda71b860e992ad80a5c1d1.jpg"
@@ -508,7 +511,7 @@
                 </a>
               </li>
               <li class="p-item">
-                <a class="p-link" href="//www.koolearn.com/product/c_28_12909.html" target="_blank">
+                <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                   <img
                     class="p-img"
                     src="https://uploadimg.koolearn.com/upload/2018-04-28/3c2fbd4f3bcc3947b1fd443f4d2384c7.jpg"
@@ -527,7 +530,7 @@
                 </a>
               </li>
               <li class="p-item">
-                <a class="p-link" href="//www.koolearn.com/product/c_28_12913.html" target="_blank">
+                <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                   <img
                     class="p-img"
                     src="https://uploadimg.koolearn.com/upload/2018-04-28/a28b86baf1eff0dddcf64f5e4d2abc58.jpg"
@@ -546,7 +549,7 @@
                 </a>
               </li>
               <li class="p-item">
-                <a class="p-link" href="//www.koolearn.com/product/c_28_12915.html" target="_blank">
+                <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                   <img
                     class="p-img"
                     src="https://uploadimg.koolearn.com/upload/2018-04-28/fe694db5eedbdd2796138d6fd8683862.jpg"
@@ -565,7 +568,7 @@
                 </a>
               </li>
               <li class="p-item">
-                <a class="p-link" href="//www.koolearn.com/product/c_28_12910.html" target="_blank">
+                <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                   <img
                     class="p-img"
                     src="https://uploadimg.koolearn.com/upload/2018-04-28/dfe443c5ac122429902adc968deec941.jpg"
@@ -586,7 +589,7 @@
             </ul>
             <ul class="p-class-list" :class="hotItemIndex === 6?'p-selected':'p-no-selected'">
               <li class="p-item">
-                <a class="p-link" href="//www.koolearn.com/product/c_37_14574.html" target="_blank">
+                <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                   <img
                     class="p-img"
                     src="https://uploadimg.koolearn.com/upload/2018-12-29/c984487a525229954793313da171ee35.jpg"
@@ -605,7 +608,7 @@
                 </a>
               </li>
               <li class="p-item">
-                <a class="p-link" href="//www.koolearn.com/product/c_34_13776.html" target="_blank">
+                <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                   <img
                     class="p-img"
                     src="https://uploadimg.koolearn.com/upload/2018-12-29/f65549e75a53cde46bc07400a0ac9c85.jpg"
@@ -624,7 +627,7 @@
                 </a>
               </li>
               <li class="p-item">
-                <a class="p-link" href="//www.koolearn.com/product/c_34_13553.html" target="_blank">
+                <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                   <img
                     class="p-img"
                     src="https://uploadimg.koolearn.com/upload/2018-12-20/a556d7f8b8daa5586d7ea73d4cd5bea4.jpg"
@@ -643,7 +646,7 @@
                 </a>
               </li>
               <li class="p-item">
-                <a class="p-link" href="//www.koolearn.com/product/c_37_13387.html" target="_blank">
+                <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                   <img
                     class="p-img"
                     src="https://uploadimg.koolearn.com/upload/2018-12-05/c09bccefc08a51c17029ce982516310b.jpg"
@@ -662,7 +665,7 @@
                 </a>
               </li>
               <li class="p-item">
-                <a class="p-link" href="//www.koolearn.com/product/c_34_14942.html" target="_blank">
+                <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                   <img
                     class="p-img"
                     src="https://uploadimg.koolearn.com/upload/2019-02-26/7282129fb5eb8f88ad84d59cde48968a.jpg"
@@ -687,8 +690,8 @@
     </div>
     <div class="section2">
       <div class="p-content p-max-width-wrap detail-top">
-        <div class="p-left-imgs-wrap" id="jp-left-imgs-dx-wrap">
-          <img
+        <div class="p-left-imgs-wrap" id="jp-left-imgs-dx-wrap" style="background-image: url(http://oss.lshao.cn/images/primary_bg.png);">
+          <!-- <img
             class="p-title-img"
             src="//images.koolearn.com/shark/project/zt/2017/1205koolearn-home-gf/i/hot-course/hot-title-dx.png?f1cb1f"
             alt
@@ -736,12 +739,16 @@
             <li class="p-item p-selected"></li>
             <li class="p-item"></li>
             <li class="p-item"></li>
-          </ul>
+          </ul> -->
+          <div class="top-banner">
+            <p-school-banner />
+          </div>
+          <p class="botton-title link"  @click="goGoodsListPage('','小学')">更多课程 >></p>
         </div>
         <div class="p-middle-content-wrap">
           <ul class="p-course-list jp-get-hot-list-wrap" data-id="1281">
             <li class="p-item p-r-border p-b-border">
-              <a class="p-link" href="//www.koolearn.com/product/c_2_13979.html" target="_blank">
+              <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                 <p class="p-title">
                   <span class="p-flag">NEW</span>2020考研英语进阶全程春季1班（一、二可选）
                 </p>
@@ -778,7 +785,7 @@
             </li>
 
             <li class="p-item p-r-border p-b-border">
-              <a class="p-link" href="//www.koolearn.com/product/c_2_13970.html" target="_blank">
+              <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                 <p class="p-title">
                   <span class="p-flag">NEW</span>2020考研政治进阶全程班
                 </p>
@@ -815,7 +822,7 @@
             </li>
 
             <li class="p-item p-b-border">
-              <a class="p-link" href="//www.koolearn.com/product/c_19_14656.html" target="_blank">
+              <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                 <p class="p-title">
                   <span class="p-flag">NEW</span>大学英语四级全程2班【2019年6月】
                 </p>
@@ -852,7 +859,7 @@
             </li>
 
             <li class="p-item p-r-border">
-              <a class="p-link" href="//www.koolearn.com/product/c_20_14689.html" target="_blank">
+              <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                 <p class="p-title">
                   <span class="p-flag">NEW</span>大学英语六级全程2班【2019年6月】
                 </p>
@@ -889,7 +896,7 @@
             </li>
 
             <li class="p-item p-r-border">
-              <a class="p-link" href="//www.koolearn.com/product/c_20_14689.html" target="_blank">
+              <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                 <p class="p-title">
                   <span class="p-flag">NEW</span>大学英语六级全程2班【2019年6月】
                 </p>
@@ -926,7 +933,7 @@
             </li>
 
             <li class="p-item">
-              <a class="p-link" href="//www.koolearn.com/product/c_20_14689.html" target="_blank">
+              <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                 <p class="p-title">
                   <span class="p-flag">NEW</span>大学英语六级全程2班【2019年6月】
                 </p>
@@ -964,14 +971,14 @@
           </ul>
           <ul class="p-gg-imgs-list">
             <li class="p-item p-part1">
-              <a href="http://www.koolearn.com/ke/kaoyan2/" class="p-link" target="_blank">
+              <a @click="goProductDetailPage(32)" class="p-link link" target="_blank">
                 <img class="p-bg-img" src="//file.koolearn.com/2017/1227/20171227031136951.jpg" alt>
                 <p class="p-title">2020考研政治进阶全程班</p>
                 <p class="p-info">阮晔 徐涛 刘源泉</p>
               </a>
             </li>
             <li class="p-item p-part1">
-              <a href="http://www.koolearn.com/ke/kaoyan2/" class="p-link" target="_blank">
+              <a @click="goProductDetailPage(32)" class="p-link link" target="_blank">
                 <img class="p-bg-img" src="//file.koolearn.com/2017/1219/20171219054251419.png" alt>
                 <p class="p-title">2020考研英语进阶全程班</p>
                 <p class="p-info">王江涛 李旭 唐静</p>
@@ -982,61 +989,17 @@
       </div>
 
       <div class="p-content p-max-width-wrap detail-mid">
-        <div class="p-left-imgs-wrap" id="jp-left-imgs-dx-wrap">
-          <img
-            class="p-title-img"
-            src="//images.koolearn.com/shark/project/zt/2017/1205koolearn-home-gf/i/hot-course/hot-title-dx.png?f1cb1f"
-            alt
-          >
-          <ul class="p-imgs-list jp-left-imgs-list">
-            <li class="p-item p-selected">
-              <a class="p-link" href="http://www.koolearn.com/ke/kaoyan2/" target="_blank">
-                <img
-                  class="p-course-img"
-                  src="//file.koolearn.com/2018/0423/20180423111947336.jpg"
-                  alt
-                >
-                <p class="p-course-title">2020考研（签约）全程班</p>
-                <p class="p-course-info">零基础长线备考拼高分</p>
-              </a>
-            </li>
-            <li class="p-item">
-              <a class="p-link" href="http://www.koolearn.com/ke/kaoyan/" target="_blank">
-                <img
-                  class="p-course-img"
-                  src="//file.koolearn.com/2017/1219/20171219053817588.png"
-                  alt
-                >
-                <p class="p-course-title">2019考研复试</p>
-                <p class="p-course-info">科学辅导逆袭通关</p>
-              </a>
-            </li>
-            <li class="p-item">
-              <a
-                class="p-link"
-                href="http://www.koolearn.com/ke/cet/?from=shouye_daxue"
-                target="_blank"
-              >
-                <img
-                  class="p-course-img"
-                  src="//file.koolearn.com/2017/1219/20171219054016231.png"
-                  alt
-                >
-                <p class="p-course-title">四六级</p>
-                <p class="p-course-info">直击考点高分过级</p>
-              </a>
-            </li>
-          </ul>
-          <ul class="p-imgs-index jp-left-imgs-index-list">
-            <li class="p-item p-selected"></li>
-            <li class="p-item"></li>
-            <li class="p-item"></li>
-          </ul>
+        <div class="p-left-imgs-wrap" id="jp-left-imgs-dx-wrap"  style="background-image: url(http://oss.lshao.cn/images/junior_bg.png);">
+          
+          <div class="top-banner">
+            <j-school-banner />
+          </div>
+          <p class="botton-title link"  @click="goGoodsListPage('','初中')">更多课程 >></p>
         </div>
         <div class="p-middle-content-wrap">
           <ul class="p-course-list jp-get-hot-list-wrap" data-id="1281">
             <li class="p-item p-r-border p-b-border">
-              <a class="p-link" href="//www.koolearn.com/product/c_2_13979.html" target="_blank">
+              <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                 <p class="p-title">
                   <span class="p-flag">NEW</span>2020考研英语进阶全程春季1班（一、二可选）
                 </p>
@@ -1073,7 +1036,7 @@
             </li>
 
             <li class="p-item p-r-border p-b-border">
-              <a class="p-link" href="//www.koolearn.com/product/c_2_13970.html" target="_blank">
+              <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                 <p class="p-title">
                   <span class="p-flag">NEW</span>2020考研政治进阶全程班
                 </p>
@@ -1110,7 +1073,7 @@
             </li>
 
             <li class="p-item p-b-border">
-              <a class="p-link" href="//www.koolearn.com/product/c_19_14656.html" target="_blank">
+              <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                 <p class="p-title">
                   <span class="p-flag">NEW</span>大学英语四级全程2班【2019年6月】
                 </p>
@@ -1147,7 +1110,7 @@
             </li>
 
             <li class="p-item p-r-border">
-              <a class="p-link" href="//www.koolearn.com/product/c_20_14689.html" target="_blank">
+              <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                 <p class="p-title">
                   <span class="p-flag">NEW</span>大学英语六级全程2班【2019年6月】
                 </p>
@@ -1184,7 +1147,7 @@
             </li>
 
             <li class="p-item p-r-border">
-              <a class="p-link" href="//www.koolearn.com/product/c_20_14689.html" target="_blank">
+              <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                 <p class="p-title">
                   <span class="p-flag">NEW</span>大学英语六级全程2班【2019年6月】
                 </p>
@@ -1221,7 +1184,7 @@
             </li>
 
             <li class="p-item">
-              <a class="p-link" href="//www.koolearn.com/product/c_20_14689.html" target="_blank">
+              <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                 <p class="p-title">
                   <span class="p-flag">NEW</span>大学英语六级全程2班【2019年6月】
                 </p>
@@ -1259,14 +1222,14 @@
           </ul>
           <ul class="p-gg-imgs-list">
             <li class="p-item p-part1">
-              <a href="http://www.koolearn.com/ke/kaoyan2/" class="p-link" target="_blank">
+              <a @click="goProductDetailPage(32)" class="p-link link" target="_blank">
                 <img class="p-bg-img" src="//file.koolearn.com/2017/1227/20171227031136951.jpg" alt>
                 <p class="p-title">2020考研政治进阶全程班</p>
                 <p class="p-info">阮晔 徐涛 刘源泉</p>
               </a>
             </li>
             <li class="p-item p-part1">
-              <a href="http://www.koolearn.com/ke/kaoyan2/" class="p-link" target="_blank">
+              <a @click="goProductDetailPage(32)" class="p-link link" target="_blank">
                 <img class="p-bg-img" src="//file.koolearn.com/2017/1219/20171219054251419.png" alt>
                 <p class="p-title">2020考研英语进阶全程班</p>
                 <p class="p-info">王江涛 李旭 唐静</p>
@@ -1277,61 +1240,17 @@
       </div>
 
       <div class="p-content p-max-width-wrap detail-bottom">
-        <div class="p-left-imgs-wrap" id="jp-left-imgs-dx-wrap">
-          <img
-            class="p-title-img"
-            src="//images.koolearn.com/shark/project/zt/2017/1205koolearn-home-gf/i/hot-course/hot-title-dx.png?f1cb1f"
-            alt
-          >
-          <ul class="p-imgs-list jp-left-imgs-list">
-            <li class="p-item p-selected">
-              <a class="p-link" href="http://www.koolearn.com/ke/kaoyan2/" target="_blank">
-                <img
-                  class="p-course-img"
-                  src="//file.koolearn.com/2018/0423/20180423111947336.jpg"
-                  alt
-                >
-                <p class="p-course-title">2020考研（签约）全程班</p>
-                <p class="p-course-info">零基础长线备考拼高分</p>
-              </a>
-            </li>
-            <li class="p-item">
-              <a class="p-link" href="http://www.koolearn.com/ke/kaoyan/" target="_blank">
-                <img
-                  class="p-course-img"
-                  src="//file.koolearn.com/2017/1219/20171219053817588.png"
-                  alt
-                >
-                <p class="p-course-title">2019考研复试</p>
-                <p class="p-course-info">科学辅导逆袭通关</p>
-              </a>
-            </li>
-            <li class="p-item">
-              <a
-                class="p-link"
-                href="http://www.koolearn.com/ke/cet/?from=shouye_daxue"
-                target="_blank"
-              >
-                <img
-                  class="p-course-img"
-                  src="//file.koolearn.com/2017/1219/20171219054016231.png"
-                  alt
-                >
-                <p class="p-course-title">四六级</p>
-                <p class="p-course-info">直击考点高分过级</p>
-              </a>
-            </li>
-          </ul>
-          <ul class="p-imgs-index jp-left-imgs-index-list">
-            <li class="p-item p-selected"></li>
-            <li class="p-item"></li>
-            <li class="p-item"></li>
-          </ul>
+        <div class="p-left-imgs-wrap" id="jp-left-imgs-dx-wrap"   style="background-image: url(http://oss.lshao.cn/images/high_bg.png);">
+          
+          <div class="top-banner">
+            <h-school-banner />
+          </div>
+          <p class="botton-title link"  @click="goGoodsListPage('','高中')">更多课程 >></p>
         </div>
         <div class="p-middle-content-wrap">
           <ul class="p-course-list jp-get-hot-list-wrap" data-id="1281">
             <li class="p-item p-r-border p-b-border">
-              <a class="p-link" href="//www.koolearn.com/product/c_2_13979.html" target="_blank">
+              <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                 <p class="p-title">
                   <span class="p-flag">NEW</span>2020考研英语进阶全程春季1班（一、二可选）
                 </p>
@@ -1368,7 +1287,7 @@
             </li>
 
             <li class="p-item p-r-border p-b-border">
-              <a class="p-link" href="//www.koolearn.com/product/c_2_13970.html" target="_blank">
+              <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                 <p class="p-title">
                   <span class="p-flag">NEW</span>2020考研政治进阶全程班
                 </p>
@@ -1405,7 +1324,7 @@
             </li>
 
             <li class="p-item p-b-border">
-              <a class="p-link" href="//www.koolearn.com/product/c_19_14656.html" target="_blank">
+              <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                 <p class="p-title">
                   <span class="p-flag">NEW</span>大学英语四级全程2班【2019年6月】
                 </p>
@@ -1442,7 +1361,7 @@
             </li>
 
             <li class="p-item p-r-border">
-              <a class="p-link" href="//www.koolearn.com/product/c_20_14689.html" target="_blank">
+              <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                 <p class="p-title">
                   <span class="p-flag">NEW</span>大学英语六级全程2班【2019年6月】
                 </p>
@@ -1479,7 +1398,7 @@
             </li>
 
             <li class="p-item p-r-border">
-              <a class="p-link" href="//www.koolearn.com/product/c_20_14689.html" target="_blank">
+              <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                 <p class="p-title">
                   <span class="p-flag">NEW</span>大学英语六级全程2班【2019年6月】
                 </p>
@@ -1516,7 +1435,7 @@
             </li>
 
             <li class="p-item">
-              <a class="p-link" href="//www.koolearn.com/product/c_20_14689.html" target="_blank">
+              <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                 <p class="p-title">
                   <span class="p-flag">NEW</span>大学英语六级全程2班【2019年6月】
                 </p>
@@ -1554,14 +1473,14 @@
           </ul>
           <ul class="p-gg-imgs-list">
             <li class="p-item p-part1">
-              <a href="http://www.koolearn.com/ke/kaoyan2/" class="p-link" target="_blank">
+              <a @click="goProductDetailPage(32)" class="p-link link" target="_blank">
                 <img class="p-bg-img" src="//file.koolearn.com/2017/1227/20171227031136951.jpg" alt>
                 <p class="p-title">2020考研政治进阶全程班</p>
                 <p class="p-info">阮晔 徐涛 刘源泉</p>
               </a>
             </li>
             <li class="p-item p-part1">
-              <a href="http://www.koolearn.com/ke/kaoyan2/" class="p-link" target="_blank">
+              <a @click="goProductDetailPage(32)" class="p-link link" target="_blank">
                 <img class="p-bg-img" src="//file.koolearn.com/2017/1219/20171219054251419.png" alt>
                 <p class="p-title">2020考研英语进阶全程班</p>
                 <p class="p-info">王江涛 李旭 唐静</p>
@@ -1576,7 +1495,7 @@
           <div class="capital-ti">
             <img
               class="capital-ti__img"
-              src="//images.koolearn.com/shark/project/zt/2017/0918koolearn-home-gf/i/content/why-choose-title.png?cf9c3e"
+              src="http://oss.lshao.cn/images/title1.png"
             >
           </div>
           <div class="capital-list">
@@ -1635,7 +1554,7 @@
           <div class="capital-ti">
             <img
               class="capital-ti__img"
-              src="//images.koolearn.com/shark/project/zt/2017/0918koolearn-home-gf/i/content/why-choose-title.png?cf9c3e"
+              src="http://oss.lshao.cn/images/title2.png"
             >
           </div>
           <ul class="coop">
@@ -1670,12 +1589,34 @@
 
       <!-- <div class="w detail-top debug">abc</div> -->
     </div>
+    <ul class="top-float">
+      <li class="item blue link" @click.prevent="loadPage('download')">
+        <img class="float-img" src="http://oss.lshao.cn/images/download1.png" alt="">
+        <p class="float-title" >下载</p>
+      </li>
+      <li class="item link" onclick="alert('正在规划')">
+        <img class="float-img" src="http://oss.lshao.cn/images/help1.png" alt="">
+        <p class="float-title">帮助</p>
+      </li>
+      <li class="item link " onclick="alert('正在规划')">
+        <img class="float-img consult1" src="http://oss.lshao.cn/images/consult1.png" alt="">
+        <p class="float-title">咨询</p>
+      </li>
+      <li class="item link" onclick="alert('正在规划')">
+        <img class="float-img" src="http://oss.lshao.cn/images/feedback1.png" alt="">
+        <p class="float-title">反馈</p>
+      </li>
+    </ul>
   </div>
 </template>
 <script type="text/ecmascript-6">
 import "video.js/dist/video-js.css";
-import originBanner from "components/banner/originBanner";
+import pcBanner from "components/banner";
 import { videoPlayer } from "vue-video-player";
+
+import pSchoolBanner from "components/banner/pSchoolBanner";
+import jSchoolBanner from "components/banner/jSchoolBanner";
+import hSchoolBanner from "components/banner/hSchoolBanner";
 
 export default {
   data() {
@@ -1752,7 +1693,7 @@ export default {
       //   this.$refs.videoPlayer.player.play();
       // }else{
       //   this.playerOptions.sources[0].src = '';
-      // }
+      // } @click="goProductDetailPage(item.id)
 
       this.playerOptions.sources[0].src = this.videos[number];
       // this.$refs.videoPlayer.player.play();
@@ -1890,7 +1831,10 @@ export default {
     }
   },
   components: {
-    originBanner,
+    pcBanner,
+    pSchoolBanner,
+    jSchoolBanner,
+    hSchoolBanner,
     videoPlayer
   },
   computed: {
@@ -2101,12 +2045,15 @@ h4 {
   margin-right: 20px;
   height: 182px;
 }
-
+                                                                   
 .radius .radius-right {
-  width: 240px;
-  height: 182px;
-  background-color: green;
-  border-radius: 24px;
+    width: 840px;
+    height: 450px;
+    background-color: green;
+    /* border-radius: 24px; */
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 .p-content {
@@ -2150,9 +2097,9 @@ body .p-max-width-wrap {
   color: #4d7fff;
 }
 
-.p-content .p-title-wrap .p-tabs-list > .p-item.p-selected {
+// .p-content .p-title-wrap .p-tabs-list > .p-item.p-selected {
   // display: block;
-}
+// }
 
 .p-content .p-title-wrap .p-tabs-list > .p-item.p-no-selected {
   // display: none;
@@ -2390,6 +2337,7 @@ body .p-max-width-wrap {
 .p-hot-course-wrap.p-green-wrap .p-content .p-left-imgs-wrap,
 .p-hot-course-wrap.p-green-wrap .p-content .p-middle-content-wrap .p-flag {
   background-color: #54d2d5;
+  
 }
 .p-content .p-left-imgs-wrap {
   position: absolute;
@@ -2667,7 +2615,7 @@ img {
 .capital .capital-list .capital-list-box {
   width: 262px;
   height: 262px;
-  display: inline-block;
+  // display: inline-block;
   box-sizing: border-box;
   float: left;
   margin-left: 10px;
@@ -2708,4 +2656,62 @@ img {
     margin-right: 93px;
     margin-top: 22px;
 }
+.top-float{
+  position: fixed;
+  right: 0px;
+  top: 260px;
+  box-shadow: 0px 4px 12px 0px rgba(34, 23, 20, 0.1);
+}
+
+.top-float .item{
+	width: 60px;
+	height: 60px;
+	background-color: #ffffff;
+}
+.top-float .blue{
+	background-color: #4d7fff;
+}
+.float-title{
+  position: relative;
+    top: 17px;
+    left: 20px;
+    color: #ccc;
+}
+
+.float-img{
+  position: relative;
+    top: 10px;
+    left: 24px;
+}
+.float-img.consult1{
+  position: relative;
+    top: 10px;
+    left: 21px;
+}
+
+
+.section2 .top-banner {
+    left: 22px;
+    bottom: 80px;
+    width: 150px;
+    height: 180px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    position: absolute;
+}
+
+.section2 .botton-title {
+    bottom: 29px;
+    position: absolute;
+    width: 66px;
+    height: 12px;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0px;
+    color: #ffffff;
+    left: 25px;
+}
+
+
 </style>

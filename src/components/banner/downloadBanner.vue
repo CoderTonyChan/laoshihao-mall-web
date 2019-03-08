@@ -1,5 +1,5 @@
 <template>
-  <div class="banner">
+  <div class="downloadBanner">
     <swiper :options="swiperOption">
       <swiper-slide v-for="slide in swiperSlides" :key="slide.title">
         <img
@@ -26,14 +26,7 @@
           @play="onPlayerPlay($event)"
         ></video-player>
       </swiper-slide>
-      <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
-    <div class="banner-arrow prev">
-      <i class="swiper-button-prev"></i>
-    </div>
-    <div class="banner-arrow next">
-      <i class="swiper-button-next"></i>
-    </div>
   </div>
 </template>
 
@@ -46,42 +39,22 @@ import { videoPlayer } from "vue-video-player";
 
 
 export default {
-  name: "banner-swiper",
+  name: "downloadBanner",
   data() {
     return {
-      videos: [
-        "https://lshao.oss-cn-beijing.aliyuncs.com/lshao2.0.mp4",
-        "https://lshao.oss-cn-beijing.aliyuncs.com/%E8%80%81%E5%B8%88%E5%A5%BD%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%975.0%28%E9%AB%98%E6%B8%85%29.mp4",
-        "https://lshao.oss-cn-beijing.aliyuncs.com/%E4%BA%92%E5%8A%A8%E8%AF%BE%E5%A0%82.mp4"
-      ],
-      playerOptions: {
-        // videojs options //static/images/author.jpg
-        // autoplay: "muted",
-        height: "460px",
-        width: "840px",
-        muted: false,
-        playbackRates: [0.7, 1.0, 1.5, 2.0],
-        sources: [
-          {
-            type: "video/mp4",
-            src: "https://lshao.oss-cn-beijing.aliyuncs.com/lshao2.0.mp4"
-          }
-        ],
-        poster: "http://lshao.cn/images/mainpage.jpg"
-      },
       swiperOption: {
-        notNextTick: true,
-        // autoplay: 3500,
-        initialSlide: 0,
-        setWrapperSize: true,
-        pagination: ".banner .swiper-pagination",
-        paginationClickable: true,
-        mousewheelControl: false,
-        observeParents: true,
-        prevButton: ".banner .swiper-button-prev",
-        nextButton: ".banner .swiper-button-next",
-        // loop: true,
-        loopAdditionalSlides: 1
+        initialSlide: 1,
+        effect: 'coverflow',
+          grabCursor: true,
+          centeredSlides: true,
+          slidesPerView: 'auto',
+          coverflowEffect: {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows : true
+          },
       },
       swiperSlides: [
         {
@@ -90,8 +63,8 @@ export default {
           playerOptions: {
             // videojs options //static/images/author.jpg
             // autoplay: "muted",
-            height: "460px",
-            width: "840px",
+            height: "400px",
+            width: "520px",
             muted: false,
             playbackRates: [0.7, 1.0, 1.5, 2.0],
             sources: [
@@ -109,8 +82,8 @@ export default {
           playerOptions: {
             // videojs options //static/images/author.jpg
             // autoplay: "muted",
-            height: "460px",
-            width: "840px",
+            height: "400px",
+            width: "520px",
             muted: false,
             playbackRates: [0.7, 1.0, 1.5, 2.0],
             sources: [
@@ -127,8 +100,8 @@ export default {
           playerOptions: {
             // videojs options //static/images/author.jpg
             // autoplay: "muted",
-            height: "460px",
-            width: "840px",
+            height: "400px",
+            width: "520px",
             muted: false,
             playbackRates: [0.7, 1.0, 1.5, 2.0],
             sources: [
@@ -139,31 +112,6 @@ export default {
             ],
             poster: "https://s2.ax1x.com/2019/03/07/kxd4qP.jpg"
           },
-        },
-        {
-          src: require("../../assets/image/banner/banner1.jpg"),
-          title: "雅思",
-          href: "detail/analysis"
-        },
-        {
-          src: require("../../assets/image/banner/banner2.jpg"),
-          title: "GRE",
-          href: "detail/count"
-        },
-        {
-          src: require("../../assets/image/banner/banner3.jpg"),
-          title: "日语",
-          href: "http://xxx.xxx.com"
-        },
-        {
-          src: require("../../assets/image/banner/banner4.jpg"),
-          title: "新概念英语",
-          href: "detail/forecast"
-        },
-        {
-          src: require("../../assets/image/banner/banner5.jpg"),
-          title: "中小学",
-          href: "detail/forecast"
         }
       ]
     };
@@ -218,37 +166,54 @@ export default {
 };
 </script>
 <style>
-.banner .swiper-button-next,
-.banner .swiper-container-rtl .swiper-button-prev {
+.downloadBanner{
+    width: 100%;
+    height: 400px,
+}
+.downloadBanner .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 520px;
+    height: 400px;
+  }
+
+.downloadBanner .swiper-button-next,
+.downloadBanner .swiper-container-rtl .swiper-button-prev {
   right: 0px;
   background-image: url(http://oss.lshao.cn/images/Banner_right.png);
 }
 
-.banner .swiper-button-prev,
-.banner .swiper-container-rtl .swiper-button-next {
+.downloadBanner .swiper-button-prev,
+.downloadBanner .swiper-container-rtl .swiper-button-next {
   left: 0px;
   background-image: url(http://oss.lshao.cn/images/Banner_left.png);
 }
 
-.banner .banner-con .banner-arrow {
+.downloadBanner .downloadBanner-con .downloadBanner-arrow {
   z-index: 2;
 }
-.banner .swiper-pagination-bullet-active {
+.downloadBanner .swiper-pagination-bullet-active {
   opacity: 1;
   background: white;
 }
 
-.banner .swiper-pagination-fraction,
-.banner .swiper-pagination-custom,
-.banner .swiper-container-horizontal > .swiper-pagination-bullets {
+.downloadBanner .swiper-pagination-fraction,
+.downloadBanner .swiper-pagination-custom,
+.downloadBanner .swiper-container-horizontal > .swiper-pagination-bullets {
   bottom: 30px;
 }
-.banner .swiper-button-prev,
-.banner .swiper-button-next {
+.downloadBanner .swiper-button-prev,
+.downloadBanner .swiper-button-next {
   width: 40px;
   height: 96px;
   margin-top: -48px;
   background-size: 40px 96px;
+}
+.video-js .vjs-big-play-button {
+    top: 50%;
+    left: 50%;
+    margin-top: -0.7em;
+    margin-left: -1.5em;
 }
 </style>
 
