@@ -50,7 +50,7 @@ export default [
         meta: {
           name: '商品详情',
           requestAuth: false,
-          hideMainHeader: true
+          hideMainHeader: false
         },
         component: resolve => require(['views/goods/goods-detail'], resolve)
       },

@@ -170,7 +170,7 @@ export default {
       playerOptions: {
         // videojs options //static/images/author.jpg
         autoplay: "muted",
-        height: "402px",
+        height: "340px",
         width: "510px",
         muted: true,
         language: "en",
