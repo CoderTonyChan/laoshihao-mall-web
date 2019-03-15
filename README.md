@@ -10,3 +10,4 @@ laoshihao-mall-web
 - 边栏写入全局组件 
 - 主页轮播 每次进界面 需要reload一下
 
+

@@ -83,7 +83,7 @@
         </div>
       </div>
       <div class="detail-wrap">
-        <img src="https://user-images.githubusercontent.com/16996753/54347752-98842280-4682-11e9-853e-04b2fe294607.png" alt="">
+        <img src="https://user-images.githubusercontent.com/16996753/54404991-265a1f00-4710-11e9-85fa-0e35f5ed91f8.png" alt="">
       </div>
       
       <div class="detail-wrap">
