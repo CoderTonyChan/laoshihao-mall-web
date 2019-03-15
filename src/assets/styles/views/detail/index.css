@@ -84,7 +84,8 @@
 /* 价格部分 */
 .intro-wrap .p-info-con .p-price-con{
     padding: 7px;
-    background-color: #4d7fff;
+    /* background-color: #4d7fff; */
+    background: url(http://oss.lshao.cn/images/price_bg.jpg) no-repeat;
 }
 .intro-wrap .p-info-con .p-price-con .info{
     color: #337ab7;

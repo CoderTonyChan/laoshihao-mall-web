@@ -100,7 +100,7 @@ export default {
                 src: "https://lshao.oss-cn-beijing.aliyuncs.com/lshao2.0.mp4"
               }
             ],
-            poster: "https://s2.ax1x.com/2019/03/07/kxdhrt.jpg"
+            poster: "http://oss.lshao.cn/images/video1.jpg" // https://s2.ax1x.com/2019/03/07/kxdhrt.jpg
           },
         },
         {
@@ -119,7 +119,7 @@ export default {
                 src: "https://lshao.oss-cn-beijing.aliyuncs.com/%E8%80%81%E5%B8%88%E5%A5%BD%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%975.0%28%E9%AB%98%E6%B8%85%29.mp4"
               }
             ],
-            poster: "https://s2.ax1x.com/2019/03/07/kxdfKI.jpg"
+            poster: "http://oss.lshao.cn/images/video2.jpg"
           },
         },{
           player:'player3',
@@ -137,7 +137,7 @@ export default {
                 src: "https://lshao.oss-cn-beijing.aliyuncs.com/%E4%BA%92%E5%8A%A8%E8%AF%BE%E5%A0%82.mp4"
               }
             ],
-            poster: "https://s2.ax1x.com/2019/03/07/kxd4qP.jpg"
+            poster: "http://oss.lshao.cn/images/video3.jpg"
           },
         },
         {

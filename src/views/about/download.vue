@@ -3,7 +3,7 @@
     <!-- <div class="crumb">
       <div class="w">
         <div class="crumb-con">
-          <a class="link" href="/">老师好商城</a>
+          <a class="link" href="/">老师好在线</a>
           <span>></span>
           <span class="link-text">{{$route.meta.name}}</span>
         </div>

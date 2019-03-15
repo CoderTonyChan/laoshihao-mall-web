@@ -85,7 +85,6 @@
       <div class="detail-wrap">
         <img src="https://user-images.githubusercontent.com/16996753/54404991-265a1f00-4710-11e9-85fa-0e35f5ed91f8.png" alt="">
       </div>
-      
       <div class="detail-wrap">
         <div class="detail-tab-con">
           <ul class="tab-list">

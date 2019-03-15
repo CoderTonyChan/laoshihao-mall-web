@@ -59,7 +59,7 @@
           <a class="link" href="javascript:void(0)" @click.prevent="loadPage('disclaimer')">免责声明</a>
         </li>-->
         <!-- <li class="nav-item">
-          <a class="link" href="javascript:void(0)" @click.prevent="loadPage('about')">关于老师好商城</a>
+          <a class="link" href="javascript:void(0)" @click.prevent="loadPage('about')">关于老师好在线</a>
         </li>-->
         <!-- <li class="nav-item">
           <a class="link" href="javascript:void(0)" @click.prevent="loadPage('download')">客户端下载</a>
