@@ -447,7 +447,7 @@
                     <p class="p-title">四六级新年过级通关宝典</p>
                     <p class="p-time">2019-01-31</p>
                     <div class="p-item-footer">
-                      <span class="p-teacher">主讲 王江涛</span>
+                      <span class="p-teacher">主讲 王江海</span>
                       <span class="p-price">观看回放</span>
                     </div>
                   </div>
@@ -757,13 +757,13 @@
                   <li class="p-teacher-item">
                     <img
                       class="p-teacher-avatar"
-                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391542195818496_small.jpg"
+                      src="http://oss.lshao.cn/images/teacher-icon2.jpg"
                       alt
                     >
-                    <p class="p-teacher-name">王江涛</p>
+                    <p class="p-teacher-name">王江海</p>
                   </li>
 
-                  <li class="p-teacher-item">
+                  <!-- <li class="p-teacher-item">
                     <img
                       class="p-teacher-avatar"
                       src="//tfs.koolearn.com/class-teacher/img/201806/6410390927579287552_small.jpg"
@@ -779,7 +779,7 @@
                       alt
                     >
                     <p class="p-teacher-name">唐静</p>
-                  </li>
+                  </li> -->
                 </ul>
               </a>
             </li>
@@ -794,29 +794,12 @@
                   <li class="p-teacher-item">
                     <img
                       class="p-teacher-avatar"
-                      src="//tfs.koolearn.com/class-teacher/img/201804/6388639532102717440.JPG"
+                      src="http://oss.lshao.cn/images/teacher-icon2.jpg"
                       alt
                     >
-                    <p class="p-teacher-name">阮晔</p>
+                    <p class="p-teacher-name">王江海</p>
                   </li>
 
-                  <li class="p-teacher-item">
-                    <img
-                      class="p-teacher-avatar"
-                      src="//tfs.koolearn.com/class-teacher/img/201804/6388639691649847296.JPG"
-                      alt
-                    >
-                    <p class="p-teacher-name">徐涛</p>
-                  </li>
-
-                  <li class="p-teacher-item">
-                    <img
-                      class="p-teacher-avatar"
-                      src="//tfs.koolearn.com/class-teacher/img/201804/6388639693042356224.JPG"
-                      alt
-                    >
-                    <p class="p-teacher-name">刘源泉</p>
-                  </li>
                 </ul>
               </a>
             </li>
@@ -831,29 +814,12 @@
                   <li class="p-teacher-item">
                     <img
                       class="p-teacher-avatar"
-                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391542195818496_small.jpg"
+                      src="http://oss.lshao.cn/images/teacher-icon2.jpg"
                       alt
                     >
-                    <p class="p-teacher-name">王江涛</p>
+                    <p class="p-teacher-name">王江海</p>
                   </li>
 
-                  <li class="p-teacher-item">
-                    <img
-                      class="p-teacher-avatar"
-                      src="//tfs.koolearn.com/class-teacher/img/201806/6410390927579287552_small.jpg"
-                      alt
-                    >
-                    <p class="p-teacher-name">李旭</p>
-                  </li>
-
-                  <li class="p-teacher-item">
-                    <img
-                      class="p-teacher-avatar"
-                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391816595574784_small.jpg"
-                      alt
-                    >
-                    <p class="p-teacher-name">唐迟</p>
-                  </li>
                 </ul>
               </a>
             </li>
@@ -868,29 +834,12 @@
                   <li class="p-teacher-item">
                     <img
                       class="p-teacher-avatar"
-                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391542195818496_small.jpg"
+                      src="http://oss.lshao.cn/images/teacher-icon2.jpg"
                       alt
                     >
-                    <p class="p-teacher-name">王江涛</p>
+                    <p class="p-teacher-name">王江海</p>
                   </li>
 
-                  <li class="p-teacher-item">
-                    <img
-                      class="p-teacher-avatar"
-                      src="//tfs.koolearn.com/class-teacher/img/201806/6410390927579287552_small.jpg"
-                      alt
-                    >
-                    <p class="p-teacher-name">李旭</p>
-                  </li>
-
-                  <li class="p-teacher-item">
-                    <img
-                      class="p-teacher-avatar"
-                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391816595574784_small.jpg"
-                      alt
-                    >
-                    <p class="p-teacher-name">唐迟</p>
-                  </li>
                 </ul>
               </a>
             </li>
@@ -905,29 +854,12 @@
                   <li class="p-teacher-item">
                     <img
                       class="p-teacher-avatar"
-                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391542195818496_small.jpg"
+                      src="http://oss.lshao.cn/images/teacher-icon2.jpg"
                       alt
                     >
-                    <p class="p-teacher-name">王江涛</p>
+                    <p class="p-teacher-name">王江海</p>
                   </li>
 
-                  <li class="p-teacher-item">
-                    <img
-                      class="p-teacher-avatar"
-                      src="//tfs.koolearn.com/class-teacher/img/201806/6410390927579287552_small.jpg"
-                      alt
-                    >
-                    <p class="p-teacher-name">李旭</p>
-                  </li>
-
-                  <li class="p-teacher-item">
-                    <img
-                      class="p-teacher-avatar"
-                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391816595574784_small.jpg"
-                      alt
-                    >
-                    <p class="p-teacher-name">唐迟</p>
-                  </li>
                 </ul>
               </a>
             </li>
@@ -942,29 +874,12 @@
                   <li class="p-teacher-item">
                     <img
                       class="p-teacher-avatar"
-                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391542195818496_small.jpg"
+                      src="http://oss.lshao.cn/images/teacher-icon2.jpg"
                       alt
                     >
-                    <p class="p-teacher-name">王江涛</p>
+                    <p class="p-teacher-name">王江海</p>
                   </li>
 
-                  <li class="p-teacher-item">
-                    <img
-                      class="p-teacher-avatar"
-                      src="//tfs.koolearn.com/class-teacher/img/201806/6410390927579287552_small.jpg"
-                      alt
-                    >
-                    <p class="p-teacher-name">李旭</p>
-                  </li>
-
-                  <li class="p-teacher-item">
-                    <img
-                      class="p-teacher-avatar"
-                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391816595574784_small.jpg"
-                      alt
-                    >
-                    <p class="p-teacher-name">唐迟</p>
-                  </li>
                 </ul>
               </a>
             </li>
@@ -972,16 +887,16 @@
           <ul class="p-gg-imgs-list">
             <li class="p-item p-part1">
               <a @click="goProductDetailPage(32)" class="p-link link" target="_blank">
-                <img class="p-bg-img" src="//file.koolearn.com/2017/1227/20171227031136951.jpg" alt>
+                <img class="p-bg-img" src="http://oss.lshao.cn/images/1-alpha-edit.png" alt>
                 <p class="p-title">2020考研政治进阶全程班</p>
                 <p class="p-info">阮晔 徐涛 刘源泉</p>
               </a>
             </li>
             <li class="p-item p-part1">
               <a @click="goProductDetailPage(32)" class="p-link link" target="_blank">
-                <img class="p-bg-img" src="//file.koolearn.com/2017/1219/20171219054251419.png" alt>
+                <img class="p-bg-img" src="http://oss.lshao.cn/images/2-alpha-edit.png" alt>
                 <p class="p-title">2020考研英语进阶全程班</p>
-                <p class="p-info">王江涛 李旭 唐静</p>
+                <p class="p-info">王江海 李旭 唐静</p>
               </a>
             </li>
           </ul>
@@ -1008,29 +923,12 @@
                   <li class="p-teacher-item">
                     <img
                       class="p-teacher-avatar"
-                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391542195818496_small.jpg"
+                      src="http://oss.lshao.cn/images/teacher-icon2.jpg"
                       alt
                     >
-                    <p class="p-teacher-name">王江涛</p>
+                    <p class="p-teacher-name">王江海</p>
                   </li>
 
-                  <li class="p-teacher-item">
-                    <img
-                      class="p-teacher-avatar"
-                      src="//tfs.koolearn.com/class-teacher/img/201806/6410390927579287552_small.jpg"
-                      alt
-                    >
-                    <p class="p-teacher-name">李旭</p>
-                  </li>
-
-                  <li class="p-teacher-item">
-                    <img
-                      class="p-teacher-avatar"
-                      src="//teacher.koocdn.com/teacher/picture/201901/1548926701500_small.jpg"
-                      alt
-                    >
-                    <p class="p-teacher-name">唐静</p>
-                  </li>
                 </ul>
               </a>
             </li>
@@ -1045,29 +943,12 @@
                   <li class="p-teacher-item">
                     <img
                       class="p-teacher-avatar"
-                      src="//tfs.koolearn.com/class-teacher/img/201804/6388639532102717440.JPG"
+                      src="http://oss.lshao.cn/images/teacher-icon2.jpg"
                       alt
                     >
-                    <p class="p-teacher-name">阮晔</p>
+                    <p class="p-teacher-name">王江海</p>
                   </li>
 
-                  <li class="p-teacher-item">
-                    <img
-                      class="p-teacher-avatar"
-                      src="//tfs.koolearn.com/class-teacher/img/201804/6388639691649847296.JPG"
-                      alt
-                    >
-                    <p class="p-teacher-name">徐涛</p>
-                  </li>
-
-                  <li class="p-teacher-item">
-                    <img
-                      class="p-teacher-avatar"
-                      src="//tfs.koolearn.com/class-teacher/img/201804/6388639693042356224.JPG"
-                      alt
-                    >
-                    <p class="p-teacher-name">刘源泉</p>
-                  </li>
                 </ul>
               </a>
             </li>
@@ -1082,29 +963,12 @@
                   <li class="p-teacher-item">
                     <img
                       class="p-teacher-avatar"
-                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391542195818496_small.jpg"
+                      src="http://oss.lshao.cn/images/teacher-icon2.jpg"
                       alt
                     >
-                    <p class="p-teacher-name">王江涛</p>
+                    <p class="p-teacher-name">王江海</p>
                   </li>
 
-                  <li class="p-teacher-item">
-                    <img
-                      class="p-teacher-avatar"
-                      src="//tfs.koolearn.com/class-teacher/img/201806/6410390927579287552_small.jpg"
-                      alt
-                    >
-                    <p class="p-teacher-name">李旭</p>
-                  </li>
-
-                  <li class="p-teacher-item">
-                    <img
-                      class="p-teacher-avatar"
-                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391816595574784_small.jpg"
-                      alt
-                    >
-                    <p class="p-teacher-name">唐迟</p>
-                  </li>
                 </ul>
               </a>
             </li>
@@ -1119,29 +983,12 @@
                   <li class="p-teacher-item">
                     <img
                       class="p-teacher-avatar"
-                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391542195818496_small.jpg"
+                      src="http://oss.lshao.cn/images/teacher-icon2.jpg"
                       alt
                     >
-                    <p class="p-teacher-name">王江涛</p>
+                    <p class="p-teacher-name">王江海</p>
                   </li>
 
-                  <li class="p-teacher-item">
-                    <img
-                      class="p-teacher-avatar"
-                      src="//tfs.koolearn.com/class-teacher/img/201806/6410390927579287552_small.jpg"
-                      alt
-                    >
-                    <p class="p-teacher-name">李旭</p>
-                  </li>
-
-                  <li class="p-teacher-item">
-                    <img
-                      class="p-teacher-avatar"
-                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391816595574784_small.jpg"
-                      alt
-                    >
-                    <p class="p-teacher-name">唐迟</p>
-                  </li>
                 </ul>
               </a>
             </li>
@@ -1156,29 +1003,12 @@
                   <li class="p-teacher-item">
                     <img
                       class="p-teacher-avatar"
-                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391542195818496_small.jpg"
+                      src="http://oss.lshao.cn/images/teacher-icon2.jpg"
                       alt
                     >
-                    <p class="p-teacher-name">王江涛</p>
+                    <p class="p-teacher-name">王江海</p>
                   </li>
 
-                  <li class="p-teacher-item">
-                    <img
-                      class="p-teacher-avatar"
-                      src="//tfs.koolearn.com/class-teacher/img/201806/6410390927579287552_small.jpg"
-                      alt
-                    >
-                    <p class="p-teacher-name">李旭</p>
-                  </li>
-
-                  <li class="p-teacher-item">
-                    <img
-                      class="p-teacher-avatar"
-                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391816595574784_small.jpg"
-                      alt
-                    >
-                    <p class="p-teacher-name">唐迟</p>
-                  </li>
                 </ul>
               </a>
             </li>
@@ -1193,29 +1023,12 @@
                   <li class="p-teacher-item">
                     <img
                       class="p-teacher-avatar"
-                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391542195818496_small.jpg"
+                      src="http://oss.lshao.cn/images/teacher-icon2.jpg"
                       alt
                     >
-                    <p class="p-teacher-name">王江涛</p>
+                    <p class="p-teacher-name">王江海</p>
                   </li>
 
-                  <li class="p-teacher-item">
-                    <img
-                      class="p-teacher-avatar"
-                      src="//tfs.koolearn.com/class-teacher/img/201806/6410390927579287552_small.jpg"
-                      alt
-                    >
-                    <p class="p-teacher-name">李旭</p>
-                  </li>
-
-                  <li class="p-teacher-item">
-                    <img
-                      class="p-teacher-avatar"
-                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391816595574784_small.jpg"
-                      alt
-                    >
-                    <p class="p-teacher-name">唐迟</p>
-                  </li>
                 </ul>
               </a>
             </li>
@@ -1223,16 +1036,16 @@
           <ul class="p-gg-imgs-list">
             <li class="p-item p-part1">
               <a @click="goProductDetailPage(32)" class="p-link link" target="_blank">
-                <img class="p-bg-img" src="//file.koolearn.com/2017/1227/20171227031136951.jpg" alt>
+                <img class="p-bg-img" src="http://oss.lshao.cn/images/1-alpha-edit.png" alt>
                 <p class="p-title">2020考研政治进阶全程班</p>
                 <p class="p-info">阮晔 徐涛 刘源泉</p>
               </a>
             </li>
             <li class="p-item p-part1">
               <a @click="goProductDetailPage(32)" class="p-link link" target="_blank">
-                <img class="p-bg-img" src="//file.koolearn.com/2017/1219/20171219054251419.png" alt>
+                <img class="p-bg-img" src="http://oss.lshao.cn/images/2-alpha-edit.png" alt>
                 <p class="p-title">2020考研英语进阶全程班</p>
-                <p class="p-info">王江涛 李旭 唐静</p>
+                <p class="p-info">王江海 李旭 唐静</p>
               </a>
             </li>
           </ul>
@@ -1259,29 +1072,12 @@
                   <li class="p-teacher-item">
                     <img
                       class="p-teacher-avatar"
-                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391542195818496_small.jpg"
+                      src="http://oss.lshao.cn/images/teacher-icon2.jpg"
                       alt
                     >
-                    <p class="p-teacher-name">王江涛</p>
+                    <p class="p-teacher-name">王江海</p>
                   </li>
 
-                  <li class="p-teacher-item">
-                    <img
-                      class="p-teacher-avatar"
-                      src="//tfs.koolearn.com/class-teacher/img/201806/6410390927579287552_small.jpg"
-                      alt
-                    >
-                    <p class="p-teacher-name">李旭</p>
-                  </li>
-
-                  <li class="p-teacher-item">
-                    <img
-                      class="p-teacher-avatar"
-                      src="//teacher.koocdn.com/teacher/picture/201901/1548926701500_small.jpg"
-                      alt
-                    >
-                    <p class="p-teacher-name">唐静</p>
-                  </li>
                 </ul>
               </a>
             </li>
@@ -1296,29 +1092,12 @@
                   <li class="p-teacher-item">
                     <img
                       class="p-teacher-avatar"
-                      src="//tfs.koolearn.com/class-teacher/img/201804/6388639532102717440.JPG"
+                      src="http://oss.lshao.cn/images/teacher-icon2.jpg"
                       alt
                     >
-                    <p class="p-teacher-name">阮晔</p>
+                    <p class="p-teacher-name">王江海</p>
                   </li>
 
-                  <li class="p-teacher-item">
-                    <img
-                      class="p-teacher-avatar"
-                      src="//tfs.koolearn.com/class-teacher/img/201804/6388639691649847296.JPG"
-                      alt
-                    >
-                    <p class="p-teacher-name">徐涛</p>
-                  </li>
-
-                  <li class="p-teacher-item">
-                    <img
-                      class="p-teacher-avatar"
-                      src="//tfs.koolearn.com/class-teacher/img/201804/6388639693042356224.JPG"
-                      alt
-                    >
-                    <p class="p-teacher-name">刘源泉</p>
-                  </li>
                 </ul>
               </a>
             </li>
@@ -1333,29 +1112,12 @@
                   <li class="p-teacher-item">
                     <img
                       class="p-teacher-avatar"
-                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391542195818496_small.jpg"
+                      src="http://oss.lshao.cn/images/teacher-icon2.jpg"
                       alt
                     >
-                    <p class="p-teacher-name">王江涛</p>
+                    <p class="p-teacher-name">王江海</p>
                   </li>
 
-                  <li class="p-teacher-item">
-                    <img
-                      class="p-teacher-avatar"
-                      src="//tfs.koolearn.com/class-teacher/img/201806/6410390927579287552_small.jpg"
-                      alt
-                    >
-                    <p class="p-teacher-name">李旭</p>
-                  </li>
-
-                  <li class="p-teacher-item">
-                    <img
-                      class="p-teacher-avatar"
-                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391816595574784_small.jpg"
-                      alt
-                    >
-                    <p class="p-teacher-name">唐迟</p>
-                  </li>
                 </ul>
               </a>
             </li>
@@ -1370,29 +1132,12 @@
                   <li class="p-teacher-item">
                     <img
                       class="p-teacher-avatar"
-                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391542195818496_small.jpg"
+                      src="http://oss.lshao.cn/images/teacher-icon2.jpg"
                       alt
                     >
-                    <p class="p-teacher-name">王江涛</p>
+                    <p class="p-teacher-name">王江海</p>
                   </li>
 
-                  <li class="p-teacher-item">
-                    <img
-                      class="p-teacher-avatar"
-                      src="//tfs.koolearn.com/class-teacher/img/201806/6410390927579287552_small.jpg"
-                      alt
-                    >
-                    <p class="p-teacher-name">李旭</p>
-                  </li>
-
-                  <li class="p-teacher-item">
-                    <img
-                      class="p-teacher-avatar"
-                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391816595574784_small.jpg"
-                      alt
-                    >
-                    <p class="p-teacher-name">唐迟</p>
-                  </li>
                 </ul>
               </a>
             </li>
@@ -1407,29 +1152,12 @@
                   <li class="p-teacher-item">
                     <img
                       class="p-teacher-avatar"
-                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391542195818496_small.jpg"
+                      src="http://oss.lshao.cn/images/teacher-icon2.jpg"
                       alt
                     >
-                    <p class="p-teacher-name">王江涛</p>
+                    <p class="p-teacher-name">王江海</p>
                   </li>
 
-                  <li class="p-teacher-item">
-                    <img
-                      class="p-teacher-avatar"
-                      src="//tfs.koolearn.com/class-teacher/img/201806/6410390927579287552_small.jpg"
-                      alt
-                    >
-                    <p class="p-teacher-name">李旭</p>
-                  </li>
-
-                  <li class="p-teacher-item">
-                    <img
-                      class="p-teacher-avatar"
-                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391816595574784_small.jpg"
-                      alt
-                    >
-                    <p class="p-teacher-name">唐迟</p>
-                  </li>
                 </ul>
               </a>
             </li>
@@ -1444,28 +1172,10 @@
                   <li class="p-teacher-item">
                     <img
                       class="p-teacher-avatar"
-                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391542195818496_small.jpg"
+                      src="http://oss.lshao.cn/images/teacher-icon2.jpg"
                       alt
                     >
-                    <p class="p-teacher-name">王江涛</p>
-                  </li>
-
-                  <li class="p-teacher-item">
-                    <img
-                      class="p-teacher-avatar"
-                      src="//tfs.koolearn.com/class-teacher/img/201806/6410390927579287552_small.jpg"
-                      alt
-                    >
-                    <p class="p-teacher-name">李旭</p>
-                  </li>
-
-                  <li class="p-teacher-item">
-                    <img
-                      class="p-teacher-avatar"
-                      src="//tfs.koolearn.com/class-teacher/img/201806/6410391816595574784_small.jpg"
-                      alt
-                    >
-                    <p class="p-teacher-name">唐迟</p>
+                    <p class="p-teacher-name">王江海</p>
                   </li>
                 </ul>
               </a>
@@ -1474,16 +1184,16 @@
           <ul class="p-gg-imgs-list">
             <li class="p-item p-part1">
               <a @click="goProductDetailPage(32)" class="p-link link" target="_blank">
-                <img class="p-bg-img" src="//file.koolearn.com/2017/1227/20171227031136951.jpg" alt>
+                <img class="p-bg-img" src="http://oss.lshao.cn/images/1-alpha-edit.png" alt>
                 <p class="p-title">2020考研政治进阶全程班</p>
                 <p class="p-info">阮晔 徐涛 刘源泉</p>
               </a>
             </li>
             <li class="p-item p-part1">
               <a @click="goProductDetailPage(32)" class="p-link link" target="_blank">
-                <img class="p-bg-img" src="//file.koolearn.com/2017/1219/20171219054251419.png" alt>
+                <img class="p-bg-img" src="http://oss.lshao.cn/images/2-alpha-edit.png" alt>
                 <p class="p-title">2020考研英语进阶全程班</p>
-                <p class="p-info">王江涛 李旭 唐静</p>
+                <p class="p-info">王江海 李旭 唐静</p>
               </a>
             </li>
           </ul>
@@ -2525,6 +2235,8 @@ body .p-max-width-wrap {
   width: 38px;
   height: 38px;
   border: 1px solid #f4f4f4;
+    object-fit: cover;
+    object-position: 50% 0%;
 }
 .p-content
   .p-middle-content-wrap

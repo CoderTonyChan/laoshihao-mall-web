@@ -16,6 +16,10 @@
   import pcGoodsDetail from 'components/goods/detail';
 
   export default {
+    beforeRouteEnter (to, from, next) {
+      next();
+      document.body.scrollTop = 0;
+    },
     data() {
       return {};
     },
