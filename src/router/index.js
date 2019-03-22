@@ -133,6 +133,69 @@ export default [
         component: resolve => require(['views/about'], resolve)
       },
       {
+        name: 'question',
+        path: 'question',
+        meta: {
+          name: '常见问题',
+          hideMainHeader: false
+        },
+        component: resolve => require(['views/about/question'], resolve)
+      },
+      {
+        name: 'register',
+        path: 'register',
+        meta: {
+          name: '新用户注册',
+          hideMainHeader: false
+        },
+        component: resolve => require(['views/about/register'], resolve)
+      },
+      {
+        name: 'payonline',
+        path: 'payonline',
+        meta: {
+          name: '在线支付',
+          hideMainHeader: false
+        },
+        component: resolve => require(['views/about/payonline'], resolve)
+      },
+      {
+        name: 'invoice',
+        path: 'invoice',
+        meta: {
+          name: '开具发票',
+          hideMainHeader: false
+        },
+        component: resolve => require(['views/about/invoice'], resolve)
+      },
+      {
+        name: 'howtostudy',
+        path: 'howtostudy',
+        meta: {
+          name: '如何上课',
+          hideMainHeader: false
+        },
+        component: resolve => require(['views/about/howtostudy'], resolve)
+      },
+      {
+        name: 'business',
+        path: 'business',
+        meta: {
+          name: '商务合作',
+          hideMainHeader: false
+        },
+        component: resolve => require(['views/about/business'], resolve)
+      },
+      {
+        name: 'refund',
+        path: 'refund',
+        meta: {
+          name: '退换课规则',
+          hideMainHeader: false
+        },
+        component: resolve => require(['views/about/refund'], resolve)
+      },
+      {
         name: 'download',
         path: 'download',
         meta: {

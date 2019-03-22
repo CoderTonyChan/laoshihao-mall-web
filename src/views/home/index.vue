@@ -1303,10 +1303,10 @@
         <img class="float-img" src="http://oss.lshao.cn/images/download1.png" alt="">
         <p class="float-title" >下载</p>
       </li>
-      <li class="item link" onclick="alert('正在规划')">
+      <!-- <li class="item link" onclick="alert('正在规划')">
         <img class="float-img" src="http://oss.lshao.cn/images/help1.png" alt="">
         <p class="float-title">帮助</p>
-      </li>
+      </li> -->
       <li class="item link " onclick="alert('正在规划')">
         <img class="float-img consult1" src="http://oss.lshao.cn/images/consult1.png" alt="">
         <p class="float-title">咨询</p>
@@ -2384,9 +2384,10 @@ img {
 }
 .float-title{
   position: relative;
-    top: 17px;
+    top: 8px;
     left: 20px;
     color: #ccc;
+    margin-top: 10px;
 }
 
 .float-img{
