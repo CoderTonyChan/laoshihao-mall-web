@@ -14,7 +14,7 @@
       <div class="content with-nav">
         <div class="panel">
           <div class="panel-title">{{$route.meta.name}}</div>
-          <div class="panel-body">
+          <div class="panel-body" style="margin-top: 0px;">
             <div class="order-list-con">
               <pc-order-list :orderVoList="orderVoList"/>
             </div>

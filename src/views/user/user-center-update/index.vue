@@ -14,7 +14,7 @@
       <div class="content with-nav">
         <div class="panel">
           <div class="panel-title">我的信息</div>
-          <div class="panel-body">
+          <div class="panel-body" style="margin-top: 0px;">
             <pc-user-update></pc-user-update>
           </div>
         </div>

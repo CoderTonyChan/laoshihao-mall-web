@@ -14,7 +14,7 @@
       <div class="content with-nav">
         <div class="panel">
           <div class="panel-title">修改密码</div>
-          <div class="panel-body">
+          <div class="panel-body" style="margin-top: 0px;">
             <div class="user-info">
               <div class="form-line">
                 <span class="label">原密码：</span>

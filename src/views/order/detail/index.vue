@@ -45,7 +45,7 @@
         </div>
         <div class="panel">
           <div class="panel-title">课程清单</div>
-          <div class="panel-body">
+          <div class="panel-body" style="margin-top: 0px;">
             <table class="product-table">
               <tr>
                 <th class="cell-th cell-img">&nbsp;</th>
