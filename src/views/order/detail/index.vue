@@ -14,7 +14,7 @@
       <div class="content with-nav">
         <div class="panel">
           <div class="panel-title">订单信息</div>
-          <div class="panel-body">
+          <div class="panel-body" style="margin-top: 0px;">
             <div class="order-info">
               <div class="text-line">
                 <span class="text">订单号：{{orderVo.orderNo}}</span>
