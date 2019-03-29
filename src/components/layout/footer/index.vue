@@ -2,7 +2,7 @@
   <div class="footer">
     <div class="top">
       <div class="top w">
-        <img src="http://oss.lshao.cn/images/Logo.png" alt="">
+        <img src="http://oss.lshao.cn/images/Logo.png" alt="" @click.prevent="goHome" class="link">
 
 
         <div class="w1">
