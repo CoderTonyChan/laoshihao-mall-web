@@ -49,12 +49,12 @@
 
 
         <li class="nav-item"  v-show="loginName != null || loginName !== ''">
-          <a class="link" href="javascript:void(0)"  @click="goSignUp">{{loginName}}</a>
+          <a href="javascript:void(0)"  @click="goSignUp">{{loginName}}</a>
         </li>
         
         <li class="nav-item"  v-show="loginName != null || loginName !== ''">
           <span class="shu">|</span>
-          <a class="link" href="javascript:void(0)" @click="goSignIn">退出</a>
+          <a class="link" href="javascript:void(0)" @click.prevent="logout">退出</a>
         </li>
         
         <li class="nav-item">
