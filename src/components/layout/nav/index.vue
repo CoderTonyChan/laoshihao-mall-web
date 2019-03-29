@@ -6,7 +6,7 @@
         <span class="user">
           <span>{{city}}</span>
           <span class="link" @click="change(city)">[切换城市]</span>
-          <ul v-show="isShowCity">
+          <ul v-show="isShowCity" style="background-color: gray;">
             <li class="link city" @click="change('北京')">北京</li>
             <li class="link city" @click="change('上海')">上海</li>
             <li class="link city" @click="change('广州')">广州</li>
@@ -38,13 +38,23 @@
           </a>
         </li> -->
         
-        <li class="nav-item register">
+        <li class="nav-item register"  v-show="loginName == null || loginName === ''">
           <a class="link" href="javascript:void(0)"  @click="goSignUp">注册有礼</a>
         </li>
         
-        <li class="nav-item">
+        <li class="nav-item"  v-show="loginName == null || loginName === ''">
           <span class="shu">|</span>
           <a class="link" href="javascript:void(0)" @click="goSignIn">登录</a>
+        </li>
+
+
+        <li class="nav-item"  v-show="loginName != null || loginName !== ''">
+          <a class="link" href="javascript:void(0)"  @click="goSignUp">{{loginName}}</a>
+        </li>
+        
+        <li class="nav-item"  v-show="loginName != null || loginName !== ''">
+          <span class="shu">|</span>
+          <a class="link" href="javascript:void(0)" @click="goSignIn">退出</a>
         </li>
         
         <li class="nav-item">
