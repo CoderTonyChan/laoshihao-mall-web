@@ -38,21 +38,21 @@
           </a>
         </li> -->
         
-        <li class="nav-item register"  v-show="loginName == null || loginName === ''">
+        <li class="nav-item register"  v-if="loginName == null || loginName === ''">
           <a class="link" href="javascript:void(0)"  @click="goSignUp">注册有礼</a>
         </li>
         
-        <li class="nav-item"  v-show="loginName == null || loginName === ''">
+        <li class="nav-item"  v-if="loginName == null || loginName === ''">
           <span class="shu">|</span>
           <a class="link" href="javascript:void(0)" @click="goSignIn">登录</a>
         </li>
 
 
-        <li class="nav-item"  v-show="loginName != null || loginName !== ''">
-          <a href="javascript:void(0)"  @click="goSignUp">{{loginName}}</a>
+        <li class="nav-item"  v-if="loginName != null || loginName !== ''">
+          {{loginName}}
         </li>
         
-        <li class="nav-item"  v-show="loginName != null || loginName !== ''">
+        <li class="nav-item"  v-if="loginName != null">
           <span class="shu">|</span>
           <a class="link" href="javascript:void(0)" @click.prevent="logout">退出</a>
         </li>
