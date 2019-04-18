@@ -137,7 +137,8 @@ Vue.prototype.$http.interceptors.response.use((res) => {
     if (error.response.status === 500) {
       alert(error.response.data.message);
     } else if (error.response.status === 401) {
-      alert('您无访问权限');
+      // TODO: 重新去请求一下权限
+      // alert('您无访问权限');
     } else {
       console.log('Error', error.message);
       alert('接口请求失败或超时！请刷新重试');
