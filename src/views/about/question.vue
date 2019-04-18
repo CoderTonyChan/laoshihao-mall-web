@@ -34,7 +34,7 @@
               
               <li>Q：板书功能如何换行、退格和输入空格？</li>
               <li>A：
-                <br><span style="margin-left: 20px;">1）翻页：双指上下滑动或滚动鼠标中键；或者，一笔手写一个换行符，即先写一竖，顺势再从右到左写一横；</span>
+                <br><span style="margin-left: 20px;">1）换行：点击任何位置可以另起一行板书；或者，一笔手写一个换行符，即先写一竖，顺势再从右到左写一横；</span>
                 <br><span style="margin-left: 20px;">2）退格：从右到左写一横；</span>
                 <br><span style="margin-left: 20px;">3）空格：一笔手写一个空格符，即先写一竖，顺势再从左到右写一横、从下到上写一竖。</span>
               </li>
