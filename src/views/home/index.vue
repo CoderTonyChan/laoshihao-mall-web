@@ -1268,30 +1268,11 @@
           </div>
           <ul class="coop">
             <li class="item">
-              <img src="//images.koolearn.com/fe_upload/2018/1/2018-1-9-1515489909341.png">
+              <img src="http://www.jinghua.com/include/images/logo_bot_org.png" width="200" height="52" >
             </li>
             <li class="item">
-              <img src="//images.koolearn.com/shark/project/zt/2017/0918koolearn-home-gf/i/content/outfit_duona.png?3236a6">
+              <img src="https://i.loli.net/2019/04/18/5cb82ac5a10d4.jpg" width="200" height="52" >
             </li>
-            <li class="item">
-              <img src="//images.koolearn.com/fe_upload/2018/1/2018-1-9-1515489909341.png">
-            </li>
-            <li class="item">
-              <img src="//images.koolearn.com/shark/project/zt/2017/0918koolearn-home-gf/i/content/outfit_duona.png?3236a6">
-            </li>
-            <li class="item">
-              <img src="//images.koolearn.com/fe_upload/2018/1/2018-1-9-1515489909341.png">
-            </li>
-            <li class="item">
-              <img src="//images.koolearn.com/shark/project/zt/2017/0918koolearn-home-gf/i/content/outfit_duona.png?3236a6">
-            </li>
-            <li class="item">
-              <img src="//images.koolearn.com/fe_upload/2018/1/2018-1-9-1515489909341.png">
-            </li>
-            <li class="item">
-              <img src="//images.koolearn.com/shark/project/zt/2017/0918koolearn-home-gf/i/content/outfit_duona.png?3236a6">
-            </li>
-
           </ul>
         </div>
       </div>
