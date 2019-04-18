@@ -18,7 +18,8 @@
   export default {
     beforeRouteEnter (to, from, next) {
       next();
-      document.body.scrollTop = 0;
+      // document.body.scrollTop = 0;
+      window.scrollTo(0,0);
     },
     data() {
       return {};

@@ -151,6 +151,8 @@ export default {
     //   next(vm => vm.setData(err, post))
     // })
     next();
+
+    window.scrollTo(0,0);
     console.error(`goods-list---beforeRouteEnter`);
   },
   // 路由改变前，组件就已经渲染完了
