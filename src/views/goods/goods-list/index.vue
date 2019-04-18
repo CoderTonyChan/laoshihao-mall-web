@@ -10,15 +10,14 @@
       </div>
     </div>
     <div class="list-wrap w" v-if="selectorsData">
+      
       <div class="selector" id="J_selector">
-        <div class="s-title" clstag="thirdtype|keycount|thirdtype|select">
-          <h3>
-            <b>课程</b>
-            <em>筛选</em>
-            <!-- 共&nbsp;
-            <span>58482</span>个商品-->
-          </h3>
-        </div>
+        <div class="J_selectorLine s-line J_selectorFold">
+          <div class="sl-wrap"><div class="sl-key"><span>类型：</span></div> <div class="sl-value"><div class="sl-v-list"><ul class="J_valueList"><li><a><i></i>
+                    一卡通
+                  </a> <!----></li><li><a><i></i>
+                    定向提升
+                  </a> <!----></li></ul></div></div></div></div>
         <div v-if="selectorsData.organs" class="J_selectorLine s-line J_selectorFold">
           <div class="sl-wrap">
             <div class="sl-key">
@@ -152,7 +151,7 @@ export default {
     // })
     next();
 
-    window.scrollTo(0,0);
+      window.scrollTo(0,0);
     console.error(`goods-list---beforeRouteEnter`);
   },
   // 路由改变前，组件就已经渲染完了
