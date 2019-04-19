@@ -1413,7 +1413,9 @@ export default {
   },
   methods: {
     feedback(){
-      this.$pcMessage('感谢反馈');
+      console.log(this.$store.getters.getLoginName);
+      
+      this.$pcMessage(`感谢反馈 ${this.$store.getters.getLoginName}`);
       console.log(this.textarea);
       console.log(this.feedbacks);
       this.showModal = false;
