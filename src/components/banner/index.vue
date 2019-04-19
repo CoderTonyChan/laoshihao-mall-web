@@ -71,9 +71,11 @@ export default {
       },
       swiperOption: {
         notNextTick: true,
-        // autoplay: 3500,
+        autoplay: 3000,
+        loop: true,
         initialSlide: 0,
         setWrapperSize: true,
+        autoplayDisableOnInteraction: true,
         pagination: ".banner .swiper-pagination",
         paginationClickable: true,
         mousewheelControl: false,
