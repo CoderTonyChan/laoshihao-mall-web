@@ -72,7 +72,7 @@ export default {
       swiperOption: {
         notNextTick: true,
         autoplay: 3000,
-        loop: true,
+        // loop: true,
         initialSlide: 0,
         setWrapperSize: true,
         autoplayDisableOnInteraction: true,
@@ -118,55 +118,12 @@ export default {
             sources: [
               {
                 type: "video/mp4",
-                src: "https://lshao.oss-cn-beijing.aliyuncs.com/%E8%80%81%E5%B8%88%E5%A5%BD%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%975.0%28%E9%AB%98%E6%B8%85%29.mp4"
+                src: "https://lshao.oss-cn-beijing.aliyuncs.com/Jimmy%E8%AF%BE%E5%A0%82.MP4"
               }
             ],
-            poster: "http://oss.lshao.cn/images/video2.jpg"
+            poster: "https://i.loli.net/2019/04/19/5cb9828ba92d3.jpg"
           },
-        },{
-          player:'player3',
-          isVideo: true,
-          playerOptions: {
-            // videojs options //static/images/author.jpg
-            // autoplay: "muted",
-            height: "460px",
-            width: "840px",
-            muted: false,
-            playbackRates: [0.7, 1.0, 1.5, 2.0],
-            sources: [
-              {
-                type: "video/mp4",
-                src: "https://lshao.oss-cn-beijing.aliyuncs.com/%E4%BA%92%E5%8A%A8%E8%AF%BE%E5%A0%82.mp4"
-              }
-            ],
-            poster: "http://oss.lshao.cn/images/video3.jpg"
-          },
-        },
-        {
-          src: require("../../assets/image/banner/banner1.jpg"),
-          title: "雅思",
-          href: "detail/analysis"
-        },
-        {
-          src: require("../../assets/image/banner/banner2.jpg"),
-          title: "GRE",
-          href: "detail/count"
-        },
-        // {
-        //   src: require("../../assets/image/banner/banner3.jpg"),
-        //   title: "日语",
-        //   href: "http://xxx.xxx.com"
-        // },
-        // {
-        //   src: require("../../assets/image/banner/banner4.jpg"),
-        //   title: "新概念英语",
-        //   href: "detail/forecast"
-        // },
-        // {
-        //   src: require("../../assets/image/banner/banner5.jpg"),
-        //   title: "中小学",
-        //   href: "detail/forecast"
-        // }
+        }
       ]
     };
   },
