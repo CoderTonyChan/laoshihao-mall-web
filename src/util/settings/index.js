@@ -15,8 +15,8 @@ if (process.env.NODE_ENV === 'production') {
   gbs.domain = '.lshao.cn';
 } else {
   gbs.domain = '.lshao.cn';
-  gbs.lockr_prefix += 'DEV_';
-  gbs.cookie_prefix += 'DEV_';
+  // gbs.lockr_prefix += 'DEV_';
+  // gbs.cookie_prefix += 'DEV_';
 }
 
 const enums = {
