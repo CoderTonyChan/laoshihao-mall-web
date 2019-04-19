@@ -1,0 +1,19 @@
+language: node_js
+node_js: stable
+branches:
+  only:
+  - master
+before_script:
+  - npm install
+script:
+  - echo 'XD'
+  - npm run build
+after_success:
+  - git config --global user.name "CoderTonyChan"
+  - git config --global user.email "101992315@qq.com"
+  - cd dist
+  - git init
+  - git remote add origin https://github.com/CoderTonyChan/laoshihao-mall-web.git
+  - git add --all
+  - git commit -m "Travis-CI Update pages with build $TRAVIS_BUILD_NUMBER"
+  - git push -f https://${DEPLOY_TOKEN}@github.com/CoderTonyChan/laoshihao-mall-web.git master:gh-pages
