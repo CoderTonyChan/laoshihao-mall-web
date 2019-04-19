@@ -1,6 +1,9 @@
 # laoshihao-mall-web
-laoshihao-mall-web
 
+[![Stars](https://img.shields.io/github/stars/CoderTonyChan/laoshihao-mall-web.svg?label=Stars&style=social)](https://github.com/CoderTonyChan/laoshihao-mall-web/stargazers)
+[![Forks](https://img.shields.io/github/forks/CoderTonyChan/laoshihao-mall-web.svg?label=Forks&style=social)](https://github.com/CoderTonyChan/laoshihao-mall-web/network/members)
+[![Build Status](https://travis-ci.org/CoderTonyChan/laoshihao-mall-web.svg?branch=master)](https://travis-ci.org/CoderTonyChan/laoshihao-mall-web)
+[![repo-size](https://img.shields.io/github/repo-size/CoderTonyChan/laoshihao-mall-web.svg)]()
 
 
 # TODO 

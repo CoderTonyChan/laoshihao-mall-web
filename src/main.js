@@ -17,6 +17,8 @@ import {enums, PcCookie, PcLockr, PcEncrypt} from 'util/';
 import Bus from 'src/vueBus';
 import filters from './filters';
 
+// import modal from 'src/components/modal/index';
+
 import {
   Input,
   Dialog,
@@ -24,15 +26,25 @@ import {
   Form,
   formItem,
   MessageBox,
-  Message
+  Message,
+  Upload,
+  Row,
+  Col
 } from 'element-ui';
+
+// Vue.use(modal);
+
+// Vue.use(ElementUI);
 
 const components = [
   Input,
   Dialog,
   Button,
   Form,
-  formItem
+  formItem,
+  Upload,
+  Row,
+  Col
 ];
 
 components.map(component => {
@@ -141,10 +153,10 @@ Vue.prototype.$http.interceptors.response.use((res) => {
       // alert('您无访问权限');
     } else {
       console.log('Error', error.message);
-      alert('接口请求失败或超时！请刷新重试');
+      // alert('接口请求失败或超时！请刷新重试');
     }
   } else {
-    alert('接口请求失败或超时！请刷新重试');
+    // alert('接口请求失败或超时！请刷新重试');
   }
 });
 

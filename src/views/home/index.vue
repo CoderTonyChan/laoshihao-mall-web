@@ -1,5 +1,43 @@
 <template>
   <div>
+    <!-- <modal 
+      title="反馈" 
+      :content='""'
+      :showCancle='true' 
+      :confirmText='"提交"' 
+      @on-cancel='close'
+      @on-confirm='confirm'
+      v-show='showModal'>
+    </modal>-->
+    <el-dialog :visible.sync="showModal" title="反馈">
+      <el-input
+        type="textarea"
+        :autosize="{ minRows: 2, maxRows: 4}"
+        placeholder="反馈内容"
+        v-model="textarea"
+      ></el-input>
+      <el-row>
+        <el-col :span="24">
+          <div class="grid-content bg-purple-dark">
+            <br>
+          </div>
+        </el-col>
+      </el-row>
+      <el-upload
+        action="https://jsonplaceholder.typicode.com/posts/"
+        list-type="picture-card"
+        :on-preview="handlePictureCardPreview"
+        :on-remove="handleRemove"
+        :on-success="uploadImg"
+        :before-upload="beforeImgUpload"
+      ></el-upload>
+      <el-dialog :visible.sync="dialogVisible">
+        <img width="100%" :src="dialogImageUrl" alt>
+      </el-dialog>
+      <br>
+      <el-button @click="feedback" type="primary" style="display: block;margin: auto;">反馈</el-button>
+    </el-dialog>
+
     <div class="ad">
       <div class="w radius">
         <div class="radius-left">
@@ -45,7 +83,7 @@
 
         <div class="radius-right">
           <!-- 123 -->
-        <pc-banner></pc-banner>
+          <pc-banner></pc-banner>
         </div>
       </div>
       <div class="p-max-width-wrap p-content">
@@ -690,7 +728,11 @@
     </div>
     <div class="section2">
       <div class="p-content p-max-width-wrap detail-top">
-        <div class="p-left-imgs-wrap" id="jp-left-imgs-dx-wrap" style="background-image: url(http://oss.lshao.cn/images/primary_bg1.png);">
+        <div
+          class="p-left-imgs-wrap"
+          id="jp-left-imgs-dx-wrap"
+          style="background-image: url(http://oss.lshao.cn/images/primary_bg1.png);"
+        >
           <!-- <img
             class="p-title-img"
             src="//images.koolearn.com/shark/project/zt/2017/1205koolearn-home-gf/i/hot-course/hot-title-dx.png?f1cb1f"
@@ -739,11 +781,11 @@
             <li class="p-item p-selected"></li>
             <li class="p-item"></li>
             <li class="p-item"></li>
-          </ul> -->
+          </ul>-->
           <div class="top-banner">
-            <p-school-banner />
+            <p-school-banner/>
           </div>
-          <p class="botton-title link"  @click="goGoodsListPage('','小学')">更多课程 >></p>
+          <p class="botton-title link" @click="goGoodsListPage('','小学')">更多课程 >></p>
         </div>
         <div class="p-middle-content-wrap">
           <ul class="p-course-list jp-get-hot-list-wrap" data-id="1281">
@@ -779,7 +821,7 @@
                       alt
                     >
                     <p class="p-teacher-name">唐静</p>
-                  </li> -->
+                  </li>-->
                 </ul>
               </a>
             </li>
@@ -799,7 +841,6 @@
                     >
                     <p class="p-teacher-name">王江海</p>
                   </li>
-
                 </ul>
               </a>
             </li>
@@ -819,7 +860,6 @@
                     >
                     <p class="p-teacher-name">王江海</p>
                   </li>
-
                 </ul>
               </a>
             </li>
@@ -839,7 +879,6 @@
                     >
                     <p class="p-teacher-name">王江海</p>
                   </li>
-
                 </ul>
               </a>
             </li>
@@ -859,7 +898,6 @@
                     >
                     <p class="p-teacher-name">王江海</p>
                   </li>
-
                 </ul>
               </a>
             </li>
@@ -879,7 +917,6 @@
                     >
                     <p class="p-teacher-name">王江海</p>
                   </li>
-
                 </ul>
               </a>
             </li>
@@ -904,12 +941,15 @@
       </div>
 
       <div class="p-content p-max-width-wrap detail-mid">
-        <div class="p-left-imgs-wrap" id="jp-left-imgs-dx-wrap"  style="background-image: url(http://oss.lshao.cn/images/junior_bg1.png);">
-          
+        <div
+          class="p-left-imgs-wrap"
+          id="jp-left-imgs-dx-wrap"
+          style="background-image: url(http://oss.lshao.cn/images/junior_bg1.png);"
+        >
           <div class="top-banner">
-            <j-school-banner />
+            <j-school-banner/>
           </div>
-          <p class="botton-title link"  @click="goGoodsListPage('','初中')">更多课程 >></p>
+          <p class="botton-title link" @click="goGoodsListPage('','初中')">更多课程 >></p>
         </div>
         <div class="p-middle-content-wrap">
           <ul class="p-course-list jp-get-hot-list-wrap" data-id="1281">
@@ -928,7 +968,6 @@
                     >
                     <p class="p-teacher-name">王江海</p>
                   </li>
-
                 </ul>
               </a>
             </li>
@@ -948,7 +987,6 @@
                     >
                     <p class="p-teacher-name">王江海</p>
                   </li>
-
                 </ul>
               </a>
             </li>
@@ -968,7 +1006,6 @@
                     >
                     <p class="p-teacher-name">王江海</p>
                   </li>
-
                 </ul>
               </a>
             </li>
@@ -988,7 +1025,6 @@
                     >
                     <p class="p-teacher-name">王江海</p>
                   </li>
-
                 </ul>
               </a>
             </li>
@@ -1008,7 +1044,6 @@
                     >
                     <p class="p-teacher-name">王江海</p>
                   </li>
-
                 </ul>
               </a>
             </li>
@@ -1028,7 +1063,6 @@
                     >
                     <p class="p-teacher-name">王江海</p>
                   </li>
-
                 </ul>
               </a>
             </li>
@@ -1053,12 +1087,15 @@
       </div>
 
       <div class="p-content p-max-width-wrap detail-bottom">
-        <div class="p-left-imgs-wrap" id="jp-left-imgs-dx-wrap"   style="background-image: url(http://oss.lshao.cn/images/high_bg1.png);">
-          
+        <div
+          class="p-left-imgs-wrap"
+          id="jp-left-imgs-dx-wrap"
+          style="background-image: url(http://oss.lshao.cn/images/high_bg1.png);"
+        >
           <div class="top-banner">
-            <h-school-banner />
+            <h-school-banner/>
           </div>
-          <p class="botton-title link"  @click="goGoodsListPage('','高中')">更多课程 >></p>
+          <p class="botton-title link" @click="goGoodsListPage('','高中')">更多课程 >></p>
         </div>
         <div class="p-middle-content-wrap">
           <ul class="p-course-list jp-get-hot-list-wrap" data-id="1281">
@@ -1077,7 +1114,6 @@
                     >
                     <p class="p-teacher-name">王江海</p>
                   </li>
-
                 </ul>
               </a>
             </li>
@@ -1097,7 +1133,6 @@
                     >
                     <p class="p-teacher-name">王江海</p>
                   </li>
-
                 </ul>
               </a>
             </li>
@@ -1117,7 +1152,6 @@
                     >
                     <p class="p-teacher-name">王江海</p>
                   </li>
-
                 </ul>
               </a>
             </li>
@@ -1137,7 +1171,6 @@
                     >
                     <p class="p-teacher-name">王江海</p>
                   </li>
-
                 </ul>
               </a>
             </li>
@@ -1157,7 +1190,6 @@
                     >
                     <p class="p-teacher-name">王江海</p>
                   </li>
-
                 </ul>
               </a>
             </li>
@@ -1203,10 +1235,7 @@
       <div class="w">
         <div class="capital">
           <div class="capital-ti">
-            <img
-              class="capital-ti__img"
-              src="http://oss.lshao.cn/images/title1.png"
-            >
+            <img class="capital-ti__img" src="http://oss.lshao.cn/images/title1.png">
           </div>
           <div class="capital-list">
             <div class="capital-list-box">
@@ -1214,7 +1243,8 @@
                 <img class="capital-list-box__img" src="http://oss.lshao.cn/images/why_icon1.png">
                 <div class="p-capital-info">
                   <h3 class="capital-list-box__h">三大平台终端</h3>
-                  <p class="capital-list-box__p">多客户端支持
+                  <p class="capital-list-box__p">
+                    多客户端支持
                     <br>Windows / Android / iOS平台
                   </p>
                 </div>
@@ -1225,7 +1255,8 @@
                 <img class="capital-list-box__img" src="http://oss.lshao.cn/images/why_icon2.png">
                 <div class="p-capital-info">
                   <h3 class="capital-list-box__h">闭环在线辅导</h3>
-                  <p class="capital-list-box__p">微课视频、虚拟教室、无纸化写作业
+                  <p class="capital-list-box__p">
+                    微课视频、虚拟教室、无纸化写作业
                     <br>在线考试、在线1对1、成绩统计
                   </p>
                 </div>
@@ -1236,7 +1267,8 @@
                 <img class="capital-list-box__img" src="http://oss.lshao.cn/images/why_icon3.png">
                 <div class="p-capital-info">
                   <h3 class="capital-list-box__h">手写作业编辑</h3>
-                  <p class="capital-list-box__p">Pad上手写作业并能编辑
+                  <p class="capital-list-box__p">
+                    Pad上手写作业并能编辑
                     <br>笔迹、自动批改作业、查看答案和填空题数字识别
                   </p>
                 </div>
@@ -1247,7 +1279,8 @@
                 <img class="capital-list-box__img" src="http://oss.lshao.cn/images/why_icon4.png">
                 <div class="p-capital-info">
                   <h3 class="capital-list-box__h">双师课堂教学</h3>
-                  <p class="capital-list-box__p">双师课堂: 名师精品课
+                  <p class="capital-list-box__p">
+                    双师课堂: 名师精品课
                     <br>辅导老师闭环在线教、随时随地学
                   </p>
                 </div>
@@ -1261,17 +1294,18 @@
       <div class="w" style="padding-bottom: 60px;">
         <div class="capital">
           <div class="capital-ti">
-            <img
-              class="capital-ti__img"
-              src="http://oss.lshao.cn/images/title2.png"
-            >
+            <img class="capital-ti__img" src="http://oss.lshao.cn/images/title2.png">
           </div>
           <ul class="coop">
             <li class="item">
-              <img src="http://www.jinghua.com/include/images/logo_bot_org.png" width="200" height="52" >
+              <img
+                src="http://www.jinghua.com/include/images/logo_bot_org.png"
+                width="200"
+                height="52"
+              >
             </li>
             <li class="item">
-              <img src="https://i.loli.net/2019/04/18/5cb82ac5a10d4.jpg" width="200" height="52" >
+              <img src="https://i.loli.net/2019/04/18/5cb82ac5a10d4.jpg" width="200" height="52">
             </li>
           </ul>
         </div>
@@ -1281,20 +1315,21 @@
     </div>
     <ul class="top-float">
       <li class="item blue link" @click.prevent="loadPage('download')">
-        <img class="float-img" src="http://oss.lshao.cn/images/download1.png" alt="">
-        <p class="float-title" >下载</p>
+        <img class="float-img" src="http://oss.lshao.cn/images/download1.png" alt>
+        <p class="float-title">下载</p>
       </li>
       <!-- <li class="item link" onclick="alert('正在规划')">
         <img class="float-img" src="http://oss.lshao.cn/images/help1.png" alt="">
         <p class="float-title">帮助</p>
-      </li> -->
-      <li class="item link ">
+      </li>-->
+      <li class="item link">
         <a href="http://wpa.qq.com/msgrd?v=3&uin=1302828706&site=qq&menu=yes">
-          <img class="float-img consult1" src="http://oss.lshao.cn/images/consult1.png" alt="">
-          <p class="float-title">咨询</p></a>
-        </li>
-      <li class="item link" onclick="alert('正在规划')">
-        <img class="float-img" src="http://oss.lshao.cn/images/feedback1.png" alt="">
+          <img class="float-img consult1" src="http://oss.lshao.cn/images/consult1.png" alt>
+          <p class="float-title">咨询</p>
+        </a>
+      </li>
+      <li class="item link" @click.prevent="showModal = true">
+        <img class="float-img" src="http://oss.lshao.cn/images/feedback1.png" alt>
         <p class="float-title">反馈</p>
       </li>
     </ul>
@@ -1312,6 +1347,11 @@ import hSchoolBanner from "components/banner/hSchoolBanner";
 export default {
   data() {
     return {
+      feedbacks: [],
+      textarea: "",
+      dialogImageUrl: "",
+      dialogVisible: false,
+      showModal: false,
       hotItemIndex: 0,
       videos: [
         "https://lshao.oss-cn-beijing.aliyuncs.com/lshao2.0.mp4",
@@ -1372,6 +1412,55 @@ export default {
     });
   },
   methods: {
+    feedback(){
+      this.$pcMessage('感谢反馈');
+      console.log(this.textarea);
+      console.log(this.feedbacks);
+      this.showModal = false;
+    },
+    uploadImg(res, file) {
+      console.log(res);
+      this.feedbacks = [res.id,...this.feedbacks];
+      // 是否增加一个数组
+      // if (res.status == 1) {
+      //   this.adminInfo.avatar = res.image_path;
+      // } else {
+      //   this.$message.error("上传图片失败！");
+      // }
+    },
+    beforeImgUpload(file) {
+      console.log(file);
+      
+      const isRightType =
+        file.type === "image/jpeg" || file.type === "image/png";
+      const isLt2M = file.size / 1024 / 1024 < 2;
+
+      if (!isRightType) {
+        // this.$message.error("上传头像图片只能是 JPG 格式!");
+        alert("上传头像图片只能是 JPG 格式!")
+      }
+      if (!isLt2M) {
+        // this.$message.error("上传头像图片大小不能超过 2MB!");
+        alert("上传头像图片大小不能超过 2MB!")
+      }
+      return isRightType && isLt2M;
+    },
+    handleRemove(file, fileList) {
+      console.log(file, fileList);
+    },
+    handlePictureCardPreview(file) {
+      console.log(file);
+      this.dialogImageUrl = file.url;
+      this.dialogVisible = true;
+    },
+    close() {
+      console.log(`close`);
+      this.showModal = false;
+    },
+    confirm() {
+      // console.log(`confirm`);
+      this.showModal = false;
+    },
     // listen event
     chooseVideo(number) {
       // this.playerOptions.sources[0].src = this.videos[number];
@@ -1736,15 +1825,15 @@ h4 {
   margin-right: 20px;
   height: 182px;
 }
-                                                                   
+
 .radius .radius-right {
-    width: 840px;
-    height: 450px;
-    background-color: green;
-    /* border-radius: 24px; */
-    position: absolute;
-    top: 0;
-    right: 0;
+  width: 840px;
+  height: 450px;
+  background-color: green;
+  /* border-radius: 24px; */
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .p-content {
@@ -1789,7 +1878,7 @@ body .p-max-width-wrap {
 }
 
 // .p-content .p-title-wrap .p-tabs-list > .p-item.p-selected {
-  // display: block;
+// display: block;
 // }
 
 .p-content .p-title-wrap .p-tabs-list > .p-item.p-no-selected {
@@ -2028,7 +2117,6 @@ body .p-max-width-wrap {
 .p-hot-course-wrap.p-green-wrap .p-content .p-left-imgs-wrap,
 .p-hot-course-wrap.p-green-wrap .p-content .p-middle-content-wrap .p-flag {
   background-color: #54d2d5;
-  
 }
 .p-content .p-left-imgs-wrap {
   position: absolute;
@@ -2217,8 +2305,8 @@ body .p-max-width-wrap {
   width: 38px;
   height: 38px;
   border: 1px solid #f4f4f4;
-    object-fit: cover;
-    object-position: 50% 0%;
+  object-fit: cover;
+  object-position: 50% 0%;
 }
 .p-content
   .p-middle-content-wrap
@@ -2339,73 +2427,74 @@ img {
   color: #9fadb5;
   font-size: 14px;
 }
-.capital .coop{
+.capital .coop {
   margin-top: 20px;
   margin-bottom: 40px;
   color: #9fadb5;
 }
-.capital .coop .item{
+.capital .coop .item {
   float: left;
-    margin-right: 93px;
-    margin-top: 22px;
+  margin-right: 93px;
+  margin-top: 22px;
 }
-.top-float{
+.top-float {
   position: fixed;
   right: 0px;
   top: 260px;
   box-shadow: 0px 4px 12px 0px rgba(34, 23, 20, 0.1);
 }
 
-.top-float .item{
-	width: 60px;
-	height: 60px;
-	background-color: #ffffff;
+.top-float .item {
+  width: 60px;
+  height: 60px;
+  background-color: #ffffff;
 }
-.top-float .blue{
-	background-color: #4d7fff;
+.top-float .blue {
+  background-color: #4d7fff;
 }
-.float-title{
+.float-title {
   position: relative;
-    top: 8px;
-    left: 20px;
-    color: #ccc;
-    margin-top: 10px;
+  top: 8px;
+  left: 20px;
+  color: #ccc;
+  margin-top: 10px;
 }
 
-.float-img{
+.float-img {
   position: relative;
-    top: 10px;
-    left: 24px;
+  top: 10px;
+  left: 24px;
 }
-.float-img.consult1{
+.float-img.consult1 {
   position: relative;
-    top: 10px;
-    left: 21px;
+  top: 10px;
+  left: 21px;
 }
-
 
 .section2 .top-banner {
-    left: 22px;
-    bottom: 80px;
-    width: 150px;
-    height: 180px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    position: absolute;
+  left: 22px;
+  bottom: 80px;
+  width: 150px;
+  height: 180px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  position: absolute;
 }
 
 .section2 .botton-title {
-    bottom: 29px;
-    position: absolute;
-    width: 66px;
-    height: 12px;
-    font-size: 12px;
-    font-weight: normal;
-    font-stretch: normal;
-    letter-spacing: 0px;
-    color: #ffffff;
-    left: 25px;
+  bottom: 29px;
+  position: absolute;
+  width: 66px;
+  height: 12px;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  letter-spacing: 0px;
+  color: #ffffff;
+  left: 25px;
 }
 
-
+.el-upload .el-upload__input {
+  display: none;
+}
 </style>
