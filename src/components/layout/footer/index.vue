@@ -36,8 +36,8 @@
         <div class="w4">
           <p class="f-title">售后服务</p>
           <ul class="f-table">
-            <li class="item link" onclick="alert('正在规划')">在线客服</li>
-            <li class="item link" onclick="alert('正在规划')">意见反馈</li>
+            <li class="item" style="color: #999;">服务时间：9:00 - 20:00</li>
+            <li class="item"><a href="tel:010-52262815" class="link">服务电话：010 - 52262815</a></li>
             <li class="item link" @click.prevent="loadPage('refund')">退换课须知</li>
           </ul>
         </div>
