@@ -1,6 +1,6 @@
 <template>
   <div class="banner">
-    <swiper :options="swiperOption">
+    <swiper ref="swiper" :options="swiperOption">
       <swiper-slide v-for="slide in swiperSlides" :key="slide.title">
         <img
           v-if="!slide.isVideo"
@@ -135,12 +135,20 @@ export default {
   methods: {
     onPlayerPlay(player) {
       console.log('player play! event:', event)
-      console.log(this.$refs);
+      // console.log(this.$refs);
       // Object.values(this.$refs).forEach(element => {
       //   console.log(videoPlayer);
       // });
-      
+        
       for (const key in this.$refs) {
+        console.log(this.$refs);
+        if (key.indexOf('swiper') >=0) {
+          const VueSwiper = this.$refs.swiper;
+          const swiper = VueSwiper.swiper;
+          console.log(swiper);
+          swiper.stopAutoplay()
+          continue;
+        }
         if (this.$refs.hasOwnProperty(key)) {
           const videoPlayer = this.$refs[key];
           // console.log(videoPlayer[0].player);

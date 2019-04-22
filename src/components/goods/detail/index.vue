@@ -65,6 +65,7 @@
           </div>-->
           <div class="p-product-info">
             <p>课时：{{product.period}}&nbsp;&nbsp;&nbsp;&nbsp;有效期： {{this.dataString}}</p>
+            <p>难度：<span style="font-weight: bold; font-size: 16px; color: #f39800; letter-spacing: 2px;">{{stars}}</span>&nbsp;&nbsp;&nbsp;&nbsp;</p>
             <p class="teacher">
               主讲老师：
               <a
@@ -178,6 +179,7 @@ export default {
   data() {
     return {
       isShowProduct: true,
+      // stars: true,
       buyCount: 1,
       product: {},
       mainImage: "",
@@ -210,17 +212,21 @@ export default {
   mounted() {
     console.log("this is current player instance object", this.player);
   },
-  computed: {
-    player() {
-      return this.$refs.videoPlayer.player;
-    },
-    url() {
-      return `http://wpa.qq.com/msgrd?v=3&uin=${
-        this.product.qq
-      }&site=qq&menu=yes`;
-    }
-  },
   methods: {
+    // stars: function () {
+    //     if (this.product.difficulty === 1) {
+    //       return '★☆☆☆☆'
+    //     }else if (this.product.difficulty === 2) {
+    //       return '★★☆☆☆'
+    //     }else if (this.product.difficulty === 3) {
+    //       return '★★★☆☆'
+    //     }else if (this.product.difficulty === 4) {
+    //       return '★★★★☆'
+    //     }else if (this.product.difficulty === 5) {
+    //       return '★★★★★'
+    //     }
+    //     return '★★★☆☆';
+    // },
     // listen event
     onPlayerPlay(player) {
       // console.log('player play!', player)
@@ -287,6 +293,7 @@ export default {
         success: res => {
           if (res.code === 200) {
             this.product = res.result;
+            // this.product.difficulty = 5;
             this.mainImage = this.product.mainImage;
             if (this.product.subImages) {
               let subImages = this.product.subImages;
@@ -321,7 +328,29 @@ export default {
       // var m = (date.getMinutes() <10 ? '0' + date.getMinutes() : date.getMinutes()) + ':';
       // var s = (date.getSeconds() <10 ? '0' + date.getSeconds() : date.getSeconds());
       return Y + M + D;
-    }
+    },
+    stars: function () {
+        if (this.product.difficulty === 1) {
+          return '★☆☆☆☆'
+        }else if (this.product.difficulty === 2) {
+          return '★★☆☆☆'
+        }else if (this.product.difficulty === 3) {
+          return '★★★☆☆'
+        }else if (this.product.difficulty === 4) {
+          return '★★★★☆'
+        }else if (this.product.difficulty === 5) {
+          return '★★★★★'
+        }
+        return '★★★☆☆';
+    },
+    player() {
+      return this.$refs.videoPlayer.player;
+    },
+    url() {
+      return `http://wpa.qq.com/msgrd?v=3&uin=${
+        this.product.qq
+      }&site=qq&menu=yes`;
+    },
   }
 };
 </script>
