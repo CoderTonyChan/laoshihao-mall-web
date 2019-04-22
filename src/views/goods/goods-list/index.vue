@@ -10,14 +10,48 @@
       </div>
     </div>
     <div class="list-wrap w" v-if="selectorsData">
-      
       <div class="selector" id="J_selector">
         <div class="J_selectorLine s-line J_selectorFold">
-          <div class="sl-wrap"><div class="sl-key"><span>类型：</span></div> <div class="sl-value"><div class="sl-v-list"><ul class="J_valueList"><li><a><i></i>
-                    一卡通
-                  </a> <!----></li><li><a><i></i>
-                    定向提升
-                  </a> <!----></li></ul></div></div></div></div>
+          <div class="sl-wrap">
+            <div class="sl-key">
+              <span>类型：</span>
+            </div>
+            <div class="sl-value">
+              <div class="sl-v-list">
+                <ul class="J_valueList">
+                  <li>
+                    <a @click="reloadDifficulty(0)" v-bind:class="{seleted: (0 === queryInfo.difficulty)}">
+                      <i></i>
+                      同步课
+                    </a>
+                    <!---->
+                  </li>
+                  <li>
+                    <a @click="reloadDifficulty(1)" v-bind:class="{seleted: (1 === queryInfo.difficulty)}">
+                      <i></i>
+                      定向提升
+                    </a>
+                    <!---->
+                  </li>
+                  <li>
+                    <a @click="reloadDifficulty(2)" v-bind:class="{seleted: (2 === queryInfo.difficulty)}">
+                      <i></i>
+                      一卡通
+                    </a>
+                    <!---->
+                  </li>
+                  <li>
+                    <a @click="reloadDifficulty(3)" v-bind:class="{seleted: (3 === queryInfo.difficulty)}">
+                      <i></i>
+                      精华优课
+                    </a>
+                    <!---->
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
         <div v-if="selectorsData.organs" class="J_selectorLine s-line J_selectorFold">
           <div class="sl-wrap">
             <div class="sl-key">
@@ -26,12 +60,12 @@
             <div class="sl-value">
               <div class="sl-v-list">
                 <ul class="J_valueList">
-                  <li v-for="organ in selectorsData.organs" :key="organ.id">
-                    <a @click="reloadOrganData(organ)">
+                  <li v-for="organ in selectorsData.organs" :key="organ.id"  >
+                    <a @click="reloadOrganData(organ)" v-bind:class="{seleted: (organ.id === queryInfo.organId)}">
                       <i></i>
                       {{organ.name}}
                     </a>
-                    <a v-if="organ.id === queryInfo.organId" @click="reloadCancelOrganData(organ)">X</a>
+                    <!-- <a v-if="organ.id === queryInfo.organId" @click="reloadCancelOrganData(organ)">X</a> -->
                   </li>
                 </ul>
               </div>
@@ -51,14 +85,14 @@
               <div class="sl-v-list">
                 <ul class="J_valueList">
                   <li v-for="value in category.list" :key="value.id">
-                    <a @click="reloadCategoryData(value)">
+                    <a @click="reloadCategoryData(value)" v-bind:class="{seleted: (value.id === queryInfo.categoryId)}">
                       <i></i>
                       {{value.name}}
                     </a>
-                    <a
+                    <!-- <a
                       v-if="value.id === queryInfo.categoryId"
                       @click="reloadCancelCategoryData(value)"
-                    >X</a>
+                    >X</a> -->
                   </li>
                 </ul>
               </div>
@@ -78,14 +112,14 @@
               <div class="sl-v-list">
                 <ul class="J_valueList">
                   <li v-for="value in spec.values" :key="value.id">
-                    <a @click="reloadSpecsData(spec,value)">
+                    <a @click="reloadSpecsData(spec,value)" v-bind:class="{seleted: ((spec.id + '_' +value.id) === queryInfo.spec)}">
                       <i></i>
                       {{value.name}}
                     </a>
-                    <a
+                    <!-- <a
                       v-if="(spec.id + '_' +value.id) === queryInfo.spec"
                       @click="reloadCancelSpecsData(spec,value)"
-                    >X</a>
+                    >X</a> -->
                   </li>
                 </ul>
               </div>
@@ -137,7 +171,8 @@ export default {
         pageNum: "1",
         pageSize: "10",
         organId: "",
-        spec: ""
+        spec: "",
+        difficulty: null,
       },
       pcGoodsListKey: 1
     };
@@ -151,7 +186,7 @@ export default {
     // })
     next();
 
-      window.scrollTo(0,0);
+    window.scrollTo(0, 0);
     console.error(`goods-list---beforeRouteEnter`);
   },
   // 路由改变前，组件就已经渲染完了
@@ -160,7 +195,7 @@ export default {
     next();
     this.querySelectorsData(res => {
       if (res.code === 200) {
-          this.selectorsData = res.result;
+        this.selectorsData = res.result;
         console.log(res.result);
         this.$pcBus.$emit("searchProduct");
       } else {
@@ -180,6 +215,20 @@ export default {
     });
   },
   methods: {
+    reloadCancelDifficulty() {
+      this.queryInfo.difficulty = null;
+      this.loadPage("goods-list", this.queryInfo);
+    },
+    reloadDifficulty(difficulty) {
+      if (difficulty === this.queryInfo.difficulty) {
+        this.reloadCancelDifficulty();
+        return;
+      }
+      this.queryInfo.difficulty = difficulty;
+      this.queryInfo.categoryId = this.getUrlParam("categoryId");
+      this.queryInfo.keyword = this.getUrlParam("keyword");
+      this.loadPage("goods-list", this.queryInfo);
+    },
     reloadCancelSpecsData(spec, organ) {
       console.log(organ);
       this.queryInfo.keyword = this.getUrlParam("keyword");
@@ -187,6 +236,11 @@ export default {
       this.loadPage("goods-list", this.queryInfo);
     },
     reloadSpecsData(spec, organ) {
+      if ((spec.id + "_" + organ.id) === this.queryInfo.spec) {
+        this.reloadCancelSpecsData(spec, organ);
+        return;
+      }
+
       console.log(organ);
       this.queryInfo.spec = spec.id + "_" + organ.id;
       this.queryInfo.keyword = this.getUrlParam("keyword");
@@ -199,6 +253,10 @@ export default {
       this.loadPage("goods-list", this.queryInfo);
     },
     reloadCategoryData(organ) {
+      if (organ.id === this.queryInfo.categoryId) {
+        this.reloadCancelCategoryData(organ);
+        return;
+      }
       console.log(organ);
       this.queryInfo.categoryId = organ.id;
       this.queryInfo.keyword = this.getUrlParam("keyword");
@@ -215,6 +273,11 @@ export default {
     },
     reloadOrganData(organ) {
       console.log(organ);
+      if (organ.id === this.queryInfo.organId) {
+        this.reloadCancelOrganData(organ);
+        return;
+      }
+
       this.queryInfo.categoryId = this.getUrlParam("categoryId");
       this.queryInfo.keyword = this.getUrlParam("keyword");
       this.queryInfo.organId = organ.id;
@@ -320,9 +383,19 @@ export default {
   height: 26px;
   line-height: 26px;
 }
+
 .selector .sl-v-list li a {
   float: left;
   white-space: nowrap;
   zoom: 1;
+  cursor: pointer;
 }
+.selector .sl-v-list li a.seleted{
+  background-color: #7ecef4;
+  color: white;
+}
+/* .selector .sl-v-list li a.noSeleted{
+  background-color: clear;
+  color: #337ab7;
+} */
 </style>
