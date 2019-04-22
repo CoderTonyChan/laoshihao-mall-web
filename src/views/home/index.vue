@@ -1323,7 +1323,7 @@
         <img class="float-img" src="http://oss.lshao.cn/images/help1.png" alt="">
         <p class="float-title">帮助</p>
       </li>-->
-      <li class="item link">
+      <li class="item link" v-if="!this.$store.getters.getPlatformIsMobile">
         <a href="http://wpa.qq.com/msgrd?v=3&uin=1302828706&site=qq&menu=yes">
           <img class="float-img consult1" src="http://oss.lshao.cn/images/consult1.png" alt>
           <p class="float-title">咨询</p>
@@ -2445,6 +2445,7 @@ img {
   right: 0px;
   top: 260px;
   box-shadow: 0px 4px 12px 0px rgba(34, 23, 20, 0.1);
+  z-index: 100;
 }
 
 .top-float .item {
