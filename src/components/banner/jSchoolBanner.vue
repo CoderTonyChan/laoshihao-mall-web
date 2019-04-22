@@ -21,6 +21,15 @@
   import { swiper, swiperSlide } from 'vue-awesome-swiper';
   export default {
     name: 'banner-swiper',
+    props: ['adDtoList'],
+    computed: {
+      swiperSlides: function () {
+        this.adDtoList.forEach(element => {
+          element.src = element.img
+        });
+        return this.adDtoList;
+      }
+    },
     data() {
       return {
         swiperOption: {
@@ -37,33 +46,33 @@
           loop: true,
           loopAdditionalSlides: 1
         },
-        swiperSlides: [
-          {
-            src: require('../../assets/image/banner/banner1.jpg'),
-            title: '雅思',
-            href: 'detail/analysis'
-          },
-          {
-            src: require('../../assets/image/banner/banner2.jpg'),
-            title: 'GRE',
-            href: 'detail/count'
-          },
-          {
-            src: require('../../assets/image/banner/banner3.jpg'),
-            title: '日语',
-            href: 'http://xxx.xxx.com'
-          },
-          {
-            src: require('../../assets/image/banner/banner4.jpg'),
-            title: '新概念英语',
-            href: 'detail/forecast'
-          },
-          {
-            src: require('../../assets/image/banner/banner5.jpg'),
-            title: '中小学',
-            href: 'detail/forecast'
-          }
-        ]
+        // swiperSlides: [
+        //   {
+        //     src: require('../../assets/image/banner/banner1.jpg'),
+        //     title: '雅思',
+        //     href: 'detail/analysis'
+        //   },
+        //   {
+        //     src: require('../../assets/image/banner/banner2.jpg'),
+        //     title: 'GRE',
+        //     href: 'detail/count'
+        //   },
+        //   {
+        //     src: require('../../assets/image/banner/banner3.jpg'),
+        //     title: '日语',
+        //     href: 'http://xxx.xxx.com'
+        //   },
+        //   {
+        //     src: require('../../assets/image/banner/banner4.jpg'),
+        //     title: '新概念英语',
+        //     href: 'detail/forecast'
+        //   },
+        //   {
+        //     src: require('../../assets/image/banner/banner5.jpg'),
+        //     title: '中小学',
+        //     href: 'detail/forecast'
+        //   }
+        // ]
       };
     },
     components: {
@@ -91,6 +100,9 @@
   };
 </script>
 <style>
+.banner-img{
+  cursor: pointer;
+}
  .jSchoolBanner .swiper-button-next, 
  .jSchoolBanner .swiper-container-rtl .swiper-button-prev {
    right: -40px;

@@ -733,189 +733,27 @@
           id="jp-left-imgs-dx-wrap"
           style="background-image: url(http://oss.lshao.cn/images/primary_bg1.png);"
         >
-          <!-- <img
-            class="p-title-img"
-            src="//images.koolearn.com/shark/project/zt/2017/1205koolearn-home-gf/i/hot-course/hot-title-dx.png?f1cb1f"
-            alt
-          >
-          <ul class="p-imgs-list jp-left-imgs-list">
-            <li class="p-item p-selected">
-              <a class="p-link" href="http://www.koolearn.com/ke/kaoyan2/" target="_blank">
-                <img
-                  class="p-course-img"
-                  src="//file.koolearn.com/2018/0423/20180423111947336.jpg"
-                  alt
-                >
-                <p class="p-course-title">2020考研（签约）全程班</p>
-                <p class="p-course-info">零基础长线备考拼高分</p>
-              </a>
-            </li>
-            <li class="p-item">
-              <a class="p-link" href="http://www.koolearn.com/ke/kaoyan/" target="_blank">
-                <img
-                  class="p-course-img"
-                  src="//file.koolearn.com/2017/1219/20171219053817588.png"
-                  alt
-                >
-                <p class="p-course-title">2019考研复试</p>
-                <p class="p-course-info">科学辅导逆袭通关</p>
-              </a>
-            </li>
-            <li class="p-item">
-              <a
-                class="p-link"
-                href="http://www.koolearn.com/ke/cet/?from=shouye_daxue"
-                target="_blank"
-              >
-                <img
-                  class="p-course-img"
-                  src="//file.koolearn.com/2017/1219/20171219054016231.png"
-                  alt
-                >
-                <p class="p-course-title">四六级</p>
-                <p class="p-course-info">直击考点高分过级</p>
-              </a>
-            </li>
-          </ul>
-          <ul class="p-imgs-index jp-left-imgs-index-list">
-            <li class="p-item p-selected"></li>
-            <li class="p-item"></li>
-            <li class="p-item"></li>
-          </ul>-->
           <div class="top-banner">
-            <p-school-banner/>
+            <p-school-banner :adDtoList="this.categoryData[0].adDtoList"/>
           </div>
           <p class="botton-title link" @click="goGoodsListPage('','小学')">更多课程 >></p>
         </div>
         <div class="p-middle-content-wrap">
           <ul class="p-course-list jp-get-hot-list-wrap" data-id="1281">
-            <li class="p-item p-r-border p-b-border">
-              <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
+            <li class="p-item p-r-border p-b-border" v-for="xiaoxue in this.categoryData[0].productTeacherDtoList" :key="xiaoxue.id">
+              <a class="p-link link" @click="goProductDetailPage(xiaoxue.id)" target="_blank">
                 <p class="p-title">
-                  <span class="p-flag">NEW</span>2020考研英语进阶全程春季1班（一、二可选）
+                  <span class="p-flag">NEW</span>{{xiaoxue.name}}
                 </p>
-                <p class="p-time">课时数：267</p>
+                <p class="p-time">课时数：{{xiaoxue.period}}</p>
                 <ul class="p-teacher-list">
-                  <li class="p-teacher-item">
+                  <li class="p-teacher-item" v-for="teacher in xiaoxue.teacherList" :key="teacher.id">
                     <img
                       class="p-teacher-avatar"
-                      src="http://oss.lshao.cn/images/teacher-icon2.jpg"
+                      :src="teacher.avatar"
                       alt
                     >
-                    <p class="p-teacher-name">王江海</p>
-                  </li>
-
-                  <!-- <li class="p-teacher-item">
-                    <img
-                      class="p-teacher-avatar"
-                      src="//tfs.koolearn.com/class-teacher/img/201806/6410390927579287552_small.jpg"
-                      alt
-                    >
-                    <p class="p-teacher-name">李旭</p>
-                  </li>
-
-                  <li class="p-teacher-item">
-                    <img
-                      class="p-teacher-avatar"
-                      src="//teacher.koocdn.com/teacher/picture/201901/1548926701500_small.jpg"
-                      alt
-                    >
-                    <p class="p-teacher-name">唐静</p>
-                  </li>-->
-                </ul>
-              </a>
-            </li>
-
-            <li class="p-item p-r-border p-b-border">
-              <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
-                <p class="p-title">
-                  <span class="p-flag">NEW</span>2020考研政治进阶全程班
-                </p>
-                <p class="p-time">课时数：125</p>
-                <ul class="p-teacher-list">
-                  <li class="p-teacher-item">
-                    <img
-                      class="p-teacher-avatar"
-                      src="http://oss.lshao.cn/images/teacher-icon2.jpg"
-                      alt
-                    >
-                    <p class="p-teacher-name">王江海</p>
-                  </li>
-                </ul>
-              </a>
-            </li>
-
-            <li class="p-item p-b-border">
-              <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
-                <p class="p-title">
-                  <span class="p-flag">NEW</span>大学英语四级全程2班【2019年6月】
-                </p>
-                <p class="p-time">课时数：131</p>
-                <ul class="p-teacher-list">
-                  <li class="p-teacher-item">
-                    <img
-                      class="p-teacher-avatar"
-                      src="http://oss.lshao.cn/images/teacher-icon2.jpg"
-                      alt
-                    >
-                    <p class="p-teacher-name">王江海</p>
-                  </li>
-                </ul>
-              </a>
-            </li>
-
-            <li class="p-item p-r-border">
-              <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
-                <p class="p-title">
-                  <span class="p-flag">NEW</span>大学英语六级全程2班【2019年6月】
-                </p>
-                <p class="p-time">课时数：131</p>
-                <ul class="p-teacher-list">
-                  <li class="p-teacher-item">
-                    <img
-                      class="p-teacher-avatar"
-                      src="http://oss.lshao.cn/images/teacher-icon2.jpg"
-                      alt
-                    >
-                    <p class="p-teacher-name">王江海</p>
-                  </li>
-                </ul>
-              </a>
-            </li>
-
-            <li class="p-item p-r-border">
-              <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
-                <p class="p-title">
-                  <span class="p-flag">NEW</span>大学英语六级全程2班【2019年6月】
-                </p>
-                <p class="p-time">课时数：131</p>
-                <ul class="p-teacher-list">
-                  <li class="p-teacher-item">
-                    <img
-                      class="p-teacher-avatar"
-                      src="http://oss.lshao.cn/images/teacher-icon2.jpg"
-                      alt
-                    >
-                    <p class="p-teacher-name">王江海</p>
-                  </li>
-                </ul>
-              </a>
-            </li>
-
-            <li class="p-item">
-              <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
-                <p class="p-title">
-                  <span class="p-flag">NEW</span>大学英语六级全程2班【2019年6月】
-                </p>
-                <p class="p-time">课时数：131</p>
-                <ul class="p-teacher-list">
-                  <li class="p-teacher-item">
-                    <img
-                      class="p-teacher-avatar"
-                      src="http://oss.lshao.cn/images/teacher-icon2.jpg"
-                      alt
-                    >
-                    <p class="p-teacher-name">王江海</p>
+                    <p class="p-teacher-name">{{teacher.name}}</p>
                   </li>
                 </ul>
               </a>
@@ -940,128 +778,33 @@
         </div>
       </div>
 
-      <div class="p-content p-max-width-wrap detail-mid">
+      <div class="p-content p-max-width-wrap detail-mid" v-if="this.categoryData[1]">
         <div
           class="p-left-imgs-wrap"
           id="jp-left-imgs-dx-wrap"
           style="background-image: url(http://oss.lshao.cn/images/junior_bg1.png);"
         >
           <div class="top-banner">
-            <j-school-banner/>
+            <j-school-banner :adDtoList="this.categoryData[1].adDtoList"/>
           </div>
           <p class="botton-title link" @click="goGoodsListPage('','初中')">更多课程 >></p>
         </div>
         <div class="p-middle-content-wrap">
           <ul class="p-course-list jp-get-hot-list-wrap" data-id="1281">
-            <li class="p-item p-r-border p-b-border">
-              <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
+            <li class="p-item p-r-border p-b-border"  v-for="chuzhong in this.categoryData[1].productTeacherDtoList" :key="chuzhong.id">
+              <a class="p-link link" @click="goProductDetailPage(chuzhong.id)" target="_blank">
                 <p class="p-title">
-                  <span class="p-flag">NEW</span>2020考研英语进阶全程春季1班（一、二可选）
+                  <span class="p-flag">NEW</span>{{chuzhong.name}}
                 </p>
-                <p class="p-time">课时数：267</p>
+                <p class="p-time">课时数：{{chuzhong.period}}</p>
                 <ul class="p-teacher-list">
-                  <li class="p-teacher-item">
+                  <li class="p-teacher-item" v-for="teacher in chuzhong.teacherList" :key="teacher.id">
                     <img
                       class="p-teacher-avatar"
-                      src="http://oss.lshao.cn/images/teacher-icon2.jpg"
+                      :src="teacher.avatar"
                       alt
                     >
-                    <p class="p-teacher-name">王江海</p>
-                  </li>
-                </ul>
-              </a>
-            </li>
-
-            <li class="p-item p-r-border p-b-border">
-              <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
-                <p class="p-title">
-                  <span class="p-flag">NEW</span>2020考研政治进阶全程班
-                </p>
-                <p class="p-time">课时数：125</p>
-                <ul class="p-teacher-list">
-                  <li class="p-teacher-item">
-                    <img
-                      class="p-teacher-avatar"
-                      src="http://oss.lshao.cn/images/teacher-icon2.jpg"
-                      alt
-                    >
-                    <p class="p-teacher-name">王江海</p>
-                  </li>
-                </ul>
-              </a>
-            </li>
-
-            <li class="p-item p-b-border">
-              <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
-                <p class="p-title">
-                  <span class="p-flag">NEW</span>大学英语四级全程2班【2019年6月】
-                </p>
-                <p class="p-time">课时数：131</p>
-                <ul class="p-teacher-list">
-                  <li class="p-teacher-item">
-                    <img
-                      class="p-teacher-avatar"
-                      src="http://oss.lshao.cn/images/teacher-icon2.jpg"
-                      alt
-                    >
-                    <p class="p-teacher-name">王江海</p>
-                  </li>
-                </ul>
-              </a>
-            </li>
-
-            <li class="p-item p-r-border">
-              <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
-                <p class="p-title">
-                  <span class="p-flag">NEW</span>大学英语六级全程2班【2019年6月】
-                </p>
-                <p class="p-time">课时数：131</p>
-                <ul class="p-teacher-list">
-                  <li class="p-teacher-item">
-                    <img
-                      class="p-teacher-avatar"
-                      src="http://oss.lshao.cn/images/teacher-icon2.jpg"
-                      alt
-                    >
-                    <p class="p-teacher-name">王江海</p>
-                  </li>
-                </ul>
-              </a>
-            </li>
-
-            <li class="p-item p-r-border">
-              <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
-                <p class="p-title">
-                  <span class="p-flag">NEW</span>大学英语六级全程2班【2019年6月】
-                </p>
-                <p class="p-time">课时数：131</p>
-                <ul class="p-teacher-list">
-                  <li class="p-teacher-item">
-                    <img
-                      class="p-teacher-avatar"
-                      src="http://oss.lshao.cn/images/teacher-icon2.jpg"
-                      alt
-                    >
-                    <p class="p-teacher-name">王江海</p>
-                  </li>
-                </ul>
-              </a>
-            </li>
-
-            <li class="p-item">
-              <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
-                <p class="p-title">
-                  <span class="p-flag">NEW</span>大学英语六级全程2班【2019年6月】
-                </p>
-                <p class="p-time">课时数：131</p>
-                <ul class="p-teacher-list">
-                  <li class="p-teacher-item">
-                    <img
-                      class="p-teacher-avatar"
-                      src="http://oss.lshao.cn/images/teacher-icon2.jpg"
-                      alt
-                    >
-                    <p class="p-teacher-name">王江海</p>
+                    <p class="p-teacher-name">{{teacher.name}}</p>
                   </li>
                 </ul>
               </a>
@@ -1086,132 +829,38 @@
         </div>
       </div>
 
-      <div class="p-content p-max-width-wrap detail-bottom">
+      <div class="p-content p-max-width-wrap detail-bottom"  v-if="this.categoryData[2]">
         <div
           class="p-left-imgs-wrap"
           id="jp-left-imgs-dx-wrap"
           style="background-image: url(http://oss.lshao.cn/images/high_bg1.png);"
         >
           <div class="top-banner">
-            <h-school-banner/>
+            <h-school-banner :adDtoList="this.categoryData[2].adDtoList"/>
           </div>
           <p class="botton-title link" @click="goGoodsListPage('','高中')">更多课程 >></p>
         </div>
         <div class="p-middle-content-wrap">
           <ul class="p-course-list jp-get-hot-list-wrap" data-id="1281">
-            <li class="p-item p-r-border p-b-border">
+            <li class="p-item p-r-border p-b-border"  v-for="gaozhong in this.categoryData[2].productTeacherDtoList" :key="gaozhong.id">
               <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                 <p class="p-title">
-                  <span class="p-flag">NEW</span>2020考研英语进阶全程春季1班（一、二可选）
+                  <span class="p-flag">NEW</span>{{gaozhong.name}}
                 </p>
-                <p class="p-time">课时数：267</p>
+                <p class="p-time">课时数：{{gaozhong.period}}</p>
                 <ul class="p-teacher-list">
-                  <li class="p-teacher-item">
+                  <li class="p-teacher-item" v-for="teacher in gaozhong.teacherList" :key="teacher.id">
                     <img
                       class="p-teacher-avatar"
-                      src="http://oss.lshao.cn/images/teacher-icon2.jpg"
+                      :src="teacher.avatar"
                       alt
                     >
-                    <p class="p-teacher-name">王江海</p>
+                    <p class="p-teacher-name">{{teacher.name}}</p>
                   </li>
                 </ul>
               </a>
             </li>
 
-            <li class="p-item p-r-border p-b-border">
-              <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
-                <p class="p-title">
-                  <span class="p-flag">NEW</span>2020考研政治进阶全程班
-                </p>
-                <p class="p-time">课时数：125</p>
-                <ul class="p-teacher-list">
-                  <li class="p-teacher-item">
-                    <img
-                      class="p-teacher-avatar"
-                      src="http://oss.lshao.cn/images/teacher-icon2.jpg"
-                      alt
-                    >
-                    <p class="p-teacher-name">王江海</p>
-                  </li>
-                </ul>
-              </a>
-            </li>
-
-            <li class="p-item p-b-border">
-              <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
-                <p class="p-title">
-                  <span class="p-flag">NEW</span>大学英语四级全程2班【2019年6月】
-                </p>
-                <p class="p-time">课时数：131</p>
-                <ul class="p-teacher-list">
-                  <li class="p-teacher-item">
-                    <img
-                      class="p-teacher-avatar"
-                      src="http://oss.lshao.cn/images/teacher-icon2.jpg"
-                      alt
-                    >
-                    <p class="p-teacher-name">王江海</p>
-                  </li>
-                </ul>
-              </a>
-            </li>
-
-            <li class="p-item p-r-border">
-              <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
-                <p class="p-title">
-                  <span class="p-flag">NEW</span>大学英语六级全程2班【2019年6月】
-                </p>
-                <p class="p-time">课时数：131</p>
-                <ul class="p-teacher-list">
-                  <li class="p-teacher-item">
-                    <img
-                      class="p-teacher-avatar"
-                      src="http://oss.lshao.cn/images/teacher-icon2.jpg"
-                      alt
-                    >
-                    <p class="p-teacher-name">王江海</p>
-                  </li>
-                </ul>
-              </a>
-            </li>
-
-            <li class="p-item p-r-border">
-              <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
-                <p class="p-title">
-                  <span class="p-flag">NEW</span>大学英语六级全程2班【2019年6月】
-                </p>
-                <p class="p-time">课时数：131</p>
-                <ul class="p-teacher-list">
-                  <li class="p-teacher-item">
-                    <img
-                      class="p-teacher-avatar"
-                      src="http://oss.lshao.cn/images/teacher-icon2.jpg"
-                      alt
-                    >
-                    <p class="p-teacher-name">王江海</p>
-                  </li>
-                </ul>
-              </a>
-            </li>
-
-            <li class="p-item">
-              <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
-                <p class="p-title">
-                  <span class="p-flag">NEW</span>大学英语六级全程2班【2019年6月】
-                </p>
-                <p class="p-time">课时数：131</p>
-                <ul class="p-teacher-list">
-                  <li class="p-teacher-item">
-                    <img
-                      class="p-teacher-avatar"
-                      src="http://oss.lshao.cn/images/teacher-icon2.jpg"
-                      alt
-                    >
-                    <p class="p-teacher-name">王江海</p>
-                  </li>
-                </ul>
-              </a>
-            </li>
           </ul>
           <ul class="p-gg-imgs-list">
             <li class="p-item p-part1">
@@ -1380,6 +1029,13 @@ export default {
           categoryId: "",
           categoryName: "",
           productTeacherDtoList: [
+            {
+              id: "",
+              categoryId: "",
+              categoryName: ""
+            }
+          ],
+          adDtoList:[
             {
               id: "",
               categoryId: "",
@@ -1600,7 +1256,8 @@ export default {
       this.ajax({
         type: "GET",
         // url: `/uac/auth/category/getProductCategoryDtoByPid/0`,
-        url: `/uac/auth/category/getCategoryAndProductDtoByPid/0`,
+        // url: `/uac/auth/category/getCategoryAndProductDtoByPid/0`,
+        url: `/uac/auth/category/getCategoryAndProductDtoByPid/100002`,
         success: resolve
       });
     },
