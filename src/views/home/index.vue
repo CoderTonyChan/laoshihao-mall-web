@@ -843,7 +843,7 @@
         <div class="p-middle-content-wrap">
           <ul class="p-course-list jp-get-hot-list-wrap" data-id="1281">
             <li class="p-item p-r-border p-b-border"  v-for="gaozhong in this.categoryData[2].productTeacherDtoList" :key="gaozhong.id">
-              <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
+              <a class="p-link link" @click="goProductDetailPage(gaozhong.id)" target="_blank">
                 <p class="p-title">
                   <span class="p-flag">NEW</span>{{gaozhong.name}}
                 </p>

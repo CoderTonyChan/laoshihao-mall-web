@@ -133,7 +133,7 @@
             <div class="page-control" id="jp-course-list-control"></div>
           </div>
 
-          <div class="product-info-path p-course-return">
+          <!-- <div class="product-info-path p-course-return">
             <p class="pi-path-title" id="div4">
               <em></em>退换课规则
             </p>
@@ -144,7 +144,7 @@
               <li>4、如所退换课程包含资料等成本费用需在办理退款时一并扣除。</li>
               <li>5、课程已过期不可进行退换。</li>
             </ul>
-          </div>
+          </div> -->
 
           <!-- <div class="product-info-path p-course-return">
             <p class="pi-path-title">
