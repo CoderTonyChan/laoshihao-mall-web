@@ -15,17 +15,8 @@
             <span class="glyphicon glyphicon glyphicon-search" aria-hidden="true"></span>
           </button>
           <ul class="search-list">
-            <li class="search-item register">
-              <a href="javascript:void(0)" class="link"  @click="goGoodsListPage('初三数学','')">初三数学</a>
-            </li>
-            <li class="search-item">
-              <a href="javascript:void(0)" class="link hightlight" @click="goGoodsListPage('初一英语','初三数学')">初一英语</a>
-            </li>
-            <li class="search-item">
-              <a href="javascript:void(0)" class="link" @click="goGoodsListPage('初二英语','初三数学')">初二英语</a>
-            </li>
-            <li class="search-item">
-              <a href="javascript:void(0)" class="link" @click="goGoodsListPage('热门课程','初三数学')">热门课程</a>
+            <li class="search-item" v-for="seach in hotSearchData" :key="seach">
+              <a href="javascript:void(0)" class="link hightlight"  @click="goGoodsListPage(seach,'')">{{seach}}</a>
             </li>
           </ul>
         </div>
@@ -43,9 +34,25 @@
 <script type="text/ecmascript-6">
 import pcNav from "components/layout/nav";
 export default {
+  mounted() {
+      this.ajax({
+        type: "GET",
+        // url: `/uac/auth/category/getProductCategoryDtoByPid/0`,
+        // url: `/uac/auth/category/getCategoryAndProductDtoByPid/0`,
+        url: `/uac/auth/hotSearch`,
+        success: (res) => {
+          if (res.code === 200) {
+            this.hotSearchData = res.result;
+          } else {
+            
+          }
+        }
+      });
+  },
   data() {
     return {
-      searchInfo: ""
+      searchInfo: "",
+      hotSearchData: ['初三数学','初一英语','初二英语','热门课程']
     };
   },
   components: {
