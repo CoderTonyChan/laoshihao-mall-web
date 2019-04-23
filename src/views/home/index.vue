@@ -91,21 +91,25 @@
           <div class="p-title">热门课程</div>
           <ul class="p-tabs-list" id="jp-solive-tabs-wrap">
             <li
+              v-if="allData"
               class="p-item"
               @mouseenter="hotItemIndex = 0"
               :class="hotItemIndex === 0?'p-selected':'p-no-selected'"
             >全部</li>
             <li
+              v-if="xiaoxueData"
               class="p-item"
               @mouseenter="hotItemIndex = 1"
               :class="hotItemIndex === 1?'p-selected':'p-no-selected'"
             >小学</li>
             <li
+              v-if="chuzhongData"
               class="p-item"
               @mouseenter="hotItemIndex = 2"
               :class="hotItemIndex === 2?'p-selected':'p-no-selected'"
             >初中</li>
             <li
+              v-if="gaozhongData"
               class="p-item"
               @mouseenter="hotItemIndex = 3"
               :class="hotItemIndex === 3?'p-selected':'p-no-selected'"
@@ -118,32 +122,32 @@
         </div>
         <transition name="fade">
           <div class="p-class-wrap">
-            <ul class="p-class-list p-selected" v-show="hotItemIndex === 0">
-              <li class="p-item">
-                <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
+            <ul v-if="allData" class="p-class-list p-selected" v-show="hotItemIndex === 0">
+              <li class="p-item" v-for="item in allData" :key="item.id">
+                <a class="p-link link" @click="goProductDetailPage(item.id)" target="_blank">
                   <img
                     class="p-img"
-                    src="https://uploadimg.koolearn.com/upload/2019-01-25/e779e60cc78824667a98629ef1577476.jpg"
+                    :src="item.mainImage"
                     alt
                   >
                   <div class="p-info-wrap">
-                    <p class="p-title">2019年上教师资格证笔试冲刺救急班（小学）</p>
+                    <p class="p-title">{{item.name}}</p>
                     <p class="p-time">
                       <img
                         src="http://oss.lshao.cn/images/people.png"
                         alt
                         style="bottom: 1px;position: relative;"
-                      > 259&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;课时数：32
+                      > {{item.sales}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;课时数：{{item.period}}
                     </p>
                     <div class="p-item-footer">
                       <span class="p-price">
-                        <em class="p-unit">￥</em>9.90
+                        <em class="p-unit">￥</em>{{item.price}}
                       </span>
                     </div>
                   </div>
                 </a>
               </li>
-              <li class="p-item">
+              <!-- <li class="p-item">
                 <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                   <img
                     class="p-img"
@@ -216,11 +220,35 @@
                     </div>
                   </div>
                 </a>
-              </li>
+              </li> -->
             </ul>
 
-            <ul class="p-class-list p-selected" v-show="hotItemIndex === 1">
-              <li class="p-item">
+            <ul v-if="xiaoxueData" class="p-class-list p-selected" v-show="hotItemIndex === 1">
+              <li class="p-item" v-for="item in xiaoxueData" :key="item.id">
+                <a class="p-link link" @click="goProductDetailPage(item.id)" target="_blank">
+                  <img
+                    class="p-img"
+                    :src="item.mainImage"
+                    alt
+                  >
+                  <div class="p-info-wrap">
+                    <p class="p-title">{{item.name}}</p>
+                    <p class="p-time">
+                      <img
+                        src="http://oss.lshao.cn/images/people.png"
+                        alt
+                        style="bottom: 1px;position: relative;"
+                      > {{item.sales}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;课时数：{{item.period}}
+                    </p>
+                    <div class="p-item-footer">
+                      <span class="p-price">
+                        <em class="p-unit">￥</em>{{item.price}}
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <!-- <li class="p-item">
                 <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                   <img
                     class="p-img"
@@ -268,10 +296,34 @@
                     </div>
                   </div>
                 </a>
-              </li>
+              </li> -->
             </ul>
-            <ul class="p-class-list p-selected" v-show="hotItemIndex === 2">
-              <li class="p-item">
+            <ul  v-if="chuzhongData" class="p-class-list p-selected" v-show="hotItemIndex === 2">
+              <li class="p-item" v-for="item in chuzhongData" :key="item.id">
+                <a class="p-link link" @click="goProductDetailPage(item.id)" target="_blank">
+                  <img
+                    class="p-img"
+                    :src="item.mainImage"
+                    alt
+                  >
+                  <div class="p-info-wrap">
+                    <p class="p-title">{{item.name}}</p>
+                    <p class="p-time">
+                      <img
+                        src="http://oss.lshao.cn/images/people.png"
+                        alt
+                        style="bottom: 1px;position: relative;"
+                      > {{item.sales}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;课时数：{{item.period}}
+                    </p>
+                    <div class="p-item-footer">
+                      <span class="p-price">
+                        <em class="p-unit">￥</em>{{item.price}}
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <!-- <li class="p-item">
                 <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                   <img
                     class="p-img"
@@ -363,10 +415,34 @@
                     </div>
                   </div>
                 </a>
-              </li>
+              </li> -->
             </ul>
-            <ul class="p-class-list p-selected" v-show="hotItemIndex === 3">
-              <li class="p-item">
+            <ul  v-if="gaozhongData" class="p-class-list p-selected" v-show="hotItemIndex === 3">
+              <li class="p-item" v-for="item in gaozhongData" :key="item.id">
+                <a class="p-link link" @click="goProductDetailPage(item.id)" target="_blank">
+                  <img
+                    class="p-img"
+                    :src="item.mainImage"
+                    alt
+                  >
+                  <div class="p-info-wrap">
+                    <p class="p-title">{{item.name}}</p>
+                    <p class="p-time">
+                      <img
+                        src="http://oss.lshao.cn/images/people.png"
+                        alt
+                        style="bottom: 1px;position: relative;"
+                      > {{item.sales}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;课时数：{{item.period}}
+                    </p>
+                    <div class="p-item-footer">
+                      <span class="p-price">
+                        <em class="p-unit">￥</em>{{item.price}}
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <!-- <li class="p-item">
                 <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
                   <img
                     class="p-img"
@@ -454,7 +530,7 @@
                     </div>
                   </div>
                 </a>
-              </li>
+              </li> -->
             </ul>
             <ul class="p-class-list" :class="hotItemIndex === 4?'p-selected':'p-no-selected'">
               <li class="p-item">
@@ -761,17 +837,17 @@
           </ul>
           <ul class="p-gg-imgs-list">
             <li class="p-item p-part1">
-              <a @click="goProductDetailPage(32)" class="p-link link" target="_blank">
+              <a class="p-link" target="_blank">
                 <img class="p-bg-img" src="http://oss.lshao.cn/images/1-alpha-edit.png" alt>
                 <p class="p-title">2020考研政治进阶全程班</p>
-                <p class="p-info">阮晔 徐涛 刘源泉</p>
+                <p class="p-info">Jimmy</p>
               </a>
             </li>
             <li class="p-item p-part1">
-              <a @click="goProductDetailPage(32)" class="p-link link" target="_blank">
+              <a class="p-link" target="_blank">
                 <img class="p-bg-img" src="http://oss.lshao.cn/images/2-alpha-edit.png" alt>
                 <p class="p-title">2020考研英语进阶全程班</p>
-                <p class="p-info">王江海 李旭 唐静</p>
+                <p class="p-info">Jimmy</p>
               </a>
             </li>
           </ul>
@@ -812,17 +888,17 @@
           </ul>
           <ul class="p-gg-imgs-list">
             <li class="p-item p-part1">
-              <a @click="goProductDetailPage(32)" class="p-link link" target="_blank">
-                <img class="p-bg-img" src="http://oss.lshao.cn/images/1-alpha-edit.png" alt>
+              <a class="p-link" target="_blank">
+                <img class="p-bg-img" src="https://i.loli.net/2019/04/23/5cbe7c1001348.png" alt>
                 <p class="p-title">2020考研政治进阶全程班</p>
-                <p class="p-info">阮晔 徐涛 刘源泉</p>
+                <p class="p-info">魏明阳</p>
               </a>
             </li>
             <li class="p-item p-part1">
-              <a @click="goProductDetailPage(32)" class="p-link link" target="_blank">
-                <img class="p-bg-img" src="http://oss.lshao.cn/images/2-alpha-edit.png" alt>
+              <a class="p-link" target="_blank">
+                <img class="p-bg-img" src="https://i.loli.net/2019/04/23/5cbe7c0f73551.png" alt>
                 <p class="p-title">2020考研英语进阶全程班</p>
-                <p class="p-info">王江海 李旭 唐静</p>
+                <p class="p-info">杨雪艺</p>
               </a>
             </li>
           </ul>
@@ -864,17 +940,17 @@
           </ul>
           <ul class="p-gg-imgs-list">
             <li class="p-item p-part1">
-              <a @click="goProductDetailPage(32)" class="p-link link" target="_blank">
-                <img class="p-bg-img" src="http://oss.lshao.cn/images/1-alpha-edit.png" alt>
+              <a class="p-link" target="_blank">
+                <img class="p-bg-img" src="https://i.loli.net/2019/04/23/5cbe7c1076771.png" alt>
                 <p class="p-title">2020考研政治进阶全程班</p>
-                <p class="p-info">阮晔 徐涛 刘源泉</p>
+                <p class="p-info">安永贺</p>
               </a>
             </li>
             <li class="p-item p-part1">
-              <a @click="goProductDetailPage(32)" class="p-link link" target="_blank">
-                <img class="p-bg-img" src="http://oss.lshao.cn/images/2-alpha-edit.png" alt>
+              <a class="p-link" target="_blank">
+                <img class="p-bg-img" src="https://i.loli.net/2019/04/23/5cbe7c0eeed87.png" alt>
                 <p class="p-title">2020考研英语进阶全程班</p>
-                <p class="p-info">王江海 李旭 唐静</p>
+                <p class="p-info">刘颖</p>
               </a>
             </li>
           </ul>
@@ -997,6 +1073,10 @@ import hSchoolBanner from "components/banner/hSchoolBanner";
 export default {
   data() {
     return {
+      allData: [],
+      xiaoxueData: [],
+      chuzhongData: [],
+      gaozhongData: [],
       feedbacks: [],
       textarea: "",
       dialogImageUrl: "",
@@ -1067,6 +1147,56 @@ export default {
         alert("加载主页面失败");
       }
     });
+
+    this.ajax({
+        type: "GET",
+        // url: `/uac/auth/category/getProductCategoryDtoByPid/0`,
+        // url: `/uac/auth/category/getCategoryAndProductDtoByPid/0`,
+        url: `/uac/auth/hotSale/category`,
+        success: (res) => {
+          if (res.code === 200) {
+            this.allData = res.result;
+          } else {
+            
+          }
+        }
+      });
+
+      this.ajax({
+        type: "GET",
+        url: `/uac/auth/hotSale/category/100011`,
+        success: (res) => {
+          if (res.code === 200) {
+            this.xiaoxueData = res.result;
+          } else {
+            
+          }
+        }
+      });
+
+      this.ajax({
+        type: "GET",
+        url: `/uac/auth/hotSale/category/100012`,
+        success: (res) => {
+          if (res.code === 200) {
+            this.chuzhongData = res.result;
+          } else {
+            
+          }
+        }
+      });
+
+      this.ajax({
+        type: "GET",
+        url: `/uac/auth/hotSale/category/100013`,
+        success: (res) => {
+          if (res.code === 200) {
+            this.gaozhongData = res.result;
+          } else {
+            
+          }
+        }
+      });
   },
   methods: {
     feedback(){
