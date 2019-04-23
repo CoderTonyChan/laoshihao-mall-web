@@ -99,7 +99,7 @@
               <a href="#div3">名师介绍</a>
             </li>
             <li class="tab-item active">
-              <a href="#div4">退换课须知</a>
+              <a @click.prevent="loadPage('refund')">退换课须知</a>
             </li>
           </ul>
         </div>
