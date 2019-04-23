@@ -44,39 +44,39 @@
           <div class="top">
             <span>小学科目</span>
             <ul>
-              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('','小学')">数学</li>
-              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('','英语')">英语</li>
-              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('','语文')">语文</li>
+              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('100011','小学')">数学</li>
+              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('100011','英语')">英语</li>
+              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('100011','语文')">语文</li>
             </ul>
           </div>
           <div class="mid">
             <span>初中科目</span>
             <ul>
-              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('','数学')">数学</li>
-              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('','英语')">英语</li>
-              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('','语文')">语文</li>
-              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('','物理')">物理</li>
-              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('','化学')">化学</li>
-              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('','政治')">政治</li>
-              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('','历史')">历史</li>
-              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('','地理')">地理</li>
-              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('','生物')">生物</li>
-              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('','信息科技')">信息科技</li>
+              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('100012','数学')">数学</li>
+              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('100012','英语')">英语</li>
+              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('100012','语文')">语文</li>
+              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('100012','物理')">物理</li>
+              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('100012','化学')">化学</li>
+              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('100012','政治')">政治</li>
+              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('100012','历史')">历史</li>
+              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('100012','地理')">地理</li>
+              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('100012','生物')">生物</li>
+              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('100012','信息科技')">信息科技</li>
             </ul>
           </div>
           <div class="botton">
             <span>高中科目</span>
             <ul>
-              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('','数学')">数学</li>
-              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('','英语')">英语</li>
-              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('','语文')">语文</li>
-              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('','物理')">物理</li>
-              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('','化学')">化学</li>
-              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('','政治')">政治</li>
-              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('','历史')">历史</li>
-              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('','地理')">地理</li>
-              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('','生物')">生物</li>
-              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('','信息科技')">信息科技</li>
+              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('100013','数学')">数学</li>
+              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('100013','英语')">英语</li>
+              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('100013','语文')">语文</li>
+              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('100013','物理')">物理</li>
+              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('100013','化学')">化学</li>
+              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('100013','政治')">政治</li>
+              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('100013','历史')">历史</li>
+              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('100013','地理')">地理</li>
+              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('100013','生物')">生物</li>
+              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('100013','信息科技')">信息科技</li>
             </ul>
           </div>
         </div>
