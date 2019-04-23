@@ -1048,8 +1048,8 @@
         <img class="float-img" src="http://oss.lshao.cn/images/help1.png" alt="">
         <p class="float-title">帮助</p>
       </li>-->
-      <li class="item link" v-if="!this.$store.getters.getPlatformIsMobile">
-        <a href="http://wpa.qq.com/msgrd?v=3&uin=1302828706&site=qq&menu=yes">
+      <li class="item link" v-if="!this.$store.getters.getPlatformIsMobile" onclick="window.open(`http://wpa.qq.com/msgrd?v=3&uin=1302828706&site=qq&menu=yes`)">
+        <a> <!--  href="http://wpa.qq.com/msgrd?v=3&uin=1302828706&site=qq&menu=yes" -->
           <img class="float-img consult1" src="http://oss.lshao.cn/images/consult1.png" alt>
           <p class="float-title">咨询</p>
         </a>
