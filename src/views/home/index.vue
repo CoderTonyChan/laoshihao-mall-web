@@ -803,7 +803,60 @@
       </div>
     </div>
     <div class="section2">
-      <div class="p-content p-max-width-wrap detail-top">
+
+      <div class="p-content p-max-width-wrap detail-top"  v-if="this.categoryData[2]">
+        <div
+          class="p-left-imgs-wrap"
+          id="jp-left-imgs-dx-wrap"
+          style="background-image: url(http://oss.lshao.cn/images/high_bg1.png);"
+        >
+          <div class="top-banner">
+            <h-school-banner :adDtoList="this.categoryData[2].adDtoList"/>
+          </div>
+          <p class="botton-title link" @click="goGoodsListPage('','高中')">更多课程 >></p>
+        </div>
+        <div class="p-middle-content-wrap">
+          <ul class="p-course-list jp-get-hot-list-wrap" data-id="1281">
+            <li class="p-item p-r-border p-b-border"  v-for="gaozhong in this.categoryData[2].productTeacherDtoList" :key="gaozhong.id">
+              <a class="p-link link" @click="goProductDetailPage(gaozhong.id)" target="_blank">
+                <p class="p-title">
+                  <span class="p-flag">NEW</span>{{gaozhong.name}}
+                </p>
+                <p class="p-time">课时数：{{gaozhong.period}}</p>
+                <ul class="p-teacher-list">
+                  <li class="p-teacher-item" v-for="teacher in gaozhong.teacherList" :key="teacher.id">
+                    <img
+                      class="p-teacher-avatar"
+                      :src="teacher.avatar"
+                      alt
+                    >
+                    <p class="p-teacher-name">{{teacher.name}}</p>
+                  </li>
+                </ul>
+              </a>
+            </li>
+
+          </ul>
+          <ul class="p-gg-imgs-list">
+            <li class="p-item p-part1">
+              <a class="p-link" target="_blank">
+                <img class="p-bg-img" src="https://i.loli.net/2019/04/23/5cbe7c1076771.png" alt>
+                <p class="p-title">2020考研政治进阶全程班</p>
+                <p class="p-info">安永贺</p>
+              </a>
+            </li>
+            <li class="p-item p-part1">
+              <a class="p-link" target="_blank">
+                <img class="p-bg-img" src="https://i.loli.net/2019/04/23/5cbe7c0eeed87.png" alt>
+                <p class="p-title">2020考研英语进阶全程班</p>
+                <p class="p-info">刘颖</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- <div class="p-content p-max-width-wrap detail-top">
         <div
           class="p-left-imgs-wrap"
           id="jp-left-imgs-dx-wrap"
@@ -852,7 +905,7 @@
             </li>
           </ul>
         </div>
-      </div>
+      </div> -->
 
       <div class="p-content p-max-width-wrap detail-mid" v-if="this.categoryData[1]">
         <div
@@ -905,27 +958,28 @@
         </div>
       </div>
 
-      <div class="p-content p-max-width-wrap detail-bottom"  v-if="this.categoryData[2]">
+
+      <div class="p-content p-max-width-wrap detail-bottom">
         <div
           class="p-left-imgs-wrap"
           id="jp-left-imgs-dx-wrap"
-          style="background-image: url(http://oss.lshao.cn/images/high_bg1.png);"
+          style="background-image: url(http://oss.lshao.cn/images/primary_bg1.png);"
         >
           <div class="top-banner">
-            <h-school-banner :adDtoList="this.categoryData[2].adDtoList"/>
+            <p-school-banner :adDtoList="this.categoryData[0].adDtoList"/>
           </div>
-          <p class="botton-title link" @click="goGoodsListPage('','高中')">更多课程 >></p>
+          <p class="botton-title link" @click="goGoodsListPage('','小学')">更多课程 >></p>
         </div>
         <div class="p-middle-content-wrap">
           <ul class="p-course-list jp-get-hot-list-wrap" data-id="1281">
-            <li class="p-item p-r-border p-b-border"  v-for="gaozhong in this.categoryData[2].productTeacherDtoList" :key="gaozhong.id">
-              <a class="p-link link" @click="goProductDetailPage(gaozhong.id)" target="_blank">
+            <li class="p-item p-r-border p-b-border" v-for="xiaoxue in this.categoryData[0].productTeacherDtoList" :key="xiaoxue.id">
+              <a class="p-link link" @click="goProductDetailPage(xiaoxue.id)" target="_blank">
                 <p class="p-title">
-                  <span class="p-flag">NEW</span>{{gaozhong.name}}
+                  <span class="p-flag">NEW</span>{{xiaoxue.name}}
                 </p>
-                <p class="p-time">课时数：{{gaozhong.period}}</p>
+                <p class="p-time">课时数：{{xiaoxue.period}}</p>
                 <ul class="p-teacher-list">
-                  <li class="p-teacher-item" v-for="teacher in gaozhong.teacherList" :key="teacher.id">
+                  <li class="p-teacher-item" v-for="teacher in xiaoxue.teacherList" :key="teacher.id">
                     <img
                       class="p-teacher-avatar"
                       :src="teacher.avatar"
@@ -936,21 +990,20 @@
                 </ul>
               </a>
             </li>
-
           </ul>
           <ul class="p-gg-imgs-list">
             <li class="p-item p-part1">
               <a class="p-link" target="_blank">
-                <img class="p-bg-img" src="https://i.loli.net/2019/04/23/5cbe7c1076771.png" alt>
+                <img class="p-bg-img" src="http://oss.lshao.cn/images/1-alpha-edit.png" alt>
                 <p class="p-title">2020考研政治进阶全程班</p>
-                <p class="p-info">安永贺</p>
+                <p class="p-info">Jimmy</p>
               </a>
             </li>
             <li class="p-item p-part1">
               <a class="p-link" target="_blank">
-                <img class="p-bg-img" src="https://i.loli.net/2019/04/23/5cbe7c0eeed87.png" alt>
+                <img class="p-bg-img" src="http://oss.lshao.cn/images/2-alpha-edit.png" alt>
                 <p class="p-title">2020考研英语进阶全程班</p>
-                <p class="p-info">刘颖</p>
+                <p class="p-info">Jimmy</p>
               </a>
             </li>
           </ul>
