@@ -123,25 +123,26 @@ export default {
             ],
             poster: "https://i.loli.net/2019/04/19/5cb9828ba92d3.jpg"
           },
-        },{
-          player:'player3',
-          isVideo: true,
-          playerOptions: {
-            // videojs options //static/images/author.jpg
-            // autoplay: "muted",
-            height: "460px",
-            width: "840px",
-            muted: false,
-            playbackRates: [0.7, 1.0, 1.5, 2.0],
-            sources: [
-              {
-                type: "video/mp4",
-                src: "https://lshao.oss-cn-beijing.aliyuncs.com/Jimmy%E4%BA%92%E5%8A%A8%E8%AF%BE%E5%A0%82.MP4"
-              }
-            ],
-            poster: "http://oss.lshao.cn/images/video3.jpg"
-          },
-        }
+        },
+        // {
+        //   player:'player3',
+        //   isVideo: true,
+        //   playerOptions: {
+        //     // videojs options //static/images/author.jpg
+        //     // autoplay: "muted",
+        //     height: "460px",
+        //     width: "840px",
+        //     muted: false,
+        //     playbackRates: [0.7, 1.0, 1.5, 2.0],
+        //     sources: [
+        //       {
+        //         type: "video/mp4",
+        //         src: "https://lshao.oss-cn-beijing.aliyuncs.com/Jimmy%E4%BA%92%E5%8A%A8%E8%AF%BE%E5%A0%82.MP4"
+        //       }
+        //     ],
+        //     poster: "http://oss.lshao.cn/images/video3.jpg"
+        //   },
+        // }
       ]
     };
   },

@@ -107,7 +107,8 @@ export default {
             sources: [
               {
                 type: "video/mp4",
-                src: "https://lshao.oss-cn-beijing.aliyuncs.com/%E4%BA%92%E5%8A%A8%E8%AF%BE%E5%A0%82.mp4"
+                // src: "https://lshao.oss-cn-beijing.aliyuncs.com/%E4%BA%92%E5%8A%A8%E8%AF%BE%E5%A0%82.mp4"
+                src: "https://lshao.oss-cn-beijing.aliyuncs.com/Jimmy%E4%BA%92%E5%8A%A8%E8%AF%BE%E5%A0%82.MP4"
               }
             ],
             poster: "http://oss.lshao.cn/images/video3.jpg"
