@@ -20,28 +20,28 @@
               <div class="sl-v-list">
                 <ul class="J_valueList">
                   <li>
-                    <a @click="reloadDifficulty(0)" v-bind:class="{seleted: (0 === queryInfo.difficulty)}">
+                    <a @click="reloadtype(0)" v-bind:class="{seleted: (0 === queryInfo.type)}">
                       <i></i>
                       同步课
                     </a>
                     <!---->
                   </li>
                   <li>
-                    <a @click="reloadDifficulty(1)" v-bind:class="{seleted: (1 === queryInfo.difficulty)}">
+                    <a @click="reloadtype(1)" v-bind:class="{seleted: (1 === queryInfo.type)}">
                       <i></i>
                       定向提升
                     </a>
                     <!---->
                   </li>
                   <li>
-                    <a @click="reloadDifficulty(2)" v-bind:class="{seleted: (2 === queryInfo.difficulty)}">
+                    <a @click="reloadtype(2)" v-bind:class="{seleted: (2 === queryInfo.type)}">
                       <i></i>
                       一卡通
                     </a>
                     <!---->
                   </li>
                   <li>
-                    <a @click="reloadDifficulty(3)" v-bind:class="{seleted: (3 === queryInfo.difficulty)}">
+                    <a @click="reloadtype(3)" v-bind:class="{seleted: (3 === queryInfo.type)}">
                       <i></i>
                       精华优课
                     </a>
@@ -172,7 +172,7 @@ export default {
         pageSize: "10",
         organId: "",
         spec: "",
-        difficulty: null,
+        type: null,
       },
       pcGoodsListKey: 1
     };
@@ -215,16 +215,16 @@ export default {
     });
   },
   methods: {
-    reloadCancelDifficulty() {
-      this.queryInfo.difficulty = null;
+    reloadCanceltype() {
+      this.queryInfo.type = null;
       this.loadPage("goods-list", this.queryInfo);
     },
-    reloadDifficulty(difficulty) {
-      if (difficulty === this.queryInfo.difficulty) {
-        this.reloadCancelDifficulty();
+    reloadtype(type) {
+      if (type === this.queryInfo.type) {
+        this.reloadCanceltype();
         return;
       }
-      this.queryInfo.difficulty = difficulty;
+      this.queryInfo.type = type;
       this.queryInfo.categoryId = this.getUrlParam("categoryId");
       this.queryInfo.keyword = this.getUrlParam("keyword");
       this.loadPage("goods-list", this.queryInfo);

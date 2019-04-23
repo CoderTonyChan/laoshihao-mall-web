@@ -121,7 +121,7 @@ export default {
                 src: "https://lshao.oss-cn-beijing.aliyuncs.com/Jimmy%E8%AF%BE%E5%A0%82.MP4"
               }
             ],
-            poster: "https://i.loli.net/2019/04/19/5cb9828ba92d3.jpg"
+            poster: "https://i.loli.net/2019/04/23/5cbeda1475479.jpg"
           },
         },
         // {
