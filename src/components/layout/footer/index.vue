@@ -17,8 +17,8 @@
         <div class="w2">
           <p class="f-title">商家入驻</p>
           <ul class="f-table">
-            <li class="item link">老师入驻</li>
-            <li class="item link">机构入驻</li>
+            <li class="item link" onclick="alert('敬请期待')">老师入驻</li>
+            <li class="item link" onclick="alert('敬请期待')">机构入驻</li>
             <li class="item link" @click.prevent="loadPage('business')">商务合作</li>
           </ul>
         </div>
@@ -37,7 +37,7 @@
           <p class="f-title">售后服务</p>
           <ul class="f-table">
             <li class="item" style="color: #999;">服务时间：9:00 - 20:00</li>
-            <li class="item"><a href="tel:010-52262815" class="link">服务电话：010 - 52262815</a></li>
+            <li class="item"><a href="tel:13925736712" class="link">服务电话：13925736712</a></li>
             <li class="item link" @click.prevent="loadPage('refund')">退换课须知</li>
           </ul>
         </div>
