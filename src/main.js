@@ -162,7 +162,7 @@ Vue.prototype.$http.interceptors.response.use((res) => {
 
 // 登陆统一处理
 router.beforeEach((to, from, next) => {
-  console.log(`router.beforeEach`);
+  // console.log(`router.beforeEach`);
   // 检查一下需不需要刷新token
   store.dispatch('get_access_token', (res) => {
   });

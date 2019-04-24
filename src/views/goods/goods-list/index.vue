@@ -185,7 +185,6 @@ export default {
     //   next(vm => vm.setData(err, post))
     // })
     next();
-
     window.scrollTo(0, 0);
     console.error(`goods-list---beforeRouteEnter`);
   },
@@ -227,10 +226,10 @@ export default {
       this.queryInfo.type = type;
       this.queryInfo.categoryId = this.getUrlParam("categoryId");
       this.queryInfo.keyword = this.getUrlParam("keyword");
+      
       this.loadPage("goods-list", this.queryInfo);
     },
     reloadCancelSpecsData(spec, organ) {
-      console.log(organ);
       this.queryInfo.keyword = this.getUrlParam("keyword");
       this.queryInfo.spec = null;
       this.loadPage("goods-list", this.queryInfo);
@@ -240,14 +239,11 @@ export default {
         this.reloadCancelSpecsData(spec, organ);
         return;
       }
-
-      console.log(organ);
       this.queryInfo.spec = spec.id + "_" + organ.id;
       this.queryInfo.keyword = this.getUrlParam("keyword");
       this.loadPage("goods-list", this.queryInfo);
     },
     reloadCancelCategoryData(organ) {
-      console.log(organ);
       this.queryInfo.categoryId = null;
       this.queryInfo.keyword = this.getUrlParam("keyword");
       this.loadPage("goods-list", this.queryInfo);
@@ -257,32 +253,24 @@ export default {
         this.reloadCancelCategoryData(organ);
         return;
       }
-      console.log(organ);
       this.queryInfo.categoryId = organ.id;
       this.queryInfo.keyword = this.getUrlParam("keyword");
-      console.log(organ.id);
       this.loadPage("goods-list", this.queryInfo);
     },
     reloadCancelOrganData(organ) {
-      console.log(organ);
       this.queryInfo.categoryId = this.getUrlParam("categoryId");
       this.queryInfo.keyword = this.getUrlParam("keyword");
       this.queryInfo.organId = null;
-      console.log(`reloadCancelOrganData id`);
       this.loadPage("goods-list", this.queryInfo);
     },
     reloadOrganData(organ) {
-      console.log(organ);
       if (organ.id === this.queryInfo.organId) {
         this.reloadCancelOrganData(organ);
         return;
       }
-
       this.queryInfo.categoryId = this.getUrlParam("categoryId");
       this.queryInfo.keyword = this.getUrlParam("keyword");
       this.queryInfo.organId = organ.id;
-      console.log(`reloadOrganData id`);
-      console.log(organ.id);
       this.loadPage("goods-list", this.queryInfo);
     },
     querySelectorsData(resolve) {
@@ -290,8 +278,6 @@ export default {
       this.queryInfo.keyword = this.getUrlParam("keyword");
       this.queryInfo.organId = this.getUrlParam("organId");
       this.queryInfo.spec = this.getUrlParam("spec");
-      console.log(`querySelectorsData id`);
-      console.log(this.queryInfo.organId);
       this.ajax({
         type: "POST",
         url: `/uac/auth/product/getSelectors`,

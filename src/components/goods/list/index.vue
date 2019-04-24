@@ -61,6 +61,7 @@
         this.queryInfo.keyword = this.getUrlParam('keyword');
         this.queryInfo.organId = this.getUrlParam('organId');
         this.queryInfo.spec = this.getUrlParam('spec');
+        this.queryInfo.type = this.getUrlParam('type');
         this.ajax({
           url: `/uac/auth/product/queryProductList`,
           data: this.queryInfo,
