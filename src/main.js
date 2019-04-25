@@ -91,6 +91,7 @@ function mergeCartFlag() {
   let authToken = store.getters.getAuthToken;
   console.info('mall-authToken: ');
   if (authToken && authToken.access_token && !authToken.mergeCartFlag) {
+    console.info('合并购物车');
     // 合并购物车数据
     let cartListDto = {};
     cartListDto.cartProductVoList = PcLockr.get(enums.CART.SHOPPING_CART) ? JSON.parse(PcLockr.get(enums.CART.SHOPPING_CART)) : [];

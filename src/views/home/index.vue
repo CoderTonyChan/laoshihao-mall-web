@@ -1099,7 +1099,7 @@
           <p class="float-title">咨询</p>
         </a>
       </li>
-      <li class="item link" @click.prevent="showModal = true">
+      <li class="item link" @click.prevent="showModal = true" v-if="this.$store.getters.getLoginName">
         <img class="float-img" src="http://oss.lshao.cn/images/feedback1.png" alt>
         <p class="float-title">反馈</p>
       </li>
@@ -1255,9 +1255,8 @@ export default {
   },
   methods: {
     feedback(){
-      console.log(this.$store.getters.getLoginName);
-      
-      this.$pcMessage(`感谢反馈 ${this.$store.getters.getLoginName}`);
+      // console.log(this.$store.getters.getLoginName);
+      this.$pcMessage(`感谢反馈 ${this.$store.getters.getLoginName?this.$store.getters.getLoginName:null}`);
       console.log(this.textarea);
       console.log(this.feedbacks);
       this.showModal = false;
