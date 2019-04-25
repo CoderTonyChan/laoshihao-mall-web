@@ -29,6 +29,7 @@ import {
   Message,
   Upload,
   Row,
+  Cascader,
   Col
 } from 'element-ui';
 
@@ -44,6 +45,7 @@ const components = [
   formItem,
   Upload,
   Row,
+  Cascader,
   Col
 ];
 
