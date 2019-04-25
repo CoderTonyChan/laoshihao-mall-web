@@ -72,9 +72,10 @@ export default {
   },
   [types.PUSH_CART](state, product) {
     state.cartList.push(product);
+    console.log(`PUSH_CART`);
     let loginName = store.getters.getLoginName;
     if (loginName) {
-      axios.post(`/uac/cart/addProduct/` + product.productId + '/' + product.quantity);
+      axios.post(`/uac/cart/addProduct/${product.productId}/${product.quantity}`, product);
     }
   },
   [types.PLUS_COUNT](state) {

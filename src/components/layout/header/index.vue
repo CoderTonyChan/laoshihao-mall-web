@@ -22,7 +22,7 @@
         </div>
         <div class="shop">
           <img src="http://oss.lshao.cn/images/Cart.png" alt="" class="img">
-          <span class="font link" @click.prevent="loadPage('user-cart')">&nbsp;购物车</span><span class="hightlight">(0)</span>
+          <span class="font link" @click.prevent="loadPage('user-cart')">&nbsp;购物车</span><span class="hightlight">({{this.$store.getters.getCartInfo.totalNum}})</span>
         </div>
         <div class="download">
           <span class="button link" @click.prevent="loadPage('download')" >客户端下载</span>

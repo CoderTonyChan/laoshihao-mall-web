@@ -423,27 +423,16 @@ export default {
     this.isShowProduct = true;
   },
   mounted() {
-    console.log("this is current player instance object", this.player);
+    // console.log("this is current player instance object", this.player);
+    
   },
   methods: {
       handleChange(value) {
-        console.log(this.selectedOptions);
-        console.log(value);
+        // 不需要监听 直接使用this.selectedOptions
+        // console.log(this.selectedOptions);
+        // console.log(value);
+
       },
-    // stars: function () {
-    //     if (this.product.difficulty === 1) {
-    //       return '★☆☆☆☆'
-    //     }else if (this.product.difficulty === 2) {
-    //       return '★★☆☆☆'
-    //     }else if (this.product.difficulty === 3) {
-    //       return '★★★☆☆'
-    //     }else if (this.product.difficulty === 4) {
-    //       return '★★★★☆'
-    //     }else if (this.product.difficulty === 5) {
-    //       return '★★★★★'
-    //     }
-    //     return '★★★☆☆';
-    // },
     // listen event
     onPlayerPlay(player) {
       // console.log('player play!', player)
@@ -466,7 +455,7 @@ export default {
       },
     // player is ready
     playerReadied(player) {
-      console.log("the player is readied", player);
+      // console.log("the player is readied", player);
       // you can use it to do something...
       // player.[methods]
     },
@@ -475,8 +464,12 @@ export default {
       this.$http({
         url: `/uac/auth/address/organ/${this.product.organId}`,
       }).then((res) => {
-
-        console.log("the player is readied", res);
+        if (res.code === 200) {
+          this.dialogVisible = true;
+          this.options = res.result;
+        }else {
+          this.$pcMessage(res);
+        }
       }).catch(() => {
       });
     },
@@ -494,6 +487,8 @@ export default {
         userCart.productName = this.product.name;
         userCart.productPrice = this.product.price;
         userCart.mainImage = this.product.mainImage;
+        userCart.adCode = this.selectedOptions.pop();
+        
         userCart.checked = 1;
         this.$store.dispatch("push_cart", { userCart });
       }

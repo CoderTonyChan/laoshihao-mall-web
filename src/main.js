@@ -89,7 +89,7 @@ if (process.env.NODE_ENV === 'production') {
 
 function mergeCartFlag() {
   let authToken = store.getters.getAuthToken;
-  console.info('mall-authToken: ', authToken);
+  console.info('mall-authToken: ');
   if (authToken && authToken.access_token && !authToken.mergeCartFlag) {
     // 合并购物车数据
     let cartListDto = {};
