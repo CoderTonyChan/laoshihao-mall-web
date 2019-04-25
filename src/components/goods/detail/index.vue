@@ -79,7 +79,18 @@
             </p>
           </div>
           <div class="p-info-item-2">
-            <a class="btn cart-add" @click="addCart">立刻报名</a>
+            <a class="btn cart-add" @click="addCartClick">立刻报名</a>
+            <el-dialog
+              title="提示"
+              :visible.sync="dialogVisible"
+              width="30%"
+              :before-close="handleClose">
+              <span>这是一段信息</span>
+              <span slot="footer" class="dialog-footer">
+                <el-button @click="dialogVisible = false">取 消</el-button>
+                <el-button type="primary" @click="addCart">确 定</el-button>
+              </span>
+            </el-dialog>
           </div>
         </div>
       </div>
@@ -178,6 +189,7 @@ import { videoPlayer } from "vue-video-player";
 export default {
   data() {
     return {
+      dialogVisible: false,
       isShowProduct: true,
       // stars: true,
       buyCount: 1,
@@ -240,14 +252,25 @@ export default {
     playerStateChanged(playerCurrentState) {
       // console.log('player current update state', playerCurrentState)
     },
-
+    handleClose(done) {
+        this.$confirm('确认关闭？')
+          .then(_ => {
+            done();
+          })
+          .catch(_ => {});
+      },
     // player is ready
     playerReadied(player) {
       console.log("the player is readied", player);
       // you can use it to do something...
       // player.[methods]
     },
+    addCartClick(){
+      this.dialogVisible = true;
+      
+    },
     addCart() {
+      this.dialogVisible = false;
       let userCart = {};
       console.info("this.product", this.product);
       let productId = this.product.id;

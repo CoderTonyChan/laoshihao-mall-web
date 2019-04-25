@@ -1,14 +1,5 @@
 <template>
   <div>
-    <!-- <modal 
-      title="反馈" 
-      :content='""'
-      :showCancle='true' 
-      :confirmText='"提交"' 
-      @on-cancel='close'
-      @on-confirm='confirm'
-      v-show='showModal'>
-    </modal>-->
     <el-dialog :visible.sync="showModal" title="反馈">
       <el-input
         type="textarea"
@@ -24,13 +15,14 @@
         </el-col>
       </el-row>
       <el-upload
-        action="https://jsonplaceholder.typicode.com/posts/"
+        :action="'//api.lshao.cn' + '/opc/file/uploadFile'"
         list-type="picture-card"
-        :on-preview="handlePictureCardPreview"
         :on-remove="handleRemove"
         :on-success="uploadImg"
         :before-upload="beforeImgUpload"
-      ></el-upload>
+        :data="uploadData"
+        :headers="authHeader">
+      </el-upload>
       <el-dialog :visible.sync="dialogVisible">
         <img width="100%" :src="dialogImageUrl" alt>
       </el-dialog>
@@ -1101,7 +1093,7 @@
         <img class="float-img" src="http://oss.lshao.cn/images/help1.png" alt="">
         <p class="float-title">帮助</p>
       </li>-->
-      <li class="item link" v-if="!this.$store.getters.getPlatformIsMobile" onclick="window.open(`http://wpa.qq.com/msgrd?v=3&uin=1302828706&site=qq&menu=yes`)">
+      <li class="item link" v-if="!this.$store.getters.getPlatformIsMobile&&false" onclick="window.open(`http://wpa.qq.com/msgrd?v=3&uin=1302828706&site=qq&menu=yes`)">
         <a> <!--  href="http://wpa.qq.com/msgrd?v=3&uin=1302828706&site=qq&menu=yes" -->
           <img class="float-img consult1" src="http://oss.lshao.cn/images/consult1.png" alt>
           <p class="float-title">咨询</p>
@@ -1122,10 +1114,20 @@ import { videoPlayer } from "vue-video-player";
 import pSchoolBanner from "components/banner/pSchoolBanner";
 import jSchoolBanner from "components/banner/jSchoolBanner";
 import hSchoolBanner from "components/banner/hSchoolBanner";
+import store from '../../store/';
 
 export default {
   data() {
     return {
+      uploadData: {
+        fileType: null,
+        bucketName: null,
+        filePath: null
+      },
+      authHeader:{
+        Authorization: 'Bearer ' + store.getters.getAccessToken
+      },
+      dialogVisible: false,
       allData: [],
       xiaoxueData: [],
       chuzhongData: [],
@@ -1259,10 +1261,26 @@ export default {
       console.log(this.textarea);
       console.log(this.feedbacks);
       this.showModal = false;
+
+      this.ajax({
+        type: "POST",
+        url: `/uac/user/addFeedback`,
+        data: {content:this.textarea,image:this.feedbacks.join(',')},
+        success: (res) => {
+            console.log(res);
+        }
+      });
     },
     uploadImg(res, file) {
       console.log(res);
-      this.feedbacks = [res.id,...this.feedbacks];
+      if (res.code == 200) {
+        this.feedbacks = [res.result.attachmentIds,...this.feedbacks];
+        console.log(this.feedbacks);
+        // this.organForm.logo = res.result.attachmentIds;
+        // this.organForm.logoUrl = res.result.attachmentUrls;
+      }else{
+        this.$message.error('上传图片失败！');
+      }
       // 是否增加一个数组
       // if (res.status == 1) {
       //   this.adminInfo.avatar = res.image_path;
@@ -1271,8 +1289,7 @@ export default {
       // }
     },
     beforeImgUpload(file) {
-      console.log(file);
-      
+      // console.log(file);
       const isRightType =
         file.type === "image/jpeg" || file.type === "image/png";
       const isLt2M = file.size / 1024 / 1024 < 2;
@@ -1285,22 +1302,23 @@ export default {
         // this.$message.error("上传头像图片大小不能超过 2MB!");
         alert("上传头像图片大小不能超过 2MB!")
       }
+      this.uploadData.fileType = "picture";
+      this.uploadData.bucketName = "lshao";
+      this.uploadData.filePath = "organ/img/"
       return isRightType && isLt2M;
     },
     handleRemove(file, fileList) {
-      console.log(file, fileList);
+      // console.log(file, fileList);
+      // console.log(fileList.map(i=>i.response.result.attachmentIds))
+      this.feedbacks = fileList.map(i=>i.response.result.attachmentIds);
     },
     handlePictureCardPreview(file) {
-      console.log(file);
+      // console.log(file);
       this.dialogImageUrl = file.url;
       this.dialogVisible = true;
     },
     close() {
-      console.log(`close`);
-      this.showModal = false;
-    },
-    confirm() {
-      // console.log(`confirm`);
+      // console.log(`close`);
       this.showModal = false;
     },
     // listen event
