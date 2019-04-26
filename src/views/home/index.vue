@@ -1210,7 +1210,7 @@ export default {
         url: `/uac/auth/hotSale/category`,
         success: (res) => {
           if (res.code === 200) {
-            this.allData = res.result;
+            this.allData = res.result.splice(0,5);
           } else {
             
           }
