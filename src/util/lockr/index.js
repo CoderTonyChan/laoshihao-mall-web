@@ -11,6 +11,7 @@ class PcLockr {
 
   set(key, value, fn) {
     PcLockr.checkKey(key);
+    console.log(key);
     Lockr.set(key, value);
     fn && fn();
   }
@@ -22,7 +23,12 @@ class PcLockr {
 
   delete(key, fn) {
     PcLockr.checkKey(key);
-    Lockr.rm(this.pcPrefix + key);
+
+    // ⚠️ Lockr.prefix = gbs.lockr_prefix; 这个下面的冲突
+    // console.log(this.pcPrefix + key);
+    // console.log(Lockr.get(this.pcPrefix + key));
+    Lockr.rm(key);
+    // console.log(Lockr.get(this.pcPrefix + key));
     fn && fn();
   }
 

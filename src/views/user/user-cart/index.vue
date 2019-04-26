@@ -17,7 +17,21 @@
 <script type="text/ecmascript-6">
   import pcCart from 'components/user/cart';
 
+import store from '../../../store/';
   export default {
+    beforeRouteEnter (to, from, next) {
+      // console.log(to);
+      // console.log(to.$store);
+      
+      let auth = store.getters.getAuthToken;
+      auth.mergeCartFlag = false;
+      store.dispatch('update_auth_token', auth);
+
+      next();
+
+      // document.body.scrollTop = 0;
+      window.scrollTo(0,0);
+    },
     data() {
       return {};
     },

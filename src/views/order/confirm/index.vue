@@ -99,7 +99,18 @@
               // 清空购物车
               this.$store.dispatch('clear_cart');
               console.info('提交订单 order=', orderVo.orderNo);
-              this.loadPage('order-payment', {'orderNo': orderVo.orderNo});
+              // this.loadPage('order-payment', {'orderNo': orderVo.orderNo});
+              this.ajax({
+                url: `/omc/pay/createAlipayForm/` + orderVo.orderNo,
+                success: (res) => {
+                  if (res.code === 200) {
+                    // 支付
+                    let newwindow = window.open("#","_blank");
+                    newwindow.document.write(res.result);
+                    // this.optUploadFileRespDto = res.result;
+                  }
+                }
+              });
             } else {
               alert('支付失败');
               this.loadPage('user-order');

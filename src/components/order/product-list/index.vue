@@ -2,7 +2,7 @@
   <div>
     <table class="product-table">
       <tr>
-        <th class="cell-img">&nbsp;</th>
+        <th class="cell-img">课程图片</th>
         <th class="cell-info">课程描述</th>
         <th class="cell-price">价格</th>
         <!-- <th class="cell-count">数量</th>

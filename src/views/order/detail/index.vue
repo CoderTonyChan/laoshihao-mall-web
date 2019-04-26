@@ -20,16 +20,14 @@
                 <span class="text">订单号：{{orderVo.orderNo}}</span>
                 <span class="text">创建时间：{{orderVo.createTime}}</span>
               </div>
-              <div class="text-line">
+              <!-- <div class="text-line">
                                 <span class="text">
-                                    收件人：
-                                    {{orderVo.receiverName}}
-                                  <!--{{orderVo.shippingVo.receiverProvince}}-->
-                                  <!--{{orderVo.shippingVo.receiverCity}}-->
-                                  <!--{{orderVo.shippingVo.receiverAddress}}-->
-                                  <!--{{orderVo.shippingVo.receiverMobile}}-->
-                                </span>
-              </div>
+                                    收件人：{{orderVo.receiverName}}
+                                  {{orderVo.shippingVo.receiverProvince}}
+                                  {{orderVo.shippingVo.receiverCity}}
+                                  {{orderVo.shippingVo.receiverAddress}}
+                                  {{orderVo.shippingVo.receiverMobile}}
+                                </span></div> -->
               <div class="text-line">
                 <span class="text">订单状态： {{orderVo.status | getOrderStatusName}}</span>
               </div>
@@ -37,7 +35,8 @@
                 <span class="text">支付方式：{{orderVo.paymentTypeDesc}}</span>
               </div>
               <div class="text-line" v-if="orderVo.status === 10">
-                <a class="btn" @click="loadPage('order-payment', {'orderNo': orderVo.orderNo})">去支付</a>
+                <!-- <a class="btn" @click="loadPage('order-payment', {'orderNo': orderVo.orderNo})">去支付</a> -->
+                <a class="btn" @click="orderPayment">去支付</a>
                 <a class="btn order-cancel" @click="cancelOrder(orderVo.orderNo)">取消订单</a>
               </div>
             </div>
@@ -93,6 +92,19 @@
       this.queryOrderItemVoList();
     },
     methods: {
+      orderPayment(){
+        this.ajax({
+                url: `/omc/pay/createAlipayForm/` + this.orderVo.orderNo,
+                success: (res) => {
+                  if (res.code === 200) {
+                    // 支付
+                    let newwindow = window.open("#","_blank");
+                    newwindow.document.write(res.result);
+                    // this.optUploadFileRespDto = res.result;
+                  }
+                }
+              });
+      },
       goProductDetailPage(productId) {
         this.loadPage('goods-detail', {'productId': productId});
       },
