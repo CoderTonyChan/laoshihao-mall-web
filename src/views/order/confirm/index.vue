@@ -91,6 +91,7 @@
         //   return;
         // }
         this.addressId = 0;
+        let newwindow = window.open("#","_blank");
         this.ajax({
           url: `/omc/order/createOrderDoc/` + this.addressId,
           success: (res) => {
@@ -105,8 +106,7 @@
                 success: (res) => {
                   if (res.code === 200) {
                     // 支付
-                    let newwindow = window.open("#","_blank");
-                    newwindow.document.write(res.result);
+                    newwindow.document.write(`<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />${res.result}`);
                     // this.optUploadFileRespDto = res.result;
                   }
                 }
