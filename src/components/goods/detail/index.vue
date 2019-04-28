@@ -485,6 +485,11 @@ export default {
       });
     },
     addCart() {
+      if (!this.selectedOptions.length) {
+        this.$pcMessage(`请选中地区`);
+        return;
+      }
+
       this.dialogVisible = false;
       let userCart = {};
       console.info("this.product", this.product);

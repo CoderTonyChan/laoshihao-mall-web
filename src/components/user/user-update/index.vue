@@ -13,7 +13,7 @@
       </el-form-item>
       <el-form-item label="邮箱">
         <el-input v-model="updateUserForm.email" class="form-line-input"/>
-        <el-button :plain="true" type="danger" @click="getEmailCode">获取验证码</el-button>
+        <el-button :plain="true" type="danger" @click="getEmailCode" :disabled="buttonDisabled">获取验证码</el-button>
       </el-form-item>
       <el-form-item label="验证码">
         <el-input v-model="updateUserForm.emailCode" class="form-line-input"/>
@@ -27,6 +27,7 @@
   export default {
     data() {
       return {
+        buttonDisabled: false,
         errMsg: '',
         labelPosition: 'right',
         updateUserForm: {
@@ -54,6 +55,7 @@
           },
           success: (res) => {
             if (res && res.code === 200) {
+              this.buttonDisabled = true;
               console.info('发送验证码成功');
             }
           }
