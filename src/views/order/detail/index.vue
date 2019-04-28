@@ -93,12 +93,13 @@
     },
     methods: {
       orderPayment(){
+        let newwindow = window.open("#","_blank");
         this.ajax({
                 url: `/omc/pay/createAlipayForm/` + this.orderVo.orderNo,
                 success: (res) => {
                   if (res.code === 200) {
                     // 支付
-                    let newwindow = window.open("#","_blank");
+                    // let newwindow = window.open("#","_blank");
                     newwindow.document.write(res.result);
                     // this.optUploadFileRespDto = res.result;
                   }

@@ -429,7 +429,7 @@ export default {
   methods: {
       handleChange(value) {
         // 不需要监听 直接使用this.selectedOptions
-        // console.log(this.selectedOptions);
+        console.log(this.selectedOptions);
         // console.log(value);
 
       },
@@ -467,6 +467,17 @@ export default {
         if (res.code === 200) {
           this.dialogVisible = true;
           this.options = res.result;
+          let tmpArray = [];
+          let first = res.result[0];
+          tmpArray.push(first.value);
+          if (first.children) {
+            tmpArray.push(first.children[0].value);
+            if (first.children[0].children) {
+             tmpArray.push(first.children[0].children[0].value);
+            }
+          }
+          console.log(tmpArray);
+          this.selectedOptions = tmpArray;
         }else {
           this.$pcMessage(res);
         }
