@@ -1,8 +1,7 @@
 <template>
   <div class="user-info">
     <el-form :label-position="labelPosition" label-width="60px" :model="updateUserForm">
-      <el-form-item label="
-      ">
+      <el-form-item label="登录名">
         <el-input v-model="updateUserForm.loginName" class="form-line-input" :disabled="true"/>
       </el-form-item>
       <el-form-item label="手机号">

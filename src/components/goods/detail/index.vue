@@ -79,7 +79,7 @@
             </p>
           </div>
           <div class="p-info-item-2">
-            <a class="btn cart-add" @click="addCartClick">立刻报名</a>
+            <a class="btn cart-add" @click="addCartClick">{{!product.canBuy?"已经购买":product.canBuy===1? "立刻报名":"立刻付款"}}</a>
             <el-dialog
               title="提示"
               :visible.sync="dialogVisible"
@@ -460,6 +460,13 @@ export default {
       // player.[methods]
     },
     addCartClick(){
+      if (!this.product.canBuy) {
+        this.$pcMessage('不能重复购买');
+        return;
+      }else if (this.product.canBuy === 2) {
+        this.loadPage("order-detail", { orderNo: this.product.orderNo });
+        return;
+      }
       this.dialogVisible = true;
       this.$http({
         url: `/uac/auth/address/organ/${this.product.organId}`,
@@ -538,6 +545,8 @@ export default {
         success: res => {
           if (res.code === 200) {
             this.product = res.result;
+            console.log(this.product);
+            
             // this.product.difficulty = 5;
             this.mainImage = this.product.mainImage;
             if (this.product.subImages) {
