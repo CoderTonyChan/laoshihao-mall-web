@@ -100,7 +100,7 @@
                   if (res.code === 200) {
                     // 支付
                     // let newwindow = window.open("#","_blank");
-                    newwindow.document.write(`<meta charset="utf-8">${res.result}`);
+                    newwindow.document.write(res.result);
                     // this.optUploadFileRespDto = res.result;
                   }
                 }
