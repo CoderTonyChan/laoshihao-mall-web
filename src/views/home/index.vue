@@ -1302,7 +1302,7 @@ export default {
         alert("上传头像图片大小不能超过 2MB!")
       }
       this.uploadData.fileType = "picture";
-      this.uploadData.bucketName = "lshao";
+      this.uploadData.bucketName = "lshaomall";
       this.uploadData.filePath = "organ/img/"
       return isRightType && isLt2M;
     },

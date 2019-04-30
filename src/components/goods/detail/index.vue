@@ -89,7 +89,8 @@
                 expand-trigger="hover"
                 :options="options"
                 v-model="selectedOptions"
-                @change="handleChange">
+                @change="handleChange"
+                >
               </el-cascader>
               <span slot="footer" class="dialog-footer">
                 <el-button @click="dialogVisible = false">取 消</el-button>
