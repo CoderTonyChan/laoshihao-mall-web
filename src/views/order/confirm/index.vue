@@ -106,7 +106,7 @@
                 success: (res) => {
                   if (res.code === 200) {
                     // 支付
-                    newwindow.document.write(`<meta charset="UTF-8">${res.result}`);
+                    newwindow.document.write(`<meta http-equiv="content-type" content="text/html;charset=utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge">${res.result}`);
                     // this.optUploadFileRespDto = res.result;
                   }
                 }
