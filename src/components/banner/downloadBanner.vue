@@ -37,28 +37,27 @@ import { swiper, swiperSlide } from "vue-awesome-swiper";
 import "video.js/dist/video-js.css";
 import { videoPlayer } from "vue-video-player";
 
-
 export default {
   name: "downloadBanner",
   data() {
     return {
       swiperOption: {
         initialSlide: 1,
-        effect: 'coverflow',
-          grabCursor: true,
-          centeredSlides: true,
-          slidesPerView: 'auto',
-          coverflowEffect: {
-            rotate: 50,
-            stretch: 0,
-            depth: 100,
-            modifier: 1,
-            slideShadows : true
-          },
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        coverflowEffect: {
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true
+        }
       },
       swiperSlides: [
         {
-          player:'player1',
+          player: "player1",
           isVideo: true,
           playerOptions: {
             // videojs options //static/images/author.jpg
@@ -74,10 +73,10 @@ export default {
               }
             ],
             poster: "http://oss.lshao.cn/images/video1.jpg"
-          },
+          }
         },
         {
-          player:'player2',
+          player: "player2",
           isVideo: true,
           playerOptions: {
             // videojs options //static/images/author.jpg
@@ -89,13 +88,15 @@ export default {
             sources: [
               {
                 type: "video/mp4",
-                src: "https://lshao.oss-cn-beijing.aliyuncs.com/%E8%80%81%E5%B8%88%E5%A5%BD%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%975.0%28%E9%AB%98%E6%B8%85%29.mp4"
+                src:
+                  "http://lshaomall.oss-cn-shenzhen.aliyuncs.com/website/video/%E5%AD%A6%E7%94%9F%E5%A6%82%E4%BD%95%E4%B8%8A%E8%AF%BE.MOV"
               }
             ],
-            poster: "http://oss.lshao.cn/images/video2.jpg"
-          },
-        },{
-          player:'player3',
+            // poster: "http://oss.lshao.cn/images/video2.jpg"
+          }
+        },
+        {
+          player: "player3",
           isVideo: true,
           playerOptions: {
             // videojs options //static/images/author.jpg
@@ -108,11 +109,12 @@ export default {
               {
                 type: "video/mp4",
                 // src: "https://lshao.oss-cn-beijing.aliyuncs.com/%E4%BA%92%E5%8A%A8%E8%AF%BE%E5%A0%82.mp4"
-                src: "https://lshao.oss-cn-beijing.aliyuncs.com/Jimmy%E4%BA%92%E5%8A%A8%E8%AF%BE%E5%A0%82.MP4"
+                src:
+                  "http://lshaomall.oss-cn-shenzhen.aliyuncs.com/website/video/%E5%A6%82%E4%BD%95%E5%86%99%E4%BD%9C%E4%B8%9A.MOV"
               }
             ],
-            poster: "http://oss.lshao.cn/images/video3.jpg"
-          },
+            // poster: "http://oss.lshao.cn/images/video3.jpg"
+          }
         }
       ]
     };
@@ -124,12 +126,12 @@ export default {
   },
   methods: {
     onPlayerPlay(player) {
-      console.log('player play! event:', event)
+      console.log("player play! event:", event);
       console.log(this.$refs);
       // Object.values(this.$refs).forEach(element => {
       //   console.log(videoPlayer);
       // });
-      
+
       for (const key in this.$refs) {
         if (this.$refs.hasOwnProperty(key)) {
           const videoPlayer = this.$refs[key];
@@ -167,16 +169,16 @@ export default {
 };
 </script>
 <style>
-.downloadBanner{
-    width: 100%;
-    height: 400px,
+.downloadBanner {
+  width: 100%;
+  height: 400px;
 }
 .downloadBanner .swiper-slide {
-    background-position: center;
-    background-size: cover;
-    width: 520px;
-    height: 400px;
-  }
+  background-position: center;
+  background-size: cover;
+  width: 520px;
+  height: 400px;
+}
 
 .downloadBanner .swiper-button-next,
 .downloadBanner .swiper-container-rtl .swiper-button-prev {
@@ -211,10 +213,10 @@ export default {
   background-size: 40px 96px;
 }
 .video-js .vjs-big-play-button {
-    top: 50%;
-    left: 50%;
-    margin-top: -0.7em;
-    margin-left: -1.5em;
+  top: 50%;
+  left: 50%;
+  margin-top: -0.7em;
+  margin-left: -1.5em;
 }
 </style>
 
