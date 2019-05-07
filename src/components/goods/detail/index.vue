@@ -64,7 +64,7 @@
             <span class="p-count-btn minus" @click="changeBuyCount('minus')">-</span>
           </div>-->
           <div class="p-product-info">
-            <p>课时：{{product.period}}&nbsp;&nbsp;&nbsp;&nbsp;有效期： {{this.dataString}}</p>
+            <p>课时：{{product.period}}<span v-show="product.validTime">&nbsp;&nbsp;&nbsp;&nbsp;有效期： {{this.dataString}}</span></p>
             <p>难度：<span style="font-weight: bold; font-size: 16px; color: #f39800; letter-spacing: 2px;">{{stars}}</span>&nbsp;&nbsp;&nbsp;&nbsp;</p>
             <p class="teacher">
               主讲老师：

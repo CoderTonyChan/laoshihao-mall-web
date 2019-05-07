@@ -3,7 +3,8 @@
     <li class="p-item" v-show="product.id !== ''" v-for="product in productList" :key="product.id">
       <div class="p-img-con">
         <a class="link" @click="goProductDetailPage(product.id)">
-          <img class="p-img" :src="product.mainImage" alt="name"/>
+          <img v-if="product.mainImage" class="p-img" :src="product.mainImage" alt="name"/>
+          <img v-else class="p-img" src="http://oss.lshao.cn/images/Logo.png" alt="name"/>
         </a>
       </div>
       <div class="p-price-con">
