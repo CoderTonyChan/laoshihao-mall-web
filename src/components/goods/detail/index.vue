@@ -1,5 +1,5 @@
 <template xmlns="http://www.w3.org/1999/html">
-  <div class="page-container w">
+  <div class="detail page-container w">
     <p v-show="!isShowProduct" class="err-tip">很抱歉，实在找不到您要的商品。</p>
     <div v-show="isShowProduct">
       <div class="intro-wrap">
@@ -107,13 +107,13 @@
         <div class="detail-tab-con">
           <ul class="tab-list">
             <li class="tab-item active">
-              <a href="#div1">课程介绍</a>
+              <a href="#intro">课程介绍</a>
             </li>
             <li class="tab-item active">
-              <a href="#div2">课程大纲</a>
+              <a href="#table">课程大纲</a>
             </li>
             <li class="tab-item active">
-              <a href="#div3">名师介绍</a>
+              <a href="#teacher">名师介绍</a>
             </li>
             <li class="tab-item active">
               <a @click.prevent="loadPage('refund')">退换课须知</a>
@@ -121,29 +121,22 @@
           </ul>
         </div>
         <div class="detail-con">
-          <div v-html="product.detail"></div>
+          <div id="intro"></div>
+          <div id="table" v-html="product.detail"></div>
 
           <div id="audition" class="product-info-path p-course-trial">
-            <p class="pi-path-title" id="div3">
+            <p class="pi-path-title" id="teacher">
               <em></em>名师介绍
             </p>
             <div class="course-list">
               <div class="course-list-inner" id="jp-course-list-wrap">
-                <div class="course-item">
-                  <img src="//file.koolearn.com/2015/1123/20151123104039704.png" alt>
+                <div class="course-item" v-for="(teacher, index) in product.teacherList" :key="teacher.id">
+                  <h1>{{teacher.name}}</h1>
+                  <img :src="teacher.avatar" alt>
 
-                  <div class="info">
-                    <p title="小学三年级英语孙拓第一讲上">小学三年级英语孙拓第一讲上</p>
+                  <div class="info" style="font-size: 20px;">
+                    <p>{{teacher.introduce}}</p>
                   </div>
-                  <a
-                    href="javascript:;"
-                    class="play-btn j-player-btn"
-                    data-title="小学三年级英语秋季强化班（全国通用版）【录播】"
-                    data-text="小学三年级英语孙拓第一讲上"
-                    data-video="156538/2017c"
-                  >
-                    <em></em>试听
-                  </a>
                 </div>
               </div>
             </div>
@@ -610,6 +603,31 @@ export default {
 };
 </script>
 <style rel="stylesheet/scss" lang="scss">
+
+.detail table {
+    background-color: transparent;
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+}
+
+.detail th {
+    padding: 0;
+    line-height: 52px;
+    color: #727171;
+    border: 1px solid #dcdddd;
+    text-align: center;
+    background: #eee;
+}
+
+.detail td {
+    padding: 0;
+    line-height: 52px;
+    color: #727171;
+    border: 1px solid #dcdddd;
+}
+
 .box-title {
   height: 40px;
   line-height: 40px;

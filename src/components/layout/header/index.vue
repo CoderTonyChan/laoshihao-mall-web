@@ -5,7 +5,7 @@
       <div class="w">
         <img src="http://oss.lshao.cn/images/Logo.png" alt style="top: 27px;position: relative;"  @click.prevent="goHome" class="link">
         <div class="search-con">
-          <input class="search-input" v-model="searchInfo" id="search-input" placeholder="请输入课程名称">
+          <input class="search-input" v-model="searchInfo" @keyup.enter="goGoodsListPage(searchInfo)" id="search-input" placeholder="请输入课程名称">
           <button
             class="search-btn"
             @click="goGoodsListPage(searchInfo)"
