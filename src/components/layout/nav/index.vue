@@ -7,11 +7,11 @@
           <span>{{city}}</span>
           <span class="link" @click="change(city)">[切换城市]</span>
           <ul v-show="isShowCity" style="background-color: gray;">
-            <li class="link city" @click="change('北京')">北京</li>
+            <!-- <li class="link city" @click="change('北京')">北京</li>
             <li class="link city" @click="change('上海')">上海</li>
             <li class="link city" @click="change('广州')">广州</li>
-            <li class="link city" @click="change('东莞')">东莞</li>
-            <li class="link city" @click="change('广西')">广西</li>
+            <li class="link city" @click="change('东莞')">东莞</li> -->
+            <li class="link city" @click="change('南宁')">南宁</li>
           </ul>
         </span>
         <!-- <span class="user not-login" v-show="loginName == null || loginName === ''">
@@ -98,7 +98,7 @@ export default {
   data() {
     return {
       isShowCity: false,
-      city: '东莞'
+      city: '南宁'
     };
   },
   methods: {
