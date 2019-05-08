@@ -46,11 +46,12 @@
         addressList: [],
         orderItemVoList: [],
         productTotalPrice: 0,
-        addressId: ''
+        addressId: '',
+        queryInfo: {}
       };
     },
     created() {
-      this.queryAddressList();
+      // this.queryAddressList();
       this.queryOrderItemVoList();
     },
     methods: {
@@ -72,15 +73,21 @@
           }
         });
       },
+      //   <!-- TODO -->
       queryOrderItemVoList() {
+        this.queryInfo.productId = this.getUrlParam("productId");
+        this.queryInfo.adCode = this.getUrlParam("adCode");
         this.ajax({
-          url: `/omc/order/getOrderCartProduct`,
+          // url: `/omc/order/getOrderCartProduct`,
+          url: `/omc/order/getOrderConfirmInfo`,
+          data: this.queryInfo,
           success: (res) => {
             if (!res || res.code !== 200) {
               this.loadPage('user-order');
             } else {
               this.productTotalPrice = res.result.productTotalPrice;
               this.orderItemVoList = res.result.orderItemVoList;
+              this.queryInfo.adCode = res.result.orderItemVoList[0].adCode||this.getUrlParam("adCode");
             }
           }
         });
@@ -93,7 +100,9 @@
         this.addressId = 0;
         // let newwindow = window.open("#","_blank");
         this.ajax({
-          url: `/omc/order/createOrderDoc/` + this.addressId,
+          // url: `/omc/order/createOrderDoc/` + this.addressId,
+          url: `/omc/order/createOrder`,
+          data: this.queryInfo,
           success: (res) => {
             let orderVo = res.result;
             if (res.code === 200 && orderVo.orderNo) {

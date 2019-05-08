@@ -65,7 +65,8 @@
             <span>已选择{{cartInfo.totalNum}}课程</span>
             <span>总价：</span>
             <span class="submit-total">{{cartInfo.totalPrice | formatMoney}}</span>
-            <span @click="loadPage('order-confirm')" class="btn btn-submit">去结算</span>
+            <!-- TODO -->
+            <span @click="loadPage('order-confirm')" class="btn btn-submit">去结算</span> 
           </div>
         </div>
       </div>

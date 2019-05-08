@@ -477,7 +477,7 @@ export default {
              tmpArray.push(first.children[0].children[0].value);
             }
           }
-          console.log(tmpArray);
+          // console.log(tmpArray);
           this.selectedOptions = tmpArray;
         }else {
           this.$pcMessage(res);
@@ -492,24 +492,27 @@ export default {
       }
 
       this.dialogVisible = false;
-      let userCart = {};
-      console.info("this.product", this.product);
-      let productId = this.product.id;
-      this.$store.dispatch("check_product", { productId });
-      if (this.$store.getters.getCurIndex !== -1) {
-        this.$store.dispatch("plus_count");
-      } else {
-        userCart.productId = this.product.id;
-        userCart.quantity = this.buyCount;
-        userCart.productName = this.product.name;
-        userCart.productPrice = this.product.price;
-        userCart.mainImage = this.product.mainImage;
-        userCart.adCode = this.selectedOptions.pop();
+      // 2019.5.8 去掉购物车
+      // let userCart = {};
+      // console.info("this.product", this.product);
+      // let productId = this.product.id;
+      // this.$store.dispatch("check_product", { productId });
+      // if (this.$store.getters.getCurIndex !== -1) {
+      //   this.$store.dispatch("plus_count");
+      // } else {
+      //   userCart.productId = this.product.id;
+      //   userCart.quantity = this.buyCount;
+      //   userCart.productName = this.product.name;
+      //   userCart.productPrice = this.product.price;
+      //   userCart.mainImage = this.product.mainImage;
+      //   userCart.adCode = this.selectedOptions.pop();
         
-        userCart.checked = 1;
-        this.$store.dispatch("push_cart", { userCart });
-      }
-      this.loadPage("oper-result", { type: "user-cart" });
+      //   userCart.checked = 1;
+      //   this.$store.dispatch("push_cart", { userCart });
+      // }
+      // this.loadPage("oper-result", { type: "user-cart" });
+      this.loadPage("order-confirm", { adCode:this.selectedOptions.pop(),productId:this.product.id });
+
     },
     changeMainImg(img) {
       this.mainImage = img;
