@@ -20,7 +20,7 @@
             </li>
           </ul>
         </div>
-        <div class="shop">
+        <div class="shop" style="display: none;">
           <img src="http://oss.lshao.cn/images/Cart.png" alt="" class="img">
           <span class="font link" @click.prevent="loadPage('user-cart')">&nbsp;购物车</span><span class="hightlight">({{this.$store.getters.getCartInfo.totalNum}})</span>
         </div>

@@ -20,8 +20,8 @@
                            @click="toDetailPage(order.orderNo)">{{order.orderNo}}</a>
                     </span>
             <span class="order-text">{{order.createTime}}</span>
-            <span class="order-text">收件人：{{order.receiverName}}</span>
-            <span class="order-text">订单状态：{{order.status | getOrderStatusName}}</span>
+            <!-- <span class="order-text">收件人：{{order.receiverName}}</span> -->
+            <span class="order-text">订单状态：{{order.statusDesc}}</span>
             <span class="order-text">
                     <span>订单总价：</span>
                     <span class="order-total">{{order.payment | formatMoney}}</span>

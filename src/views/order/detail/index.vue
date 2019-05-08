@@ -29,7 +29,7 @@
                                   {{orderVo.shippingVo.receiverMobile}}
                                 </span></div> -->
               <div class="text-line">
-                <span class="text">订单状态： {{orderVo.status | getOrderStatusName}}</span>
+                <span class="text">订单状态： {{orderVo.statusDesc}}</span>
               </div>
               <div class="text-line">
                 <span class="text">支付方式：{{orderVo.paymentTypeDesc}}</span>
