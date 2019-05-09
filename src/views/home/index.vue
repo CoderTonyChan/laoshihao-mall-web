@@ -814,7 +814,8 @@
                 <p class="p-title">
                   <span class="p-flag">NEW</span>{{gaozhong.name}}
                 </p>
-                <p class="p-time">课时数：{{gaozhong.period}}</p>
+                <p class="p-time">课时数：{{gaozhong.period}} <span v-show="gaozhong.homework===1">&nbsp;&nbsp;&nbsp;&nbsp;含课后作业</span> </p>
+                难度：{{stars(gaozhong.difficulty)}}
                 <ul class="p-teacher-list">
                   <li class="p-teacher-item" v-for="teacher in gaozhong.teacherList" :key="teacher.id">
                     <img
@@ -923,7 +924,8 @@
                 <p class="p-title">
                   <span class="p-flag">NEW</span>{{chuzhong.name}}
                 </p>
-                <p class="p-time">课时数：{{chuzhong.period}}</p>
+                <p class="p-time">课时数：{{chuzhong.period}} <span v-show="chuzhong.homework===1">&nbsp;&nbsp;&nbsp;&nbsp;含课后作业</span> </p>
+                难度：{{stars(chuzhong.difficulty)}}
                 <ul class="p-teacher-list">
                   <li class="p-teacher-item" v-for="teacher in chuzhong.teacherList" :key="teacher.id">
                     <img
@@ -981,7 +983,8 @@
                 <p class="p-title">
                   <span class="p-flag">NEW</span>{{xiaoxue.name}}
                 </p>
-                <p class="p-time">课时数：{{xiaoxue.period}}</p>
+                <p class="p-time">课时数：{{xiaoxue.period}} <span v-show="xiaoxue.homework===1">&nbsp;&nbsp;&nbsp;&nbsp;含课后作业</span> </p>
+                难度：{{stars(xiaoxue.difficulty)}}
                 <ul class="p-teacher-list">
                   <li class="p-teacher-item" v-for="teacher in xiaoxue.teacherList" :key="teacher.id">
                     <img
@@ -1266,6 +1269,20 @@ export default {
       });
   },
   methods: {
+    stars: function (difficulty) {
+        if (difficulty === 1) {
+          return '★☆☆☆☆'
+        }else if (difficulty === 2) {
+          return '★★☆☆☆'
+        }else if (difficulty === 3) {
+          return '★★★☆☆'
+        }else if (difficulty === 4) {
+          return '★★★★☆'
+        }else if (difficulty === 5) {
+          return '★★★★★'
+        }
+        return '★★★☆☆';
+    },
     feedback(){
       // console.log(this.$store.getters.getLoginName);
       this.$pcMessage(`感谢反馈 ${this.$store.getters.getLoginName?this.$store.getters.getLoginName:null}`);
@@ -1492,7 +1509,8 @@ export default {
   computed: {
     player() {
       return this.$refs.videoPlayer.player;
-    }
+    },
+    
   }
 };
 </script>
@@ -2137,6 +2155,7 @@ body .p-max-width-wrap {
   margin-top: 6px;
   font-size: 12px;
   line-height: 16px;
+    margin-bottom: -10px;
 }
 .p-hot-course-wrap.p-green-wrap .p-content .p-left-imgs-wrap .p-course-title,
 .p-hot-course-wrap.p-green-wrap .p-content .p-middle-content-wrap .p-time {
