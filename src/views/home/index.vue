@@ -832,16 +832,22 @@
           <ul class="p-gg-imgs-list">
             <li class="p-item p-part1">
               <a class="p-link" target="_blank">
-                <img class="p-bg-img" src="https://i.loli.net/2019/04/23/5cbe7c1076771.png" alt>
-                <p class="p-title">2020考研政治进阶全程班</p>
-                <p class="p-info">安永贺</p>
+                <img class="p-bg-img" src="https://user-images.githubusercontent.com/16996753/57441039-b5e8fd80-727b-11e9-897e-f8db7d51aa69.png" alt>
+                <p class="p-info">马昕</p>
+                <p class="p-info">教师资格证：</p>
+                <p class="p-info">20051308940000881</p>
+                <p class="p-info">北京大学中文系</p>
+                <p class="p-info">古典文献学博士</p>
               </a>
             </li>
             <li class="p-item p-part1">
               <a class="p-link" target="_blank">
-                <img class="p-bg-img" src="https://i.loli.net/2019/04/23/5cbe7c0eeed87.png" alt>
-                <p class="p-title">2020考研英语进阶全程班</p>
-                <p class="p-info">刘颖</p>
+                <img class="p-bg-img" src="https://user-images.githubusercontent.com/16996753/57441043-b6819400-727b-11e9-8954-01a3ed384f5c.png" alt>
+                <p class="p-info">白彦彬</p>
+                <p class="p-info">教师资格证：</p>
+                <p class="p-info">20001300140000369</p>
+                <p class="p-info">精华学校师资部校长</p>
+                <p class="p-info">教研组长</p>
               </a>
             </li>
           </ul>
@@ -934,16 +940,22 @@
           <ul class="p-gg-imgs-list">
             <li class="p-item p-part1">
               <a class="p-link" target="_blank">
-                <img class="p-bg-img" src="https://i.loli.net/2019/04/23/5cbe7c1001348.png" alt>
-                <p class="p-title">2020考研政治进阶全程班</p>
+                <img class="p-bg-img" src="https://user-images.githubusercontent.com/16996753/57441045-b6819400-727b-11e9-8fae-09a8a5b60d10.png" alt>
                 <p class="p-info">魏明阳</p>
+                <p class="p-info">教师资格证：</p>
+                <p class="p-info">20091380141000207</p>
+                <p class="p-info">中央民族大学硕士</p>
+                <p class="p-info">多年中考教学经验</p>
               </a>
             </li>
             <li class="p-item p-part1">
               <a class="p-link" target="_blank">
-                <img class="p-bg-img" src="https://i.loli.net/2019/04/23/5cbe7c0f73551.png" alt>
-                <p class="p-title">2020考研英语进阶全程班</p>
-                <p class="p-info">杨雪艺</p>
+                <img class="p-bg-img" src="https://user-images.githubusercontent.com/16996753/57441046-b71a2a80-727b-11e9-9abb-9aff5ece399b.png" alt>
+                <p class="p-info">邹一萍</p>
+                <p class="p-info">教师资格证：</p>
+                <p class="p-info">20074210141000028</p>
+                <p class="p-info">初中英语教研组组长</p>
+                <p class="p-info">尖子班英语主讲教师</p>
               </a>
             </li>
           </ul>
