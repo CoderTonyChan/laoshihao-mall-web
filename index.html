@@ -122,14 +122,21 @@
       mvp.setAttribute('content', 'width=device-width,user-scalable=yes,initial-scale=0.7');
     } else {
       var mvp = document.getElementById('testViewport');
-      mvp.setAttribute('content', 'width=device-width,user-scalable=yes,initial-scale=0.33');
+      if (/(iPad)/i.test(navigator.userAgent)) {
+        mvp.setAttribute('content', 'width=device-width,user-scalable=yes,initial-scale=1');
+      }else{
+        mvp.setAttribute('content', 'width=device-width,user-scalable=yes,initial-scale=0.33');
+      }
     }
   }, false);
-  if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
-    //alert(navigator.userAgent);  
-    mvp.setAttribute('content', 'width=device-width,user-scalable=yes,initial-scale=0.5');
-  } else if (/(Android)/i.test(navigator.userAgent)) {
-    //alert(navigator.userAgent); 
-  } else {
-  };
+  console.log(`navigator`);
+  
+  // if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+  //   //alert(navigator.userAgent);  
+  //   var mvp = document.getElementById('testViewport');
+  //   mvp.setAttribute('content', 'width=device-width,user-scalable=yes,initial-scale=0.5');
+  // } else if (/(Android)/i.test(navigator.userAgent)) {
+  //   //alert(navigator.userAgent); 
+  // } else {
+  // };
 </script>
