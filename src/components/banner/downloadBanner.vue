@@ -92,7 +92,7 @@ export default {
                   "http://lshaomall.oss-cn-shenzhen.aliyuncs.com/website/video/%E5%AD%A6%E7%94%9F%E5%A6%82%E4%BD%95%E4%B8%8A%E8%AF%BE.MOV"
               }
             ],
-            // poster: "http://oss.lshao.cn/images/video2.jpg"
+            poster: "http://lshaomall.oss-cn-shenzhen.aliyuncs.com/website/img/222.jpeg"
           }
         },
         {
@@ -113,7 +113,7 @@ export default {
                   "http://lshaomall.oss-cn-shenzhen.aliyuncs.com/website/video/%E5%A6%82%E4%BD%95%E5%86%99%E4%BD%9C%E4%B8%9A.MOV"
               }
             ],
-            // poster: "http://oss.lshao.cn/images/video3.jpg"
+            poster: "http://lshaomall.oss-cn-shenzhen.aliyuncs.com/website/img/111.jpeg"
           }
         }
       ]

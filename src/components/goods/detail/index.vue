@@ -101,7 +101,7 @@
         </div>
       </div>
       <div class="detail-wrap">
-        <img src="https://user-images.githubusercontent.com/16996753/54806761-fa154400-4cb5-11e9-8077-0478a96c560d.png" alt="">
+        <img src="http://lshaomall.oss-cn-shenzhen.aliyuncs.com/website/img/333.png" alt="">
       </div>
       <div class="detail-wrap">
         <div class="detail-tab-con">
