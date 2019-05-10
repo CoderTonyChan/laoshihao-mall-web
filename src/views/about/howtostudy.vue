@@ -16,7 +16,7 @@
               <li>一、学员请在老师好在线（www.lshao.cn）注册账号</li>
               <li>二、网上报班并在线支付：请记住您选择的培训机构名称，第一次登录老师好App时需要勾选</li>
               <li>三、下载老师好App，并在客户端下载界面认真观看《学生如何上课》和《如何写作业》这两个视频</li>
-              <li>四、用老师好App的步骤：
+              <li>四、使用老师好App的步骤：
                 <br><span style="margin-left: 20px;">1、打开老师好App，选择培训机构，并用学员的注册账号登录，界面显示类似如下：</span>
                 <br><img style="margin-left: 20px;" src="https://user-images.githubusercontent.com/16996753/54809765-339e7d00-4cbf-11e9-8f29-e5335c444a4c.png" alt="">
                 <br><span style="margin-left: 20px;">2、点击班级课程，界面显示类似如下：</span>
@@ -29,7 +29,6 @@
                 <br><span style="margin-left: 20px;">5、提交作业请老师批改</span>
                 <br><span style="margin-left: 20px;">6、查看作业或考试成绩，使用双指左右滑动的手势操作或鼠标左键双击，可以自己对照标准答案修改错题</span>
               </li>
-              <li>四、网上报班：请记住您选择的培训机构名称，第一次登录老师好App时需要勾选</li>
               <li>五、师生及时沟通：学员以手机号注册，请老师组织学员，可在老师好App的班级群里互发消息进行沟通，也可建立QQ或微信群进行沟通</li>
             </ul>
       </div>
