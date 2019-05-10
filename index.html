@@ -113,8 +113,7 @@
 </script> -->
 
 <script>
-  window.addEventListener("orientationchange", function () {
-    // alert(window.orientation);
+  function updateViewport() {
     if (window.orientation === 90) {// 竖屏
       // alert(window.orientation);
       // 这种适配方式挺好的
@@ -124,19 +123,17 @@
       var mvp = document.getElementById('testViewport');
       if (/(iPad)/i.test(navigator.userAgent)) {
         mvp.setAttribute('content', 'width=device-width,user-scalable=yes,initial-scale=1');
-      }else{
+      } else {
         mvp.setAttribute('content', 'width=device-width,user-scalable=yes,initial-scale=0.33');
       }
     }
+  }
+
+  window.addEventListener("orientationchange", function () {
+    // alert(window.orientation);
+    updateViewport();
   }, false);
   console.log(`navigator`);
   
-  // if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
-  //   //alert(navigator.userAgent);  
-  //   var mvp = document.getElementById('testViewport');
-  //   mvp.setAttribute('content', 'width=device-width,user-scalable=yes,initial-scale=0.5');
-  // } else if (/(Android)/i.test(navigator.userAgent)) {
-  //   //alert(navigator.userAgent); 
-  // } else {
-  // };
+  updateViewport();
 </script>
