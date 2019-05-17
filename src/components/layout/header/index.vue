@@ -50,10 +50,16 @@ export default {
       });
   },
   data() {
+    // const keyword = this.getUrlParam('keyword');
     return {
-      searchInfo: "",
+      searchInfo: '',
       hotSearchData: ['初三数学','初一英语','初二英语','热门课程']
     };
+  },
+  computed: {
+    // searchInfo() {
+    //   return '';
+    // },
   },
   components: {
     pcNav
