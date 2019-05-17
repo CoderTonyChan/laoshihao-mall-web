@@ -65,13 +65,15 @@
           </div>-->
           <div class="p-product-info">
             <p>课时：{{product.period}}<span v-show="product.validTime">&nbsp;&nbsp;&nbsp;&nbsp;有效期： {{this.dataString}}</span></p>
-            <p>难度：<span style="font-weight: bold; font-size: 16px; color: #f39800; letter-spacing: 2px;">{{stars}}</span>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            <p>难度：<span style="font-weight: bold; font-size: 16px; color: #f39800; letter-spacing: 2px;">{{stars}}</span>&nbsp;&nbsp;&nbsp;&nbsp; <span v-show="product.homework===1">含课后作业</span></p>
             <p class="teacher">
               主讲老师：
               <a
                 v-for="(teacher, index) in product.teacherList"
                 :key="teacher.id"
                 target="_blank"
+                class="link"
+                @click="loadPage('goods-list', {teacherId : teacher.id})"
               >
                 {{teacher.name}}
                 <span v-if="index !== product.teacherList.length - 1">、</span>

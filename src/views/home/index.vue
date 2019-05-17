@@ -815,7 +815,7 @@
                   <span class="p-flag">NEW</span>{{gaozhong.name}}
                 </p>
                 <p class="p-time">课时数：{{gaozhong.period}} <span v-show="gaozhong.homework===1">&nbsp;&nbsp;&nbsp;&nbsp;含课后作业</span> </p>
-                难度：{{stars(gaozhong.difficulty)}}
+                难度：<span style="font-weight: bold; font-size: 14px; color: #f39800; letter-spacing: 2px;">{{stars(gaozhong.difficulty)}}</span>
                 <ul class="p-teacher-list">
                   <li class="p-teacher-item" v-for="teacher in gaozhong.teacherList" :key="teacher.id">
                     <img
@@ -842,7 +842,7 @@
               </a>
             </li>
             <li class="p-item p-part1">
-              <a class="p-link" target="_blank">
+              <a class="p-link link" target="_blank" @click="loadPage('goods-list', {teacherId : '621397011819666432'})"> 
                 <img class="p-bg-img" src="https://user-images.githubusercontent.com/16996753/57441043-b6819400-727b-11e9-8954-01a3ed384f5c.png" alt>
                 <p class="p-info" style="font-size: 16px;">白彦彬</p>
                 <p class="p-info">教师资格证：</p>
@@ -925,7 +925,7 @@
                   <span class="p-flag">NEW</span>{{chuzhong.name}}
                 </p>
                 <p class="p-time">课时数：{{chuzhong.period}} <span v-show="chuzhong.homework===1">&nbsp;&nbsp;&nbsp;&nbsp;含课后作业</span> </p>
-                难度：{{stars(chuzhong.difficulty)}}
+                难度：<span style="font-weight: bold; font-size: 14px; color: #f39800; letter-spacing: 2px;">{{stars(chuzhong.difficulty)}}</span>
                 <ul class="p-teacher-list">
                   <li class="p-teacher-item" v-for="teacher in chuzhong.teacherList" :key="teacher.id">
                     <img
@@ -984,7 +984,7 @@
                   <span class="p-flag">NEW</span>{{xiaoxue.name}}
                 </p>
                 <p class="p-time">课时数：{{xiaoxue.period}} <span v-show="xiaoxue.homework===1">&nbsp;&nbsp;&nbsp;&nbsp;含课后作业</span> </p>
-                难度：{{stars(xiaoxue.difficulty)}}
+                难度：<span style="font-weight: bold; font-size: 14px; color: #f39800; letter-spacing: 2px;">{{stars(xiaoxue.difficulty)}}</span>
                 <ul class="p-teacher-list">
                   <li class="p-teacher-item" v-for="teacher in xiaoxue.teacherList" :key="teacher.id">
                     <img
@@ -1412,6 +1412,7 @@ export default {
       param.categoryId = categoryId;
       param.keyword = keyword;
       param.organId = organId;
+      
       this.loadPage("goods-list", param);
     },
     checkVersion() {
@@ -2162,7 +2163,7 @@ body .p-max-width-wrap {
   color: #00b2b8;
 }
 .p-content .p-middle-content-wrap .p-course-list .p-item .p-teacher-list {
-  margin-top: 15px;
+  margin-top: 8px;
 }
 .p-content
   .p-middle-content-wrap
@@ -2264,6 +2265,7 @@ body .p-max-width-wrap {
   margin-top: 6px;
   font-size: 12px;
   line-height: 12px;
+  color: #555;
 }
 
 .capital {
