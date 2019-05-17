@@ -810,20 +810,20 @@
         <div class="p-middle-content-wrap">
           <ul class="p-course-list jp-get-hot-list-wrap" data-id="1281">
             <li class="p-item p-r-border p-b-border"  v-for="gaozhong in this.categoryData[2].productTeacherDtoList" :key="gaozhong.id">
-              <a class="p-link link" @click="goProductDetailPage(gaozhong.id)" target="_blank">
-                <p class="p-title">
+              <a class="p-link">
+                <p class="p-title link"  @click="goProductDetailPage(gaozhong.id)" >
                   <span class="p-flag">NEW</span>{{gaozhong.name}}
                 </p>
                 <p class="p-time">课时数：{{gaozhong.period}} <span v-show="gaozhong.homework===1">&nbsp;&nbsp;&nbsp;&nbsp;含课后作业</span> </p>
                 难度：<span style="font-weight: bold; font-size: 14px; color: #f39800; letter-spacing: 2px;">{{stars(gaozhong.difficulty)}}</span>
                 <ul class="p-teacher-list">
-                  <li class="p-teacher-item" v-for="teacher in gaozhong.teacherList" :key="teacher.id">
+                  <li class="p-teacher-item link" v-for="teacher in gaozhong.teacherList" :key="teacher.id" @click="loadPage('goods-list', {teacherId : teacher.id})">
                     <img
                       class="p-teacher-avatar"
                       :src="teacher.avatar"
                       alt
                     >
-                    <p class="p-teacher-name">{{teacher.name}}</p>
+                    <p class="p-teacher-name" >{{teacher.name}}</p>
                   </li>
                 </ul>
               </a>
@@ -920,14 +920,14 @@
         <div class="p-middle-content-wrap">
           <ul class="p-course-list jp-get-hot-list-wrap" data-id="1281">
             <li class="p-item p-r-border p-b-border"  v-for="chuzhong in this.categoryData[1].productTeacherDtoList" :key="chuzhong.id">
-              <a class="p-link link" @click="goProductDetailPage(chuzhong.id)" target="_blank">
-                <p class="p-title">
+              <a class="p-link " target="_blank">
+                <p class="p-title link" @click="goProductDetailPage(chuzhong.id)" >
                   <span class="p-flag">NEW</span>{{chuzhong.name}}
                 </p>
                 <p class="p-time">课时数：{{chuzhong.period}} <span v-show="chuzhong.homework===1">&nbsp;&nbsp;&nbsp;&nbsp;含课后作业</span> </p>
                 难度：<span style="font-weight: bold; font-size: 14px; color: #f39800; letter-spacing: 2px;">{{stars(chuzhong.difficulty)}}</span>
                 <ul class="p-teacher-list">
-                  <li class="p-teacher-item" v-for="teacher in chuzhong.teacherList" :key="teacher.id">
+                  <li class="p-teacher-item link" v-for="teacher in chuzhong.teacherList" :key="teacher.id"  @click="loadPage('goods-list', {teacherId : teacher.id})">
                     <img
                       class="p-teacher-avatar"
                       :src="teacher.avatar"
@@ -979,14 +979,14 @@
         <div class="p-middle-content-wrap">
           <ul class="p-course-list jp-get-hot-list-wrap" data-id="1281">
             <li class="p-item p-r-border p-b-border" v-for="xiaoxue in this.categoryData[0].productTeacherDtoList" :key="xiaoxue.id">
-              <a class="p-link link" @click="goProductDetailPage(xiaoxue.id)" target="_blank">
-                <p class="p-title">
+              <a class="p-link " target="_blank">
+                <p class="p-title link" @click="goProductDetailPage(xiaoxue.id)" >
                   <span class="p-flag">NEW</span>{{xiaoxue.name}}
                 </p>
                 <p class="p-time">课时数：{{xiaoxue.period}} <span v-show="xiaoxue.homework===1">&nbsp;&nbsp;&nbsp;&nbsp;含课后作业</span> </p>
                 难度：<span style="font-weight: bold; font-size: 14px; color: #f39800; letter-spacing: 2px;">{{stars(xiaoxue.difficulty)}}</span>
                 <ul class="p-teacher-list">
-                  <li class="p-teacher-item" v-for="teacher in xiaoxue.teacherList" :key="teacher.id">
+                  <li class="p-teacher-item link" v-for="teacher in xiaoxue.teacherList" :key="teacher.id"  @click="loadPage('goods-list', {teacherId : teacher.id})">
                     <img
                       class="p-teacher-avatar"
                       :src="teacher.avatar"
