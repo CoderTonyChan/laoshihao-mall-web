@@ -78,7 +78,7 @@
           <pc-banner></pc-banner>
         </div>
       </div>
-      <div class="p-max-width-wrap p-content">
+      <div class="p-max-width-wrap p-content" v-if="allData||xiaoxueData||chuzhongData||gaozhongData">
         <div class="p-title-wrap">
           <div class="p-title">热门课程</div>
           <ul class="p-tabs-list" id="jp-solive-tabs-wrap">
@@ -906,7 +906,7 @@
         </div>
       </div> -->
 
-      <div class="p-content p-max-width-wrap detail-mid" v-if="this.categoryData[1]">
+      <div class="p-content p-max-width-wrap detail-mid" v-if="this.categoryData[1].productTeacherDtoList.length">
         <div
           class="p-left-imgs-wrap"
           id="jp-left-imgs-dx-wrap"
@@ -965,7 +965,7 @@
       </div>
 
 
-      <div class="p-content p-max-width-wrap detail-bottom">
+      <div class="p-content p-max-width-wrap detail-bottom"  v-if="this.categoryData[0].productTeacherDtoList.length">
         <div
           class="p-left-imgs-wrap"
           id="jp-left-imgs-dx-wrap"
@@ -1143,7 +1143,7 @@ export default {
         Authorization: 'Bearer ' + store.getters.getAccessToken
       },
       dialogVisible: false,
-      allData: [],
+      allData: null,
       xiaoxueData: [],
       chuzhongData: [],
       gaozhongData: [],
@@ -1225,7 +1225,9 @@ export default {
         url: `/uac/auth/hotSale/category`,
         success: (res) => {
           if (res.code === 200) {
-            this.allData = res.result.splice(0,5);
+            if (res.result) {
+              this.allData = res.result.splice(0,5);
+            }
           } else {
             
           }
