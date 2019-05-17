@@ -833,7 +833,7 @@
           <ul class="p-gg-imgs-list">
             <li class="p-item p-part1">
               <a class="p-link" target="_blank">
-                <img class="p-bg-img" src="https://user-images.githubusercontent.com/16996753/57441039-b5e8fd80-727b-11e9-897e-f8db7d51aa69.png" alt>
+                <img class="p-bg-img" src="https://i.loli.net/2019/05/17/5cde7fec24afc25327.png" alt>
                 <p class="p-info" style="font-size: 16px;">马昕</p>
                 <p class="p-info">教师资格证：</p>
                 <p class="p-info">20051308940000881</p>
@@ -843,7 +843,7 @@
             </li>
             <li class="p-item p-part1">
               <a class="p-link link" target="_blank" @click="loadPage('goods-list', {teacherId : '621397011819666432'})"> 
-                <img class="p-bg-img" src="https://user-images.githubusercontent.com/16996753/57441043-b6819400-727b-11e9-8954-01a3ed384f5c.png" alt>
+                <img class="p-bg-img" src="https://i.loli.net/2019/05/17/5cde7feca339436267.png" alt>
                 <p class="p-info" style="font-size: 16px;">白彦彬</p>
                 <p class="p-info">教师资格证：</p>
                 <p class="p-info">20001300140000369</p>
