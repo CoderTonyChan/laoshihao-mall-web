@@ -61,10 +61,16 @@
         this.queryInfo.categoryId = this.getUrlParam('categoryId');
         this.queryInfo.keyword = this.getUrlParam('keyword');
         this.queryInfo.organId = this.getUrlParam('organId');
-        this.queryInfo.spec = this.getUrlParam('spec');
-        this.queryInfo.type = this.getUrlParam('type');
+        this.queryInfo.secondTypeId = this.getUrlParam('secondTypeId');
+        this.queryInfo.subjectId = this.getUrlParam('subjectId');
+        this.queryInfo.teacherId = this.getUrlParam('teacherId');
+        this.queryInfo.knowledgeId = this.getUrlParam('knowledgeId');
+        this.queryInfo.firstTypeId = this.getUrlParam('firstTypeId');
+        this.queryInfo.gradeId = this.getUrlParam('gradeId');
+        // this.queryInfo.spec = this.getUrlParam('spec');
+        // this.queryInfo.type = this.getUrlParam('type');
         this.ajax({
-          url: `/uac/auth/product/queryProductList`,
+          url: `/uac/auth/product/queryProductListWithPage`,
           data: this.queryInfo,
           success: (res) => {
             if (res.code === 200) {
