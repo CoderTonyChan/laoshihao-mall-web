@@ -6,7 +6,7 @@
           v-if="!slide.isVideo"
           class="banner-img"
           :src="slide.src"
-          @click="goGoodsListPage('',slide.title)"
+          @click="loadPage('goods-list', {teacherId : slide.id})"
           style="object-fit: cover; height: 460px; width: 840px;"
         >
         <!-- v-lazy 环路空白 待解决 -->
@@ -72,7 +72,7 @@ export default {
       swiperOption: {
         notNextTick: true,
         autoplay: 3000,
-        // loop: true,
+        loop: true,
         initialSlide: 0,
         setWrapperSize: true,
         autoplayDisableOnInteraction: true,
@@ -87,43 +87,73 @@ export default {
       },
       swiperSlides: [
         {
-          player:'player1',
-          isVideo: true,
-          playerOptions: {
-            // videojs options //static/images/author.jpg
-            // autoplay: "muted",
-            height: "460px",
-            width: "840px",
-            muted: false,
-            playbackRates: [0.7, 1.0, 1.5, 2.0],
-            sources: [
-              {
-                type: "video/mp4",
-                src: "https://lshao.oss-cn-beijing.aliyuncs.com/lshao2.0.mp4"
-              }
-            ],
-            poster: "http://oss.lshao.cn/images/video1.jpg" // https://s2.ax1x.com/2019/03/07/kxdhrt.jpg
+            src: require('../../assets/image/banner/banner1.jpg'),
+            title: '雅思',
+            id: '621399284889164800'
+            // href: 'detail/analysis'
           },
-        },
-        {
-          player:'player2',
-          isVideo: true,
-          playerOptions: {
-            // videojs options //static/images/author.jpg
-            // autoplay: "muted",
-            height: "460px",
-            width: "840px",
-            muted: false,
-            playbackRates: [0.7, 1.0, 1.5, 2.0],
-            sources: [
-              {
-                type: "video/mp4",
-                src: "https://lshao.oss-cn-beijing.aliyuncs.com/Jimmy%E8%AF%BE%E5%A0%82.MP4"
-              }
-            ],
-            poster: "https://i.loli.net/2019/04/23/5cbeda1475479.jpg"
+          {
+            src: require('../../assets/image/banner/banner2.jpg'),
+            title: 'GRE',
+            id: '620706418936257536'
+            // href: 'detail/count'
           },
-        },
+          {
+            src: require('../../assets/image/banner/banner3.jpg'),
+            title: '日语',
+            id: '620706072587410432'
+            // href: 'http://xxx.xxx.com'
+          },
+          {
+            src: require('../../assets/image/banner/banner4.jpg'),
+            title: '新概念英语',
+            id: '615795425378573312'
+            // href: 'detail/forecast'
+          },
+          {
+            src: require('../../assets/image/banner/banner5.jpg'),
+            title: '中小学',
+            id: '621399284889164800'
+            // href: 'detail/forecast'
+          },
+        // {
+        //   player:'player1',
+        //   isVideo: true,
+        //   playerOptions: {
+        //     // videojs options //static/images/author.jpg
+        //     // autoplay: "muted",
+        //     height: "460px",
+        //     width: "840px",
+        //     muted: false,
+        //     playbackRates: [0.7, 1.0, 1.5, 2.0],
+        //     sources: [
+        //       {
+        //         type: "video/mp4",
+        //         src: "https://lshao.oss-cn-beijing.aliyuncs.com/lshao2.0.mp4"
+        //       }
+        //     ],
+        //     poster: "http://oss.lshao.cn/images/video1.jpg" // https://s2.ax1x.com/2019/03/07/kxdhrt.jpg
+        //   },
+        // },
+        // {
+        //   player:'player2',
+        //   isVideo: true,
+        //   playerOptions: {
+        //     // videojs options //static/images/author.jpg
+        //     // autoplay: "muted",
+        //     height: "460px",
+        //     width: "840px",
+        //     muted: false,
+        //     playbackRates: [0.7, 1.0, 1.5, 2.0],
+        //     sources: [
+        //       {
+        //         type: "video/mp4",
+        //         src: "https://lshao.oss-cn-beijing.aliyuncs.com/Jimmy%E8%AF%BE%E5%A0%82.MP4"
+        //       }
+        //     ],
+        //     poster: "https://i.loli.net/2019/04/23/5cbeda1475479.jpg"
+        //   },
+        // },
         // {
         //   player:'player3',
         //   isVideo: true,
