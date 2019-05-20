@@ -6,7 +6,7 @@
           v-if="!slide.isVideo"
           class="banner-img"
           :src="slide.src"
-          @click="loadPage('goods-list', {teacherId : slide.id})"
+          @click="loadPage('goods-list', slide.para)"
           style="object-fit: cover; height: 460px; width: 840px;"
         >
         <!-- v-lazy 环路空白 待解决 -->
@@ -87,15 +87,21 @@ export default {
       },
       swiperSlides: [
         {
-            src: require('../../assets/image/banner/banner1.jpg'),
+            src: 'https://i.loli.net/2019/04/23/5cbeda1475479.jpg',
             title: '雅思',
-            id: '621399284889164800'
+            para: {
+              teacherId : '620706418936257536'
+            }
             // href: 'detail/analysis'
           },
           {
             src: require('../../assets/image/banner/banner2.jpg'),
             title: 'GRE',
-            id: '620706418936257536'
+            id: '620706418936257536',
+            para: {
+              secondTypeId : '18',
+              firstTypeId : '1'
+            }
             // href: 'detail/count'
           },
           {
