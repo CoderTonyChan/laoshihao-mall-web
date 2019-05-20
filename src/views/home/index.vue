@@ -810,7 +810,7 @@
         <div class="p-middle-content-wrap">
           <ul class="p-course-list jp-get-hot-list-wrap" data-id="1281">
             <li class="p-item p-r-border p-b-border"  v-for="gaozhong in this.categoryData[2].productTeacherDtoList" :key="gaozhong.id">
-              <a class="p-link">
+              <a class="p-link" style="position: relative;">
                 <p class="p-title link"  @click="goProductDetailPage(gaozhong.id)" >
                   <span class="p-flag">NEW</span>{{gaozhong.name}}
                 </p>
@@ -826,6 +826,7 @@
                     <p class="p-teacher-name" >{{teacher.name}}</p>
                   </li>
                 </ul>
+              <span class="p-price" style="font-size: 22px;color: rgb(255, 131, 48);bottom: 8px;right: 30px;position: absolute;"><em class="p-unit">￥</em>{{gaozhong.price}}</span>
               </a>
             </li>
 
