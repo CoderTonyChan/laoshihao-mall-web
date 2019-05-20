@@ -937,6 +937,7 @@
                     <p class="p-teacher-name">{{teacher.name}}</p>
                   </li>
                 </ul>
+              <span class="p-price" style="font-size: 22px;color: rgb(255, 131, 48);bottom: 8px;right: 30px;position: absolute;"><em class="p-unit">￥</em>{{chuzhong.price}}</span>
               </a>
             </li>
           </ul>
@@ -996,6 +997,7 @@
                     <p class="p-teacher-name">{{teacher.name}}</p>
                   </li>
                 </ul>
+              <span class="p-price" style="font-size: 22px;color: rgb(255, 131, 48);bottom: 8px;right: 30px;position: absolute;"><em class="p-unit">￥</em>{{xiaoxue.price}}</span>
               </a>
             </li>
           </ul>
