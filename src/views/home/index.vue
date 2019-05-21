@@ -921,7 +921,7 @@
         <div class="p-middle-content-wrap">
           <ul class="p-course-list jp-get-hot-list-wrap" data-id="1281">
             <li class="p-item p-r-border p-b-border"  v-for="chuzhong in this.categoryData[1].productTeacherDtoList" :key="chuzhong.id">
-              <a class="p-link " target="_blank">
+              <a class="p-link " target="_blank" style="position: relative;">
                 <p class="p-title link" @click="goProductDetailPage(chuzhong.id)" >
                   <span class="p-flag">NEW</span>{{chuzhong.name}}
                 </p>
@@ -981,7 +981,7 @@
         <div class="p-middle-content-wrap">
           <ul class="p-course-list jp-get-hot-list-wrap" data-id="1281">
             <li class="p-item p-r-border p-b-border" v-for="xiaoxue in this.categoryData[0].productTeacherDtoList" :key="xiaoxue.id">
-              <a class="p-link " target="_blank">
+              <a class="p-link " target="_blank" style="position: relative;">
                 <p class="p-title link" @click="goProductDetailPage(xiaoxue.id)" >
                   <span class="p-flag">NEW</span>{{xiaoxue.name}}
                 </p>

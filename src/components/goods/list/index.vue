@@ -11,7 +11,7 @@
         <div class="p-name-con">
           <a class="p-name" style="font-size: 16px;">{{product.name}}</a>
         </div>
-        <div class="p-name-con">
+        <div class="p-name-con" style="height: 22px;">
           课时数：{{product.period}}
           <span v-show="product.homework===1">&nbsp;&nbsp;&nbsp;&nbsp;含课后作业</span>
         </div>
