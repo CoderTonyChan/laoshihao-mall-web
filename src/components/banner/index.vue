@@ -104,24 +104,24 @@ export default {
             }
             // href: 'detail/count'
           },
-          {
-            src: require('../../assets/image/banner/banner3.jpg'),
-            title: '日语',
-            id: '620706072587410432'
-            // href: 'http://xxx.xxx.com'
-          },
-          {
-            src: require('../../assets/image/banner/banner4.jpg'),
-            title: '新概念英语',
-            id: '615795425378573312'
-            // href: 'detail/forecast'
-          },
-          {
-            src: require('../../assets/image/banner/banner5.jpg'),
-            title: '中小学',
-            id: '621399284889164800'
-            // href: 'detail/forecast'
-          },
+          // {
+          //   src: require('../../assets/image/banner/banner3.jpg'),
+          //   title: '日语',
+          //   id: '620706072587410432'
+          //   // href: 'http://xxx.xxx.com'
+          // },
+          // {
+          //   src: require('../../assets/image/banner/banner4.jpg'),
+          //   title: '新概念英语',
+          //   id: '615795425378573312'
+          //   // href: 'detail/forecast'
+          // },
+          // {
+          //   src: require('../../assets/image/banner/banner5.jpg'),
+          //   title: '中小学',
+          //   id: '621399284889164800'
+          //   // href: 'detail/forecast'
+          // },
         // {
         //   player:'player1',
         //   isVideo: true,
