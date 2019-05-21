@@ -207,7 +207,7 @@
       </div>
     </div>
     <div class="list-wrap w">
-      <ul class="sort-con">
+      <!-- <ul class="sort-con">
         <li
           :class="{'sort-item': true, 'active': sortActive}"
           data-type="default"
@@ -222,11 +222,10 @@
           <i class="fa fa-sort-asc"></i>
           <i class="fa fa-sort-desc"></i>
         </li>
-      </ul>
-      <ul class="p-list-con">
+      </ul>-->
+      <div >
         <pc-goods-list/>
-      </ul>
-      <div class="pagination"></div>
+      </div>
     </div>
   </div>
 </template>
@@ -236,43 +235,47 @@ import pcGoodsList from "components/goods/list";
 export default {
   data() {
     return {
+      count: 1,
       update: true,
       sortActive: true,
       isAsc: false,
       isDesc: false,
-      orderBy: "name asc",
+      orderBy: null,
       selectorsData: {
-        organs: [{ id: '3', name: "老师好教育" }, { id: '4', name: "精华学校" }],
+        organs: [
+          { id: "3", name: "老师好教育" },
+          { id: "4", name: "精华学校" }
+        ],
         grades: [
-          { id: '1', name: "一年级" },
-          { id: '2', name: "二年级" },
-          { id: '3', name: "三年级" },
-          { id: '4', name: "四年级" },
-          { id: '5', name: "五年级" },
-          { id: '6', name: "六年级" },
-          { id: '7', name: "初一" },
-          { id: '8', name: "初二" },
-          { id: '9', name: "初三" },
-          { id: '11', name: "高一" },
-          { id: '14', name: "高二" },
-          { id: '17', name: "高三" }
+          { id: "1", name: "一年级" },
+          { id: "2", name: "二年级" },
+          { id: "3", name: "三年级" },
+          { id: "4", name: "四年级" },
+          { id: "5", name: "五年级" },
+          { id: "6", name: "六年级" },
+          { id: "7", name: "初一" },
+          { id: "8", name: "初二" },
+          { id: "9", name: "初三" },
+          { id: "11", name: "高一" },
+          { id: "14", name: "高二" },
+          { id: "17", name: "高三" }
         ],
         subjects: [
-          { id: '101', name: "语文" },
-          { id: '102', name: "数学" },
-          { id: '103', name: "英语" },
-          { id: '104', name: "物理" },
-          { id: '105', name: "化学" },
-          { id: '106', name: "生物" },
-          { id: '107', name: "历史" },
-          { id: '108', name: "地理" },
-          { id: '109', name: "政治" }
+          { id: "101", name: "语文" },
+          { id: "102", name: "数学" },
+          { id: "103", name: "英语" },
+          { id: "104", name: "物理" },
+          { id: "105", name: "化学" },
+          { id: "106", name: "生物" },
+          { id: "107", name: "历史" },
+          { id: "108", name: "地理" },
+          { id: "109", name: "政治" }
         ],
         secondTypes: [
-          { id: '15', name: "秋季课" },
-          { id: '16', name: "寒假课" },
-          { id: '17', name: "春季课" },
-          { id: '18', name: "暑假课" }
+          { id: "15", name: "秋季课" },
+          { id: "16", name: "寒假课" },
+          { id: "17", name: "春季课" },
+          { id: "18", name: "暑假课" }
         ],
         categorys: [],
         specs: []
@@ -281,8 +284,8 @@ export default {
         // firstTypeId,
         // categoryId,
         // keyword,
-        // pageNum: "1",
-        // pageSize: "10",
+        pageNum: 1,
+        pageSize: 10
         // organId: organId,
         // secondTypeId,
         // subjectId,
@@ -309,7 +312,6 @@ export default {
     //   console.log(gradeId);
     //   console.log(grade.id);
     //   console.log(grade.seleted);
-      
     // });
   },
   beforeRouteEnter(to, from, next) {
@@ -334,7 +336,7 @@ export default {
     //   }
     // });
     // console.error(`goods-list---beforeRouteUpdate`);
-    
+
     // this.selectorsData.grades.splice(12)
   },
   activated() {
@@ -364,6 +366,13 @@ export default {
     this.selectorsData.subjects.splice(this.selectorsData.subjects.length);
   },
   methods: {
+    handleSizeChange(val) {
+      console.log(`每页 ${val} 条`);
+    },
+    handleCurrentChange(val) {
+      this.queryInfo.pageNum = val;
+      this.loadPage("goods-list", this.queryInfo);
+    },
     reloadCanceltype() {
       this.queryInfo.firstTypeId = null;
       this.loadPage("goods-list", this.queryInfo);

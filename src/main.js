@@ -20,6 +20,7 @@ import filters from './filters';
 // import modal from 'src/components/modal/index';
 
 import {
+  Pagination,
   Input,
   Dialog,
   Button,
@@ -38,6 +39,7 @@ import {
 // Vue.use(ElementUI);
 
 const components = [
+  Pagination,
   Input,
   Dialog,
   Button,
