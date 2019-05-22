@@ -27,7 +27,7 @@
                                   {{orderVo.shippingVo.receiverCity}}
                                   {{orderVo.shippingVo.receiverAddress}}
                                   {{orderVo.shippingVo.receiverMobile}}
-                                </span></div> -->
+              </span></div>-->
               <div class="text-line">
                 <span class="text">订单状态： {{orderVo.statusDesc}}</span>
               </div>
@@ -38,6 +38,10 @@
                 <!-- <a class="btn" @click="loadPage('order-payment', {'orderNo': orderVo.orderNo})">去支付</a> -->
                 <a class="btn" @click="orderPayment">去支付</a>
                 <a class="btn order-cancel" @click="cancelOrder(orderVo.orderNo)">取消订单</a>
+              </div>
+              <div class="text-line" v-if="orderVo.status === 50">
+                <!-- <a class="btn" @click="loadPage('order-payment', {'orderNo': orderVo.orderNo})">去支付</a> -->
+                <a class="btn order-cancel" @click="refundApply(orderVo.orderNo)">申请退款</a>
               </div>
             </div>
           </div>
@@ -55,12 +59,21 @@
               </tr>
               <tr v-for="detail in orderVo.orderItemVoList" :key="detail.id">
                 <td class="cell cell-img">
-                  <a href="javascript:void(0)" @click="goProductDetailPage(detail.productId)" target="_blank">
-                    <img class="p-img" :src="detail.productImage" :alt="detail.productName"/>
+                  <a
+                    href="javascript:void(0)"
+                    @click="goProductDetailPage(detail.productId)"
+                    target="_blank"
+                  >
+                    <img class="p-img" :src="detail.productImage" :alt="detail.productName">
                   </a>
                 </td>
                 <td class="cell cell-info">
-                  <a class="link" href="javascript:void(0)" @click="goProductDetailPage(detail.productId)" target="_blank">{{detail.productName}}</a>
+                  <a
+                    class="link"
+                    href="javascript:void(0)"
+                    @click="goProductDetailPage(detail.productId)"
+                    target="_blank"
+                  >{{detail.productName}}</a>
                 </td>
                 <td class="cell cell-price">{{detail.currentUnitPrice | formatMoney}}</td>
                 <td class="cell cell-count">{{detail.quantity}}</td>
@@ -78,76 +91,91 @@
   </div>
 </template>
 <script type="text/ecmascript-6">
-  import pcNavSide from 'components/layout/nav-side';
+import pcNavSide from "components/layout/nav-side";
 
-  export default {
-    data() {
-      return {
-        orderVo: {}
-      };
+export default {
+  data() {
+    return {
+      orderVo: {}
+    };
+  },
+  created() {},
+  activated() {
+    this.queryOrderItemVoList();
+  },
+  methods: {
+    orderPayment() {
+      // let newwindow = window.open("#","_blank");
+      this.ajax({
+        url: `/omc/pay/createAlipayForm/` + this.orderVo.orderNo,
+        success: res => {
+          if (res.code === 200) {
+            // 支付
+            // let newwindow = window.open("#","_blank");
+            // newwindow.document.write(res.result);
+            // this.optUploadFileRespDto = res.result;
+            const div = document.createElement("divform");
+            div.innerHTML = res.result;
+            document.body.appendChild(div);
+            document.forms[0].acceptCharset = "utf-8"; //保持与支付宝默认编码格式一致，如果不一致将会出现：调试错误，请回到请求来源地，重新发起请求，错误代码 invalid-signature 错误原因: 验签出错，建议检查签名字符串或签名私钥与应用公钥是否匹配
+            document.forms[0].submit();
+            // console.log('utf-8');
+            // console.log(res.result);
+          }
+        }
+      });
     },
-    created() {
+    goProductDetailPage(productId) {
+      this.loadPage("goods-detail", { productId: productId });
     },
-    activated() {
-      this.queryOrderItemVoList();
+    queryOrderItemVoList() {
+      this.ajax({
+        url: `/omc/order/queryUserOrderDetailList/` + this.$route.query.orderNo,
+        success: res => {
+          if (res.code === 200) {
+            this.orderVo = res.result;
+          }
+        }
+      });
     },
-    methods: {
-      orderPayment(){
-        // let newwindow = window.open("#","_blank");
+    refundApply(orderNo,refundReason) {
+      if (!orderNo) {
+        alert("订单号不能为空");
+        return;
+      }
+      if (window.confirm("确实要提交申请吗？")) {
         this.ajax({
-                url: `/omc/pay/createAlipayForm/` + this.orderVo.orderNo,
-                success: (res) => {
-                  if (res.code === 200) {
-                    // 支付
-                    // let newwindow = window.open("#","_blank");
-                    // newwindow.document.write(res.result);
-                    // this.optUploadFileRespDto = res.result;
-                    const div=document.createElement('divform');
-                    div.innerHTML=res.result;
-                    document.body.appendChild(div);
-                    document.forms[0].acceptCharset='utf-8';//保持与支付宝默认编码格式一致，如果不一致将会出现：调试错误，请回到请求来源地，重新发起请求，错误代码 invalid-signature 错误原因: 验签出错，建议检查签名字符串或签名私钥与应用公钥是否匹配
-                    document.forms[0].submit();
-                    // console.log('utf-8');
-                    // console.log(res.result);
-                    
-                  }
-                }
-              });
-      },
-      goProductDetailPage(productId) {
-        this.loadPage('goods-detail', {'productId': productId});
-      },
-      queryOrderItemVoList() {
-        this.ajax({
-          url: `/omc/order/queryUserOrderDetailList/` + this.$route.query.orderNo,
-          success: (res) => {
+          url: `/omc/refund/refundApply`,
+          data: {orderNo,refundReason},
+          success: res => {
             if (res.code === 200) {
-              this.orderVo = res.result;
+              this.goBack();
             }
           }
         });
-      },
-      cancelOrder(orderNo) {
-        if (!orderNo) {
-          alert('订单号不能为空');
-          return;
-        }
-        if (window.confirm('确实要取消该订单？')) {
-          this.ajax({
-            url: `/omc/order/cancelOrderDoc/` + orderNo,
-            success: (res) => {
-              if (res.code === 200) {
-                this.goBack();
-              }
-            }
-          });
-        }
       }
     },
-    components: {
-      pcNavSide
+    cancelOrder(orderNo) {
+      if (!orderNo) {
+        alert("订单号不能为空");
+        return;
+      }
+      if (window.confirm("确实要取消该订单？")) {
+        this.ajax({
+          url: `/omc/order/cancelOrderDoc/` + orderNo,
+          success: res => {
+            if (res.code === 200) {
+              this.goBack();
+            }
+          }
+        });
+      }
     }
-  };
+  },
+  components: {
+    pcNavSide
+  }
+};
 </script>
 <style>
 </style>

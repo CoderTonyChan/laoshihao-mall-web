@@ -19,7 +19,8 @@
     color: #999;
 }
 .order-list-table .order-info .order-text{
-    margin-right: 25px;
+    /* 需要撑起整个tr */
+    margin-right: 65px;
 }
 .order-list-table .order-info .order-num{
     font-weight: bold;

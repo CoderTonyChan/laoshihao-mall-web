@@ -35,7 +35,7 @@
             <span class="p-subtitle-3">{{product.organName}}</span>
           </span>
           &nbsp;&nbsp;&nbsp;&nbsp;
-          <span class="p-subtitle-2">联系方式：</span>
+          <span v-if="product.qq" class="p-subtitle-2">联系方式：</span>
           <span v-if="product.qq" class="p-subtitle-3">QQ&nbsp;{{product.qq}}</span>
           <span v-if="product.qq">
             <a
