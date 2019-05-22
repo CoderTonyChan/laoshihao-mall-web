@@ -18,17 +18,17 @@
             <div class="user-info">
               <div class="form-line">
                 <span class="label">原密码：</span>
-                <input type="password" class="input" id="password" autocomplete="off"/>
+                <input type="password" v-model="oldPassword" class="input" id="password" autocomplete="off"/>
               </div>
               <div class="form-line">
                 <span class="label">新密码：</span>
-                <input type="password" class="input" id="password-new" autocomplete="off"/>
+                <input type="password" class="input" v-model="newPassword" id="password-new" autocomplete="off"/>
               </div>
               <div class="form-line">
                 <span class="label">确认密码：</span>
-                <input type="password" class="input" id="password-confirm" autocomplete="off"/>
+                <input type="password" class="input" v-model="confirmPwd" id="password-confirm" autocomplete="off"/>
               </div>
-              <span class="btn btn-submit">提交</span>
+              <span class="btn btn-submit" @click="modifyUserPwd">提交</span>
             </div>
           </div>
         </div>
@@ -41,12 +41,30 @@
 
   export default {
     data() {
-      return {};
+      return {
+        confirmPwd:'',
+        newPassword:'',
+        oldPassword:'',
+      };
     },
     created() {
     },
     methods: {
-      test() {
+      modifyUserPwd() {
+        this.ajax({
+          url: `/uac/user/modifyUserPwd`,
+          data: {
+            loginName: this.$store.getters.getLoginName,
+            confirmPwd: this.confirmPwd,
+            newPassword: this.newPassword,
+            oldPassword: this.oldPassword,
+          },
+          success: (res) => {
+            if (res.code === 200) {
+              
+            }
+          }
+        });
       }
     },
     components: {
