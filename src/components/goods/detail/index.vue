@@ -137,7 +137,7 @@
                   <img :src="teacher.avatar" alt>
 
                   <div class="info" style="font-size: 20px;">
-                    <p>{{teacher.introduce}}</p>
+                    <p v-html="introduceString(teacher.introduce)"></p>
                   </div>
                 </div>
               </div>
@@ -423,6 +423,11 @@ export default {
     
   },
   methods: {
+    introduceString(introduce){
+      var reg=new RegExp("\n","g");
+      console.log(introduce);
+      return introduce.replace(reg,"<br>");;
+    },
       handleChange(value) {
         // 不需要监听 直接使用this.selectedOptions
         console.log(this.selectedOptions);
