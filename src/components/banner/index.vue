@@ -90,12 +90,12 @@ export default {
             src: 'https://i.loli.net/2019/04/23/5cbeda1475479.jpg',
             title: '雅思',
             para: {
-              teacherId : '620706418936257536'
+              teacherId : '630882618623138816'
             }
             // href: 'detail/analysis'
           },
           {
-            src: require('../../assets/image/banner/banner2.jpg'),
+            src: 'https://lshaomall.oss-cn-shenzhen.aliyuncs.com/website/banner/banner1.jpg',
             title: 'GRE',
             id: '620706418936257536',
             para: {

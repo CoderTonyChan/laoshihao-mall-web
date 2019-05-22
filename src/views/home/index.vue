@@ -810,7 +810,7 @@
         <div class="p-middle-content-wrap">
           <ul class="p-course-list jp-get-hot-list-wrap" data-id="1281">
             <li class="p-item p-r-border p-b-border"  v-for="gaozhong in this.categoryData[2].productTeacherDtoList" :key="gaozhong.id">
-              <a class="p-link" style="position: relative;">
+              <a class="p-link link" style="position: relative;"  @click="goProductDetailPage(gaozhong.id)" >
                 <p class="p-title link"  @click="goProductDetailPage(gaozhong.id)" >
                   <span class="p-flag">NEW</span>{{gaozhong.name}}
                 </p>
@@ -833,7 +833,7 @@
           </ul>
           <ul class="p-gg-imgs-list">
             <li class="p-item p-part1">
-              <a class="p-link" target="_blank">
+              <a class="p-link link" target="_blank" @click="loadPage('goods-list', {teacherId : '628174760148212736'})">
                 <img class="p-bg-img" src="https://lshaomall.oss-cn-shenzhen.aliyuncs.com/website/img/maxin.png" alt>
                 <p class="p-info" style="font-size: 16px;">马昕</p>
                 <p class="p-info">教师资格证：</p>
@@ -921,7 +921,7 @@
         <div class="p-middle-content-wrap">
           <ul class="p-course-list jp-get-hot-list-wrap" data-id="1281">
             <li class="p-item p-r-border p-b-border"  v-for="chuzhong in this.categoryData[1].productTeacherDtoList" :key="chuzhong.id">
-              <a class="p-link " target="_blank" style="position: relative;">
+              <a class="p-link link" target="_blank" style="position: relative;"  @click="goProductDetailPage(chuzhong.id)">
                 <p class="p-title link" @click="goProductDetailPage(chuzhong.id)" >
                   <span class="p-flag">NEW</span>{{chuzhong.name}}
                 </p>
@@ -943,7 +943,7 @@
           </ul>
           <ul class="p-gg-imgs-list">
             <li class="p-item p-part1">
-              <a class="p-link" target="_blank">
+              <a class="p-link link" target="_blank" @click="loadPage('goods-list', {teacherId : '630888840143313920'})">
                 <img class="p-bg-img" src="https://user-images.githubusercontent.com/16996753/57441045-b6819400-727b-11e9-8fae-09a8a5b60d10.png" alt>
                 <p class="p-info" style="font-size: 16px;">魏明阳</p>
                 <p class="p-info">教师资格证：</p>
@@ -953,7 +953,7 @@
               </a>
             </li>
             <li class="p-item p-part1">
-              <a class="p-link" target="_blank">
+              <a class="p-link link" target="_blank" @click="loadPage('goods-list', {teacherId : '630889097530973184'})">
                 <img class="p-bg-img" src="https://user-images.githubusercontent.com/16996753/57441046-b71a2a80-727b-11e9-9abb-9aff5ece399b.png" alt>
                 <p class="p-info" style="font-size: 16px;">邹一萍</p>
                 <p class="p-info">教师资格证：</p>
@@ -981,7 +981,7 @@
         <div class="p-middle-content-wrap">
           <ul class="p-course-list jp-get-hot-list-wrap" data-id="1281">
             <li class="p-item p-r-border p-b-border" v-for="xiaoxue in this.categoryData[0].productTeacherDtoList" :key="xiaoxue.id">
-              <a class="p-link " target="_blank" style="position: relative;">
+              <a class="p-link link" target="_blank" style="position: relative;"  @click="goProductDetailPage(xiaoxue.id)">
                 <p class="p-title link" @click="goProductDetailPage(xiaoxue.id)" >
                   <span class="p-flag">NEW</span>{{xiaoxue.name}}
                 </p>
@@ -1003,14 +1003,14 @@
           </ul>
           <ul class="p-gg-imgs-list">
             <li class="p-item p-part1">
-              <a class="p-link" target="_blank">
+              <a class="p-link link" target="_blank" @click="loadPage('goods-list', {teacherId : '630882618623138816'})">
                 <img class="p-bg-img" src="http://oss.lshao.cn/images/1-alpha-edit.png" alt>
                 <p class="p-title">2020考研政治进阶全程班</p>
                 <p class="p-info" style="font-size: 16px;">Jimmy</p>
               </a>
             </li>
             <li class="p-item p-part1">
-              <a class="p-link" target="_blank">
+              <a class="p-link link" target="_blank" @click="loadPage('goods-list', {teacherId : '630882618623138816'})">
                 <img class="p-bg-img" src="http://oss.lshao.cn/images/2-alpha-edit.png" alt>
                 <p class="p-title">2020考研英语进阶全程班</p>
                 <p class="p-info" style="font-size: 16px;">Jimmy</p>
