@@ -21,8 +21,8 @@
         :on-success="uploadImg"
         :before-upload="beforeImgUpload"
         :data="uploadData"
-        :headers="authHeader">
-      </el-upload>
+        :headers="authHeader"
+      ></el-upload>
       <el-dialog :visible.sync="dialogVisible">
         <img width="100%" :src="dialogImageUrl" alt>
       </el-dialog>
@@ -53,7 +53,11 @@
               <li class="link" href="javascript:void(0)" @click="goGoodsListPage('100012','历史')">历史</li>
               <li class="link" href="javascript:void(0)" @click="goGoodsListPage('100012','地理')">地理</li>
               <li class="link" href="javascript:void(0)" @click="goGoodsListPage('100012','生物')">生物</li>
-              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('100012','信息科技')">信息科技</li>
+              <li
+                class="link"
+                href="javascript:void(0)"
+                @click="goGoodsListPage('100012','信息科技')"
+              >信息科技</li>
             </ul>
           </div>
           <div class="botton">
@@ -68,7 +72,11 @@
               <li class="link" href="javascript:void(0)" @click="goGoodsListPage('100013','历史')">历史</li>
               <li class="link" href="javascript:void(0)" @click="goGoodsListPage('100013','地理')">地理</li>
               <li class="link" href="javascript:void(0)" @click="goGoodsListPage('100013','生物')">生物</li>
-              <li class="link" href="javascript:void(0)" @click="goGoodsListPage('100013','信息科技')">信息科技</li>
+              <li
+                class="link"
+                href="javascript:void(0)"
+                @click="goGoodsListPage('100013','信息科技')"
+              >信息科技</li>
             </ul>
           </div>
         </div>
@@ -78,7 +86,10 @@
           <pc-banner></pc-banner>
         </div>
       </div>
-      <div class="p-max-width-wrap p-content" v-if="allData||xiaoxueData||chuzhongData||gaozhongData">
+      <div
+        class="p-max-width-wrap p-content"
+        v-if="allData||xiaoxueData||chuzhongData||gaozhongData"
+      >
         <div class="p-title-wrap">
           <div class="p-title">热门课程</div>
           <ul class="p-tabs-list" id="jp-solive-tabs-wrap">
@@ -117,412 +128,216 @@
             <ul v-if="allData" class="p-class-list p-selected" v-show="hotItemIndex === 0">
               <li class="p-item" v-for="item in allData" :key="item.id">
                 <a class="p-link link" @click="goProductDetailPage(item.id)" target="_blank">
-                  <img
+                  <!-- <img
                     class="p-img"
                     :src="item.mainImage"
                     alt
-                  >
+                  >-->
                   <div class="p-info-wrap">
-                    <p class="p-title">{{item.name}}</p>
-                    <p class="p-time">
+                    <!-- <p class="p-title">{{item.name}}</p> -->
+                    <p class="p-time" style="height: 36px;">
                       <img
                         src="http://oss.lshao.cn/images/people.png"
                         alt
                         style="bottom: 1px;position: relative;"
-                      > {{item.sales}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;课时数：{{item.period}}
+                      >
+                      {{item.sales}}&nbsp;&nbsp;&nbsp;&nbsp;
+                      <span style="font-size: 16px;">{{item.name}}</span>
                     </p>
+                    <p class="p-time" style="color: #4d7fff;">
+                      课时数：{{item.period}}
+                      <span v-show="item.homework===1">&nbsp;&nbsp;&nbsp;&nbsp;含课后作业</span>
+                    </p>难度：
+                    <span
+                      style="font-weight: bold; font-size: 14px; color: #f39800; letter-spacing: 2px;"
+                    >{{stars(item.difficulty)}}</span>
+                    <ul class="p-teacher-list">
+                      <li
+                        class="p-teacher-item link"
+                        style="width: 40px;height: 66px;"
+                        v-for="teacher in item.teacherList"
+                        :key="teacher.id"
+                        @click="loadPage('goods-list', {teacherId : teacher.id})"
+                      >
+                        <img
+                          class="p-teacher-avatar"
+                          :src="teacher.avatar"
+                          alt
+                          style="width: 38px;height: 38px;margin-top: 10px;"
+                        >
+                        <p
+                          class="p-teacher-name"
+                          style="text-align: center; margin-top: 10px;"
+                        >{{teacher.name}}</p>
+                      </li>
+                    </ul>
                     <div class="p-item-footer">
                       <span class="p-price">
-                        <em class="p-unit">￥</em>{{item.price}}
+                        <em class="p-unit">￥</em>
+                        {{item.price}}
                       </span>
                     </div>
                   </div>
                 </a>
               </li>
-              <!-- <li class="p-item">
-                <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
-                  <img
-                    class="p-img"
-                    src="https://uploadimg.koolearn.com/upload/2019-01-25/b0684af9926be01171ba5a5b1a833e6f.jpg"
-                    alt
-                  >
-                  <div class="p-info-wrap">
-                    <p class="p-title">2019年上教师资格证笔试冲刺救急班（中学）</p>
-                    <p class="p-time">今天 19:00-21:00</p>
-                    <div class="p-item-footer">
-                      <span class="p-teacher">主讲 范志明</span>
-                      <span class="p-price">
-                        <em class="p-unit">￥</em>9.90
-                      </span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li class="p-item">
-                <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
-                  <img
-                    class="p-img"
-                    src="https://uploadimg.koolearn.com/upload/2019-02-17/bfe4595957cc35220154edc49fc19194.jpg"
-                    alt
-                  >
-                  <div class="p-info-wrap">
-                    <p class="p-title">乔治老师托福词汇营【第2期】</p>
-                    <p class="p-time">明天 19:50-21:00</p>
-                    <div class="p-item-footer">
-                      <span class="p-teacher">主讲 李冰洁</span>
-                      <span class="p-price">
-                        <em class="p-unit">￥</em>1.00
-                      </span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li class="p-item">
-                <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
-                  <img
-                    class="p-img"
-                    src="https://uploadimg.koolearn.com/upload/2019-02-15/840c47963cbfb4f1210a32966691e8d9.png"
-                    alt
-                  >
-                  <div class="p-info-wrap">
-                    <p class="p-title">新东方雅思3月公益课</p>
-                    <p class="p-time">2019-03-04</p>
-                    <div class="p-item-footer">
-                      <span class="p-teacher">主讲 王煦</span>
-                      <span class="p-price">
-                        <em class="p-unit">￥</em>1.00
-                      </span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li class="p-item">
-                <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
-                  <img
-                    class="p-img"
-                    src="https://uploadimg.koolearn.com/upload/2019-01-04/431b551e8ccc5160e03ee00d634dfb8a.jpg"
-                    alt
-                  >
-                  <div class="p-info-wrap">
-                    <p class="p-title">【期末冲刺满分】六年级应用题重点突破</p>
-                    <p class="p-time">2019-01-12</p>
-                    <div class="p-item-footer">
-                      <span class="p-teacher">主讲 许秋琦</span>
-                      <span class="p-price">观看回放</span>
-                    </div>
-                  </div>
-                </a>
-              </li> -->
             </ul>
 
             <ul v-if="xiaoxueData" class="p-class-list p-selected" v-show="hotItemIndex === 1">
               <li class="p-item" v-for="item in xiaoxueData" :key="item.id">
                 <a class="p-link link" @click="goProductDetailPage(item.id)" target="_blank">
-                  <img
-                    class="p-img"
-                    :src="item.mainImage"
-                    alt
-                  >
+                  <!-- <img class="p-img" :src="item.mainImage" alt> -->
                   <div class="p-info-wrap">
-                    <p class="p-title">{{item.name}}</p>
-                    <p class="p-time">
+                    <!-- <p class="p-title">{{item.name}}</p> -->
+                    <p class="p-time" style="height: 36px;">
                       <img
                         src="http://oss.lshao.cn/images/people.png"
                         alt
                         style="bottom: 1px;position: relative;"
-                      > {{item.sales}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;课时数：{{item.period}}
+                      >
+                      {{item.sales}}&nbsp;&nbsp;&nbsp;&nbsp;
+                      <span style="font-size: 16px;">{{item.name}}</span>
                     </p>
+                    <p class="p-time" style="color: #4d7fff;">
+                      课时数：{{item.period}}
+                      <span v-show="item.homework===1">&nbsp;&nbsp;&nbsp;&nbsp;含课后作业</span>
+                    </p>难度：
+                    <span
+                      style="font-weight: bold; font-size: 14px; color: #f39800; letter-spacing: 2px;"
+                    >{{stars(item.difficulty)}}</span>
+                    <ul class="p-teacher-list">
+                      <li
+                        class="p-teacher-item link"
+                        style="width: 40px;height: 66px;"
+                        v-for="teacher in item.teacherList"
+                        :key="teacher.id"
+                        @click="loadPage('goods-list', {teacherId : teacher.id})"
+                      >
+                        <img
+                          class="p-teacher-avatar"
+                          :src="teacher.avatar"
+                          alt
+                          style="width: 38px;height: 38px;margin-top: 10px;"
+                        >
+                        <p
+                          class="p-teacher-name"
+                          style="text-align: center; margin-top: 10px;"
+                        >{{teacher.name}}</p>
+                      </li>
+                    </ul>
                     <div class="p-item-footer">
                       <span class="p-price">
-                        <em class="p-unit">￥</em>{{item.price}}
+                        <em class="p-unit">￥</em>
+                        {{item.price}}
                       </span>
                     </div>
                   </div>
                 </a>
               </li>
-              <!-- <li class="p-item">
-                <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
-                  <img
-                    class="p-img"
-                    src="https://uploadimg.koolearn.com/upload/2019-01-02/3aae374be24db0e90a244d48ed7eac08.jpg"
-                    alt
-                  >
-                  <div class="p-info-wrap">
-                    <p class="p-title">考研规划●报考策略 20讲</p>
-                    <p class="p-time">2019-01-28</p>
-                    <div class="p-item-footer">
-                      <span class="p-price">观看回放</span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li class="p-item">
-                <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
-                  <img
-                    class="p-img"
-                    src="https://uploadimg.koolearn.com/upload/2019-01-17/8211fdc034b67b2dbd2e284e5bfd7b79.jpg"
-                    alt
-                  >
-                  <div class="p-info-wrap">
-                    <p class="p-title">2020考研英语进阶全程班超级班会</p>
-                    <p class="p-time">2019-01-23</p>
-                    <div class="p-item-footer">
-                      <span class="p-price">观看回放</span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li class="p-item">
-                <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
-                  <img
-                    class="p-img"
-                    src="https://uploadimg.koolearn.com/upload/2018-12-13/e1070d50678785e05028beaf115c5b41.jpg"
-                    alt
-                  >
-                  <div class="p-info-wrap">
-                    <p class="p-title">2019考研真题解析</p>
-                    <p class="p-time">2018-12-23</p>
-                    <div class="p-item-footer">
-                      <span class="p-teacher">主讲 阮晔</span>
-                      <span class="p-price">观看回放</span>
-                    </div>
-                  </div>
-                </a>
-              </li> -->
             </ul>
-            <ul  v-if="chuzhongData" class="p-class-list p-selected" v-show="hotItemIndex === 2">
+            <ul v-if="chuzhongData" class="p-class-list p-selected" v-show="hotItemIndex === 2">
               <li class="p-item" v-for="item in chuzhongData" :key="item.id">
                 <a class="p-link link" @click="goProductDetailPage(item.id)" target="_blank">
-                  <img
-                    class="p-img"
-                    :src="item.mainImage"
-                    alt
-                  >
+                  <!-- <img class="p-img" :src="item.mainImage" alt> -->
+                  
                   <div class="p-info-wrap">
-                    <p class="p-title">{{item.name}}</p>
-                    <p class="p-time">
+                    <!-- <p class="p-title">{{item.name}}</p> -->
+                    <p class="p-time" style="height: 36px;">
                       <img
                         src="http://oss.lshao.cn/images/people.png"
                         alt
                         style="bottom: 1px;position: relative;"
-                      > {{item.sales}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;课时数：{{item.period}}
+                      >
+                      {{item.sales}}&nbsp;&nbsp;&nbsp;&nbsp;
+                      <span style="font-size: 16px;">{{item.name}}</span>
                     </p>
+                    <p class="p-time" style="color: #4d7fff;">
+                      课时数：{{item.period}}
+                      <span v-show="item.homework===1">&nbsp;&nbsp;&nbsp;&nbsp;含课后作业</span>
+                    </p>难度：
+                    <span
+                      style="font-weight: bold; font-size: 14px; color: #f39800; letter-spacing: 2px;"
+                    >{{stars(item.difficulty)}}</span>
+                    <ul class="p-teacher-list">
+                      <li
+                        class="p-teacher-item link"
+                        style="width: 40px;height: 66px;"
+                        v-for="teacher in item.teacherList"
+                        :key="teacher.id"
+                        @click="loadPage('goods-list', {teacherId : teacher.id})"
+                      >
+                        <img
+                          class="p-teacher-avatar"
+                          :src="teacher.avatar"
+                          alt
+                          style="width: 38px;height: 38px;margin-top: 10px;"
+                        >
+                        <p
+                          class="p-teacher-name"
+                          style="text-align: center; margin-top: 10px;"
+                        >{{teacher.name}}</p>
+                      </li>
+                    </ul>
                     <div class="p-item-footer">
                       <span class="p-price">
-                        <em class="p-unit">￥</em>{{item.price}}
+                        <em class="p-unit">￥</em>
+                        {{item.price}}
                       </span>
                     </div>
                   </div>
                 </a>
               </li>
-              <!-- <li class="p-item">
-                <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
-                  <img
-                    class="p-img"
-                    src="https://uploadimg.koolearn.com/upload/2019-02-01/f1454f923444e6e512e1a791df4cac44.jpg"
-                    alt
-                  >
-                  <div class="p-info-wrap">
-                    <p class="p-title">能不能读普高高考班来申请美国本科</p>
-                    <p class="p-time">今天 19:55-21:00</p>
-                    <div class="p-item-footer">
-                      <span class="p-teacher">主讲 张仪</span>
-                      <span class="p-price">免费领取</span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li class="p-item">
-                <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
-                  <img
-                    class="p-img"
-                    src="https://uploadimg.koolearn.com/upload/2019-01-22/aa48d19c0edb2c0eff6766045f03e008.jpg"
-                    alt
-                  >
-                  <div class="p-info-wrap">
-                    <p class="p-title">新东方GMAT2月公益课</p>
-                    <p class="p-time">今天 20:00-21:00</p>
-                    <div class="p-item-footer">
-                      <span class="p-teacher">主讲 周谢慧</span>
-                      <span class="p-price">
-                        <em class="p-unit">￥</em>1.00
-                      </span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li class="p-item">
-                <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
-                  <img
-                    class="p-img"
-                    src="https://uploadimg.koolearn.com/upload/2019-02-17/bfe4595957cc35220154edc49fc19194.jpg"
-                    alt
-                  >
-                  <div class="p-info-wrap">
-                    <p class="p-title">乔治老师托福词汇营【第2期】</p>
-                    <p class="p-time">明天 19:50-21:00</p>
-                    <div class="p-item-footer">
-                      <span class="p-teacher">主讲 李冰洁</span>
-                      <span class="p-price">
-                        <em class="p-unit">￥</em>1.00
-                      </span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li class="p-item">
-                <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
-                  <img
-                    class="p-img"
-                    src="https://uploadimg.koolearn.com/upload/2019-02-14/b82c9dc362c21d770fd2da4f22fc265a.jpg"
-                    alt
-                  >
-                  <div class="p-info-wrap">
-                    <p class="p-title">新东方托福3月公益课-第6期</p>
-                    <p class="p-time">2019-03-01</p>
-                    <div class="p-item-footer">
-                      <span class="p-teacher">主讲 吴奇</span>
-                      <span class="p-price">
-                        <em class="p-unit">￥</em>1.00
-                      </span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li class="p-item">
-                <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
-                  <img
-                    class="p-img"
-                    src="https://uploadimg.koolearn.com/upload/2019-02-15/840c47963cbfb4f1210a32966691e8d9.png"
-                    alt
-                  >
-                  <div class="p-info-wrap">
-                    <p class="p-title">新东方雅思3月公益课</p>
-                    <p class="p-time">2019-03-04</p>
-                    <div class="p-item-footer">
-                      <span class="p-teacher">主讲 王煦</span>
-                      <span class="p-price">
-                        <em class="p-unit">￥</em>1.00
-                      </span>
-                    </div>
-                  </div>
-                </a>
-              </li> -->
             </ul>
-            <ul  v-if="gaozhongData" class="p-class-list p-selected" v-show="hotItemIndex === 3">
+            <ul v-if="gaozhongData" class="p-class-list p-selected" v-show="hotItemIndex === 3">
               <li class="p-item" v-for="item in gaozhongData" :key="item.id">
                 <a class="p-link link" @click="goProductDetailPage(item.id)" target="_blank">
-                  <img
-                    class="p-img"
-                    :src="item.mainImage"
-                    alt
-                  >
+                  <!-- <img class="p-img" :src="item.mainImage" alt> -->
                   <div class="p-info-wrap">
-                    <p class="p-title">{{item.name}}</p>
-                    <p class="p-time">
+                    <!-- <p class="p-title">{{item.name}}</p> -->
+                    <p class="p-time" style="height: 36px;">
                       <img
                         src="http://oss.lshao.cn/images/people.png"
                         alt
                         style="bottom: 1px;position: relative;"
-                      > {{item.sales}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;课时数：{{item.period}}
+                      >
+                      {{item.sales}}&nbsp;&nbsp;&nbsp;&nbsp;
+                      <span style="font-size: 16px;">{{item.name}}</span>
                     </p>
+                    <p class="p-time" style="color: #4d7fff;">
+                      课时数：{{item.period}}
+                      <span v-show="item.homework===1">&nbsp;&nbsp;&nbsp;&nbsp;含课后作业</span>
+                    </p>难度：
+                    <span
+                      style="font-weight: bold; font-size: 14px; color: #f39800; letter-spacing: 2px;"
+                    >{{stars(item.difficulty)}}</span>
+                    <ul class="p-teacher-list">
+                      <li
+                        class="p-teacher-item link"
+                        style="width: 40px;height: 66px;"
+                        v-for="teacher in item.teacherList"
+                        :key="teacher.id"
+                        @click="loadPage('goods-list', {teacherId : teacher.id})"
+                      >
+                        <img
+                          class="p-teacher-avatar"
+                          :src="teacher.avatar"
+                          alt
+                          style="width: 38px;height: 38px;margin-top: 10px;"
+                        >
+                        <p
+                          class="p-teacher-name"
+                          style="text-align: center; margin-top: 10px;"
+                        >{{teacher.name}}</p>
+                      </li>
+                    </ul>
                     <div class="p-item-footer">
                       <span class="p-price">
-                        <em class="p-unit">￥</em>{{item.price}}
+                        <em class="p-unit">￥</em>
+                        {{item.price}}
                       </span>
                     </div>
                   </div>
                 </a>
               </li>
-              <!-- <li class="p-item">
-                <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
-                  <img
-                    class="p-img"
-                    src="https://uploadimg.koolearn.com/upload/2019-01-04/0cbbc0076e9ea8cc2196b70f6b1c4084.jpg"
-                    alt
-                  >
-                  <div class="p-info-wrap">
-                    <p class="p-title">【期末冲刺满分】四年级期末重点知识串讲</p>
-                    <p class="p-time">2019-01-12</p>
-                    <div class="p-item-footer">
-                      <span class="p-teacher">主讲 张海彬</span>
-                      <span class="p-price">观看回放</span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li class="p-item">
-                <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
-                  <img
-                    class="p-img"
-                    src="https://uploadimg.koolearn.com/upload/2019-01-04/ee99809cca0923a94f4896df1c5d1dea.jpg"
-                    alt
-                  >
-                  <div class="p-info-wrap">
-                    <p class="p-title">【期末冲刺满分】五年级期末重点知识串讲</p>
-                    <p class="p-time">2019-01-12</p>
-                    <div class="p-item-footer">
-                      <span class="p-teacher">主讲 邵春楠</span>
-                      <span class="p-price">观看回放</span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li class="p-item">
-                <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
-                  <img
-                    class="p-img"
-                    src="https://uploadimg.koolearn.com/upload/2019-01-04/431b551e8ccc5160e03ee00d634dfb8a.jpg"
-                    alt
-                  >
-                  <div class="p-info-wrap">
-                    <p class="p-title">【期末冲刺满分】六年级应用题重点突破</p>
-                    <p class="p-time">2019-01-12</p>
-                    <div class="p-item-footer">
-                      <span class="p-teacher">主讲 许秋琦</span>
-                      <span class="p-price">观看回放</span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li class="p-item">
-                <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
-                  <img
-                    class="p-img"
-                    src="https://uploadimg.koolearn.com/upload/2018-09-27/65e0ebc8cd939753a0a422dcb10a95a6.jpg"
-                    alt
-                  >
-                  <div class="p-info-wrap">
-                    <p class="p-title">【小升初冲刺】较复杂的分数应用</p>
-                    <p class="p-time">2018-10-07</p>
-                    <div class="p-item-footer">
-                      <span class="p-teacher">主讲 许秋琦</span>
-                      <span class="p-price">
-                        <em class="p-unit">￥</em>19.90
-                      </span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li class="p-item">
-                <a class="p-link link" @click="goProductDetailPage(32)" target="_blank">
-                  <img
-                    class="p-img"
-                    src="https://uploadimg.koolearn.com/upload/2018-09-27/7bc712ff73311270bd8b49023d0fd72d.jpg"
-                    alt
-                  >
-                  <div class="p-info-wrap">
-                    <p class="p-title">【高考数学】函数难点不再难</p>
-                    <p class="p-time">2018-10-07</p>
-                    <div class="p-item-footer">
-                      <span class="p-teacher">主讲 程玲海</span>
-                      <span class="p-price">
-                        <em class="p-unit">￥</em>19.90
-                      </span>
-                    </div>
-                  </div>
-                </a>
-              </li> -->
             </ul>
             <ul class="p-class-list" :class="hotItemIndex === 4?'p-selected':'p-no-selected'">
               <li class="p-item">
@@ -795,8 +610,7 @@
       </div>
     </div>
     <div class="section2">
-
-      <div class="p-content p-max-width-wrap detail-top"  v-if="this.categoryData[2]">
+      <div class="p-content p-max-width-wrap detail-top" v-if="this.categoryData[2]">
         <div
           class="p-left-imgs-wrap"
           id="jp-left-imgs-dx-wrap"
@@ -809,32 +623,60 @@
         </div>
         <div class="p-middle-content-wrap">
           <ul class="p-course-list jp-get-hot-list-wrap" data-id="1281">
-            <li class="p-item p-r-border p-b-border"  v-for="gaozhong in this.categoryData[2].productTeacherDtoList" :key="gaozhong.id">
-              <a class="p-link link" style="position: relative;"  @click="goProductDetailPage(gaozhong.id)" >
-                <p class="p-title link"  @click="goProductDetailPage(gaozhong.id)" >
-                  <span class="p-flag">NEW</span>{{gaozhong.name}}
+            <li
+              class="p-item p-r-border p-b-border"
+              v-for="gaozhong in this.categoryData[2].productTeacherDtoList"
+              :key="gaozhong.id"
+            >
+              <a
+                class="p-link link"
+                style="position: relative;"
+                @click="goProductDetailPage(gaozhong.id)"
+              >
+                <p class="p-title link" @click="goProductDetailPage(gaozhong.id)">
+                  <span class="p-flag">NEW</span>
+                  {{gaozhong.name}}
                 </p>
-                <p class="p-time">课时数：{{gaozhong.period}} <span v-show="gaozhong.homework===1">&nbsp;&nbsp;&nbsp;&nbsp;含课后作业</span> </p>
-                难度：<span style="font-weight: bold; font-size: 14px; color: #f39800; letter-spacing: 2px;">{{stars(gaozhong.difficulty)}}</span>
+                <p class="p-time">
+                  课时数：{{gaozhong.period}}
+                  <span v-show="gaozhong.homework===1">&nbsp;&nbsp;&nbsp;&nbsp;含课后作业</span>
+                </p>难度：
+                <span
+                  style="font-weight: bold; font-size: 14px; color: #f39800; letter-spacing: 2px;"
+                >{{stars(gaozhong.difficulty)}}</span>
                 <ul class="p-teacher-list">
-                  <li class="p-teacher-item link" v-for="teacher in gaozhong.teacherList" :key="teacher.id" @click="loadPage('goods-list', {teacherId : teacher.id})">
-                    <img
-                      class="p-teacher-avatar"
-                      :src="teacher.avatar"
-                      alt
-                    >
-                    <p class="p-teacher-name" >{{teacher.name}}</p>
+                  <li
+                    class="p-teacher-item link"
+                    v-for="teacher in gaozhong.teacherList"
+                    :key="teacher.id"
+                    @click="loadPage('goods-list', {teacherId : teacher.id})"
+                  >
+                    <img class="p-teacher-avatar" :src="teacher.avatar" alt>
+                    <p class="p-teacher-name">{{teacher.name}}</p>
                   </li>
                 </ul>
-              <span class="p-price" style="font-size: 22px;color: rgb(255, 131, 48);bottom: 8px;right: 30px;position: absolute;"><em class="p-unit">￥</em>{{gaozhong.price}}</span>
+                <span
+                  class="p-price"
+                  style="font-size: 22px;color: rgb(255, 131, 48);bottom: 8px;right: 30px;position: absolute;"
+                >
+                  <em class="p-unit">￥</em>
+                  {{gaozhong.price}}
+                </span>
               </a>
             </li>
-
           </ul>
           <ul class="p-gg-imgs-list">
             <li class="p-item p-part1">
-              <a class="p-link link" target="_blank" @click="loadPage('goods-list', {teacherId : '628174760148212736'})">
-                <img class="p-bg-img" src="https://lshaomall.oss-cn-shenzhen.aliyuncs.com/website/img/maxin.png" alt>
+              <a
+                class="p-link link"
+                target="_blank"
+                @click="loadPage('goods-list', {teacherId : '628174760148212736'})"
+              >
+                <img
+                  class="p-bg-img"
+                  src="https://lshaomall.oss-cn-shenzhen.aliyuncs.com/website/img/maxin.png"
+                  alt
+                >
                 <p class="p-info" style="font-size: 16px;">马昕</p>
                 <p class="p-info">教师资格证：</p>
                 <p class="p-info">20051308940000881</p>
@@ -843,8 +685,16 @@
               </a>
             </li>
             <li class="p-item p-part1">
-              <a class="p-link link" target="_blank" @click="loadPage('goods-list', {teacherId : '621397011819666432'})"> 
-                <img class="p-bg-img" src="https://lshaomall.oss-cn-shenzhen.aliyuncs.com/website/img/baiyanbin.png" alt>
+              <a
+                class="p-link link"
+                target="_blank"
+                @click="loadPage('goods-list', {teacherId : '621397011819666432'})"
+              >
+                <img
+                  class="p-bg-img"
+                  src="https://lshaomall.oss-cn-shenzhen.aliyuncs.com/website/img/baiyanbin.png"
+                  alt
+                >
                 <p class="p-info" style="font-size: 16px;">白彦彬</p>
                 <p class="p-info">教师资格证：</p>
                 <p class="p-info">20001300140000369</p>
@@ -905,9 +755,12 @@
             </li>
           </ul>
         </div>
-      </div> -->
+      </div>-->
 
-      <div class="p-content p-max-width-wrap detail-mid" v-if="this.categoryData[1].productTeacherDtoList.length">
+      <div
+        class="p-content p-max-width-wrap detail-mid"
+        v-if="this.categoryData[1].productTeacherDtoList.length"
+      >
         <div
           class="p-left-imgs-wrap"
           id="jp-left-imgs-dx-wrap"
@@ -920,31 +773,61 @@
         </div>
         <div class="p-middle-content-wrap">
           <ul class="p-course-list jp-get-hot-list-wrap" data-id="1281">
-            <li class="p-item p-r-border p-b-border"  v-for="chuzhong in this.categoryData[1].productTeacherDtoList" :key="chuzhong.id">
-              <a class="p-link link" target="_blank" style="position: relative;"  @click="goProductDetailPage(chuzhong.id)">
-                <p class="p-title link" @click="goProductDetailPage(chuzhong.id)" >
-                  <span class="p-flag">NEW</span>{{chuzhong.name}}
+            <li
+              class="p-item p-r-border p-b-border"
+              v-for="chuzhong in this.categoryData[1].productTeacherDtoList"
+              :key="chuzhong.id"
+            >
+              <a
+                class="p-link link"
+                target="_blank"
+                style="position: relative;"
+                @click="goProductDetailPage(chuzhong.id)"
+              >
+                <p class="p-title link" @click="goProductDetailPage(chuzhong.id)">
+                  <span class="p-flag">NEW</span>
+                  {{chuzhong.name}}
                 </p>
-                <p class="p-time">课时数：{{chuzhong.period}} <span v-show="chuzhong.homework===1">&nbsp;&nbsp;&nbsp;&nbsp;含课后作业</span> </p>
-                难度：<span style="font-weight: bold; font-size: 14px; color: #f39800; letter-spacing: 2px;">{{stars(chuzhong.difficulty)}}</span>
+                <p class="p-time">
+                  课时数：{{chuzhong.period}}
+                  <span v-show="chuzhong.homework===1">&nbsp;&nbsp;&nbsp;&nbsp;含课后作业</span>
+                </p>难度：
+                <span
+                  style="font-weight: bold; font-size: 14px; color: #f39800; letter-spacing: 2px;"
+                >{{stars(chuzhong.difficulty)}}</span>
                 <ul class="p-teacher-list">
-                  <li class="p-teacher-item link" v-for="teacher in chuzhong.teacherList" :key="teacher.id"  @click="loadPage('goods-list', {teacherId : teacher.id})">
-                    <img
-                      class="p-teacher-avatar"
-                      :src="teacher.avatar"
-                      alt
-                    >
+                  <li
+                    class="p-teacher-item link"
+                    v-for="teacher in chuzhong.teacherList"
+                    :key="teacher.id"
+                    @click="loadPage('goods-list', {teacherId : teacher.id})"
+                  >
+                    <img class="p-teacher-avatar" :src="teacher.avatar" alt>
                     <p class="p-teacher-name">{{teacher.name}}</p>
                   </li>
                 </ul>
-              <span class="p-price" style="font-size: 22px;color: rgb(255, 131, 48);bottom: 8px;right: 30px;position: absolute;"><em class="p-unit">￥</em>{{chuzhong.price}}</span>
+                <span
+                  class="p-price"
+                  style="font-size: 22px;color: rgb(255, 131, 48);bottom: 8px;right: 30px;position: absolute;"
+                >
+                  <em class="p-unit">￥</em>
+                  {{chuzhong.price}}
+                </span>
               </a>
             </li>
           </ul>
           <ul class="p-gg-imgs-list">
             <li class="p-item p-part1">
-              <a class="p-link link" target="_blank" @click="loadPage('goods-list', {teacherId : '630888840143313920'})">
-                <img class="p-bg-img" src="https://user-images.githubusercontent.com/16996753/57441045-b6819400-727b-11e9-8fae-09a8a5b60d10.png" alt>
+              <a
+                class="p-link link"
+                target="_blank"
+                @click="loadPage('goods-list', {teacherId : '630888840143313920'})"
+              >
+                <img
+                  class="p-bg-img"
+                  src="https://user-images.githubusercontent.com/16996753/57441045-b6819400-727b-11e9-8fae-09a8a5b60d10.png"
+                  alt
+                >
                 <p class="p-info" style="font-size: 16px;">魏明阳</p>
                 <p class="p-info">教师资格证：</p>
                 <p class="p-info">20091380141000207</p>
@@ -953,8 +836,16 @@
               </a>
             </li>
             <li class="p-item p-part1">
-              <a class="p-link link" target="_blank" @click="loadPage('goods-list', {teacherId : '630889097530973184'})">
-                <img class="p-bg-img" src="https://user-images.githubusercontent.com/16996753/57441046-b71a2a80-727b-11e9-9abb-9aff5ece399b.png" alt>
+              <a
+                class="p-link link"
+                target="_blank"
+                @click="loadPage('goods-list', {teacherId : '630889097530973184'})"
+              >
+                <img
+                  class="p-bg-img"
+                  src="https://user-images.githubusercontent.com/16996753/57441046-b71a2a80-727b-11e9-9abb-9aff5ece399b.png"
+                  alt
+                >
                 <p class="p-info" style="font-size: 16px;">邹一萍</p>
                 <p class="p-info">教师资格证：</p>
                 <p class="p-info">20074210141000028</p>
@@ -966,8 +857,10 @@
         </div>
       </div>
 
-
-      <div class="p-content p-max-width-wrap detail-bottom"  v-if="this.categoryData[0].productTeacherDtoList.length">
+      <div
+        class="p-content p-max-width-wrap detail-bottom"
+        v-if="this.categoryData[0].productTeacherDtoList.length"
+      >
         <div
           class="p-left-imgs-wrap"
           id="jp-left-imgs-dx-wrap"
@@ -980,37 +873,67 @@
         </div>
         <div class="p-middle-content-wrap">
           <ul class="p-course-list jp-get-hot-list-wrap" data-id="1281">
-            <li class="p-item p-r-border p-b-border" v-for="xiaoxue in this.categoryData[0].productTeacherDtoList" :key="xiaoxue.id">
-              <a class="p-link link" target="_blank" style="position: relative;"  @click="goProductDetailPage(xiaoxue.id)">
-                <p class="p-title link" @click="goProductDetailPage(xiaoxue.id)" >
-                  <span class="p-flag">NEW</span>{{xiaoxue.name}}
+            <li
+              class="p-item p-r-border p-b-border"
+              v-for="xiaoxue in this.categoryData[0].productTeacherDtoList"
+              :key="xiaoxue.id"
+            >
+              <a
+                class="p-link link"
+                target="_blank"
+                style="position: relative;"
+                @click="goProductDetailPage(xiaoxue.id)"
+              >
+                <p class="p-title link" @click="goProductDetailPage(xiaoxue.id)">
+                  <span class="p-flag">NEW</span>
+                  {{xiaoxue.name}}
                 </p>
-                <p class="p-time">课时数：{{xiaoxue.period}} <span v-show="xiaoxue.homework===1">&nbsp;&nbsp;&nbsp;&nbsp;含课后作业</span> </p>
-                难度：<span style="font-weight: bold; font-size: 14px; color: #f39800; letter-spacing: 2px;">{{stars(xiaoxue.difficulty)}}</span>
+                <p class="p-time">
+                  课时数：{{xiaoxue.period}}
+                  <span v-show="xiaoxue.homework===1">&nbsp;&nbsp;&nbsp;&nbsp;含课后作业</span>
+                </p>难度：
+                <span
+                  style="font-weight: bold; font-size: 14px; color: #f39800; letter-spacing: 2px;"
+                >{{stars(xiaoxue.difficulty)}}</span>
                 <ul class="p-teacher-list">
-                  <li class="p-teacher-item link" v-for="teacher in xiaoxue.teacherList" :key="teacher.id"  @click="loadPage('goods-list', {teacherId : teacher.id})">
-                    <img
-                      class="p-teacher-avatar"
-                      :src="teacher.avatar"
-                      alt
-                    >
+                  <li
+                    class="p-teacher-item link"
+                    v-for="teacher in xiaoxue.teacherList"
+                    :key="teacher.id"
+                    @click="loadPage('goods-list', {teacherId : teacher.id})"
+                  >
+                    <img class="p-teacher-avatar" :src="teacher.avatar" alt>
                     <p class="p-teacher-name">{{teacher.name}}</p>
                   </li>
                 </ul>
-              <span class="p-price" style="font-size: 22px;color: rgb(255, 131, 48);bottom: 8px;right: 30px;position: absolute;"><em class="p-unit">￥</em>{{xiaoxue.price}}</span>
+                <span
+                  class="p-price"
+                  style="font-size: 22px;color: rgb(255, 131, 48);bottom: 8px;right: 30px;position: absolute;"
+                >
+                  <em class="p-unit">￥</em>
+                  {{xiaoxue.price}}
+                </span>
               </a>
             </li>
           </ul>
           <ul class="p-gg-imgs-list">
             <li class="p-item p-part1">
-              <a class="p-link link" target="_blank" @click="loadPage('goods-list', {teacherId : '630882618623138816'})">
+              <a
+                class="p-link link"
+                target="_blank"
+                @click="loadPage('goods-list', {teacherId : '630882618623138816'})"
+              >
                 <img class="p-bg-img" src="http://oss.lshao.cn/images/1-alpha-edit.png" alt>
                 <p class="p-title">2020考研政治进阶全程班</p>
                 <p class="p-info" style="font-size: 16px;">Jimmy</p>
               </a>
             </li>
             <li class="p-item p-part1">
-              <a class="p-link link" target="_blank" @click="loadPage('goods-list', {teacherId : '630882618623138816'})">
+              <a
+                class="p-link link"
+                target="_blank"
+                @click="loadPage('goods-list', {teacherId : '630882618623138816'})"
+              >
                 <img class="p-bg-img" src="http://oss.lshao.cn/images/2-alpha-edit.png" alt>
                 <p class="p-title">2020考研英语进阶全程班</p>
                 <p class="p-info" style="font-size: 16px;">Jimmy</p>
@@ -1086,12 +1009,13 @@
           </div>
           <ul class="coop">
             <li class="item">
-              <a href="http://www.jinghua.com/"><img
-                src="http://www.jinghua.com/include/images/logo_bot_org.png"
-                width="200"
-                height="52"
-              ></a>
-              
+              <a href="http://www.jinghua.com/">
+                <img
+                  src="http://www.jinghua.com/include/images/logo_bot_org.png"
+                  width="200"
+                  height="52"
+                >
+              </a>
             </li>
             <li class="item">
               <img src="https://i.loli.net/2019/04/23/5cbeda6f25292.jpg" width="200" height="52">
@@ -1111,13 +1035,22 @@
         <img class="float-img" src="http://oss.lshao.cn/images/help1.png" alt="">
         <p class="float-title">帮助</p>
       </li>-->
-      <li class="item link" v-if="!this.$store.getters.getPlatformIsMobile&&false" onclick="window.open(`http://wpa.qq.com/msgrd?v=3&uin=1302828706&site=qq&menu=yes`)">
-        <a> <!--  href="http://wpa.qq.com/msgrd?v=3&uin=1302828706&site=qq&menu=yes" -->
+      <li
+        class="item link"
+        v-if="!this.$store.getters.getPlatformIsMobile&&false"
+        onclick="window.open(`http://wpa.qq.com/msgrd?v=3&uin=1302828706&site=qq&menu=yes`)"
+      >
+        <a>
+          <!--  href="http://wpa.qq.com/msgrd?v=3&uin=1302828706&site=qq&menu=yes" -->
           <img class="float-img consult1" src="http://oss.lshao.cn/images/consult1.png" alt>
           <p class="float-title">咨询</p>
         </a>
       </li>
-      <li class="item link" @click.prevent="showModal = true" v-if="this.$store.getters.getLoginName">
+      <li
+        class="item link"
+        @click.prevent="showModal = true"
+        v-if="this.$store.getters.getLoginName"
+      >
         <img class="float-img" src="http://oss.lshao.cn/images/feedback1.png" alt>
         <p class="float-title">反馈</p>
       </li>
@@ -1132,7 +1065,7 @@ import { videoPlayer } from "vue-video-player";
 import pSchoolBanner from "components/banner/pSchoolBanner";
 import jSchoolBanner from "components/banner/jSchoolBanner";
 import hSchoolBanner from "components/banner/hSchoolBanner";
-import store from '../../store/';
+import store from "../../store/";
 
 export default {
   data() {
@@ -1142,8 +1075,8 @@ export default {
         bucketName: null,
         filePath: null
       },
-      authHeader:{
-        Authorization: 'Bearer ' + store.getters.getAccessToken
+      authHeader: {
+        Authorization: "Bearer " + store.getters.getAccessToken
       },
       dialogVisible: false,
       allData: null,
@@ -1188,7 +1121,7 @@ export default {
               categoryName: ""
             }
           ],
-          adDtoList:[
+          adDtoList: [
             {
               id: "",
               categoryId: "",
@@ -1222,75 +1155,77 @@ export default {
     });
 
     this.ajax({
-        type: "GET",
-        // url: `/uac/auth/category/getProductCategoryDtoByPid/0`,
-        // url: `/uac/auth/category/getCategoryAndProductDtoByPid/0`,
-        url: `/uac/auth/hotSale/category`,
-        success: (res) => {
-          if (res.code === 200) {
-            if (res.result) {
-              this.allData = res.result.splice(0,5);
-            }
-          } else {
-            
+      type: "GET",
+      // url: `/uac/auth/category/getProductCategoryDtoByPid/0`,
+      // url: `/uac/auth/category/getCategoryAndProductDtoByPid/0`,
+      url: `/uac/auth/hotSale/category`,
+      success: res => {
+        if (res.code === 200) {
+          if (res.result) {
+            this.allData = res.result.splice(0, 5);
           }
+        } else {
         }
-      });
+      }
+    });
 
-      this.ajax({
-        type: "GET",
-        url: `/uac/auth/hotSale/category/100011`,
-        success: (res) => {
-          if (res.code === 200) {
-            this.xiaoxueData = res.result;
-          } else {
-            
-          }
+    this.ajax({
+      type: "GET",
+      url: `/uac/auth/hotSale/category/100011`,
+      success: res => {
+        if (res.code === 200) {
+          this.xiaoxueData = res.result;
+        } else {
         }
-      });
+      }
+    });
 
-      this.ajax({
-        type: "GET",
-        url: `/uac/auth/hotSale/category/100012`,
-        success: (res) => {
-          if (res.code === 200) {
-            this.chuzhongData = res.result;
-          } else {
-            
-          }
+    this.ajax({
+      type: "GET",
+      url: `/uac/auth/hotSale/category/100012`,
+      success: res => {
+        if (res.code === 200) {
+          this.chuzhongData = res.result;
+        } else {
         }
-      });
+      }
+    });
 
-      this.ajax({
-        type: "GET",
-        url: `/uac/auth/hotSale/category/100013`,
-        success: (res) => {
-          if (res.code === 200) {
-            this.gaozhongData = res.result;
-          } else {
-            
-          }
+    this.ajax({
+      type: "GET",
+      url: `/uac/auth/hotSale/category/100013`,
+      success: res => {
+        if (res.code === 200) {
+          this.gaozhongData = res.result;
+        } else {
         }
-      });
+      }
+    });
   },
   methods: {
-    stars: function (difficulty) {
-        if (difficulty === 1) {
-          return '★☆☆☆☆'
-        }else if (difficulty === 2) {
-          return '★★☆☆☆'
-        }else if (difficulty === 3) {
-          return '★★★☆☆'
-        }else if (difficulty === 4) {
-          return '★★★★☆'
-        }else if (difficulty === 5) {
-          return '★★★★★'
-        }
-        return '★★★☆☆';
+    stars: function(difficulty) {
+      if (difficulty === 1) {
+        return "★☆☆☆☆";
+      } else if (difficulty === 2) {
+        return "★★☆☆☆";
+      } else if (difficulty === 3) {
+        return "★★★☆☆";
+      } else if (difficulty === 4) {
+        return "★★★★☆";
+      } else if (difficulty === 5) {
+        return "★★★★★";
+      }
+      return "★★★☆☆";
     },
-    feedback(){
+    feedback() {
       // console.log(this.$store.getters.getLoginName);
-      this.$pcMessage(`感谢反馈 ${this.$store.getters.getLoginName?this.$store.getters.getLoginName:null}`);
+      this.$pcMessage(
+        `感谢反馈 ${
+          this.$store.getters.getLoginName
+            ? this.$store.getters.getLoginName
+            : null
+        }`
+      );
       console.log(this.textarea);
       console.log(this.feedbacks);
       this.showModal = false;
@@ -1298,21 +1233,21 @@ export default {
       this.ajax({
         type: "POST",
         url: `/uac/user/addFeedback`,
-        data: {content:this.textarea,image:this.feedbacks.join(',')},
-        success: (res) => {
-            console.log(res);
+        data: { content: this.textarea, image: this.feedbacks.join(",") },
+        success: res => {
+          console.log(res);
         }
       });
     },
     uploadImg(res, file) {
       console.log(res);
       if (res.code == 200) {
-        this.feedbacks = [res.result.attachmentIds,...this.feedbacks];
+        this.feedbacks = [res.result.attachmentIds, ...this.feedbacks];
         console.log(this.feedbacks);
         // this.organForm.logo = res.result.attachmentIds;
         // this.organForm.logoUrl = res.result.attachmentUrls;
-      }else{
-        this.$message.error('上传图片失败！');
+      } else {
+        this.$message.error("上传图片失败！");
       }
       // 是否增加一个数组
       // if (res.status == 1) {
@@ -1329,21 +1264,21 @@ export default {
 
       if (!isRightType) {
         // this.$message.error("上传头像图片只能是 JPG 格式!");
-        alert("上传头像图片只能是 JPG 格式!")
+        alert("上传头像图片只能是 JPG 格式!");
       }
       if (!isLt2M) {
         // this.$message.error("上传头像图片大小不能超过 2MB!");
-        alert("上传头像图片大小不能超过 2MB!")
+        alert("上传头像图片大小不能超过 2MB!");
       }
       this.uploadData.fileType = "picture";
       this.uploadData.bucketName = "lshaomall";
-      this.uploadData.filePath = "organ/img/"
+      this.uploadData.filePath = "organ/img/";
       return isRightType && isLt2M;
     },
     handleRemove(file, fileList) {
       // console.log(file, fileList);
       // console.log(fileList.map(i=>i.response.result.attachmentIds))
-      this.feedbacks = fileList.map(i=>i.response.result.attachmentIds);
+      this.feedbacks = fileList.map(i => i.response.result.attachmentIds);
     },
     handlePictureCardPreview(file) {
       // console.log(file);
@@ -1377,8 +1312,6 @@ export default {
     onPlayerPause(player) {
       console.log("player pause!", player);
     },
-    // ...player event
-
     // or listen state event
     playerStateChanged(playerCurrentState) {
       console.log("player current update state", playerCurrentState);
@@ -1417,7 +1350,7 @@ export default {
       param.categoryId = categoryId;
       param.keyword = keyword;
       param.organId = organId;
-      
+
       this.loadPage("goods-list", param);
     },
     checkVersion() {
@@ -1515,8 +1448,7 @@ export default {
   computed: {
     player() {
       return this.$refs.videoPlayer.player;
-    },
-    
+    }
   }
 };
 </script>
@@ -1881,9 +1813,9 @@ img {
 }
 
 .p-content .p-class-wrap .p-class-list .p-item .p-link .p-info-wrap .p-time {
-  margin-top: 15px;
+  margin-top: 0px;
   font-size: 12px;
-  line-height: 12px;
+  line-height: 16px;
   color: #999999;
 }
 
@@ -2161,7 +2093,7 @@ body .p-max-width-wrap {
   margin-top: 6px;
   font-size: 12px;
   line-height: 16px;
-    margin-bottom: -10px;
+  margin-bottom: -10px;
 }
 .p-hot-course-wrap.p-green-wrap .p-content .p-left-imgs-wrap .p-course-title,
 .p-hot-course-wrap.p-green-wrap .p-content .p-middle-content-wrap .p-time {
