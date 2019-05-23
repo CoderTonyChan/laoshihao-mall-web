@@ -58,6 +58,8 @@ components.map(component => {
 Vue.prototype.$pcMessageBox = MessageBox;
 Vue.prototype.$pcMessage = Message;
 Vue.prototype.$confirm = MessageBox.confirm;
+Vue.prototype.$alert = MessageBox.alert;
+Vue.prototype.$prompt = MessageBox.prompt;
 
 Vue.use(infiniteScroll);
 Vue.use(Vuex);

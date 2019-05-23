@@ -39,9 +39,9 @@
                 <a class="btn" @click="orderPayment">去支付</a>
                 <a class="btn order-cancel" @click="cancelOrder(orderVo.orderNo)">取消订单</a>
               </div>
-              <div class="text-line" v-if="orderVo.status === 50">
+              <div class="text-line" v-if="orderVo.status === 50||orderVo.status === 20">
                 <!-- <a class="btn" @click="loadPage('order-payment', {'orderNo': orderVo.orderNo})">去支付</a> -->
-                <a class="btn order-cancel" @click="refundApply(orderVo.orderNo)">申请退款</a>
+                <a class="btn order-cancel" @click="refundApplyClick(orderVo.orderNo)">申请退款</a>
               </div>
             </div>
           </div>
@@ -105,6 +105,60 @@ export default {
   },
   methods: {
     orderPayment() {
+      var agent = navigator.userAgent.toLowerCase();
+      if ((/android/gi).test(agent)) {
+        // 安卓
+        this.$confirm("请选择扫码支付还是跳转支付宝app支付?", "提示", {
+          confirmButtonText: "支付宝app支付",
+          cancelButtonText: "支付宝扫码支付",
+          cancelButtonClass: "cancelButtonClass",
+          confirmButtonClass: "confirmButtonClass",
+          center: true
+        })
+          .then(() => {
+            // app支付
+            this.ajax({
+              url: `/omc/pay/createAlipayForm/${this.orderVo.orderNo}?payWay=1`,
+              success: res => {
+                if (res.code === 200) {
+                  // 支付
+                  // let newwindow = window.open("#","_blank");
+                  // newwindow.document.write(res.result);
+                  // this.optUploadFileRespDto = res.result;
+                  const div = document.createElement("divform");
+                  div.innerHTML = res.result;
+                  document.body.appendChild(div);
+                  document.forms[0].acceptCharset = "utf-8"; //保持与支付宝默认编码格式一致，如果不一致将会出现：调试错误，请回到请求来源地，重新发起请求，错误代码 invalid-signature 错误原因: 验签出错，建议检查签名字符串或签名私钥与应用公钥是否匹配
+                  document.forms[0].submit();
+                  // console.log('utf-8');
+                  // console.log(res.result);
+                }
+              }
+            });
+          })
+          .catch(() => {
+            // 扫码
+            this.ajax({
+              url: `/omc/pay/createAlipayForm/${this.orderVo.orderNo}?payWay=0`,
+              success: res => {
+                if (res.code === 200) {
+                  // 支付
+                  // let newwindow = window.open("#","_blank");
+                  // newwindow.document.write(res.result);
+                  // this.optUploadFileRespDto = res.result;
+                  const div = document.createElement("divform");
+                  div.innerHTML = res.result;
+                  document.body.appendChild(div);
+                  document.forms[0].acceptCharset = "utf-8"; //保持与支付宝默认编码格式一致，如果不一致将会出现：调试错误，请回到请求来源地，重新发起请求，错误代码 invalid-signature 错误原因: 验签出错，建议检查签名字符串或签名私钥与应用公钥是否匹配
+                  document.forms[0].submit();
+                  // console.log('utf-8');
+                  // console.log(res.result);
+                }
+              }
+            });
+          });
+        return;
+      }
       // let newwindow = window.open("#","_blank");
       this.ajax({
         url: `/omc/pay/createAlipayForm/` + this.orderVo.orderNo,
@@ -138,22 +192,41 @@ export default {
         }
       });
     },
-    refundApply(orderNo,refundReason) {
+    refundApplyClick(orderNo, refundReason) {
+      this.$prompt("退款原因", "提示", {
+        confirmButtonText: "确定",
+        cancelButtonText: "取消"
+      })
+        .then(({ value }) => {
+          // console.log(value);
+          this.refundApply(orderNo, value);
+        })
+        .catch(obj => {
+          // 取消
+          // this.$pcMessage({
+          //   type: 'info',
+          //   message: '取消输入'
+          // });
+        });
+    },
+    refundApply(orderNo, refundReason) {
       if (!orderNo) {
         alert("订单号不能为空");
         return;
       }
-      if (window.confirm("确实要提交申请吗？")) {
-        this.ajax({
-          url: `/omc/refund/refundApply`,
-          data: {orderNo,refundReason},
-          success: res => {
-            if (res.code === 200) {
-              this.goBack();
-            }
+      this.ajax({
+        url: `/omc/refund/refundApply`,
+        data: { orderNo, refundReason },
+        success: res => {
+          if (res.code === 200) {
+            this.$pcMessage({
+              type: "success",
+              message: "申请成功!"
+            });
+            window.location.reload();
           }
-        });
-      }
+        }
+      });
     },
     cancelOrder(orderNo) {
       if (!orderNo) {
@@ -178,4 +251,25 @@ export default {
 };
 </script>
 <style>
+.cancelButtonClass {
+  color: #fff;
+  background-color: #409eff;
+  border-color: #409eff;
+}
+
+.cancelButtonClass:hover {
+  color: #fff;
+  background-color: #409eff;
+  border-color: #409eff;
+}
+.confirmButtonClass {
+  color: #fff;
+  background-color: #409eff;
+  border-color: #409eff;
+}
+.confirmButtonClass:hover {
+  color: #fff;
+  background-color: #409eff;
+  border-color: #409eff;
+}
 </style>
