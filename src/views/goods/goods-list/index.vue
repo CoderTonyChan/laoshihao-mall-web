@@ -375,6 +375,7 @@ export default {
     },
     reloadCanceltype() {
       this.queryInfo.firstTypeId = null;
+      this.queryInfo.teacherId = null;
       this.loadPage("goods-list", this.queryInfo);
     },
     reloadtype(firstTypeId) {
@@ -385,12 +386,14 @@ export default {
       this.queryInfo.firstTypeId = firstTypeId;
       this.queryInfo.categoryId = this.getUrlParam("categoryId");
       this.queryInfo.keyword = null;
+      this.queryInfo.teacherId = null;
 
       this.loadPage("goods-list", this.queryInfo);
     },
     reloadCancelSpecsData(spec, organ) {
       this.queryInfo.keyword = null;
       this.queryInfo.spec = null;
+      this.queryInfo.teacherId = null;
       this.loadPage("goods-list", this.queryInfo);
     },
     reloadSpecsData(spec, organ) {
@@ -400,11 +403,13 @@ export default {
       }
       this.queryInfo.spec = spec.id + "_" + organ.id;
       this.queryInfo.keyword = null;
+      this.queryInfo.teacherId = null;
       this.loadPage("goods-list", this.queryInfo);
     },
     reloadCancelCategoryData(organ) {
       this.queryInfo.categoryId = null;
       this.queryInfo.keyword = null;
+      this.queryInfo.teacherId = null;
       this.loadPage("goods-list", this.queryInfo);
     },
     reloadCategoryData(organ) {
@@ -412,6 +417,7 @@ export default {
         this.reloadCancelCategoryData(organ);
         return;
       }
+      this.queryInfo.teacherId = null;
       this.queryInfo.categoryId = organ.id;
       this.queryInfo.keyword = null;
       this.loadPage("goods-list", this.queryInfo);
@@ -419,6 +425,7 @@ export default {
     reloadCancelGradeData(grade) {
       this.queryInfo.categoryId = null;
       this.queryInfo.keyword = null;
+      this.queryInfo.teacherId = null;
       this.queryInfo.gradeId = null;
       this.loadPage("goods-list", this.queryInfo);
     },
@@ -429,12 +436,14 @@ export default {
       }
       this.queryInfo.categoryId = null;
       this.queryInfo.keyword = null;
+      this.queryInfo.teacherId = null;
       this.queryInfo.gradeId = grade.id;
       this.loadPage("goods-list", this.queryInfo);
     },
     reloadCancelOrganData(organ) {
       this.queryInfo.categoryId = null;
       this.queryInfo.keyword = null;
+      this.queryInfo.teacherId = null;
       this.queryInfo.organId = null;
       this.loadPage("goods-list", this.queryInfo);
     },
@@ -446,12 +455,14 @@ export default {
       this.queryInfo.categoryId = null;
       this.queryInfo.keyword = null;
       this.queryInfo.organId = organ.id;
+      this.queryInfo.teacherId = null;
       this.loadPage("goods-list", this.queryInfo);
     },
     reloadCancelSubjectData(subject) {
       this.queryInfo.categoryId = null;
       this.queryInfo.keyword = null;
       this.queryInfo.subjectId = null;
+      this.queryInfo.teacherId = null;
       this.loadPage("goods-list", this.queryInfo);
     },
     reloadSubjectData(subject) {
@@ -461,12 +472,14 @@ export default {
       }
       this.queryInfo.categoryId = null;
       this.queryInfo.keyword = null;
+      this.queryInfo.teacherId = null;
       this.queryInfo.subjectId = subject.id;
       this.loadPage("goods-list", this.queryInfo);
     },
     reloadCancelSecondTypeData(secondType) {
       this.queryInfo.categoryId = null;
       this.queryInfo.keyword = null;
+      this.queryInfo.teacherId = null;
       this.queryInfo.secondTypeId = null;
       this.loadPage("goods-list", this.queryInfo);
     },
@@ -475,6 +488,7 @@ export default {
         this.reloadCancelSecondTypeData(secondType);
         return;
       }
+      this.queryInfo.teacherId = null;
       this.queryInfo.categoryId = null;
       this.queryInfo.keyword = null;
       this.queryInfo.secondTypeId = secondType.id;
@@ -484,6 +498,7 @@ export default {
       this.queryInfo.categoryId = this.getUrlParam("categoryId");
       this.queryInfo.keyword = null;
       this.queryInfo.organId = this.getUrlParam("organId");
+      this.queryInfo.teacherId = null;
       this.queryInfo.spec = this.getUrlParam("spec");
       this.ajax({
         type: "POST",

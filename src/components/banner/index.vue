@@ -95,7 +95,7 @@ export default {
             // href: 'detail/analysis'
           },
           {
-            src: 'https://lshaomall.oss-cn-shenzhen.aliyuncs.com/website/banner/banner1.jpg',
+            src: 'https://lshaomall.oss-cn-shenzhen.aliyuncs.com/website/img/%E7%BD%91%E7%AB%99%E5%B9%BF%E5%91%8A%E5%B0%81%E9%9D%A2%EF%BC%88%E6%9A%91%E5%81%87%EF%BC%89.png',
             title: 'GRE',
             id: '620706418936257536',
             para: {
