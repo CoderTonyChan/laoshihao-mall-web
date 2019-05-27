@@ -43,7 +43,7 @@ let mixin = {
       }
     },
     ajax(param) {
-      let {type, url, data, success, isUnMusk} = param;
+      let {type, url, data, success, isUnMusk, error} = param;
       if (!isUnMusk) {
         this.$pcNProgress.start();
       }
@@ -58,10 +58,13 @@ let mixin = {
         } else {
           this.goBack();
         }
-      }).catch((error) => {
+      }).catch((err) => {
         this.$pcNProgress.done();
         this.$loading = false;
-        console.error(error);
+        // console.error(error);
+        if (error) {
+          error(err);
+        }
       });
     },
     logout() {

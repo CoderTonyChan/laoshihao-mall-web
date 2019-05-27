@@ -23,6 +23,11 @@ axios.interceptors.response.use((res) => {
       window.location.href = '/';
       return Promise.reject(res);
     }
+    if (res.data.code === 10031017) {
+      // TOKEN解析失败 || 操作频率过快, 您的帐号已被冻结 || 会话超时,请刷新页面重试
+      // window.location.href = '/';
+      return Promise.reject(res);
+    }
   } else {
     if (res.data) {
       return res.data;
@@ -32,16 +37,16 @@ axios.interceptors.response.use((res) => {
   if (error.response) {
     console.error('error: ', error.response);
     if (error.response.status === 500) {
-      alert(error.response.data.message);
+      // alert(error.response.data.message);
     } else if (error.response.status === 504) {
       // 504是网关错误
-      alert('网关错误');
+      // alert('网关错误');
     } else {
       console.log('Error', error.message);
-      alert('接口请求失败或超时！请刷新重试');
+      // alert('接口请求失败或超时！请刷新重试');
     }
   } else {
-    alert('接口请求失败或超时！请刷新重试');
+    // alert('接口请求失败或超时！请刷新重试');
   }
 });
 

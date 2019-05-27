@@ -146,15 +146,15 @@ Vue.prototype.$http.interceptors.response.use((res) => {
     return Promise.reject(res);
   } else {
     // TODO: 不知道为啥Gateway拦截了
-    alert(`res.data.message`);
-    alert(res.data.message);
+    // alert(`res.data.message`);
+    // alert(res.data.message);
     return Promise.reject(res);
   }
 }, (error) => {
   if (error.response) {
     console.error('error: ', error.response);
     if (error.response.status === 500) {
-      alert(error.response.data.message);
+      // alert(error.response.data.message);
     } else if (error.response.status === 401) {
       // TODO: 重新去请求一下权限
       // alert('您无访问权限');

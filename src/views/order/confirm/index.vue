@@ -104,6 +104,7 @@ export default {
         url: `/omc/order/createOrder`,
         data: this.queryInfo,
         success: res => {
+          console.log(res);
           let orderVo = res.result;
           if (res.code === 200 && orderVo.orderNo) {
             // 清空购物车
@@ -151,10 +152,17 @@ export default {
               }
             });
           } else {
-            alert("支付失败");
+            // alert("支付失败");
             this.loadPage("user-order");
           }
-        }
+        },
+        error: err => {
+          if (err.data.code === 10031017) {
+            this.loadPage("user-order");
+            this.$pcMessage(err.data.message);
+          }
+        },
+        
       });
     }
   },
