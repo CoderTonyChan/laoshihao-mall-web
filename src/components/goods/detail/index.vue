@@ -425,7 +425,7 @@ export default {
   methods: {
     introduceString(introduce){
       var reg=new RegExp("\n","g");
-      console.log(introduce);
+      // console.log(introduce);
       return introduce.replace(reg,"<br>");;
     },
       handleChange(value) {

@@ -759,7 +759,7 @@
 
       <div
         class="p-content p-max-width-wrap detail-mid"
-        v-if="this.categoryData[1].productTeacherDtoList.length"
+        v-if="this.categoryData[1]&&this.categoryData[1].productTeacherDtoList.length"
       >
         <div
           class="p-left-imgs-wrap"
@@ -859,7 +859,7 @@
 
       <div
         class="p-content p-max-width-wrap detail-bottom"
-        v-if="this.categoryData[0].productTeacherDtoList.length"
+        v-if="this.categoryData[0]&&this.categoryData[0].productTeacherDtoList.length"
       >
         <div
           class="p-left-imgs-wrap"
@@ -923,7 +923,7 @@
                 target="_blank"
                 @click="loadPage('goods-list', {teacherId : '630882618623138816'})"
               >
-                <img class="p-bg-img" src="http://oss.lshao.cn/images/1-alpha-edit.png" alt>
+                <img class="p-bg-img" src="https://lshaomall.oss-cn-shenzhen.aliyuncs.com/website/img/jimmy1.png" alt>
                 <p class="p-title">2020考研政治进阶全程班</p>
                 <p class="p-info" style="font-size: 16px;">Jimmy</p>
               </a>
@@ -934,7 +934,7 @@
                 target="_blank"
                 @click="loadPage('goods-list', {teacherId : '630882618623138816'})"
               >
-                <img class="p-bg-img" src="http://oss.lshao.cn/images/2-alpha-edit.png" alt>
+                <img class="p-bg-img" src="https://lshaomall.oss-cn-shenzhen.aliyuncs.com/website/img/jimmy2.png" alt>
                 <p class="p-title">2020考研英语进阶全程班</p>
                 <p class="p-info" style="font-size: 16px;">Jimmy</p>
               </a>

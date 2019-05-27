@@ -6,8 +6,8 @@
           v-if="!slide.isVideo"
           class="banner-img"
           :src="slide.src"
-          @click="loadPage('goods-list', slide.para)"
           style="object-fit: cover; height: 460px; width: 840px;"
+          @click="pageClick(slide)"
         >
         <!-- v-lazy 环路空白 待解决 -->
         <!-- 其他设置
@@ -44,6 +44,102 @@ import { swiper, swiperSlide } from "vue-awesome-swiper";
 import "video.js/dist/video-js.css";
 import { videoPlayer } from "vue-video-player";
 
+const swiperSlides = [
+  {
+    src: "https://i.loli.net/2019/04/23/5cbeda1475479.jpg",
+    title: "雅思",
+    para: {
+      teacherId: "630882618623138816"
+    }
+    // href: 'detail/analysis'
+  },
+  {
+    src:
+      "https://lshaomall.oss-cn-shenzhen.aliyuncs.com/website/img/%E7%BD%91%E7%AB%99%E5%B9%BF%E5%91%8A%E5%B0%81%E9%9D%A2%EF%BC%88%E6%9A%91%E5%81%87%EF%BC%89.png",
+    title: "GRE",
+    id: "620706418936257536",
+    para: {
+      secondTypeId: "18",
+      firstTypeId: "1"
+    }
+    // href: 'detail/count'
+  }
+  // {
+  //   src: require('../../assets/image/banner/banner3.jpg'),
+  //   title: '日语',
+  //   id: '620706072587410432'
+  //   // href: 'http://xxx.xxx.com'
+  // },
+  // {
+  //   src: require('../../assets/image/banner/banner4.jpg'),
+  //   title: '新概念英语',
+  //   id: '615795425378573312'
+  //   // href: 'detail/forecast'
+  // },
+  // {
+  //   src: require('../../assets/image/banner/banner5.jpg'),
+  //   title: '中小学',
+  //   id: '621399284889164800'
+  //   // href: 'detail/forecast'
+  // },
+  // {
+  //   player:'player1',
+  //   isVideo: true,
+  //   playerOptions: {
+  //     // videojs options //static/images/author.jpg
+  //     // autoplay: "muted",
+  //     height: "460px",
+  //     width: "840px",
+  //     muted: false,
+  //     playbackRates: [0.7, 1.0, 1.5, 2.0],
+  //     sources: [
+  //       {
+  //         type: "video/mp4",
+  //         src: "https://lshao.oss-cn-beijing.aliyuncs.com/lshao2.0.mp4"
+  //       }
+  //     ],
+  //     poster: "http://oss.lshao.cn/images/video1.jpg" // https://s2.ax1x.com/2019/03/07/kxdhrt.jpg
+  //   },
+  // },
+  // {
+  //   player:'player2',
+  //   isVideo: true,
+  //   playerOptions: {
+  //     // videojs options //static/images/author.jpg
+  //     // autoplay: "muted",
+  //     height: "460px",
+  //     width: "840px",
+  //     muted: false,
+  //     playbackRates: [0.7, 1.0, 1.5, 2.0],
+  //     sources: [
+  //       {
+  //         type: "video/mp4",
+  //         src: "https://lshao.oss-cn-beijing.aliyuncs.com/Jimmy%E8%AF%BE%E5%A0%82.MP4"
+  //       }
+  //     ],
+  //     poster: "https://i.loli.net/2019/04/23/5cbeda1475479.jpg"
+  //   },
+  // },
+  // {
+  //   player:'player3',
+  //   isVideo: true,
+  //   playerOptions: {
+  //     // videojs options //static/images/author.jpg
+  //     // autoplay: "muted",
+  //     height: "460px",
+  //     width: "840px",
+  //     muted: false,
+  //     playbackRates: [0.7, 1.0, 1.5, 2.0],
+  //     sources: [
+  //       {
+  //         type: "video/mp4",
+  //         src: "https://lshao.oss-cn-beijing.aliyuncs.com/Jimmy%E4%BA%92%E5%8A%A8%E8%AF%BE%E5%A0%82.MP4"
+  //       }
+  //     ],
+  //     poster: "http://oss.lshao.cn/images/video3.jpg"
+  //   },
+  // }
+];
 
 export default {
   name: "banner-swiper",
@@ -83,103 +179,16 @@ export default {
         prevButton: ".banner .swiper-button-prev",
         nextButton: ".banner .swiper-button-next",
         // loop: true,
-        loopAdditionalSlides: 1
+        loopAdditionalSlides: 1,
+        onClick: swiper => { // 箭头函数才是自己
+          console.log(this);
+          const realIndex = swiper.realIndex;
+          const slide = this.swiperSlides[realIndex];
+          console.log(slide);
+          this.loadPage("goods-list", slide.para);
+        }
       },
-      swiperSlides: [
-        {
-            src: 'https://i.loli.net/2019/04/23/5cbeda1475479.jpg',
-            title: '雅思',
-            para: {
-              teacherId : '630882618623138816'
-            }
-            // href: 'detail/analysis'
-          },
-          {
-            src: 'https://lshaomall.oss-cn-shenzhen.aliyuncs.com/website/img/%E7%BD%91%E7%AB%99%E5%B9%BF%E5%91%8A%E5%B0%81%E9%9D%A2%EF%BC%88%E6%9A%91%E5%81%87%EF%BC%89.png',
-            title: 'GRE',
-            id: '620706418936257536',
-            para: {
-              secondTypeId : '18',
-              firstTypeId : '1'
-            }
-            // href: 'detail/count'
-          },
-          // {
-          //   src: require('../../assets/image/banner/banner3.jpg'),
-          //   title: '日语',
-          //   id: '620706072587410432'
-          //   // href: 'http://xxx.xxx.com'
-          // },
-          // {
-          //   src: require('../../assets/image/banner/banner4.jpg'),
-          //   title: '新概念英语',
-          //   id: '615795425378573312'
-          //   // href: 'detail/forecast'
-          // },
-          // {
-          //   src: require('../../assets/image/banner/banner5.jpg'),
-          //   title: '中小学',
-          //   id: '621399284889164800'
-          //   // href: 'detail/forecast'
-          // },
-        // {
-        //   player:'player1',
-        //   isVideo: true,
-        //   playerOptions: {
-        //     // videojs options //static/images/author.jpg
-        //     // autoplay: "muted",
-        //     height: "460px",
-        //     width: "840px",
-        //     muted: false,
-        //     playbackRates: [0.7, 1.0, 1.5, 2.0],
-        //     sources: [
-        //       {
-        //         type: "video/mp4",
-        //         src: "https://lshao.oss-cn-beijing.aliyuncs.com/lshao2.0.mp4"
-        //       }
-        //     ],
-        //     poster: "http://oss.lshao.cn/images/video1.jpg" // https://s2.ax1x.com/2019/03/07/kxdhrt.jpg
-        //   },
-        // },
-        // {
-        //   player:'player2',
-        //   isVideo: true,
-        //   playerOptions: {
-        //     // videojs options //static/images/author.jpg
-        //     // autoplay: "muted",
-        //     height: "460px",
-        //     width: "840px",
-        //     muted: false,
-        //     playbackRates: [0.7, 1.0, 1.5, 2.0],
-        //     sources: [
-        //       {
-        //         type: "video/mp4",
-        //         src: "https://lshao.oss-cn-beijing.aliyuncs.com/Jimmy%E8%AF%BE%E5%A0%82.MP4"
-        //       }
-        //     ],
-        //     poster: "https://i.loli.net/2019/04/23/5cbeda1475479.jpg"
-        //   },
-        // },
-        // {
-        //   player:'player3',
-        //   isVideo: true,
-        //   playerOptions: {
-        //     // videojs options //static/images/author.jpg
-        //     // autoplay: "muted",
-        //     height: "460px",
-        //     width: "840px",
-        //     muted: false,
-        //     playbackRates: [0.7, 1.0, 1.5, 2.0],
-        //     sources: [
-        //       {
-        //         type: "video/mp4",
-        //         src: "https://lshao.oss-cn-beijing.aliyuncs.com/Jimmy%E4%BA%92%E5%8A%A8%E8%AF%BE%E5%A0%82.MP4"
-        //       }
-        //     ],
-        //     poster: "http://oss.lshao.cn/images/video3.jpg"
-        //   },
-        // }
-      ]
+      swiperSlides: swiperSlides
     };
   },
   components: {
@@ -187,21 +196,38 @@ export default {
     swiperSlide,
     videoPlayer
   },
+  activated() {
+    // console.log(this.$refs);
+    // console.log(this.swiperSlides);
+  },
+  created() {
+    // console.log(this.$refs);
+    // console.log(swiperSlides);
+    // this.$refs.swiper.swiperSlides = [];
+    // console.log(this.$refs.swiper);
+    // const VueSwiper = this.$refs.swiper;
+    // const swiper = VueSwiper.swiper;
+    // swiper.swiperSlides = swiperSlides;
+  },
   methods: {
+    pageClick(slide) {
+      console.log(`pageClick`);
+      this.loadPage("goods-list", slide.para);
+    },
     onPlayerPlay(player) {
-      console.log('player play! event:', event)
+      console.log("player play! event:", event);
       // console.log(this.$refs);
       // Object.values(this.$refs).forEach(element => {
       //   console.log(videoPlayer);
       // });
-        
+
       for (const key in this.$refs) {
         console.log(this.$refs);
-        if (key.indexOf('swiper') >=0) {
+        if (key.indexOf("swiper") >= 0) {
           const VueSwiper = this.$refs.swiper;
           const swiper = VueSwiper.swiper;
           console.log(swiper);
-          swiper.stopAutoplay()
+          swiper.stopAutoplay();
           continue;
         }
         if (this.$refs.hasOwnProperty(key)) {
