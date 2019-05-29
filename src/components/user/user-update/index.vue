@@ -91,9 +91,7 @@
               _this.ajax({
                 url: `/uac/user/updateInformation`,
                 isUnMusk: true,
-                data: {
-                  email: _this.updateUserForm
-                },
+                data: _this.updateUserForm,
                 success: () => {
                   alert('操作成功');
                 }

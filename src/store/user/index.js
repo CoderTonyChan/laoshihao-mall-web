@@ -40,6 +40,18 @@ const getters = {
     }
     return state.authToken.loginName;
   },
+  getUserName: (state) => {
+    if (!state.authToken || state.authToken.access_token === '') {
+      state.authToken = PcCookie.get(enums.USER.AUTH_TOKEN) ? JSON.parse(PcCookie.get(enums.USER.AUTH_TOKEN)) : {};
+    }
+    if (state.authToken) {
+      // 判断是否需要续租
+      if ((new Date().getTime() - state.authToken.timestamp) > 120 * 60 * 1000) {
+        return '';
+      }
+    }
+    return state.authToken.user_name;
+  },
   getMenuList: (state) => {
     if (!state.menuList || state.menuList.length === 0) {
       state.menuList = PcLockr.get(enums.USER.MENU_LIST);

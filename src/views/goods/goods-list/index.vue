@@ -122,14 +122,14 @@
             </div>
           </div>
         </div>
-        <div v-if="update" class="J_selectorLine s-line J_selectorFold">
+        <div v-if="queryInfo.firstTypeId == 1" class="J_selectorLine s-line J_selectorFold">
           <div class="sl-wrap">
             <div class="sl-key">
               <span>学期：</span>
             </div>
             <div class="sl-value">
               <div class="sl-v-list">
-                <ul class="J_valueList">
+                <ul class="J_valueList" >
                   <li v-for="secondType in selectorsData.secondTypes" :key="secondType.id">
                     <a
                       @click="reloadSecondTypeData(secondType)"
@@ -137,6 +137,28 @@
                     >
                       <i></i>
                       {{secondType.name}}
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div v-if="queryInfo.firstTypeId == `2`&&knowledges.length" class="J_selectorLine s-line J_selectorFold">
+          <div class="sl-wrap">
+            <div class="sl-key">
+              <span>知识点：</span>
+            </div>
+            <div class="sl-value">
+              <div class="sl-v-list">
+                <ul class="J_valueList" v-bind:style="{height: knowledgeHeight}">
+                  <li v-for="knowledge in knowledges" :key="knowledge.id">
+                    <a
+                      @click="reloadKnowledgeIdData(knowledge)"
+                      v-bind:class="{seleted: (knowledge.id === queryInfo.knowledgeId)}"
+                    >
+                      <i></i>
+                      {{knowledge.name}}
                     </a>
                   </li>
                 </ul>
@@ -223,7 +245,7 @@
           <i class="fa fa-sort-desc"></i>
         </li>
       </ul>-->
-      <div >
+      <div>
         <pc-goods-list/>
       </div>
     </div>
@@ -235,12 +257,14 @@ import pcGoodsList from "components/goods/list";
 export default {
   data() {
     return {
+      knowledgeHeight: `30px`,
       count: 1,
       update: true,
       sortActive: true,
       isAsc: false,
       isDesc: false,
       orderBy: null,
+      knowledges: [],
       selectorsData: {
         organs: [
           { id: "3", name: "老师好教育" },
@@ -336,7 +360,6 @@ export default {
     //   }
     // });
     // console.error(`goods-list---beforeRouteUpdate`);
-
     // this.selectorsData.grades.splice(12)
   },
   activated() {
@@ -364,6 +387,8 @@ export default {
     this.selectorsData.grades.splice(this.selectorsData.grades.length);
     this.selectorsData.organs.splice(this.selectorsData.organs.length);
     this.selectorsData.subjects.splice(this.selectorsData.subjects.length);
+    // 需要更新一次
+    this.queryKnowledgeList(res => {});
   },
   methods: {
     handleSizeChange(val) {
@@ -379,6 +404,7 @@ export default {
       this.loadPage("goods-list", this.queryInfo);
     },
     reloadtype(firstTypeId) {
+
       if (firstTypeId === this.queryInfo.firstTypeId) {
         this.reloadCanceltype();
         return;
@@ -387,6 +413,7 @@ export default {
       this.queryInfo.categoryId = this.getUrlParam("categoryId");
       this.queryInfo.keyword = null;
       this.queryInfo.teacherId = null;
+      this.queryInfo.secondTypeId = null;
 
       this.loadPage("goods-list", this.queryInfo);
     },
@@ -427,7 +454,9 @@ export default {
       this.queryInfo.keyword = null;
       this.queryInfo.teacherId = null;
       this.queryInfo.gradeId = null;
+      this.queryInfo.knowledgeId = null;
       this.loadPage("goods-list", this.queryInfo);
+      this.queryKnowledgeList(res => {});
     },
     reloadGradeData(grade) {
       if (grade.id === this.queryInfo.gradeId) {
@@ -437,8 +466,10 @@ export default {
       this.queryInfo.categoryId = null;
       this.queryInfo.keyword = null;
       this.queryInfo.teacherId = null;
+      this.queryInfo.knowledgeId = null;
       this.queryInfo.gradeId = grade.id;
       this.loadPage("goods-list", this.queryInfo);
+      this.queryKnowledgeList(res => {});
     },
     reloadCancelOrganData(organ) {
       this.queryInfo.categoryId = null;
@@ -463,7 +494,9 @@ export default {
       this.queryInfo.keyword = null;
       this.queryInfo.subjectId = null;
       this.queryInfo.teacherId = null;
+      this.queryInfo.knowledgeId = null;
       this.loadPage("goods-list", this.queryInfo);
+      this.queryKnowledgeList(res => {});
     },
     reloadSubjectData(subject) {
       if (subject.id === this.queryInfo.subjectId) {
@@ -473,8 +506,10 @@ export default {
       this.queryInfo.categoryId = null;
       this.queryInfo.keyword = null;
       this.queryInfo.teacherId = null;
+      this.queryInfo.knowledgeId = null;
       this.queryInfo.subjectId = subject.id;
       this.loadPage("goods-list", this.queryInfo);
+      this.queryKnowledgeList(res => {});
     },
     reloadCancelSecondTypeData(secondType) {
       this.queryInfo.categoryId = null;
@@ -494,6 +529,17 @@ export default {
       this.queryInfo.secondTypeId = secondType.id;
       this.loadPage("goods-list", this.queryInfo);
     },
+    reloadKnowledgeIdData(knowledge) {
+      // if (secondType.id === this.queryInfo.secondTypeId) {
+      //   this.reloadCancelSecondTypeData(secondType);
+      //   return;
+      // }
+      this.queryInfo.teacherId = null;
+      this.queryInfo.categoryId = null;
+      this.queryInfo.keyword = null;
+      this.queryInfo.knowledgeId = knowledge.id;
+      this.loadPage("goods-list", this.queryInfo);
+    },
     querySelectorsData(resolve) {
       this.queryInfo.categoryId = this.getUrlParam("categoryId");
       this.queryInfo.keyword = null;
@@ -506,6 +552,28 @@ export default {
         data: this.queryInfo,
         success: resolve
       });
+    },
+    queryKnowledgeList(resolve) {
+      if (this.queryInfo.firstTypeId != `2`) {
+        return;
+      }
+      this.queryInfo.subjectId = this.getUrlParam("subjectId");
+      this.queryInfo.gradeId = this.getUrlParam("gradeId");
+      this.$http
+        .get("/uac/auth/filter/getKnowledgeList", {
+          params: {
+            subjectId: this.queryInfo.subjectId,
+            gradeId: this.queryInfo.gradeId
+          }
+        })
+        .then(response => {
+          this.knowledges = response.result;
+          this.knowledgeHeight = Math.ceil(response.result.length / 14) * 30 + 'px';
+          resolve(response);
+        })
+        .catch(response => {
+          resolve(response);
+        });
     },
     changeSort(sort) {
       if (sort === "price") {

@@ -143,6 +143,9 @@ Vue.prototype.$http.interceptors.response.use((res) => {
     // 验证token失败 || 解析header失败 || 页面已过期,请重新登录
     // store.dispatch('delete_user_info');
     // window.location.href = '/';
+    setInterval(() => {
+      window.location.reload();
+    }, 300);
     return Promise.reject(res);
   } else {
     // TODO: 不知道为啥Gateway拦截了
