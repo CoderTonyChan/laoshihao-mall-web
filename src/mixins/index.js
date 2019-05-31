@@ -37,7 +37,12 @@ let mixin = {
     },
     goSignUp() {
       if (process.env.NODE_ENV === 'production') {
-        window.location.href = 'http://login.lshao.cn/register';
+        const inviteCode = this.getUrlParam('inviteCode');
+        if (inviteCode) {
+          window.location.href = `http://login.lshao.cn/registeruser?inviteCode=${inviteCode}`;
+        } else {
+          window.location.href = `http://login.lshao.cn/registeruser`;
+        }
       } else {
         window.location.href = 'http://dev-login.lshao.cn/register';
       }

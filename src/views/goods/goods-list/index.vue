@@ -21,6 +21,15 @@
                 <ul class="J_valueList">
                   <li>
                     <a
+                      @click="reloadtype(null)"
+                      v-bind:class="{seleted: (null == queryInfo.firstTypeId)}"
+                    >
+                      <i></i>
+                      全部
+                    </a>
+                  </li>
+                  <li>
+                    <a
                       @click="reloadtype(1)"
                       v-bind:class="{seleted: (1 == queryInfo.firstTypeId)}"
                     >
@@ -63,6 +72,16 @@
             <div class="sl-value">
               <div class="sl-v-list">
                 <ul class="J_valueList">
+
+                  <li>
+                    <a
+                      @click="reloadOrganData({})"
+                      v-bind:class="{seleted: (null == queryInfo.organId)}"
+                    >
+                      <i></i>
+                      全部
+                    </a>
+                  </li>
                   <li v-for="organ in selectorsData.organs" :key="organ.id">
                     <a
                       @click="reloadOrganData(organ)"
@@ -86,6 +105,15 @@
             <div class="sl-value">
               <div class="sl-v-list">
                 <ul class="J_valueList">
+                  <li>
+                    <a
+                      @click="reloadGradeData({})"
+                      v-bind:class="{seleted: (null == queryInfo.gradeId)}"
+                    >
+                      <i></i>
+                      全部
+                    </a>
+                  </li>
                   <li v-for="grade in selectorsData.grades">
                     <a
                       @click="reloadGradeData(grade)"
@@ -108,10 +136,19 @@
             <div class="sl-value">
               <div class="sl-v-list">
                 <ul class="J_valueList">
+                  <li>
+                    <a
+                      @click="reloadSubjectData({})"
+                      v-bind:class="{seleted: (null == queryInfo.subjectId)}"
+                    >
+                      <i></i>
+                      全部
+                    </a>
+                  </li>
                   <li v-for="subject in selectorsData.subjects" :key="subject.id">
                     <a
                       @click="reloadSubjectData(subject)"
-                      v-bind:class="{seleted: (subject.id === queryInfo.subjectId)}"
+                      v-bind:class="{seleted: (subject.id == queryInfo.subjectId)}"
                     >
                       <i></i>
                       {{subject.name}}
@@ -130,10 +167,19 @@
             <div class="sl-value">
               <div class="sl-v-list">
                 <ul class="J_valueList" >
+                  <li>
+                    <a
+                      @click="reloadSecondTypeData({})"
+                      v-bind:class="{seleted: (null == queryInfo.secondTypeId)}"
+                    >
+                      <i></i>
+                      全部
+                    </a>
+                  </li>
                   <li v-for="secondType in selectorsData.secondTypes" :key="secondType.id">
                     <a
                       @click="reloadSecondTypeData(secondType)"
-                      v-bind:class="{seleted: (secondType.id === queryInfo.secondTypeId)}"
+                      v-bind:class="{seleted: (secondType.id == queryInfo.secondTypeId)}"
                     >
                       <i></i>
                       {{secondType.name}}
@@ -152,10 +198,20 @@
             <div class="sl-value">
               <div class="sl-v-list">
                 <ul class="J_valueList" v-bind:style="{height: knowledgeHeight}">
+
+                  <li>
+                    <a
+                      @click="reloadKnowledgeIdData({})"
+                      v-bind:class="{seleted: (null == queryInfo.knowledgeId)}"
+                    >
+                      <i></i>
+                      全部
+                    </a>
+                  </li>
                   <li v-for="knowledge in knowledges" :key="knowledge.id">
                     <a
                       @click="reloadKnowledgeIdData(knowledge)"
-                      v-bind:class="{seleted: (knowledge.id === queryInfo.knowledgeId)}"
+                      v-bind:class="{seleted: (knowledge.id == queryInfo.knowledgeId)}"
                     >
                       <i></i>
                       {{knowledge.name}}
@@ -499,7 +555,7 @@ export default {
       this.queryKnowledgeList(res => {});
     },
     reloadSubjectData(subject) {
-      if (subject.id === this.queryInfo.subjectId) {
+      if (!subject||subject.id === this.queryInfo.subjectId) {
         this.reloadCancelSubjectData(subject);
         return;
       }
