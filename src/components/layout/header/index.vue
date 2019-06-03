@@ -3,7 +3,7 @@
     <pc-nav/>
     <div class="header">
       <div class="w">
-        <img src="https://lshaomall.oss-cn-shenzhen.aliyuncs.com/images/Logo3.png" alt style="top: 27px;position: relative;"  @click.prevent="goHome" class="link">
+        <img src="https://lshaomall.oss-cn-shenzhen.aliyuncs.com/images/Logo4.png" alt style="top: 27px;position: relative;"  @click.prevent="goHome" class="link">
         <div class="search-con">
           <input class="search-input" v-model="searchInfo" @keyup.enter="goGoodsListPage(searchInfo)" id="search-input" placeholder="请输入课程名称">
           <button

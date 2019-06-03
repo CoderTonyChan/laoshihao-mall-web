@@ -224,6 +224,8 @@ export default {
               message: "申请成功!"
             });
             window.location.reload();
+          }else{
+            this.$pcMessage(res.data.message);
           }
         }
       });
