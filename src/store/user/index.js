@@ -50,7 +50,7 @@ const getters = {
         return '';
       }
     }
-    return state.authToken.user_name;
+    return state.authToken.username;
   },
   getMenuList: (state) => {
     if (!state.menuList || state.menuList.length === 0) {

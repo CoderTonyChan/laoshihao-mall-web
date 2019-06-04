@@ -94,6 +94,9 @@
                 data: _this.updateUserForm,
                 success: () => {
                   alert('操作成功');
+                  const authToken = this.$store.getters.getAuthToken;
+                  authToken.username = _this.updateUserForm.userName;
+                  this.$store.dispatch('update_auth_token', authToken);
                 }
               });
             }

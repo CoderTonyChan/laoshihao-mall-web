@@ -31,7 +31,8 @@
             <span class="label">{{product.price | formatMoney}}</span>
             <!-- <span class="info">{{product.price | formatMoney}}</span> -->
           </div>
-          <span class="p-subtitle-2">教育机构：
+          <span class="p-subtitle-2">
+            教育机构：
             <span class="p-subtitle-3">{{product.organName}}</span>
           </span>
           &nbsp;&nbsp;&nbsp;&nbsp;
@@ -64,8 +65,19 @@
             <span class="p-count-btn minus" @click="changeBuyCount('minus')">-</span>
           </div>-->
           <div class="p-product-info">
-            <p>课时：{{product.period}}<span v-show="product.validTime">&nbsp;&nbsp;&nbsp;&nbsp;有效期： {{this.dataString}}</span></p>
-            <p>难度：<span style="font-weight: bold; font-size: 16px; color: #f39800; letter-spacing: 2px;">{{stars}}</span>&nbsp;&nbsp;&nbsp;&nbsp; <span v-show="product.homework===1">含课后作业</span></p>
+            <p>
+              课时：{{product.period}}
+              <span
+                v-show="product.validTime"
+              >&nbsp;&nbsp;&nbsp;&nbsp;有效期： {{this.dataString}}</span>
+            </p>
+            <p>
+              难度：
+              <span
+                style="font-weight: bold; font-size: 16px; color: #f39800; letter-spacing: 2px;"
+              >{{stars}}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+              <span v-show="product.homework===1">含课后作业</span>
+            </p>
             <p class="teacher">
               主讲老师：
               <a
@@ -79,21 +91,34 @@
                 <span v-if="index !== product.teacherList.length - 1">、</span>
               </a>
             </p>
-          </div>
-          <div class="p-info-item-2">
-            <a class="btn cart-add" @click="addCartClick">{{!product.canBuy?"已经购买":product.canBuy===1? "立刻报名":"立刻付款"}}</a>
-            <el-dialog
-              title="提示"
-              :visible.sync="dialogVisible"
-              width="30%"
-              :before-close="handleClose">
+
+            <p class="teacher">
+              地区：
               <el-cascader
                 expand-trigger="hover"
                 :options="options"
                 v-model="selectedOptions"
                 @change="handleChange"
-                >
-              </el-cascader>
+              ></el-cascader>
+            </p>
+          </div>
+          <div class="p-info-item-2">
+            <a
+              class="btn cart-add"
+              @click="addCartClick"
+            >{{!product.canBuy?"已经购买":product.canBuy===1? "立刻报名":"立刻付款"}}</a>
+            <el-dialog
+              title="提示"
+              :visible.sync="dialogVisible"
+              width="30%"
+              :before-close="handleClose"
+            >
+              <el-cascader
+                expand-trigger="hover"
+                :options="options"
+                v-model="selectedOptions"
+                @change="handleChange"
+              ></el-cascader>
               <span slot="footer" class="dialog-footer">
                 <el-button @click="dialogVisible = false">取 消</el-button>
                 <el-button type="primary" @click="addCart">确 定</el-button>
@@ -103,7 +128,7 @@
         </div>
       </div>
       <div class="detail-wrap">
-        <img src="http://lshaomall.oss-cn-shenzhen.aliyuncs.com/website/img/333.png" alt="">
+        <img src="http://lshaomall.oss-cn-shenzhen.aliyuncs.com/website/img/333.png" alt>
       </div>
       <div class="detail-wrap">
         <div class="detail-tab-con">
@@ -132,7 +157,11 @@
             </p>
             <div class="course-list">
               <div class="course-list-inner" id="jp-course-list-wrap">
-                <div class="course-item" v-for="(teacher, index) in product.teacherList" :key="teacher.id">
+                <div
+                  class="course-item"
+                  v-for="(teacher, index) in product.teacherList"
+                  :key="teacher.id"
+                >
                   <h1>{{teacher.name}}</h1>
                   <img :src="teacher.avatar" alt>
 
@@ -156,7 +185,7 @@
               <li>4、如所退换课程包含资料等成本费用需在办理退款时一并扣除。</li>
               <li>5、课程已过期不可进行退换。</li>
             </ul>
-          </div> -->
+          </div>-->
 
           <!-- <div class="product-info-path p-course-return">
             <p class="pi-path-title">
@@ -175,7 +204,7 @@
               <li>Q：手写笔迹时感觉有点“卡”、笔迹失真？</li>
               <li>A：请先使用第三方软件测试手写笔迹是否也“卡”？如果不“卡”，请与我们联系解决问题；如果也“卡”，可能是您的Pad硬件对手写笔迹的支持不够。</li>
             </ul>
-          </div> -->
+          </div>-->
         </div>
       </div>
     </div>
@@ -190,202 +219,275 @@ import { videoPlayer } from "vue-video-player";
 export default {
   data() {
     return {
-      options: [{
-          value: 'zhinan',
-          label: '指南',
-          children: [{
-            value: 'shejiyuanze',
-            label: '设计原则',
-            children: [{
-              value: 'yizhi',
-              label: '一致'
-            }, {
-              value: 'fankui',
-              label: '反馈'
-            }, {
-              value: 'xiaolv',
-              label: '效率'
-            }, {
-              value: 'kekong',
-              label: '可控'
-            }]
-          }, {
-            value: 'daohang',
-            label: '导航',
-            children: [{
-              value: 'cexiangdaohang',
-              label: '侧向导航'
-            }, {
-              value: 'dingbudaohang',
-              label: '顶部导航'
-            }]
-          }]
-        }, {
-          value: 'zujian',
-          label: '组件',
-          children: [{
-            value: 'basic',
-            label: 'Basic',
-            children: [{
-              value: 'layout',
-              label: 'Layout 布局'
-            }, {
-              value: 'color',
-              label: 'Color 色彩'
-            }, {
-              value: 'typography',
-              label: 'Typography 字体'
-            }, {
-              value: 'icon',
-              label: 'Icon 图标'
-            }, {
-              value: 'button',
-              label: 'Button 按钮'
-            }]
-          }, {
-            value: 'form',
-            label: 'Form',
-            children: [{
-              value: 'radio',
-              label: 'Radio 单选框'
-            }, {
-              value: 'checkbox',
-              label: 'Checkbox 多选框'
-            }, {
-              value: 'input',
-              label: 'Input 输入框'
-            }, {
-              value: 'input-number',
-              label: 'InputNumber 计数器'
-            }, {
-              value: 'select',
-              label: 'Select 选择器'
-            }, {
-              value: 'cascader',
-              label: 'Cascader 级联选择器'
-            }, {
-              value: 'switch',
-              label: 'Switch 开关'
-            }, {
-              value: 'slider',
-              label: 'Slider 滑块'
-            }, {
-              value: 'time-picker',
-              label: 'TimePicker 时间选择器'
-            }, {
-              value: 'date-picker',
-              label: 'DatePicker 日期选择器'
-            }, {
-              value: 'datetime-picker',
-              label: 'DateTimePicker 日期时间选择器'
-            }, {
-              value: 'upload',
-              label: 'Upload 上传'
-            }, {
-              value: 'rate',
-              label: 'Rate 评分'
-            }, {
-              value: 'form',
-              label: 'Form 表单'
-            }]
-          }, {
-            value: 'data',
-            label: 'Data',
-            children: [{
-              value: 'table',
-              label: 'Table 表格'
-            }, {
-              value: 'tag',
-              label: 'Tag 标签'
-            }, {
-              value: 'progress',
-              label: 'Progress 进度条'
-            }, {
-              value: 'tree',
-              label: 'Tree 树形控件'
-            }, {
-              value: 'pagination',
-              label: 'Pagination 分页'
-            }, {
-              value: 'badge',
-              label: 'Badge 标记'
-            }]
-          }, {
-            value: 'notice',
-            label: 'Notice',
-            children: [{
-              value: 'alert',
-              label: 'Alert 警告'
-            }, {
-              value: 'loading',
-              label: 'Loading 加载'
-            }, {
-              value: 'message',
-              label: 'Message 消息提示'
-            }, {
-              value: 'message-box',
-              label: 'MessageBox 弹框'
-            }, {
-              value: 'notification',
-              label: 'Notification 通知'
-            }]
-          }, {
-            value: 'navigation',
-            label: 'Navigation',
-            children: [{
-              value: 'menu',
-              label: 'NavMenu 导航菜单'
-            }, {
-              value: 'tabs',
-              label: 'Tabs 标签页'
-            }, {
-              value: 'breadcrumb',
-              label: 'Breadcrumb 面包屑'
-            }, {
-              value: 'dropdown',
-              label: 'Dropdown 下拉菜单'
-            }, {
-              value: 'steps',
-              label: 'Steps 步骤条'
-            }]
-          }, {
-            value: 'others',
-            label: 'Others',
-            children: [{
-              value: 'dialog',
-              label: 'Dialog 对话框'
-            }, {
-              value: 'tooltip',
-              label: 'Tooltip 文字提示'
-            }, {
-              value: 'popover',
-              label: 'Popover 弹出框'
-            }, {
-              value: 'card',
-              label: 'Card 卡片'
-            }, {
-              value: 'carousel',
-              label: 'Carousel 走马灯'
-            }, {
-              value: 'collapse',
-              label: 'Collapse 折叠面板'
-            }]
-          }]
-        }, {
-          value: 'ziyuan',
-          label: '资源',
-          children: [{
-            value: 'axure',
-            label: 'Axure Components'
-          }, {
-            value: 'sketch',
-            label: 'Sketch Templates'
-          }, {
-            value: 'jiaohu',
-            label: '组件交互文档'
-          }]
-        }],
-        selectedOptions: [],
+      options: [
+        {
+          value: "zhinan",
+          label: "指南",
+          children: [
+            {
+              value: "shejiyuanze",
+              label: "设计原则",
+              children: [
+                {
+                  value: "yizhi",
+                  label: "一致"
+                },
+                {
+                  value: "fankui",
+                  label: "反馈"
+                },
+                {
+                  value: "xiaolv",
+                  label: "效率"
+                },
+                {
+                  value: "kekong",
+                  label: "可控"
+                }
+              ]
+            },
+            {
+              value: "daohang",
+              label: "导航",
+              children: [
+                {
+                  value: "cexiangdaohang",
+                  label: "侧向导航"
+                },
+                {
+                  value: "dingbudaohang",
+                  label: "顶部导航"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          value: "zujian",
+          label: "组件",
+          children: [
+            {
+              value: "basic",
+              label: "Basic",
+              children: [
+                {
+                  value: "layout",
+                  label: "Layout 布局"
+                },
+                {
+                  value: "color",
+                  label: "Color 色彩"
+                },
+                {
+                  value: "typography",
+                  label: "Typography 字体"
+                },
+                {
+                  value: "icon",
+                  label: "Icon 图标"
+                },
+                {
+                  value: "button",
+                  label: "Button 按钮"
+                }
+              ]
+            },
+            {
+              value: "form",
+              label: "Form",
+              children: [
+                {
+                  value: "radio",
+                  label: "Radio 单选框"
+                },
+                {
+                  value: "checkbox",
+                  label: "Checkbox 多选框"
+                },
+                {
+                  value: "input",
+                  label: "Input 输入框"
+                },
+                {
+                  value: "input-number",
+                  label: "InputNumber 计数器"
+                },
+                {
+                  value: "select",
+                  label: "Select 选择器"
+                },
+                {
+                  value: "cascader",
+                  label: "Cascader 级联选择器"
+                },
+                {
+                  value: "switch",
+                  label: "Switch 开关"
+                },
+                {
+                  value: "slider",
+                  label: "Slider 滑块"
+                },
+                {
+                  value: "time-picker",
+                  label: "TimePicker 时间选择器"
+                },
+                {
+                  value: "date-picker",
+                  label: "DatePicker 日期选择器"
+                },
+                {
+                  value: "datetime-picker",
+                  label: "DateTimePicker 日期时间选择器"
+                },
+                {
+                  value: "upload",
+                  label: "Upload 上传"
+                },
+                {
+                  value: "rate",
+                  label: "Rate 评分"
+                },
+                {
+                  value: "form",
+                  label: "Form 表单"
+                }
+              ]
+            },
+            {
+              value: "data",
+              label: "Data",
+              children: [
+                {
+                  value: "table",
+                  label: "Table 表格"
+                },
+                {
+                  value: "tag",
+                  label: "Tag 标签"
+                },
+                {
+                  value: "progress",
+                  label: "Progress 进度条"
+                },
+                {
+                  value: "tree",
+                  label: "Tree 树形控件"
+                },
+                {
+                  value: "pagination",
+                  label: "Pagination 分页"
+                },
+                {
+                  value: "badge",
+                  label: "Badge 标记"
+                }
+              ]
+            },
+            {
+              value: "notice",
+              label: "Notice",
+              children: [
+                {
+                  value: "alert",
+                  label: "Alert 警告"
+                },
+                {
+                  value: "loading",
+                  label: "Loading 加载"
+                },
+                {
+                  value: "message",
+                  label: "Message 消息提示"
+                },
+                {
+                  value: "message-box",
+                  label: "MessageBox 弹框"
+                },
+                {
+                  value: "notification",
+                  label: "Notification 通知"
+                }
+              ]
+            },
+            {
+              value: "navigation",
+              label: "Navigation",
+              children: [
+                {
+                  value: "menu",
+                  label: "NavMenu 导航菜单"
+                },
+                {
+                  value: "tabs",
+                  label: "Tabs 标签页"
+                },
+                {
+                  value: "breadcrumb",
+                  label: "Breadcrumb 面包屑"
+                },
+                {
+                  value: "dropdown",
+                  label: "Dropdown 下拉菜单"
+                },
+                {
+                  value: "steps",
+                  label: "Steps 步骤条"
+                }
+              ]
+            },
+            {
+              value: "others",
+              label: "Others",
+              children: [
+                {
+                  value: "dialog",
+                  label: "Dialog 对话框"
+                },
+                {
+                  value: "tooltip",
+                  label: "Tooltip 文字提示"
+                },
+                {
+                  value: "popover",
+                  label: "Popover 弹出框"
+                },
+                {
+                  value: "card",
+                  label: "Card 卡片"
+                },
+                {
+                  value: "carousel",
+                  label: "Carousel 走马灯"
+                },
+                {
+                  value: "collapse",
+                  label: "Collapse 折叠面板"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          value: "ziyuan",
+          label: "资源",
+          children: [
+            {
+              value: "axure",
+              label: "Axure Components"
+            },
+            {
+              value: "sketch",
+              label: "Sketch Templates"
+            },
+            {
+              value: "jiaohu",
+              label: "组件交互文档"
+            }
+          ]
+        }
+      ],
+      selectedOptions: [],
       dialogVisible: false,
       isShowProduct: true,
       // stars: true,
@@ -414,26 +516,25 @@ export default {
     };
   },
   created() {},
-  activated() {
-    this.loadDetail();
+  async activated() {
+    await this.loadDetail();
     this.isShowProduct = true;
   },
   mounted() {
     // console.log("this is current player instance object", this.player);
-    
   },
   methods: {
-    introduceString(introduce){
-      var reg=new RegExp("\n","g");
+    introduceString(introduce) {
+      var reg = new RegExp("\n", "g");
       // console.log(introduce);
-      return introduce.replace(reg,"<br>");;
+      return introduce.replace(reg, "<br>");
     },
-      handleChange(value) {
-        // 不需要监听 直接使用this.selectedOptions
-        console.log(this.selectedOptions);
-        // console.log(value);
-
-      },
+    handleChange(value) {
+      // 不需要监听 直接使用this.selectedOptions
+      console.log(value);
+      console.log(this.selectedOptions);
+      // console.log(value);
+    },
     // listen event
     onPlayerPlay(player) {
       // console.log('player play!', player)
@@ -448,49 +549,50 @@ export default {
       // console.log('player current update state', playerCurrentState)
     },
     handleClose(done) {
-        this.$confirm('确认关闭？')
-          .then(_ => {
-            done();
-          })
-          .catch(_ => {});
-      },
+      this.$confirm("确认关闭？")
+        .then(_ => {
+          done();
+        })
+        .catch(_ => {});
+    },
     // player is ready
     playerReadied(player) {
       // console.log("the player is readied", player);
       // you can use it to do something...
       // player.[methods]
     },
-    addCartClick(){
+    addCartClick() {
       if (!this.product.canBuy) {
-        this.$pcMessage('不能重复购买');
+        this.$pcMessage("不能重复购买");
         return;
-      }else if (this.product.canBuy === 2) {
+      } else if (this.product.canBuy === 2) {
         this.loadPage("order-detail", { orderNo: this.product.orderNo });
         return;
       }
-      this.dialogVisible = true;
-      this.$http({
-        url: `/uac/auth/address/organ/${this.product.organId}`,
-      }).then((res) => {
-        if (res.code === 200) {
-          this.dialogVisible = true;
-          this.options = res.result;
-          let tmpArray = [];
-          let first = res.result[0];
-          tmpArray.push(first.value);
-          if (first.children) {
-            tmpArray.push(first.children[0].value);
-            if (first.children[0].children) {
-             tmpArray.push(first.children[0].children[0].value);
-            }
-          }
-          // console.log(tmpArray);
-          this.selectedOptions = tmpArray;
-        }else {
-          this.$pcMessage(res);
-        }
-      }).catch(() => {
-      });
+      // this.dialogVisible = true;
+      // this.$http({
+      //   url: `/uac/auth/address/organ/${this.product.organId}`,
+      // }).then((res) => {
+      //   if (res.code === 200) {
+      //     this.dialogVisible = true;
+      //     this.options = res.result;
+      //     let tmpArray = [];
+      //     let first = res.result[0];
+      //     tmpArray.push(first.value);
+      //     if (first.children) {
+      //       tmpArray.push(first.children[0].value);
+      //       if (first.children[0].children) {
+      //        tmpArray.push(first.children[0].children[0].value);
+      //       }
+      //     }
+      //     // console.log(tmpArray);
+      //     this.selectedOptions = tmpArray;
+      //   }else {
+      //     this.$pcMessage(res);
+      //   }
+      // }).catch(() => {
+      // });
+      this.addCart();
     },
     addCart() {
       if (!this.selectedOptions.length) {
@@ -513,13 +615,33 @@ export default {
       //   userCart.productPrice = this.product.price;
       //   userCart.mainImage = this.product.mainImage;
       //   userCart.adCode = this.selectedOptions.pop();
-        
+
       //   userCart.checked = 1;
       //   this.$store.dispatch("push_cart", { userCart });
       // }
       // this.loadPage("oper-result", { type: "user-cart" });
-      this.loadPage("order-confirm", { adCode:this.selectedOptions.pop(),productId:this.product.id });
+      const adCode = this.selectedOptions.pop();
+      const city = this.getName(this.options,adCode);
+      // console.log(city);
+      
 
+      this.loadPage("order-confirm", {
+        adCode: adCode,
+        productId: this.product.id,
+        city: city
+      });
+    },
+    getName(obj,adCode) {
+      for (let index = 0; index < obj.length; index++) {
+        const element = obj[index];
+        if (element.value == adCode) {
+          return element.label;
+        }
+        if (element.children) {
+          return this.getName(element.children,adCode);
+        }
+      }
+      return null;
     },
     changeMainImg(img) {
       this.mainImage = img;
@@ -550,7 +672,7 @@ export default {
           if (res.code === 200) {
             this.product = res.result;
             console.log(this.product);
-            
+
             // this.product.difficulty = 5;
             this.mainImage = this.product.mainImage;
             if (this.product.subImages) {
@@ -562,6 +684,29 @@ export default {
             }
             this.playerOptions.sources[0].src = this.product.video;
             this.playerOptions.poster = this.product.mainImage;
+
+            this.$http({
+              url: `/uac/auth/address/organ/${this.product.organId}`
+            })
+              .then(res => {
+                if (res.code === 200) {
+                  this.options = res.result;
+                  let tmpArray = [];
+                  let first = res.result[0];
+                  tmpArray.push(first.value);
+                  if (first.children) {
+                    tmpArray.push(first.children[0].value);
+                    if (first.children[0].children) {
+                      tmpArray.push(first.children[0].children[0].value);
+                    }
+                  }
+                  // console.log(tmpArray);
+                  this.selectedOptions = tmpArray;
+                } else {
+                  this.$pcMessage(res);
+                }
+              })
+              .catch(() => {});
           } else {
             this.isShowProduct = false;
           }
@@ -587,19 +732,19 @@ export default {
       // var s = (date.getSeconds() <10 ? '0' + date.getSeconds() : date.getSeconds());
       return Y + M + D;
     },
-    stars: function () {
-        if (this.product.difficulty === 1) {
-          return '★☆☆☆☆'
-        }else if (this.product.difficulty === 2) {
-          return '★★☆☆☆'
-        }else if (this.product.difficulty === 3) {
-          return '★★★☆☆'
-        }else if (this.product.difficulty === 4) {
-          return '★★★★☆'
-        }else if (this.product.difficulty === 5) {
-          return '★★★★★'
-        }
-        return '★★★☆☆';
+    stars: function() {
+      if (this.product.difficulty === 1) {
+        return "★☆☆☆☆";
+      } else if (this.product.difficulty === 2) {
+        return "★★☆☆☆";
+      } else if (this.product.difficulty === 3) {
+        return "★★★☆☆";
+      } else if (this.product.difficulty === 4) {
+        return "★★★★☆";
+      } else if (this.product.difficulty === 5) {
+        return "★★★★★";
+      }
+      return "★★★☆☆";
     },
     player() {
       return this.$refs.videoPlayer.player;
@@ -608,34 +753,33 @@ export default {
       return `http://wpa.qq.com/msgrd?v=3&uin=${
         this.product.qq
       }&site=qq&menu=yes`;
-    },
+    }
   }
 };
 </script>
 <style rel="stylesheet/scss" lang="scss">
-
 .detail table {
-    background-color: transparent;
-    border-collapse: collapse;
-    width: 100%;
-    text-align: center;
-    font-size: 16px;
+  background-color: transparent;
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
 }
 
 .detail th {
-    padding: 0;
-    line-height: 52px;
-    color: #727171;
-    border: 1px solid #dcdddd;
-    text-align: center;
-    background: #eee;
+  padding: 0;
+  line-height: 52px;
+  color: #727171;
+  border: 1px solid #dcdddd;
+  text-align: center;
+  background: #eee;
 }
 
 .detail td {
-    padding: 0;
-    line-height: 52px;
-    color: #727171;
-    border: 1px solid #dcdddd;
+  padding: 0;
+  line-height: 52px;
+  color: #727171;
+  border: 1px solid #dcdddd;
 }
 
 .box-title {

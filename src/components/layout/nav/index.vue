@@ -49,7 +49,7 @@
 
 
         <li class="nav-item"  v-if="loginName != null || loginName !== ''">
-          {{loginName}}
+          {{username}}
         </li>
         
         <li class="nav-item"  v-if="loginName != null">
@@ -111,6 +111,10 @@ export default {
     loginName() {
       return this.$store.getters.getLoginName;
     },
+    username() {
+      return this.$store.getters.getUserName;
+    },
+    
     cartList() {
       return this.$store.getters.getCartList;
     }
