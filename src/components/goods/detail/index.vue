@@ -621,9 +621,8 @@ export default {
       // }
       // this.loadPage("oper-result", { type: "user-cart" });
       const adCode = this.selectedOptions.pop();
-      const city = this.getName(this.options,adCode);
+      const city = this.getName(this.options, adCode);
       // console.log(city);
-      
 
       this.loadPage("order-confirm", {
         adCode: adCode,
@@ -631,14 +630,14 @@ export default {
         city: city
       });
     },
-    getName(obj,adCode) {
+    getName(obj, adCode) {
       for (let index = 0; index < obj.length; index++) {
         const element = obj[index];
         if (element.value == adCode) {
           return element.label;
         }
         if (element.children) {
-          return this.getName(element.children,adCode);
+          return this.getName(element.children, adCode);
         }
       }
       return null;
@@ -700,8 +699,18 @@ export default {
                       tmpArray.push(first.children[0].children[0].value);
                     }
                   }
-                  // console.log(tmpArray);
-                  this.selectedOptions = tmpArray;
+                  this.$http({
+                    url: `/uac/auth/defaultAddress/organ/${
+                      this.product.organId
+                    }`
+                  }).then(res => {
+                    if (res.code === 200) {
+                      this.selectedOptions = res.result;
+                    } else {
+                      // console.log(tmpArray);
+                      this.selectedOptions = tmpArray;
+                    }
+                  });
                 } else {
                   this.$pcMessage(res);
                 }

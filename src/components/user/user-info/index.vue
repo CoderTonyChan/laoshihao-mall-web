@@ -5,7 +5,7 @@
       <span class="text">{{userForm.loginName}}</span>
     </div>
     <div class="form-line">
-      <span class="label">用户名：</span>
+      <span class="label">昵称：</span>
       <span class="text">{{userForm.userName}}</span>
     </div>
     <div class="form-line">

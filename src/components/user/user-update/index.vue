@@ -7,7 +7,7 @@
       <el-form-item label="手机号">
         <el-input v-model="updateUserForm.mobileNo" class="form-line-input" :disabled="true"/>
       </el-form-item>
-      <el-form-item label="用户名">
+      <el-form-item label="昵称">
         <el-input v-model="updateUserForm.userName" class="form-line-input"/>
       </el-form-item>
       <el-form-item label="邮箱">
