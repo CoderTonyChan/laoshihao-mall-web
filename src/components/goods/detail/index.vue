@@ -704,7 +704,7 @@ export default {
                       this.product.organId
                     }`
                   }).then(res => {
-                    if (res.code === 200) {
+                    if (res.code === 200&&res.result) {
                       this.selectedOptions = res.result;
                     } else {
                       // console.log(tmpArray);
