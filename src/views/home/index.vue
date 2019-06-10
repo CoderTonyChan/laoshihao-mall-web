@@ -926,6 +926,9 @@
                 <img class="p-bg-img" src="https://lshaomall.oss-cn-shenzhen.aliyuncs.com/website/img/jimmy1.png" alt>
                 <p class="p-title">2020考研政治进阶全程班</p>
                 <p class="p-info" style="font-size: 16px;">Jimmy</p>
+                <p class="p-info">擅长新加坡教学</p>
+                <p class="p-info">引导学生深度学习</p>
+                <p class="p-info">激发大脑潜能</p>
               </a>
             </li>
             <li class="p-item p-part1">
@@ -937,6 +940,9 @@
                 <img class="p-bg-img" src="https://lshaomall.oss-cn-shenzhen.aliyuncs.com/website/img/jimmy2.png" alt>
                 <p class="p-title">2020考研英语进阶全程班</p>
                 <p class="p-info" style="font-size: 16px;">Jimmy</p>
+                <p class="p-info">擅长新加坡教学</p>
+                <p class="p-info">引导学生深度学习</p>
+                <p class="p-info">激发大脑潜能</p>
               </a>
             </li>
           </ul>
