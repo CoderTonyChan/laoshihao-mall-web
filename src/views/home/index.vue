@@ -1009,7 +1009,7 @@
           </div>
           <ul class="coop">
             <li class="item">
-              <a href="http://www.jinghua.com/">
+              <a>
                 <img
                   src="http://www.jinghua.com/include/images/logo_bot_org.png"
                   width="200"
