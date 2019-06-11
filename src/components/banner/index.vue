@@ -1,6 +1,6 @@
 <template>
   <div class="banner">
-    <swiper ref="swiper" :options="swiperOption">
+    <swiper ref="swiper" :options="swiperOption" v-if="show">
       <swiper-slide v-for="slide in swiperSlides" :key="slide.title">
         <img
           v-if="!slide.isVideo"
@@ -145,6 +145,7 @@ export default {
   name: "banner-swiper",
   data() {
     return {
+      show: true,
       videos: [
         "https://lshao.oss-cn-beijing.aliyuncs.com/lshao2.0.mp4",
         "https://lshao.oss-cn-beijing.aliyuncs.com/%E8%80%81%E5%B8%88%E5%A5%BD%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%975.0%28%E9%AB%98%E6%B8%85%29.mp4",
@@ -167,7 +168,7 @@ export default {
       },
       swiperOption: {
         notNextTick: true,
-        autoplay: 3000,
+        autoplay: 5000,
         loop: true,
         initialSlide: 0,
         setWrapperSize: true,
@@ -176,12 +177,13 @@ export default {
         paginationClickable: true,
         mousewheelControl: false,
         observeParents: true,
-        observer:true,
+        observer: true,
         prevButton: ".banner .swiper-button-prev",
         nextButton: ".banner .swiper-button-next",
         // loop: true,
         loopAdditionalSlides: 1,
-        onClick: swiper => { // 箭头函数才是自己
+        onClick: swiper => {
+          // 箭头函数才是自己
           console.log(this);
           const realIndex = swiper.realIndex;
           const slide = this.swiperSlides[realIndex];
@@ -198,8 +200,17 @@ export default {
     videoPlayer
   },
   activated() {
+    // 和 keep-alive有关
     // console.log(this.$refs);
     // console.log(this.swiperSlides);
+    const VueSwiper = this.$refs.swiper;
+    const swiper = VueSwiper.swiper;
+    // console.log(swiper);
+    this.show = false;
+    this.$nextTick(() => {
+      this.show = true;
+      // swiper.init();
+    })
   },
   created() {
     // console.log(this.$refs);

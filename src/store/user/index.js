@@ -187,6 +187,7 @@ const actions = {
       if ((new Date().getTime() - state.authToken.timestamp) > 90 * 60 * 1000) {
         refreshToken().then(res => {
           if (res.data.code === 200) {
+            res.data.username = state.authToken.username;
             commit('updateAuthToken', res.data.result);
             console.log(res);
           } else {

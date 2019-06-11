@@ -83,7 +83,7 @@
 
         <div class="radius-right">
           <!-- 123 -->
-          <pc-banner></pc-banner>
+          <pc-banner ></pc-banner>
         </div>
       </div>
       <div
@@ -1076,6 +1076,7 @@ import store from "../../store/";
 export default {
   data() {
     return {
+      hackReset: true,
       uploadData: {
         fileType: null,
         bucketName: null,
@@ -1138,6 +1139,12 @@ export default {
       ]
     };
   },
+  beforeRouteUpdate(to, from, next) {
+    // console.log(to);
+    // console.log(this);
+    
+    next();
+  },
   mounted() {
     // 动态设置背景图的高度为浏览器可视区域高度
     // 首先在Virtual DOM渲染数据时，设置下背景图的高度．
@@ -1152,6 +1159,13 @@ export default {
   },
   created() {},
   activated() {
+    // this.hackReset = false;
+    // this.$nextTick(() => {
+    //   to.hackReset = true;
+    // })
+    // document.body.scrollTop = 0;
+    window.scrollTo(0, 0);
+
     this.queryCategoryData(res => {
       if (res.code === 200) {
         this.categoryData = res.result;

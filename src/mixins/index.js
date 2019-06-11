@@ -26,6 +26,7 @@ let mixin = {
     },
     goHome() {
       this.loadPage('Index');
+      window.location.reload();
     },
     goSignIn() {
       console.log(`goSignIn ${process.env.NODE_ENV}`);
