@@ -119,6 +119,7 @@ const mutations = {
       authToken = JSON.parse(authToken);
     }
     console.log(`更新token : updateAuthToken`);
+    authToken.username = state.authToken.username;
     state.authToken = authToken;
     // https://github.com/js-cookie/js-cookie/wiki/Frequently-Asked-Questions#expire-cookies-in-less-than-a-day
     let expires = 2 / 24;
