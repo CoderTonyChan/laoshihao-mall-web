@@ -9,8 +9,8 @@
           <ul v-show="isShowCity" style="background-color: gray;">
             <!-- <li class="link city" @click="change('北京')">北京</li>
             <li class="link city" @click="change('上海')">上海</li>
-            <li class="link city" @click="change('广州')">广州</li>
-            <li class="link city" @click="change('东莞')">东莞</li> -->
+            <li class="link city" @click="change('广州')">广州</li> -->
+            <li class="link city" @click="change('东莞')">东莞</li>
             <li class="link city" @click="change('南宁')">南宁</li>
           </ul>
         </span>
