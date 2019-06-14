@@ -191,6 +191,9 @@ const actions = {
             res.data.username = state.authToken.username;
             commit('updateAuthToken', res.data.result);
             console.log(res);
+            setInterval(() => {
+              window.location.reload();
+            }, 2000);
           } else {
             commit('deleteUserInfo');
             commit('deleteAuthToken');
