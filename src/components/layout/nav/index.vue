@@ -3,17 +3,17 @@
     <div class="w">
       
       <div class="user-info">
-        <span class="user">
+        <!-- <span class="user">
           <span>{{city}}</span>
           <span class="link" @click="change(city)">[切换城市]</span>
           <ul v-show="isShowCity" style="background-color: gray;">
-            <!-- <li class="link city" @click="change('北京')">北京</li>
+            <li class="link city" @click="change('北京')">北京</li>
             <li class="link city" @click="change('上海')">上海</li>
-            <li class="link city" @click="change('广州')">广州</li> -->
+            <li class="link city" @click="change('广州')">广州</li>
             <li class="link city" @click="change('东莞')">东莞</li>
             <li class="link city" @click="change('南宁')">南宁</li>
           </ul>
-        </span>
+        </span> -->
         <!-- <span class="user not-login" v-show="loginName == null || loginName === ''">
           <span class="link js-login" @click="goSignIn">登录</span>
           <span class="link js-register" @click="goSignUp">注册</span>
