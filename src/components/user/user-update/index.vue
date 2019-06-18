@@ -59,26 +59,24 @@ export default {
         //正则验证不通过，格式不对
         this.$pcMessage("请输入正确的邮箱");
         return false;
-      } 
+      }
       let keyStr = gbs.secret.key_str;
       let ivStr = gbs.secret.iv_str;
       email = this.$pcEncrypt.aesEncrypt(email, keyStr, ivStr);
-      
 
       this.$http
         .post(`/uac/email/sendRestEmailCode`, {
           email: email
         })
         .then(response => {
-          if (response&&response.code === 200) {
+          if (response && response.code === 200) {
             this.buttonDisabled = true;
             this.$pcMessage("发送验证码成功");
           }
         })
         .catch(response => {
-            this.$pcMessage(response.data.message);
+          this.$pcMessage(response.data.message);
         });
-
 
       // this.ajax({
       //   url: `/uac/email/sendRestEmailCode`,
@@ -91,7 +89,7 @@ export default {
       //     if (res && res.code === 200) {
       //       this.buttonDisabled = true;
       //       this.$pcMessage("发送验证码成功");
-      //     } 
+      //     }
       //     // else {
       //     //   this.$pcMessage(res.message);
       //     // }
@@ -118,22 +116,29 @@ export default {
       let ivStr = gbs.secret.iv_str;
       email = this.$pcEncrypt.aesEncrypt(email, keyStr, ivStr);
 
-
       this.$http
         .post(`/uac/email/checkRestEmailCode`, {
           email: email,
           emailCode: _this.updateUserForm.emailCode
         })
         .then(response => {
-          if (response&&response.code === 200) {
-                const authToken = this.$store.getters.getAuthToken;
-                authToken.username = _this.updateUserForm.userName;
-                this.$store.dispatch("update_auth_token", authToken);
-                window.location.reload();
+          if (response && response.code === 200) {
+            _this.ajax({
+                url: `/uac/user/updateInformation`,
+                isUnMusk: true,
+                data: _this.updateUserForm,
+                success: () => {
+                  this.$pcMessage("操作成功");
+                  const authToken = this.$store.getters.getAuthToken;
+                  authToken.username = _this.updateUserForm.userName;
+                  this.$store.dispatch("update_auth_token", authToken);
+                  window.location.reload();
+                }
+              });
           }
         })
         .catch(response => {
-            this.$pcMessage(response.data.message);
+          this.$pcMessage(response.data.message);
         });
 
       // this.ajax({
