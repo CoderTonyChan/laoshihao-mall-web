@@ -132,7 +132,8 @@ export default {
                   const authToken = this.$store.getters.getAuthToken;
                   authToken.username = _this.updateUserForm.userName;
                   this.$store.dispatch("update_auth_token", authToken);
-                  window.location.reload();
+                  
+                  this.loadPage("user-center");
                 }
               });
           }
