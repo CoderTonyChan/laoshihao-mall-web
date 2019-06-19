@@ -18,15 +18,33 @@
             <div class="user-info">
               <div class="form-line">
                 <span class="label">原密码：</span>
-                <input type="password" v-model="oldPassword" class="input" id="password" autocomplete="off"/>
+                <input
+                  type="password"
+                  v-model="oldPassword"
+                  class="input"
+                  id="password"
+                  autocomplete="off"
+                >
               </div>
               <div class="form-line">
                 <span class="label">新密码：</span>
-                <input type="password" class="input" v-model="newPassword" id="password-new" autocomplete="off"/>
+                <input
+                  type="password"
+                  class="input"
+                  v-model="newPassword"
+                  id="password-new"
+                  autocomplete="off"
+                >
               </div>
               <div class="form-line">
                 <span class="label">确认密码：</span>
-                <input type="password" class="input" v-model="confirmPwd" id="password-confirm" autocomplete="off"/>
+                <input
+                  type="password"
+                  class="input"
+                  v-model="confirmPwd"
+                  id="password-confirm"
+                  autocomplete="off"
+                >
               </div>
               <span class="btn btn-submit" @click="modifyUserPwd">提交</span>
             </div>
@@ -37,38 +55,70 @@
   </div>
 </template>
 <script type="text/ecmascript-6">
-  import pcNavSide from 'components/layout/nav-side';
+import pcNavSide from "components/layout/nav-side";
 
-  export default {
-    data() {
-      return {
-        confirmPwd:'',
-        newPassword:'',
-        oldPassword:'',
-      };
-    },
-    created() {
-    },
-    methods: {
-      modifyUserPwd() {
-        this.ajax({
-          url: `/uac/user/modifyUserPwd`,
-          data: {
-            loginName: this.$store.getters.getLoginName,
-            confirmPwd: this.confirmPwd,
-            newPassword: this.newPassword,
-            oldPassword: this.oldPassword,
-          },
-          success: (res) => {
-            if (res.code === 200) {
-              
-            }
-          }
-        });
+export default {
+  data() {
+    return {
+      confirmPwd: "",
+      newPassword: "",
+      oldPassword: ""
+    };
+  },
+  created() {},
+  methods: {
+    modifyUserPwd() {
+      if (this.oldPassword.length === 0) {
+        this.$pcMessage("密码不能为空");
+        return false;
       }
-    },
-    components: {
-      pcNavSide
+
+      if (this.newPassword !== this.confirmPwd) {
+        this.$pcMessage("二次密码不一样");
+        return false;
+      }
+
+      this.$http
+        .post(`/uac/user/modifyUserPwd`, {
+          loginName: this.$store.getters.getLoginName,
+          confirmPwd: this.confirmPwd,
+          newPassword: this.newPassword,
+          oldPassword: this.oldPassword
+        })
+        .then(response => {
+          if (response && response.code === 200) {
+            this.$pcMessage("成功修改密码");
+            this.loadPage("user-center");
+            this.confirmPwd= "";
+            this.newPassword= "";
+            this.oldPassword= "";
+          }else {
+            this.$pcMessage("修改密码失败");
+          }
+        })
+        .catch(response => {
+          this.$pcMessage(response.data.message);
+        });
+
+      // this.ajax({
+      //   url: `/uac/user/modifyUserPwd`,
+      //   data: {
+      //     loginName: this.$store.getters.getLoginName,
+      //     confirmPwd: this.confirmPwd,
+      //     newPassword: this.newPassword,
+      //     oldPassword: this.oldPassword,
+      //   },
+      //   success: (res) => {
+      //     console.log(res);
+      //     if (res.code === 200) {
+
+      //     }
+      //   }
+      // });
     }
-  };
+  },
+  components: {
+    pcNavSide
+  }
+};
 </script>

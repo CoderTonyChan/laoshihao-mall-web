@@ -25,8 +25,15 @@ let mixin = {
       this.$router.go(-1);
     },
     goHome() {
-      this.loadPage('Index');
-      window.location.reload();
+      if (process.env.NODE_ENV === 'production') {
+        window.location.href = 'http://mall.lshao.cn';
+      } else {
+        window.location.href = 'http://dev-mall.lshao.cn:9000';
+      }
+      // this.loadPage('Index');
+      // setInterval(() => {
+      //   window.location.reload();
+      // }, 10);
     },
     goSignIn() {
       console.log(`goSignIn ${process.env.NODE_ENV}`);
