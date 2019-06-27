@@ -136,12 +136,12 @@
                   <div class="p-info-wrap">
                     <!-- <p class="p-title">{{item.name}}</p> -->
                     <p class="p-time" style="height: 36px;">
-                      <img
+                      <!-- <img
                         src="http://oss.lshao.cn/images/people.png"
                         alt
                         style="bottom: 1px;position: relative;"
                       >
-                      {{item.sales}}&nbsp;&nbsp;&nbsp;&nbsp;
+                      {{item.sales}}&nbsp;&nbsp;&nbsp;&nbsp; -->
                       <span style="font-size: 16px;">{{item.name}}</span>
                     </p>
                     <p class="p-time" style="color: #4d7fff;">
@@ -189,12 +189,12 @@
                   <div class="p-info-wrap">
                     <!-- <p class="p-title">{{item.name}}</p> -->
                     <p class="p-time" style="height: 36px;">
-                      <img
+                      <!-- <img
                         src="http://oss.lshao.cn/images/people.png"
                         alt
                         style="bottom: 1px;position: relative;"
                       >
-                      {{item.sales}}&nbsp;&nbsp;&nbsp;&nbsp;
+                      {{item.sales}}&nbsp;&nbsp;&nbsp;&nbsp; -->
                       <span style="font-size: 16px;">{{item.name}}</span>
                     </p>
                     <p class="p-time" style="color: #4d7fff;">
@@ -242,12 +242,12 @@
                   <div class="p-info-wrap">
                     <!-- <p class="p-title">{{item.name}}</p> -->
                     <p class="p-time" style="height: 36px;">
-                      <img
+                      <!-- <img
                         src="http://oss.lshao.cn/images/people.png"
                         alt
                         style="bottom: 1px;position: relative;"
                       >
-                      {{item.sales}}&nbsp;&nbsp;&nbsp;&nbsp;
+                      {{item.sales}}&nbsp;&nbsp;&nbsp;&nbsp; -->
                       <span style="font-size: 16px;">{{item.name}}</span>
                     </p>
                     <p class="p-time" style="color: #4d7fff;">
@@ -294,12 +294,12 @@
                   <div class="p-info-wrap">
                     <!-- <p class="p-title">{{item.name}}</p> -->
                     <p class="p-time" style="height: 36px;">
-                      <img
+                      <!-- <img
                         src="http://oss.lshao.cn/images/people.png"
                         alt
                         style="bottom: 1px;position: relative;"
                       >
-                      {{item.sales}}&nbsp;&nbsp;&nbsp;&nbsp;
+                      {{item.sales}}&nbsp;&nbsp;&nbsp;&nbsp; -->
                       <span style="font-size: 16px;">{{item.name}}</span>
                     </p>
                     <p class="p-time" style="color: #4d7fff;">
