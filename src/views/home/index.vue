@@ -1255,12 +1255,12 @@ export default {
         url: `/uac/user/addFeedback`,
         data: { content: this.textarea, image: this.feedbacks.join(",") },
         success: res => {
-          console.log(res);
+          // console.log(res);
         }
       });
     },
     uploadImg(res, file) {
-      console.log(res);
+      // console.log(res);
       if (res.code == 200) {
         this.feedbacks = [res.result.attachmentIds, ...this.feedbacks];
         console.log(this.feedbacks);

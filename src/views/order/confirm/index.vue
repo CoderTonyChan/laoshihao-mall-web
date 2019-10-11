@@ -21,7 +21,7 @@
       <div class="panel panel-color panel-padding">
         <h1 class="panel-title panel-padding">商品清单</h1>
         <div class="panel-body product-con panel-padding">
-          <pc-product-list :orderItemVoList="orderItemVoList"/>
+          <pc-product-list :orderItemVoList="orderItemVoList" />
         </div>
         <div class="submit-con" v-show="orderItemVoList.length > 0">
           <span>订单总价:</span>
@@ -104,7 +104,7 @@ export default {
         url: `/omc/order/createOrder`,
         data: this.queryInfo,
         success: res => {
-          console.log(res);
+          // console.log(res);
           let orderVo = res.result;
           if (res.code === 200 && orderVo.orderNo) {
             // 清空购物车
@@ -148,12 +148,15 @@ export default {
                   document.body.appendChild(div);
                   document.forms[0].acceptCharset = "utf-8"; //保持与支付宝默认编码格式一致，如果不一致将会出现：调试错误，请回到请求来源地，重新发起请求，错误代码 invalid-signature 错误原因: 验签出错，建议检查签名字符串或签名私钥与应用公钥是否匹配
                   document.forms[0].submit();
-                }else {
+                } else {
                   this.$message({
                     type: "info",
                     message: res.message
                   });
                 }
+              },
+              error: err => {
+              this.$pcMessage(err.data.message);
               }
             });
           } else {
@@ -166,8 +169,7 @@ export default {
             this.loadPage("user-order");
             this.$pcMessage(err.data.message);
           }
-        },
-        
+        }
       });
     }
   },

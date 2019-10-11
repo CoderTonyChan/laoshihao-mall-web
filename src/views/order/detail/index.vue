@@ -35,15 +35,21 @@
                 <span class="text">支付方式：{{orderVo.paymentTypeDesc}}</span>
               </div>
               <div class="text-line" v-if="(orderVo.status === 50||orderVo.status === 20)">
-                <span class="text">该课程属于<span style="color: #4d7fff;">{{orderVo.orderItemVoList[0].organName}}</span>，立即听课请<span class="link" @click="loadPage('download')">下载App</span></span>
-                
+                <span class="text">
+                  该课程属于
+                  <span style="color: #4d7fff;">{{orderVo.orderItemVoList[0].organName}}</span>，立即听课请
+                  <span class="link" @click="loadPage('download')">下载App</span>
+                </span>
               </div>
               <div class="text-line" v-if="orderVo.status === 10">
                 <!-- <a class="btn" @click="loadPage('order-payment', {'orderNo': orderVo.orderNo})">去支付</a> -->
                 <a class="btn" @click="orderPayment">去支付</a>
                 <a class="btn order-cancel" @click="cancelOrder(orderVo.orderNo)">取消订单</a>
               </div>
-              <div class="text-line" v-if="(orderVo.status === 50||orderVo.status === 20)&&orderVo.refundOutDate === 0">
+              <div
+                class="text-line"
+                v-if="(orderVo.status === 50||orderVo.status === 20)&&orderVo.refundOutDate === 0"
+              >
                 <!-- <a class="btn" @click="loadPage('order-payment', {'orderNo': orderVo.orderNo})">去支付</a> -->
                 <a class="btn order-cancel" @click="refundApplyClick(orderVo.orderNo)">申请退款</a>
               </div>
@@ -68,7 +74,7 @@
                     @click="goProductDetailPage(detail.productId)"
                     target="_blank"
                   >
-                    <img class="p-img" :src="detail.productImage" :alt="detail.productName">
+                    <img class="p-img" :src="detail.productImage" :alt="detail.productName" />
                   </a>
                 </td>
                 <td class="cell cell-info">
@@ -110,7 +116,7 @@ export default {
   methods: {
     orderPayment() {
       var agent = navigator.userAgent.toLowerCase();
-      if ((/android/gi).test(agent)) {
+      if (/android/gi.test(agent)) {
         // 安卓
         this.$confirm("请选择扫码支付还是跳转支付宝app支付?", "提示", {
           confirmButtonText: "支付宝app支付",
@@ -136,12 +142,15 @@ export default {
                   document.forms[0].submit();
                   // console.log('utf-8');
                   // console.log(res.result);
-                }else {
+                } else {
                   this.$message({
                     type: "info",
                     message: res.message
                   });
                 }
+              },
+              error: err => {
+                this.$pcMessage(err.data.message);
               }
             });
           })
@@ -162,12 +171,15 @@ export default {
                   document.forms[0].submit();
                   // console.log('utf-8');
                   // console.log(res.result);
-                }else {
+                } else {
                   this.$message({
                     type: "info",
                     message: res.message
                   });
                 }
+              },
+              error: err => {
+                this.$pcMessage(err.data.message);
               }
             });
           });
@@ -189,12 +201,14 @@ export default {
             document.forms[0].submit();
             // console.log('utf-8');
             // console.log(res.result);
-          }else {
-                  this.$message({
-                    type: "info",
-                    message: res.message
-                  });
-                }
+          } else {
+            // ajax不会来到这里
+            // console.log(res);
+                this.$pcMessage(err.data.message);
+          }
+        },
+        error: err => {
+          this.$pcMessage(err.data.message);
         }
       });
     },
@@ -243,7 +257,7 @@ export default {
               message: "申请成功!"
             });
             window.location.reload();
-          }else{
+          } else {
             this.$pcMessage(res.data.message);
           }
         }

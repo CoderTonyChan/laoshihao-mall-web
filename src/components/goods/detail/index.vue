@@ -670,7 +670,7 @@ export default {
         success: res => {
           if (res.code === 200) {
             this.product = res.result;
-            console.log(this.product);
+            // console.log(this.product);
 
             // this.product.difficulty = 5;
             this.mainImage = this.product.mainImage;

@@ -190,7 +190,7 @@ const actions = {
           if (res.data.code === 200) {
             res.data.username = state.authToken.username;
             commit('updateAuthToken', res.data.result);
-            console.log(res);
+            // console.log(res);
             setInterval(() => {
               window.location.reload();
             }, 2000);
