@@ -136,6 +136,11 @@ export default {
                   document.forms[0].submit();
                   // console.log('utf-8');
                   // console.log(res.result);
+                }else {
+                  this.$message({
+                    type: "info",
+                    message: res.message
+                  });
                 }
               }
             });
@@ -157,6 +162,11 @@ export default {
                   document.forms[0].submit();
                   // console.log('utf-8');
                   // console.log(res.result);
+                }else {
+                  this.$message({
+                    type: "info",
+                    message: res.message
+                  });
                 }
               }
             });
@@ -179,7 +189,12 @@ export default {
             document.forms[0].submit();
             // console.log('utf-8');
             // console.log(res.result);
-          }
+          }else {
+                  this.$message({
+                    type: "info",
+                    message: res.message
+                  });
+                }
         }
       });
     },
